@@ -111,6 +111,8 @@ h13 {
   --main-text: #32325d;
   --text-decoration: #525f7f;
   --somegray: #757f99;
+  --border-gray: #9fa7bb;
+  --border-gray20: #eaeaf4;
   --tip: #abb3b9;
   --lines: #cad1d7;
   --lines40: #eaedef;
@@ -121,25 +123,38 @@ h13 {
   --white: #ffffff;
   --black: #000;
   --lightgray: #e0dee3;
+  --text-yellow: #dbc714;
+  --border-yellow20: rgba(239, 228, 130, 0.2);
+  --boder-yellow: #efe482;
+  --bg-yellow: #fffbe7;
   --yellow: #fac933;
   --purple: #432fbb;
   --blue: rgb(94, 114, 228);
   --blue60: rgba(94, 114, 228, 0.35);
   --magenta: #e127ff;
   --warn: #f89033;
+  --text-orange: #e97912;
+  --border-orange20: rgba(241, 194, 150, 0.2);
+  --boder-orange: #f1c296;
+  --bg-orange: #ffeddd;
   --warn40: rgba(252, 154, 67, 0.4);
   --green: rgb(43, 212, 141);
   --green60: rgba(43, 212, 141, 0.35);
   --error: rgb(243, 38, 38);
   --error60: rgba(243, 38, 38, 0.35);
   --error40: rgba(243, 38, 38, 0.4);
+  --border-red20: rgba(242, 180, 180, 0.2);
   --info: rgb(41, 184, 245);
   --info60: rgba(41, 184, 245, 0.35);
   --card-magento: #ede8ff;
+  --border-magento20: rgba(196, 150, 241, 0.2);
   --card-lightblue: #d3fcfc;
+  --border-azure20: rgba(91, 239, 239, 0.2);
   --card-red: #fff0f0;
   --card-blue: #e0f2fe;
+  --border-blue20: rgba(150, 192, 255, 0.2);
   --card-green: #e7ffe7;
+  --border-green20: rgba(125, 214, 128, 0.2);
   --blue-linear: linear-gradient(
       139.18deg,
       #7345fc 2.11%,

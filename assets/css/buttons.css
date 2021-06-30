@@ -8,6 +8,7 @@
   height: 32px;
   font-weight: 400;
   white-space: nowrap !important;
+  padding: 6px 15px 6px 15px;
 }
 
 .btn-lg {
@@ -15,6 +16,7 @@
   line-height: 20px;
   font-weight: 700;
   height: 40px !important;
+  padding: 10px 20px 10px 20px;
 }
 
 .btn-sm {
@@ -22,27 +24,38 @@
   line-height: 16px;
   height: 26px !important;
   font-weight: 300;
+  padding: 5px 15px 5px 15px;
 }
 
 .d-flex .btn:last-child {
   margin-right: 0px !important;
 }
 
-.btn-xs {
-  font-size: 12px;
-  padding: 4px 8px 4px 8px;
-  line-height: 20px;
-  height: 24px !important;
-  min-width: 24px;
+.btn-32 {
+  font-size: 14px;
+  padding: 8px;
+  height: 32px !important;
+  min-width: 32px;
+  max-width: 32px;
   font-weight: 400;
 }
 
-.btn-xxs {
+.btn-24 {
+  font-size: 10px;
+  padding: 2px 4px 2px 4px;
+  height: 24px !important;
+  min-width: 24px;
+  max-width: 24px;
+  font-weight: 400;
+}
+
+.btn-16 {
   font-size: 8px;
-  padding: 4px;
+  padding: 2px;
   line-height: 12px;
   height: 16px !important;
   min-width: 16px;
+  max-width: 16px;
   font-weight: 400;
 }
 
@@ -382,7 +395,8 @@
   box-shadow: none;
 }
 
-.btn-action {
+.btn-action,
+.card-table .page-link {
   color: var(--text-decoration);
   background-color: var(--white);
   border: none;
@@ -390,13 +404,16 @@
 }
 
 .btn-action.hover,
-.btn-action:hover {
+.btn-action:hover,
+.card-table .page-link:hover {
   color: var(--basic);
   background-color: var(--gray100) !important;
 }
 
 .btn-action.focus,
-.btn-action:focus {
+.btn-action:focus,
+.card-table .page-link:focus,
+.card-table .page-link.focus {
   color: var(--pressed);
   background-color: var(--tabs-btns-icns) !important;
   box-shadow: none;
@@ -422,7 +439,10 @@
 
 .btn-action:not(:disabled):not(.disabled).active,
 .btn-action:not(:disabled):not(.disabled):active,
-.show > .btn-action.dropdown-toggle {
+.show > .btn-action.dropdown-toggle,
+.card-table .page-link:not(:disabled):not(.disabled):active,
+.card-table .page-link:not(:disabled):not(.disabled).active,
+.card-table .page-item.active a {
   color: var(--pressed);
   background-color: var(--tabs-btns-icns) !important;
   box-shadow: none;
@@ -430,6 +450,8 @@
 
 .btn-action:not(:disabled):not(.disabled).active:focus,
 .btn-action:not(:disabled):not(.disabled):active:focus,
-.show > .btn-action.dropdown-toggle:focus {
+.show > .btn-action.dropdown-toggle:focus,
+.card-table .page-link:not(:disabled):not(.disabled):active:focus,
+.card-table .page-link:not(:disabled):not(.disabled).active:focus {
   box-shadow: none;
 }

@@ -47,7 +47,7 @@
 .card-sm {
   border-radius: 4px !important;
   box-shadow: none;
-  min-width: 175px;
+  min-width: 170px;
 }
 
 .card-sm .card-header {
@@ -81,6 +81,7 @@
 .card-green {
   background-color: var(--card-green);
   color: var(--green);
+  border: 1px solid var(--border-green20);
 }
 .card-green .card-body {
   border-bottom-color: var(--green60);
@@ -88,6 +89,7 @@
 .card-blue {
   background-color: var(--card-blue);
   color: var(--blue);
+  border: 1px solid var(--border-blue20);
 }
 .card-blue .card-body {
   border-bottom-color: var(--blue60);
@@ -95,6 +97,7 @@
 .card-red {
   background-color: var(--card-red);
   color: var(--error);
+  border: 1px solid var(--border-red20);
 }
 .card-red .card-body {
   border-bottom-color: var(--error60);
@@ -102,6 +105,7 @@
 .card-azure {
   background-color: var(--card-lightblue);
   color: var(--info);
+  border: 1px solid var(--border-azure20);
 }
 .card-azure .card-body {
   border-bottom-color: var(--info60);
@@ -109,9 +113,36 @@
 .card-magento {
   background-color: var(--card-magento);
   color: var(--basic);
+  border: 1px solid var(--border-magento20);
 }
 .card-magento .card-body {
   border-bottom-color: var(--basic60);
+}
+.card-gray {
+  background-color: var(--background);
+  color: var(--main-text);
+  border: 1px solid var(--border-gray20);
+}
+.card-gray .card-body {
+  border-bottom-color: var(--border-gray);
+}
+
+.card-yellow {
+  background-color: var(--bg-yellow);
+  color: var(--text-yellow);
+  border: 1px solid var(--boder-yellow20);
+}
+.card-yellow .card-body {
+  border-bottom-color: var(--boder-yellow);
+}
+
+.card-orange {
+  background-color: var(--bg-orange);
+  color: var(--text-orange);
+  border: 1px solid var(--boder-orange20);
+}
+.card-orange .card-body {
+  border-bottom-color: var(--boder-orange);
 }
 
 .card-sm-table,
@@ -162,6 +193,9 @@
 .response-codes td:nth-child(even),
 .card-sm-tag-table table tr:nth-child(even) {
   padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100vw - 200px);
 }
 
 .response-codes td:nth-child(even) {
@@ -172,4 +206,10 @@
 .card-sm-table table td:nth-child(even),
 .card-sm-tag-table table tr:nth-child(even) {
   padding-right: 20px;
+}
+
+.card-table {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-bottom: 0px !important;
 }
