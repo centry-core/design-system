@@ -20,3 +20,8 @@
     border-color: #E0F2FE;
     color: #2F7DF1;
 }
+
+.dropdown-menu > div > ul > li > a.colored-select-darkblue {
+    border-color: #E0E8F3;
+    color: #32325D;
+}
