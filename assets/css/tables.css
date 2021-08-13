@@ -51,3 +51,7 @@
   font-weight: 400;
   border-radius: 4px;
 }
+
+.card-table table .bs-checkbox input {
+  font-size: 24px;
+}

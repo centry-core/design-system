@@ -20,5 +20,5 @@ function actionFormatter(value, row, index) {
 }
 
 function nameStyle(value, row, index) {
-    return {css: {"max-width": "140px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
+    return {css: {"max-width": "100px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
 }

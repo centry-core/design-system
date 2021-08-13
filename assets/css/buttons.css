@@ -290,6 +290,31 @@
   box-shadow: none;
 }
 
+.btn-colored {
+  color: var(--black);
+  background-color: var(--white);
+  border: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  max-width: 110px;
+}
+.btn-colored.hover,
+.btn-colored:hover {
+  box-shadow: var(--hover-shadow);
+}
+
+.btn-colored.focus,
+.btn-colored:focus {
+  box-shadow: none;
+}
+
+.btn-colored:not(:disabled):not(.disabled).active:focus,
+.btn-colored:not(:disabled):not(.disabled):active:focus,
+.show > .btn-colored.dropdown-toggle:focus {
+  box-shadow: none;
+}
+
 .btn-warning {
   color: var(--warn);
   background-color: var(--white);
