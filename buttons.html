@@ -26,6 +26,7 @@
     <link type="text/css" href="assets/css/dropdown.css" rel="stylesheet">
     <link type="text/css" href="assets/css/navbar.css" rel="stylesheet">
     <link type="text/css" href="assets/css/card.css" rel="stylesheet">
+    <link type="text/css" href="assets/css/select.css" rel="stylesheet">
     <!--   Core JS Files   -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -56,7 +57,7 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="#">Tables</a>
                 <a class="nav-link" href="cards.html">Cards</a>
-                <a class="nav-link" href="#">Modals</a>
+                <a class="nav-link" href="modals.html">Modals</a>
                 <a class="nav-link" href="#">Dropdowns</a>
                 <a class="nav-link active" href="buttons.html">Buttons</a>
                 <a class="nav-link" href="#">Forms</a>
@@ -211,14 +212,17 @@
             </div>
             <div class="d-flex">
                 <div class="card w-75 mr-2 card-stripped">
+                    <h5 class="pt-2 pl-2">Colored select</h5>
                     <div class="d-flex m-4">
                         <select id="coloredSelect" class="selectpicker btn-colored-select mr-2"
                             data-style="btn-colored">
-                            <option class="critical">Critical</option>
-                            <option class="high">High</option>
-                            <option class="medium">Medium</option>
-                            <option class="low">Low</option>
-                            <option class="info">Info</option>
+                            <option class="colored-select-red">Critical</option>
+                            <option class="colored-select-orange">High</option>
+                            <option class="colored-select-yellow">Medium</option>
+                            <option class="colored-select-green">Low</option>
+                            <option class="colored-select-blue">Info</option>
+                            <option>Unexpected</option>
+                            <option class="colored-select-darkblue">Ignore</option>
                         </select>
                     </div>
                 </div>

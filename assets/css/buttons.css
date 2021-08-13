@@ -297,7 +297,7 @@
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
-  max-width: 110px;
+  /*max-width: 110px;*/
 }
 .btn-colored.hover,
 .btn-colored:hover {
