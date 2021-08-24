@@ -168,7 +168,9 @@ h13 {
     0px 0px 12px rgba(252, 154, 67, 0.04);
   --hover-danger-shadow: 0px 2px 4px rgba(243, 38, 38, 0.15),
     0px 0px 12px rgba(243, 38, 38, 0.04);
+  --inputs-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1), 0px -1px 1px rgba(36, 36, 93, 0.05);
 }
+
 
 h2 a {
   vertical-align: middle;
