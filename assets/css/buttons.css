@@ -298,8 +298,8 @@
   color: var(--main-text);
   background-color: var(--white);
   border: 1px solid var(--lines);
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .btn-gray.hover,
 .btn-gray:hover {
