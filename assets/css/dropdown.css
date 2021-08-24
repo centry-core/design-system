@@ -1,3 +1,8 @@
+
+.bootstrap-select {
+    width: 100%!important;
+}
+
 .dropdown-menu.show {
   box-shadow: var(--bloc-shadow);
 }
