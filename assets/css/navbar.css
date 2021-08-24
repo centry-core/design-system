@@ -12,7 +12,8 @@
   padding-right: 10px;
 }
 
-.main-nav > .bootstrap-select {
+.main-nav .bootstrap-select {
+  min-width: 200px;
   width: -webkit-fit-content !important;
 }
 

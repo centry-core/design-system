@@ -46,3 +46,8 @@
 .modal-body p {
     margin-bottom: 0;
 }
+
+.section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

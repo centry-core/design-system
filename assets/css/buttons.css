@@ -551,6 +551,7 @@
   display: inline-block;
   width: 32px;
   height: 18px;
+  margin-top: 3px;
 }
 
 .custom-toggle input {
