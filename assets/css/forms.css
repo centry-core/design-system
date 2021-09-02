@@ -62,3 +62,19 @@ input.form-control {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.form-control-label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+.form-control-label + input{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+input[type="file"] {
+    border: 1px dashed var(--lines);
+    padding-top: 4px;
+}

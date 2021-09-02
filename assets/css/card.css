@@ -222,7 +222,20 @@
     box-shadow: var(--inputs-shadow);
 }
 
-.card-row-1 .card-header {
+.card-source {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    box-shadow: var(--inputs-shadow);
+}
+
+.card-source nav {
+    padding: 5px 15px 10px 15px;
+}
+
+
+.card-row-1 .card-header, .card-source .card-header {
     margin: 0px;
     padding-right: 0px;
     padding-left: 0px;
@@ -230,10 +243,14 @@
     padding-bottom: 12px;
 }
 
-.card-row-1 .card-header .btn-action {
+.card-row-1 .card-header .btn-action, .card-source .card-header .btn-action {
     margin-right: 10px;
 }
 
-.card-row-1 .card-header label {
+.card-row-1 .card-header label, .card-source .card-header label {
     margin-bottom: 0;
+}
+
+.card-row-1 nav {
+    padding: 20px 15px 10px 15px;
 }
