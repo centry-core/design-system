@@ -31,6 +31,15 @@
   margin-right: 0px !important;
 }
 
+.btn-37 {
+  font-size: 14px;
+  padding: 9px;
+  height: 37px !important;
+  min-width: 37px;
+  max-width: 37px;
+  font-weight: 400;
+}
+
 .btn-32 {
   font-size: 14px;
   padding: 8px;
@@ -291,8 +300,8 @@
 }
 
 .btn-gray {
-  height: calc(1.5em + 14px + 6px);
-  padding: 0.625rem 0.75rem;
+  height: calc(1.5em + 18px);
+  padding: 8px 10px;
   font-size: 13px;
   font-weight: 400;
   color: var(--main-text);

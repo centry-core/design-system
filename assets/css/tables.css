@@ -12,6 +12,17 @@
   font-weight: 400;
 }
 
+
+.params-table td input.form-control {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.params-table td {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 .card-table table tr {
   border-bottom: 1px solid var(--lines);
 }
@@ -54,4 +65,12 @@
 
 .card-table table .bs-checkbox input {
   font-size: 24px;
+}
+
+
+td.disabled input {
+    pointer-events: none;
+    color: var(--main-text);
+    background-color: var(--gray100);
+    opacity: 1;
 }
