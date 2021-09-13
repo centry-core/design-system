@@ -31,7 +31,7 @@ function dataTypeFormatter(value, row, index, field) {
 }
 
 function addEmptyParamsRow(id) {
-    $(`#${id}`).bootstrapTable('append', {"name": "", "default": "", "type": "", "description": ""})
+    $(`#${id}`).bootstrapTable('append', {"name": "", "default": "", "type": "", "description": "", "action": ""})
 }
 
 
