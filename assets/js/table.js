@@ -57,12 +57,12 @@ function actionFormatter(value, row, index) {
 $('.params-table').on('all.bs.table', function (ev) {
     $(ev.target).find('.selectpicker').each(function(index) {
         $(this).selectpicker('render')
-        if ($('.params-table').bootstrapTable('getData')[parseInt($(this).closest('tr').attr('data-index'))].type != ""){
+        if ($('.params-table').bootstrapTable('getData').length != 0 && $('.params-table').bootstrapTable('getData')[parseInt($(this).closest('tr').attr('data-index'))].type != ""){
             $(this).selectpicker('val', $('.params-table').bootstrapTable('getData')[parseInt($(this).closest('tr').attr('data-index'))].type)
         }
     })
     $(".datatype-selectpicker").on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
-        if ($('.params-table').bootstrapTable('getData')[parseInt($(this).closest('tr').attr('data-index'))].type != this.value) {
+        if ($('.params-table').bootstrapTable('getData').length != 0 && $('.params-table').bootstrapTable('getData')[parseInt($(this).closest('tr').attr('data-index'))].type != this.value) {
             updateCell(this, parseInt($(this).closest('tr').attr('data-index')), 'type')
         }
     })
