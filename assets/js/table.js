@@ -9,7 +9,10 @@ function lgFormatter(value, row, index) {
 }
 
 function inputFormatter(value, row, index, field) {
-    return `<input type="text" class="form-control form-control-alternative" onchange="updateCell(this, ${index}, '${field}')" value="${value}">`
+    return `
+        <input type="text" class="form-control form-control-alternative" onchange="updateCell(this, ${index}, '${field}')" value="${value}">
+        <div class="invalid-tooltip invalid-tooltip-custom"></div>
+    `
 }
 
 function updateCell(el, row, field) {
