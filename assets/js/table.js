@@ -49,10 +49,10 @@ function parametersDeleteFormatter(value, row, index) {
 function actionFormatter(value, row, index) {
     return `
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-16 btn-action"><i class="fas fa-play"></i></button>
-        <button type="button" class="btn btn-16 btn-action"><i class="fas fa-cog"></i></button>
-        <button type="button" class="btn btn-16 btn-action"><i class="fas fa-share-alt"></i></button>
-        <button type="button" class="btn btn-16 btn-action"><i class="fas fa-trash-alt"></i></button>
+        <button type="button" class="btn btn-24 btn-action"><i class="fas fa-play"></i></button>
+        <button type="button" class="btn btn-24 btn-action"><i class="fas fa-cog"></i></button>
+        <button type="button" class="btn btn-24 btn-action"><i class="fas fa-share-alt"></i></button>
+        <button type="button" class="btn btn-24 btn-action"><i class="fas fa-trash-alt"></i></button>
     </div>
     `
 }

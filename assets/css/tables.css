@@ -12,15 +12,14 @@
   font-weight: 400;
 }
 
-
 .params-table td input.form-control {
-    margin-top: 0px;
-    margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .params-table td {
-    padding-top: 0px;
-    padding-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .card-table table tr {
@@ -30,13 +29,17 @@
 .card-table table td {
   font-size: 12px;
   font-weight: 300px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .card-table .bootstrap-table .fixed-table-container .fixed-table-body {
   height: unset;
   min-height: 210px;
+}
+
+.bootstrap-table .fixed-table-container .table thead th .th-inner {
+  padding: 0.5rem;
 }
 
 .card-table .pagination-info {
@@ -67,19 +70,18 @@
   font-size: 24px;
 }
 
-
 td.disabled input {
-    pointer-events: none;
-    color: var(--main-text);
-    background-color: var(--gray100);
-    opacity: 1;
+  pointer-events: none;
+  color: var(--main-text);
+  background-color: var(--gray100);
+  opacity: 1;
 }
 
 .params-table .thead-light th {
-    background-color: var(--white) !important;
-    border-top: 0 !important;
+  background-color: var(--white) !important;
+  border-top: 0 !important;
 }
 
 .params-table tbody tr {
-    border-top: 1px solid var(--lines) !important;
+  border-top: 1px solid var(--lines) !important;
 }
