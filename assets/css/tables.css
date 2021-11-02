@@ -26,6 +26,24 @@
   border-bottom: 1px solid var(--lines);
 }
 
+.card-table table th:first-child .th-inner {
+  padding-left: 20px !important;
+  padding-right: 4px !important;
+}
+
+.card-table table th:last-child .th-inner {
+  padding-right: 20px !important;
+}
+
+.card-table table td:first-child {
+  padding-left: 20px;
+  padding-right: 4px;
+}
+
+.card-table table td:last-child {
+  padding-right: 20px;
+}
+
 .card-table table td {
   font-size: 12px;
   font-weight: 300px;
@@ -45,7 +63,7 @@
 .card-table .pagination-info {
   font-size: 12px;
   font-weight: 300;
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 .card-table ul.pagination {

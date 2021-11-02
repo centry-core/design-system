@@ -25,7 +25,7 @@
 }
 
 .card-12 {
-  margin: 20px 40px 0px 40px;
+  margin: 20px 20 0px 20px;
 }
 
 .card-x {
@@ -33,7 +33,7 @@
 }
 
 .d-flex .card-x:first-child {
-  margin: 20px 10px 0px 40px;
+  margin: 20px 10px 0px 20px;
 }
 
 .d-flex .card-x:nth-child(n + 2) {
@@ -41,7 +41,7 @@
 }
 
 .d-flex .card-x:last-child {
-  margin: 20px 40px 0px 10px;
+  margin: 20px 20px 0px 10px;
 }
 
 .card-sm {
@@ -215,42 +215,44 @@
 }
 
 .card-row-1 {
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
-    box-shadow: var(--inputs-shadow);
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  box-shadow: var(--inputs-shadow);
 }
 
 .card-source {
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
-    box-shadow: var(--inputs-shadow);
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  box-shadow: var(--inputs-shadow);
 }
 
 .card-source nav {
-    padding: 5px 15px 10px 15px;
+  padding: 5px 15px 10px 15px;
 }
 
-
-.card-row-1 .card-header, .card-source .card-header {
-    margin: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+.card-row-1 .card-header,
+.card-source .card-header {
+  margin: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
-.card-row-1 .card-header .btn-action, .card-source .card-header .btn-action {
-    margin-right: 10px;
+.card-row-1 .card-header .btn-action,
+.card-source .card-header .btn-action {
+  margin-right: 10px;
 }
 
-.card-row-1 .card-header label, .card-source .card-header label {
-    margin-bottom: 0;
+.card-row-1 .card-header label,
+.card-source .card-header label {
+  margin-bottom: 0;
 }
 
 .card-row-1 nav {
-    padding: 20px 15px 10px 15px;
+  padding: 20px 15px 10px 15px;
 }
