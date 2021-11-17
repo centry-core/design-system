@@ -103,3 +103,8 @@ td.disabled input {
 .params-table tbody tr {
   border-top: 1px solid var(--lines) !important;
 }
+
+.col.sidebar {
+  -ms-flex: 0 0 260px;
+  flex: 0 0 260px;
+}

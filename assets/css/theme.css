@@ -107,6 +107,8 @@
     0px 0px 12px rgba(243, 38, 38, 0.04);
   --inputs-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1),
     0px -1px 1px rgba(36, 36, 93, 0.05);
+  --card-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1),
+    0px -1px 1px rgba(36, 36, 93, 0.05);
 }
 
 h1,
@@ -116,12 +118,14 @@ h4,
 h5 {
   font-weight: 700;
   line-height: 1.8;
+  margin: 0;
 }
 h1 {
   font-size: 36px;
 }
 h2 {
   font-size: 22px;
+  line-height: 32px !important;
 }
 h3 {
   font-size: 18px;

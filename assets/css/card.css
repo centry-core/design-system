@@ -2,16 +2,12 @@
   background-color: var(--white);
   border: 0px;
   border-radius: 4px;
-  box-shadow: var(--bloc-shadow);
+  box-shadow: var(--card-shadow);
 }
 
 .card .row .col {
   padding-left: 15px;
   padding-right: 0px;
-}
-
-.card .row .col:last-child {
-  padding-right: 15px;
 }
 
 .card .card-header {
@@ -29,7 +25,7 @@
 }
 
 .card-x {
-  width: 100%;
+  width: calc(100% - 2px);
 }
 
 .d-flex .card-x:first-child {
@@ -219,19 +215,20 @@
   padding-left: 20px;
   padding-bottom: 0px;
   margin-bottom: 10px;
-  box-shadow: var(--inputs-shadow);
+  box-shadow: var(--card-shadow);
 }
 
 .card-source {
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
+  margin-top: 1px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
   margin-bottom: 10px;
-  box-shadow: var(--inputs-shadow);
+  box-shadow: var(--card-shadow);
 }
 
 .card-source nav {
-  padding: 5px 15px 10px 15px;
+  padding: 5px 0px 10px 0px;
 }
 
 .card-row-1 .card-header,
