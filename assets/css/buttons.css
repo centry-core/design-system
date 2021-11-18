@@ -495,7 +495,7 @@
 }
 
 .btn-action,
-.card-table .page-link {
+.card-body .page-link {
   color: var(--text-decoration);
   background-color: var(--white);
   border: none;
@@ -504,15 +504,15 @@
 
 .btn-action.hover,
 .btn-action:hover,
-.card-table .page-link:hover {
+.card-body .page-link:hover {
   color: var(--basic);
   background-color: var(--gray100) !important;
 }
 
 .btn-action.focus,
 .btn-action:focus,
-.card-table .page-link:focus,
-.card-table .page-link.focus {
+.card-body .page-link:focus,
+.card-body .page-link.focus {
   color: var(--pressed);
   background-color: var(--tabs-btns-icns) !important;
   box-shadow: none;
@@ -539,9 +539,9 @@
 .btn-action:not(:disabled):not(.disabled).active,
 .btn-action:not(:disabled):not(.disabled):active,
 .show > .btn-action.dropdown-toggle,
-.card-table .page-link:not(:disabled):not(.disabled):active,
-.card-table .page-link:not(:disabled):not(.disabled).active,
-.card-table .page-item.active a {
+.card-body .page-link:not(:disabled):not(.disabled):active,
+.card-body .page-link:not(:disabled):not(.disabled).active,
+.card-body .page-item.active a {
   color: var(--pressed);
   background-color: var(--tabs-btns-icns) !important;
   box-shadow: none;
@@ -550,8 +550,8 @@
 .btn-action:not(:disabled):not(.disabled).active:focus,
 .btn-action:not(:disabled):not(.disabled):active:focus,
 .show > .btn-action.dropdown-toggle:focus,
-.card-table .page-link:not(:disabled):not(.disabled):active:focus,
-.card-table .page-link:not(:disabled):not(.disabled).active:focus {
+.card-body .page-link:not(:disabled):not(.disabled):active:focus,
+.card-body .page-link:not(:disabled):not(.disabled).active:focus {
   box-shadow: none;
 }
 

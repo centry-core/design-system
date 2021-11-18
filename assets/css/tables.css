@@ -2,6 +2,17 @@
   border: 0;
 }
 
+.table-border {
+  border: 1px solid var(--lines) !important;
+}
+
+.table-border th,
+.table-border td,
+.table-border thead th,
+.table-border tbody + tbody {
+  border: 0;
+}
+
 .thead-light th {
   background-color: var(--background) !important;
   border-top: 1px solid var(--lines) !important;
@@ -22,36 +33,48 @@
   padding-bottom: 0px;
 }
 
-.card-table table tr {
+.card-body table tr {
   border-bottom: 1px solid var(--lines);
 }
 
-.card-table table th:first-child .th-inner {
+.card-body table th:first-child .th-inner {
   padding-left: 20px !important;
   padding-right: 4px !important;
 }
 
-.card-table table th:last-child .th-inner {
+.card-body table th:last-child .th-inner {
   padding-right: 20px !important;
 }
 
-.card-table table td:first-child {
+.card-body table td:first-child {
   padding-left: 20px;
   padding-right: 4px;
 }
 
-.card-table table td:last-child {
+.card-body table td:last-child {
   padding-right: 20px;
 }
 
-.card-table table td {
+.card-body table td {
   font-size: 12px;
   font-weight: 300px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
-.card-table .bootstrap-table .fixed-table-container .fixed-table-body {
+.card-body table td {
+  line-height: 18px;
+}
+
+.card-table .card-body table td {
+  line-height: 32px;
+}
+
+.card-table .card-body table th {
+  line-height: 24px;
+}
+
+.card-body .bootstrap-table .fixed-table-container .fixed-table-body {
   height: unset;
   min-height: 210px;
 }
@@ -60,21 +83,29 @@
   padding: 0.5rem;
 }
 
-.card-table .pagination-info {
+.card-body .pagination-info {
   font-size: 12px;
   font-weight: 300;
   padding-left: 20px;
 }
 
-.card-table ul.pagination {
+.card-table .card-body .pagination-info {
+  padding-left: 0px;
+}
+
+.card-body ul.pagination {
   padding-right: 20px;
 }
 
-.card-table ul.pagination li {
+.card-table .card-body ul.pagination {
+  padding-right: 0px;
+}
+
+.card-body ul.pagination li {
   margin-left: 5px;
 }
 
-.card-table .page-link {
+.card-body .page-link {
   font-size: 12px;
   padding: 4px 8px;
   height: 24px !important;
@@ -84,7 +115,7 @@
   border-radius: 4px;
 }
 
-.card-table table .bs-checkbox input {
+.card-body table .bs-checkbox input {
   font-size: 24px;
 }
 
@@ -107,4 +138,20 @@ td.disabled input {
 .col.sidebar {
   -ms-flex: 0 0 260px;
   flex: 0 0 260px;
+}
+
+.bootstrap-table .fixed-table-pagination > .pagination-detail .pagination-info {
+  line-height: 24px;
+}
+
+.card-table .bootstrap-table .fixed-table-pagination > .pagination-detail,
+.card-table .bootstrap-table .fixed-table-pagination > .pagination {
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.card-table-sm .bootstrap-table .fixed-table-pagination > .pagination-detail,
+.card-table-sm .bootstrap-table .fixed-table-pagination > .pagination {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
