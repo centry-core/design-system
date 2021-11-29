@@ -187,3 +187,12 @@ h2 a {
   font-size: 16px;
   color: var(--somegray);
 }
+
+.hidden {
+  display: none;
+}
+
+.max-scrollable-y {
+  max-height: calc(100vh - 218px) !important;
+  overflow-y: scroll;
+}

@@ -155,3 +155,21 @@ td.disabled input {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.table-list input[type="radio"] {
+  display: none;
+}
+
+.table-list .bs-checkbox {
+  padding: 0;
+  max-width: 2px !important;
+  width: 2px !important;
+}
+
+.table-list tr.selected td {
+  background-color: var(--gray100) !important;
+}
+
+.table-list tr.selected td.bs-checkbox {
+  background-color: var(--basic) !important;
+}
