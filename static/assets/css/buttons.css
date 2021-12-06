@@ -494,6 +494,59 @@
   box-shadow: none;
 }
 
+.btn-success {
+  color: var(--white);
+  background-color: var(--success);
+  border: 1px solid var(--success);
+  text-transform: capitalize;
+}
+
+.btn-success.hover,
+.btn-success:hover {
+  color: var(--success);
+  background-color: var(--white) !important;
+  border: 1px solid var(--success);
+  box-shadow: var(--hover-success-shadow);
+}
+
+.btn-success.focus,
+.btn-success:focus {
+  color: var(--success);
+  background-color: var(--white) !important;
+  border: 1px solid var(--success);
+  box-shadow: none;
+}
+
+.btn-success.disabled,
+.btn-success:disabled {
+  color: var(--disabled);
+  background-color: var(--white);
+  border: 1px solid var(--borders);
+}
+
+.btn-success.disabled.updating,
+.btn-success.updating:disabled {
+  color: var(--success);
+  background-color: var(--white) !important;
+  border: 1px solid var(--success);
+  box-shadow: none;
+}
+
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.show > .btn-danger.dropdown-toggle {
+  color: var(--success);
+  background-color: var(--white) !important;
+  border: 1px solid var(--success);
+  box-shadow: none;
+}
+
+.btn-success:not(:disabled):not(.disabled).active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.show > .btn-danger.dropdown-toggle:focus {
+  box-shadow: none;
+}
+
 .btn-action,
 .card-body .page-link {
   color: var(--text-decoration);
