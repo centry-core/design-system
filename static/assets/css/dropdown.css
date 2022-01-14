@@ -103,3 +103,94 @@
   border-bottom: 0;
   border-left: 0.3em solid transparent;
 }
+/* dropdown simple-list*/
+.dropdown_simple-list input[type=checkbox]{
+  transform: scale(1.4);
+}
+.dropdown_simple-list .dropdown-menu input[type=checkbox],
+.dropdown_simple-list .dropdown-menu label
+{
+  cursor: pointer !important;
+}
+.dropdown_simple-list .dropdown-menu li:hover {
+  background: var(--gray100);
+}
+.dropdown_simple-list .dropdown-menu i.fa-check {
+  color: var(--purple);
+  font-size: 8px;
+}
+.dropdown_simple-list .dropdown-menu i {
+  color: var(--somegray);
+  font-size: 12px;
+}
+/* dropdown tree-list*/
+.dropdown_tree-list i.fa-sort-down {
+  font-size: 20px;
+  padding-bottom: 6px;
+  cursor: pointer;
+  color: var(--gray400);
+}
+.dropdown_tree-list input[type=checkbox]{
+  transform: scale(1.4);
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  -o-appearance:none;
+}
+
+.dropdown_tree-list input[type=checkbox],
+.dropdown_tree-list label
+{
+  cursor: pointer !important;
+}
+/* dropdown multilevel */
+.dropdown_multilevel .dropdown-menu > li:hover > .submenu{
+  display: block;
+}
+
+.dropdown_multilevel .submenu{
+  display: none;
+  position: absolute;
+  left:100%;
+  top:-3px;
+}
+.dropdown_multilevel .dropdown-menu .dropdown-item {
+  cursor: pointer;
+}
+/* checkbox */
+input[type=checkbox].custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.custom-checkbox+label::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid var(--gray400);
+  border-radius: 0.25em;
+  margin-right: 0.9em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.custom-checkbox+label.arrow_label::before {
+  margin-right: 2.3em;
+}
+.custom-checkbox:checked+label::before {
+  border-color: var(--purple);
+  background-color: var(--purple);
+  background-image: url("../ico/check-white.svg");
+  background-size: 10px;
+}
+.dropdown_tree-list i.fa-sort-down {
+  left: 46px;
+}
+.dropdown_tree-list label {
+  color: var(--gray800);
+}
+.dropdown-menu .dropdown-menu_item {
+  padding: 6px 1rem;
+}
