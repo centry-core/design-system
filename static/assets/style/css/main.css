@@ -1,3 +1,11 @@
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: var(--gray700);
+}
+
 input[type=checkbox].custom-checkbox {
   position: absolute;
   z-index: -1;
@@ -318,6 +326,31 @@ input[type=range]::-moz-range-thumb {
   align-items: center;
   padding: 0 2px;
   outline: 0;
+}
+
+.bootstrap-select .filter-option-inner-inner {
+  color: var(--gray700);
+}
+.bootstrap-select.show {
+  border: 1px solid var(--gray400);
+  box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
+  border-radius: 4px;
+}
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+
+.custom-tabs a {
+  text-decoration: none;
+  color: var(--gray600);
+  font-size: 12px;
+  line-height: 24px;
+  padding: 4px 16px;
+  border-bottom: solid 1px var(--gray200);
+}
+.custom-tabs a.active {
+  color: var(--purple);
+  border-color: var(--purple);
 }
 
 /*# sourceMappingURL=main.css.map */

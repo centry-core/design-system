@@ -119,81 +119,50 @@
     </aside>
     <div class="card mt-3 w-100">
         <div class="card-header">
-            <h1> Inputs </h1>
+            <h1> Tabs </h1>
         </div>
         <div class="card-body row">
-            <div class="col-6">
-                <h4 class="pt-2">Fields</h4>
+            <div class="col">
+                <h4 class="pt-2">Tabs</h4>
                 <div class="card w-100 card-stripped p-3">
-                    <div class="custom-input mb-3">
-                        <input
-                            type="text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input mb-3">
-                        <input
-                            type="text"
-                            value="Text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input invalid-input mb-3">
-                        <input
-                            type="text"
-                            value="Wrong data"
-                            placeholder="Text">
-                        <span class="input_error-msg">Сlarifying error message</span>
-                    </div>
-                    <div class="custom-input custom-input__search position-relative">
-                        <input
-                            type="text"
-                            placeholder="Search">
-                        <img src="assets/ico/search.svg" class="icon-search position-absolute">
+                    <ul class="custom-tabs nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">TAB SELECTED</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">TAB DEFAULT</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="" id="pills-setting-tab" data-toggle="pill" href="#pills-setting" role="tab" aria-controls="pills-setting" aria-selected="false">TAB DEFAULT</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.</div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ullam veritatis voluptatibus!</div>
+                        <div class="tab-pane fade" id="pills-setting" role="tabpanel" aria-labelledby="pills-setting-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur esse expedita ipsam quasi quidem repudiandae sunt? Amet autem officiis tempore?</div>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-                <h4 class="pt-2">Fields & label</h4>
+        </div>
+        <div class="card-body row">
+            <div class="col">
+                <h4 class="pt-2">Tabs & icons</h4>
                 <div class="card w-100 card-stripped p-3">
-                    <div class="custom-input mb-3">
-                        <label for="fieldOne" class="font-weight-bold mb-0">Label</label>
-                        <p class="custom-input_desc mb-2">Description</p>
-                        <input
-                            id="fieldOne"
-                            type="text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input mb-3">
-                        <label for="fieldTwo" class="font-weight-bold mb-1">Label</label>
-                        <input
-                                id="fieldTwo"
-                                type="text"
-                                placeholder="Text">
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="pt-2">Select</h4>
-                <div class="card w-100 card-stripped p-3">
-                    <select id="secondarySelect" class="selectpicker" data-style="btn">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="pt-2">Input stepper</h4>
-                <div class="card w-100 card-stripped p-3 align-items-start">
-                    <div id="inputStepper" class="input-stepper">
-                        <button
-                            @click="counter--"
-                            :disabled="counter <= 0"
-                        ><i class="fas fa-minus"></i>
-                        </button>
-                        <span role="textbox" contenteditable @input="changeCounter">{{ counter }}</span>
-                        <button
-                            @click="counter++"
-                        ><i class="fas fa-plus"></i></button>
+                    <ul class="custom-tabs nav nav-pills mb-3" id="icons-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="active" id="icons-home-tab" data-toggle="pill" href="#icons-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="" id="icons-profile-tab" data-toggle="pill" href="#icons-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                                <i class="fas fa-tasks"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="icons-tabContent">
+                        <div class="tab-pane fade show active" id="icons-home" role="tabpanel" aria-labelledby="pills-home-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.</div>
+                        <div class="tab-pane fade" id="icons-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ullam veritatis voluptatibus!</div>
                     </div>
                 </div>
             </div>
@@ -202,7 +171,5 @@
 </main>
 <script src="https://unpkg.com/vue@next"></script>
 <script src="assets/js/inputs.js"></script>
-<script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-<script src="assets/js/select.js"></script>
 </body>
 </html>
