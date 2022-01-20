@@ -1,0 +1,14 @@
+.custom-tabs {
+  a {
+    text-decoration: none;
+    color: var(--gray600);
+    font-size: 12px;
+    line-height: 24px;
+    padding: 4px 16px;
+    border-bottom: solid 1px var(--gray200);
+  }
+  a.active {
+    color: var(--purple);
+    border-color: var(--purple);
+  }
+}
