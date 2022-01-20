@@ -40,6 +40,7 @@
             crossorigin="anonymous"></script>
 </head>
 
+
 <body>
 <nav class="navbar navbar-expand-xl main-nav">
     <div class="d-flex chapters">
@@ -113,69 +114,71 @@
     </aside>
     <div class="card mt-3 w-100">
         <div class="card-header">
-            <h1>Dropdowns</h1>
+            <h1> Inputs </h1>
         </div>
-        <div id="dropdowns" class="card-body">
-            <div class="row">
-                <div class="col">
-                    <h4 class="pt-2">List Tree</h4>
-                    <div class="card w-100 mr-2 card-stripped">
-                        <div class="d-flex m-4">
-                            <complex-list/>
-                        </div>
+        <div class="card-body row">
+            <div class="col-6">
+                <h4 class="pt-2">Fields</h4>
+                <div class="card w-100 card-stripped p-3">
+                    <div class="custom-input mb-3">
+                        <input
+                            type="text"
+                            placeholder="Text">
+                    </div>
+                    <div class="custom-input mb-3">
+                        <input
+                            type="text"
+                            value="Text"
+                            placeholder="Text">
+                    </div>
+                    <div class="custom-input invalid-input mb-3">
+                        <input
+                            type="text"
+                            value="Wrong data"
+                            placeholder="Text">
+                        <span class="input_error-msg">Сlarifying error message</span>
+                    </div>
+                    <div class="custom-input custom-input__search position-relative">
+                        <input
+                            type="text"
+                            placeholder="Search">
+                        <img src="assets/ico/search.svg" class="icon-search position-absolute">
                     </div>
                 </div>
             </div>
-            <h4 class="pt-2">List Tree</h4>
-            <div class="card w-100 mr-2 card-stripped">
-                <div class="d-flex m-4">
-                    <tree-list/>
-                </div>
-            </div>
-            <h4 class="pt-2">Simple List</h4>
-            <div class="card w-100 mr-2 card-stripped">
-                <div class="d-flex m-4">
-                    <div class="d-flex">
-                        <simple-list
-                                :items-list1="[
-                            { id: 1, title: 'Step 1' },
-                            { id: 2, title: 'Step 2' }
-                        ]"
-                        ></simple-list>
-                        <simple-list
-                                :show-check-box="false"
-                                :items-list1="[
-                            { id: 3, title: 'Step 1' },
-                            { id: 4, title: 'Step 2' }
-                        ]"
-                        ></simple-list>
+            <div class="col-6">
+                <h4 class="pt-2">Fields & label</h4>
+                <div class="card w-100 card-stripped p-3">
+                    <div class="custom-input mb-3">
+                        <label for="fieldOne" class="font-weight-bold mb-0">Label</label>
+                        <p class="custom-input_desc mb-2">Description</p>
+                        <input
+                            id="fieldOne"
+                            type="text"
+                            placeholder="Text">
+                    </div>
+                    <div class="custom-input mb-3">
+                        <label for="fieldTwo" class="font-weight-bold mb-1">Label</label>
+                        <input
+                                id="fieldTwo"
+                                type="text"
+                                placeholder="Text">
                     </div>
                 </div>
             </div>
-            <h4 class="pt-2">Multilevel</h4>
-            <div class="card w-100 mr-2 card-stripped">
-                <div class="d-flex m-4">
-                    <div class="dropdown_multilevel">
-                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select Step
+            <div class="col-6">
+                <h4 class="pt-2">Input stepper</h4>
+                <div class="card w-100 card-stripped p-3 align-items-start">
+                    <div id="inputStepper" class="input-stepper">
+                        <button
+                            @click="counter--"
+                            :disabled="counter <= 0"
+                        ><i class="fas fa-minus"></i>
                         </button>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-menu_item dropdown-item d-flex align-items-center">
-                                <span class="w-100">Step 1</span>
-                                <i class="fa fa-sort-down mr-2"
-                                   style="transform: rotate(270deg)"
-                                ></i>
-                                <ul class="submenu dropdown-menu">
-                                    <li class="dropdown-menu_item dropdown-item d-flex align-items-center">
-                                        <span class="w-100">Step 1.1</span>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-menu_item dropdown-item d-flex align-items-center">
-                                <span class="w-100">Step 2</span>
-                            </li>
-                        </ul>
+                        <span role="textbox" contenteditable @input="changeCounter">{{ counter }}</span>
+                        <button
+                            @click="counter++"
+                        ><i class="fas fa-plus"></i></button>
                     </div>
                 </div>
             </div>
@@ -183,9 +186,6 @@
     </div>
 </main>
 <script src="https://unpkg.com/vue@next"></script>
-<script src="assets/js/dropdowns.js">
-
-</script>
+<script src="assets/js/inputs.js"></script>
 </body>
-
 </html>

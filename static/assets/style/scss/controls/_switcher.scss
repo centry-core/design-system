@@ -1,0 +1,65 @@
+.custom-toggle {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 16px;
+}
+.custom-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.custom-toggle input+.custom-toggle_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gray400);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.custom-toggle .custom-toggle_slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  box-shadow: 0 0 3px rgba(50, 50, 93, 0.16), 0 0 2px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.custom-toggle input:checked+.custom-toggle_slider {
+  background-color: var(--purple);
+}
+.custom-toggle input:not(:disabled):checked:hover+.custom-toggle_slider {
+  background-color: var(--purple-hover);
+}
+
+.custom-toggle input:checked+.custom-toggle_slider:before {
+  -webkit-transform: translateX(11px);
+  -ms-transform: translateX(11px);
+  transform: translateX(11px);
+}
+
+.custom-toggle .custom-toggle_slider.round {
+  border-radius: 16px;
+}
+
+.custom-toggle .custom-toggle_slider.round:before {
+  border-radius: 50%;
+}
+.custom-toggle input:not(:disabled):hover+.custom-toggle_slider {
+  background-color: var(--gray500);
+}
+.custom-toggle input:disabled+.custom-toggle_slider {
+  background-color: var(--gray400);
+}
+.custom-toggle input:not(:checked):disabled+.custom-toggle_slider {
+  background-color: var(--gray300);
+}

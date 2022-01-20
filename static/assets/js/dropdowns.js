@@ -45,7 +45,7 @@ const SimpleList = {
                             class="mb-0 w-100 d-flex align-items-center"
                             :for="item.id">
                             <i class="fa fa-2x mr-2" :class="[item.icon]" v-if="!showCheckBox && item.icon"></i>
-                            <span class="w-100 d-inline-block">{{ item.title }}</span>
+                            <span class="w-100 d-inline-block ml-3">{{ item.title }}</span>
                             <i class="fa fa-check" v-if="isShowIcon(item)"></i>
                         </label>
                     </li>
@@ -106,7 +106,9 @@ const TreeList = {
                             <label
                                 class="w-full d-inline-block mb-0"
                                 :class="{'arrow_label' : item1lvl.items}"
-                                :for="item1lvl.title+'-'+item1lvl.id">{{ item1lvl.title }}</label>
+                                :for="item1lvl.title+'-'+item1lvl.id">
+                                <span style="margin-left: 36px">{{ item1lvl.title }}</span>
+                            </label>
                         </p>
                         <div v-if="item1lvl.items && item1lvl.showItems" class="ml-4">
                             <div v-for="item2lvl in item1lvl.items" :key="item2lvl.id">
@@ -125,7 +127,9 @@ const TreeList = {
                                     <label 
                                         class="w-full d-inline-block mb-0"
                                         :class="{'arrow_label' : item2lvl.items}"
-                                        :for="item2lvl.title+'-'+item2lvl.id">{{ item2lvl.title }}</label>
+                                        :for="item2lvl.title+'-'+item2lvl.id">
+                                        <span style="margin-left: 36px">{{ item2lvl.title }}</span>
+                                    </label>
                                 </p>
                                 <div v-if="item2lvl.items && item2lvl.showItems" class="ml-4">
                                     <div v-for="item3lvl in item2lvl.items" :key="item3lvl.id">
@@ -139,7 +143,9 @@ const TreeList = {
                                                 v-model="selectedItems">
                                             <label
                                                 class="w-full d-inline-block mb-0"
-                                                :for="item3lvl.title+'-'+item3lvl.id">{{ item3lvl.title }}</label>
+                                                :for="item3lvl.title+'-'+item3lvl.id">
+                                                <span style="margin-left: 36px">{{ item3lvl.title }}</span>
+                                            </label>
                                         </p>
                                     </div>
                                 </div>
@@ -151,10 +157,73 @@ const TreeList = {
         `
 }
 
+const ComplexList = {
+    data() {
+        return {
+            inputSearch: '',
+            itemsList: [
+                { id: 11, title: 'Step 1' },
+                { id: 12, title: 'Step 2' },
+                { id: 13, title: 'Step 3' },
+                { id: 14, title: 'Step 4' },
+                { id: 15, title: 'Step 5' },
+            ],
+            selectedItems: [],
+            closeOnItem: true,
+        }
+    },
+    computed: {
+        foundItems() {
+            return this.itemsList.filter(item => item.title.includes(this.inputSearch))
+        }
+    },
+    template: `
+        <div id="complexList" class="complex-list">
+            <button class="btn btn-secondary dropdown-toggle" type="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select Step
+            </button>
+            <div class="dropdown-menu"
+                :class="{'close-outside': closeOnItem}">
+                <div class="px-3 pt-2">
+                    <div class="custom-input custom-input__search position-relative">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            v-model="inputSearch">
+                        <img src="assets/ico/search.svg" class="icon-search position-absolute">
+                    </div>
+                </div>
+                <ul v-if="foundItems.length > 0" class="my-0">
+                    <li
+                        class="dropdown-item dropdown-menu_item d-flex align-items-center"
+                        v-for="item in foundItems" :key="item.id">
+                        <input
+                            class="mr-2 custom-checkbox"
+                            type="checkbox"
+                            :id="item.id"
+                            :value="item"
+                            v-model="selectedItems">
+                        <label
+                            class="mb-0 w-100 d-flex align-items-center"
+                            :for="item.id">
+                            <span class="w-100 d-inline-block ml-3">{{ item.title }}</span>
+                        </label>
+                    </li>
+                </ul>
+                <div class="p-3">
+                    <button class="btn btn-basic" type="submit">Primary</button>
+                    <button type="button" class="btn btn-secondary">Secondary</button>
+                </div>
+            </div>
+        </div>`
+};
+
 const dropdownsApp = Vue.createApp({
     components: {
         'simple-list': SimpleList,
         'tree-list': TreeList,
+        'complex-list': ComplexList,
     }
 });
 
