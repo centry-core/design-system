@@ -53,49 +53,19 @@ input[type=checkbox].custom-checkbox {
 }
 
 /* checkbox multicolor */
-/* YELLOW */
-.custom-checkbox.custom-checkbox_multicolor__yellow + label::before {
-  border: 1px solid var(--yellow);
+/* ANY COLOR */
+.custom-checkbox.custom-checkbox_multicolor + label::before {
+  border: 1px solid var(--cbx-color);
 }
 
-.custom-checkbox.custom-checkbox_multicolor__yellow:checked + label::before {
-  border-color: var(--yellow);
-  background-color: var(--yellow);
+.custom-checkbox.custom-checkbox_multicolor:checked + label::before {
+  border-color: var(--cbx-color);
+  background-color: var(--cbx-color);
 }
 
-.custom-checkbox.custom-checkbox_multicolor__yellow:checked:not(:disabled) + label:hover:before {
-  border-color: var(--yellow);
-  background-color: var(--yellow);
-}
-
-/* PINK */
-.custom-checkbox.custom-checkbox_multicolor__pink + label::before {
-  border: 1px solid var(--pink);
-}
-
-.custom-checkbox.custom-checkbox_multicolor__pink:checked + label::before {
-  border-color: var(--pink);
-  background-color: var(--pink);
-}
-
-.custom-checkbox.custom-checkbox_multicolor__pink:checked:not(:disabled) + label:hover:before {
-  border-color: var(--pink);
-  background-color: var(--pink);
-}
-
-/* BLUE */
-.custom-checkbox.custom-checkbox_multicolor__blue + label::before {
-  border: 1px solid var(--blue);
-}
-
-.custom-checkbox.custom-checkbox_multicolor__blue:checked + label::before {
-  border-color: var(--blue);
-  background-color: var(--blue);
-}
-
-.custom-checkbox.custom-checkbox_multicolor__blue:checked:not(:disabled) + label:hover:before {
-  border-color: var(--blue);
-  background-color: var(--blue);
+.custom-checkbox.custom-checkbox_multicolor:checked:not(:disabled) + label:hover:before {
+  border-color: var(--cbx-color);
+  background-color: var(--cbx-color);
 }
 
 input[type=radio].custom-radio {
@@ -328,8 +298,12 @@ input[type=range]::-moz-range-thumb {
   outline: 0;
 }
 
+.bootstrap-select {
+  width: auto !important;
+  border: 1px solid transparent;
+}
 .bootstrap-select .filter-option-inner-inner {
-  color: var(--gray700);
+  color: var(--gray700) !important;
 }
 .bootstrap-select.show {
   border: 1px solid var(--gray400);
@@ -338,6 +312,10 @@ input[type=range]::-moz-range-thumb {
 }
 .bootstrap-select .dropdown-toggle:focus {
   outline: none !important;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: auto;
 }
 
 .custom-tabs a {
@@ -351,6 +329,273 @@ input[type=range]::-moz-range-thumb {
 .custom-tabs a.active {
   color: var(--purple);
   border-color: var(--purple);
+}
+
+.dropdown-toggle:disabled {
+  background: var(--gray100);
+}
+
+.dropdown-menu.show {
+  box-shadow: var(--bloc-shadow);
+}
+
+.bootstrap-select .dropdown-toggle:focus,
+.bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
+  outline: none !important;
+  outline-offset: -2px;
+}
+
+.bootstrap-select a:focus {
+  outline: none !important;
+}
+
+.bootstrap-select .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--main-text);
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.bootstrap-select .dropdown-item i {
+  color: var(--gray600) !important;
+}
+
+.bootstrap-select .dropdown-item {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: var(--main-text);
+  text-decoration: none;
+  background-color: var(--gray100);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--basic);
+  text-decoration: none;
+  font-weight: 400;
+  background-color: var(--white);
+}
+
+.dropdown-item span {
+  width: 95%;
+  text-overflow: ellipsis;
+}
+
+.bootstrap-select .dropdown-item.active::after,
+.bootstrap-select .dropdown-item:active::after {
+  content: "";
+  display: inline-block;
+  background: url("../ico/check.svg") no-repeat top right;
+  width: 14px;
+  height: 12px;
+}
+
+.dropdown-item.disabled,
+.dropdown-item:disabled {
+  color: var(--somegray);
+  pointer-events: none;
+  background-color: var(--disabled);
+}
+
+.bootstrap-select .dropdown-toggle::after {
+  content: "";
+  display: inline-block;
+  background: url("../ico/arrow-down.svg") no-repeat center right;
+  width: 14px;
+  height: 12px;
+  border: 0;
+}
+
+.bootstrap-select .dropdown-toggle[aria-expanded=true]::after {
+  content: "";
+  display: inline-block;
+  background: url("../ico/arrow-up.svg") no-repeat center right;
+  width: 14px;
+  height: 12px;
+  border: 0;
+}
+
+.main-nav .bootstrap-select .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  width: unset;
+  height: unset;
+  background: transparent;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+/* dropdown simple-list*/
+.dropdown_simple-list input[type=checkbox] {
+  transform: scale(1.4);
+}
+.dropdown_simple-list .dropdown-menu input[type=checkbox], .dropdown_simple-list .dropdown-menu label {
+  cursor: pointer !important;
+}
+.dropdown_simple-list .dropdown-menu input[type=checkbox] li:hover, .dropdown_simple-list .dropdown-menu label li:hover {
+  background: var(--gray100);
+}
+.dropdown_simple-list .dropdown-menu i.fa-check {
+  color: var(--purple);
+  font-size: 8px;
+}
+.dropdown_simple-list .dropdown-menu i {
+  color: var(--somegray);
+  font-size: 12px;
+}
+
+/* dropdown tree-list*/
+.dropdown-menu i.fa-sort-down {
+  font-size: 20px;
+  padding-bottom: 6px;
+  cursor: pointer;
+  color: var(--gray400);
+}
+
+.dropdown_tree-list input[type=checkbox] {
+  transform: scale(1.4);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+}
+
+.dropdown_tree-list .fa-sort-down ~ label > span {
+  margin-left: 36px !important;
+}
+
+.dropdown_tree-list input[type=checkbox],
+.dropdown_tree-list label {
+  cursor: pointer !important;
+}
+
+/* dropdown multilevel */
+.dropdown_multilevel .dropdown-menu > li:hover > .submenu {
+  display: block;
+}
+
+.dropdown_multilevel .submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -3px;
+}
+
+.dropdown_multilevel .dropdown-menu .dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown_tree-list i.fa-sort-down {
+  left: 46px;
+}
+
+.dropdown_tree-list label {
+  color: var(--gray800);
+}
+
+.dropdown-menu .dropdown-menu_item {
+  padding: 6px 1rem;
+}
+
+.dropdown-menu .dropdown-menu_item:hover .fa-sort-down {
+  color: var(--purple);
+}
+
+/* complex list*/
+.complex-list ul {
+  padding-inline-start: 0 !important;
+}
+
+.complex-list label {
+  cursor: pointer !important;
+}
+
+.complex-list .complex-list_empty {
+  color: var(--gray500);
+}
+
+.btn-select {
+  border: solid 1px var(--gray400);
+  height: 40px;
+}
+
+.btn-select.dropdown-toggle::after {
+  display: inline-block;
+  content: "";
+  border: none;
+  background: url(../ico/arrow-down.svg) no-repeat bottom right;
+  width: 14px;
+  height: 6px;
+  vertical-align: 0;
+  margin-left: 1rem;
+}
+
+.btn-select.dropdown-toggle[aria-expanded=true]::after {
+  background: url(../ico/arrow-up.svg) no-repeat center right;
+}
+
+.filter-option-inner-inner > i {
+  display: none;
+}
+
+/* dropdown actions */
+.dropdown_action .dropdown-toggle::before, .dropdown_action .dropdown-toggle::after {
+  display: none;
+}
+.dropdown_action .dropdown-toggle i {
+  width: 14px;
+}
+.dropdown_action .dropdown-toggle.btn {
+  padding: 6px 8px;
+}
+.dropdown_action.show .btn-secondary.dropdown-toggle {
+  border-color: var(--purple);
+}
+.dropdown_action.show .btn-secondary.dropdown-toggle i {
+  color: var(--purple);
+}
+.dropdown_action .dropdown-item {
+  cursor: pointer;
+}
+.dropdown_action .dropdown-item i {
+  color: var(--gray600);
+}
+.dropdown_action li {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* dropdown-select */
+.bootstrap-select .bs-searchbox {
+  padding: 4px 16px;
+}
+.bootstrap-select .bs-searchbox .form-control {
+  height: 32px;
+  border: solid 1px var(--gray500);
+  border-radius: 4px;
+  padding-left: 32px;
+  background: url(../../../../../static/assets/ico/search.svg) no-repeat 8px 7px;
+}
+.bootstrap-select .bs-searchbox:focus {
+  box-shadow: none;
+}
+.bootstrap-select .no-results {
+  background: #fff;
+  padding: 4px 16px;
 }
 
 /*# sourceMappingURL=main.css.map */
