@@ -1,11 +1,5 @@
 const SimpleList = {
     props: {
-        showCheckBox: {
-            default: true
-        },
-        closeOnItem: {
-            default: true
-        },
         itemsList1: {
             default: []
         }
@@ -15,11 +9,6 @@ const SimpleList = {
             selectedItems1: [],
         }
     },
-    methods: {
-        isShowIcon(selectedItem) {
-            return this.selectedItems1.some(item => item.id === selectedItem.id) && !this.showCheckBox;
-        }
-    },
     watch: {
         selectedItems1: (val) => {
             console.log(`SELECTED ITEMS: ${val}`)
@@ -27,12 +16,11 @@ const SimpleList = {
     },
     template:`
             <div id="simpleList" class="dropdown_simple-list">
-                <button class="btn btn-secondary dropdown-toggle" type="button"
+                <button class="btn btn-secondary btn-select dropdown-toggle" type="button"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select Step
                 </button>
-                <ul class="dropdown-menu"
-                    :class="{'close-outside': closeOnItem}"
+                <ul class="dropdown-menu close-outside"
                     v-if="itemsList1.length > 0">
                     <li class="dropdown-menu_item d-flex align-items-center px-3" v-for="item in itemsList1" :key="item.id">
                         <input
@@ -44,9 +32,7 @@ const SimpleList = {
                         <label
                             class="mb-0 w-100 d-flex align-items-center"
                             :for="item.id">
-                            <i class="fa fa-2x mr-2" :class="[item.icon]" v-if="!showCheckBox && item.icon"></i>
                             <span class="w-100 d-inline-block ml-3">{{ item.title }}</span>
-                            <i class="fa fa-check" v-if="isShowIcon(item)"></i>
                         </label>
                     </li>
                 </ul>
@@ -85,7 +71,7 @@ const TreeList = {
     },
     template: `
             <div class="dropdown_tree-list">
-                <button class="btn btn-secondary dropdown-toggle" type="button"
+                <button class="btn btn-select btn-secondary dropdown-toggle" type="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Select Step
                 </button>
@@ -107,7 +93,7 @@ const TreeList = {
                                 class="w-full d-inline-block mb-0"
                                 :class="{'arrow_label' : item1lvl.items}"
                                 :for="item1lvl.title+'-'+item1lvl.id">
-                                <span style="margin-left: 36px">{{ item1lvl.title }}</span>
+                                <span class="ml-3">{{ item1lvl.title }}</span>
                             </label>
                         </p>
                         <div v-if="item1lvl.items && item1lvl.showItems" class="ml-4">
@@ -128,7 +114,7 @@ const TreeList = {
                                         class="w-full d-inline-block mb-0"
                                         :class="{'arrow_label' : item2lvl.items}"
                                         :for="item2lvl.title+'-'+item2lvl.id">
-                                        <span style="margin-left: 36px">{{ item2lvl.title }}</span>
+                                        <span class="ml-3">{{ item2lvl.title }}</span>
                                     </label>
                                 </p>
                                 <div v-if="item2lvl.items && item2lvl.showItems" class="ml-4">
@@ -144,7 +130,7 @@ const TreeList = {
                                             <label
                                                 class="w-full d-inline-block mb-0"
                                                 :for="item3lvl.title+'-'+item3lvl.id">
-                                                <span style="margin-left: 36px">{{ item3lvl.title }}</span>
+                                                <span class="ml-3">{{ item3lvl.title }}</span>
                                             </label>
                                         </p>
                                     </div>
@@ -161,31 +147,47 @@ const ComplexList = {
     data() {
         return {
             inputSearch: '',
-            itemsList: [
-                { id: 11, title: 'Step 1' },
-                { id: 12, title: 'Step 2' },
-                { id: 13, title: 'Step 3' },
-                { id: 14, title: 'Step 4' },
-                { id: 15, title: 'Step 5' },
-            ],
+            itemsList: [...Array(5).keys()].map((item, index) => (
+                { id: Math.round(Math.random() * 1000), title: `Step ${index + 1}`}
+            )),
+            refSearchId: 'refSearchCbx'+Math.round(Math.random() * 1000),
             selectedItems: [],
             closeOnItem: true,
         }
     },
     computed: {
         foundItems() {
-            return this.itemsList.filter(item => item.title.includes(this.inputSearch))
+            return this.inputSearch ?
+                this.itemsList.filter(item => item.title.toUpperCase().includes(this.inputSearch.toUpperCase())) :
+                this.itemsList
+        }
+    },
+    watch: {
+        selectedItems: function (val) {
+            if (this.selectedItems.length !== this.itemsList.length) {
+                this.$refs[this.refSearchId].checked = false;
+            }
+        }
+    },
+    methods: {
+        handlerSelectAll() {
+            if (this.selectedItems.length !== this.itemsList.length) {
+                this.selectedItems = [...this.itemsList];
+            } else {
+                this.selectedItems.splice(0);
+            }
         }
     },
     template: `
         <div id="complexList" class="complex-list">
-            <button class="btn btn-secondary dropdown-toggle" type="button"
+            <button class="btn btn-select dropdown-toggle" type="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select Step
+                <span v-if="selectedItems.length > 0">{{ selectedItems.length }} selected</span>
+                <span v-else class="complex-list_empty">Select Step</span>
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div class="px-3 pt-2">
+                <div v-if="itemsList.length > 4" class="px-3 py-2">
                     <div class="custom-input custom-input__search position-relative">
                         <input
                             type="text"
@@ -194,7 +196,21 @@ const ComplexList = {
                         <img src="assets/ico/search.svg" class="icon-search position-absolute">
                     </div>
                 </div>
-                <ul v-if="foundItems.length > 0" class="my-0">
+                <ul class="my-0">
+                    <li
+                        class="dropdown-item dropdown-menu_item d-flex align-items-center">
+                        <input
+                            :id="refSearchId"
+                            :ref="refSearchId"
+                            class="mr-2 custom-checkbox"
+                            type="checkbox">
+                        <label
+                            @click="handlerSelectAll"
+                            :for="refSearchId"
+                            class="mb-0 w-100 d-flex align-items-center">
+                            <span class="w-100 d-inline-block ml-3">All</span>
+                        </label>
+                    </li>
                     <li
                         class="dropdown-item dropdown-menu_item d-flex align-items-center"
                         v-for="item in foundItems" :key="item.id">
