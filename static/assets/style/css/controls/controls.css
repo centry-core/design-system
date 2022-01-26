@@ -45,49 +45,19 @@ input[type=checkbox].custom-checkbox {
 }
 
 /* checkbox multicolor */
-/* YELLOW */
-.custom-checkbox.custom-checkbox_multicolor__yellow + label::before {
-  border: 1px solid var(--yellow);
+/* ANY COLOR */
+.custom-checkbox.custom-checkbox_multicolor + label::before {
+  border: 1px solid var(--cbx-color);
 }
 
-.custom-checkbox.custom-checkbox_multicolor__yellow:checked + label::before {
-  border-color: var(--yellow);
-  background-color: var(--yellow);
+.custom-checkbox.custom-checkbox_multicolor:checked + label::before {
+  border-color: var(--cbx-color);
+  background-color: var(--cbx-color);
 }
 
-.custom-checkbox.custom-checkbox_multicolor__yellow:checked:not(:disabled) + label:hover:before {
-  border-color: var(--yellow);
-  background-color: var(--yellow);
-}
-
-/* PINK */
-.custom-checkbox.custom-checkbox_multicolor__pink + label::before {
-  border: 1px solid var(--pink);
-}
-
-.custom-checkbox.custom-checkbox_multicolor__pink:checked + label::before {
-  border-color: var(--pink);
-  background-color: var(--pink);
-}
-
-.custom-checkbox.custom-checkbox_multicolor__pink:checked:not(:disabled) + label:hover:before {
-  border-color: var(--pink);
-  background-color: var(--pink);
-}
-
-/* BLUE */
-.custom-checkbox.custom-checkbox_multicolor__blue + label::before {
-  border: 1px solid var(--blue);
-}
-
-.custom-checkbox.custom-checkbox_multicolor__blue:checked + label::before {
-  border-color: var(--blue);
-  background-color: var(--blue);
-}
-
-.custom-checkbox.custom-checkbox_multicolor__blue:checked:not(:disabled) + label:hover:before {
-  border-color: var(--blue);
-  background-color: var(--blue);
+.custom-checkbox.custom-checkbox_multicolor:checked:not(:disabled) + label:hover:before {
+  border-color: var(--cbx-color);
+  background-color: var(--cbx-color);
 }
 
 input[type=radio].custom-radio {

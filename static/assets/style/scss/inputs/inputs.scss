@@ -82,8 +82,10 @@
 }
 
 .bootstrap-select {
+  width: auto !important;
+  border: 1px solid transparent;
   .filter-option-inner-inner {
-    color: var(--gray700);
+    color: var(--gray700) !important;
   }
   &.show {
     border: 1px solid var(--gray400);
@@ -93,4 +95,7 @@
   .dropdown-toggle:focus {
     outline: none !important;
   }
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: auto;
 }
