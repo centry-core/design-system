@@ -15,20 +15,32 @@
     border: solid 1px var(--gray500);
     border-radius: 4px;
     outline: none;
+    font-size: 14px;
   }
   input:focus {
     box-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1), 0px -1px 1px rgba(36, 36, 93, 0.05);
   }
   input::placeholder {
     color: var(--gray500);
+    font-size: 14px;
   }
-  &__search {
+  &_search {
     input {
       padding-left: 40px;
     }
     .icon-search{
       left: 16px;
       top: 11px;
+      color: var(--gray500);
+    }
+  }
+  &_search__sm {
+    input {
+      padding: 3px 12px 3px 34px;
+    }
+    .icon-search{
+      left: 12px;
+      top: 6px;
       color: var(--gray500);
     }
   }
@@ -87,7 +99,8 @@
   .filter-option-inner-inner {
     color: var(--gray700) !important;
   }
-  &.show {
+  &.show, &:hover {
+    transition: all .3s;
     border: 1px solid var(--gray400);
     box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
     border-radius: 4px;
@@ -96,6 +109,7 @@
     outline: none !important;
   }
 }
+
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   width: auto;
 }
