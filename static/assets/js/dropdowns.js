@@ -14,32 +14,38 @@ const SimpleList = {
         }
     },
     template:`
-            <div id="simpleList" class="dropdown_simple-list">
-                <button class="btn btn-select dropdown-toggle" type="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span v-if="selectedItems1.length > 0">{{ selectedItems1.length }} selected</span>
-                <span v-else class="complex-list_empty">Select Step</span>
-                </button>
-                <ul class="dropdown-menu close-outside"
-                    v-if="itemsList1.length > 0">
-                    <li class="dropdown-menu_item d-flex align-items-center px-3" v-for="item in itemsList1" :key="item.id">
-                        <label
-                            class="mb-0 w-100 d-flex align-items-center custom-checkbox">
-                            <input
-                                :value="item.title"
-                                v-model="selectedItems1"
-                                type="checkbox">
-                            <span class="w-100 d-inline-block ml-3">{{ item.title }}</span>
-                        </label>
-                    </li>
-                </ul>
-                <div class="dropdown-menu py-0" v-else>
-                    <span class="px-3 py-2 d-inline-block">There are no any steps.</span>
-                </div>
-            </div>`
+        <div id="simpleList" class="dropdown_simple-list">
+            <button class="btn btn-select dropdown-toggle" type="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span v-if="selectedItems1.length > 0">{{ selectedItems1.length }} selected</span>
+            <span v-else class="complex-list_empty">Select Step</span>
+            </button>
+            <ul class="dropdown-menu close-outside"
+                v-if="itemsList1.length > 0">
+                <li class="dropdown-menu_item d-flex align-items-center px-3" v-for="item in itemsList1" :key="item.id">
+                    <label
+                        class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                        <input
+                            :value="item.title"
+                            v-model="selectedItems1"
+                            type="checkbox">
+                        <span class="w-100 d-inline-block ml-3">{{ item.title }}</span>
+                    </label>
+                </li>
+            </ul>
+            <div class="dropdown-menu py-0" v-else>
+                <span class="px-3 py-2 d-inline-block">There are no any steps.</span>
+            </div>
+        </div>
+    `
 }
 
 const TreeList = {
+    props: {
+      allSelected: {
+          default: true,
+      }
+    },
     data() {
         return {
             itemsListTree: [
@@ -66,6 +72,40 @@ const TreeList = {
             console.log(`SELECTED TREE ITEMS: ${val}`)
         }
     },
+    mounted() {
+        if (this.allSelected) this.selectAllItems(this.itemsListTree);
+    },
+    methods: {
+        selectAllItems(values) {
+            values.forEach(value => {
+                if(value.hasOwnProperty('items')) {
+                    this.selectAllItems(value.items)
+                }
+                this.selectedItems.push(value.id);
+            })
+        },
+        selectRelatedItems(item) {
+            const relatedItems = [];
+            item.items.forEach(v => {
+                if(v.hasOwnProperty('items')) {
+                    v.items.forEach(v2 => {
+                        relatedItems.push(v2.id);
+                    });
+                }
+                relatedItems.push(v.id);
+            });
+            return relatedItems;
+        },
+        checkItem(item, e) {
+            if (item.hasOwnProperty('items') && !e.target.checked && e.target.checked !== undefined) {
+                this.selectedItems = this.selectedItems
+                    .filter(v => !this.selectRelatedItems(item).includes(v))
+                    .filter(v => v !== item.id)
+            } else if (item.hasOwnProperty('items') && e.target.checked) {
+                this.selectedItems = [...this.selectedItems, ...this.selectRelatedItems(item), item.id];
+            }
+        }
+    },
     template: `
             <div class="dropdown_tree-list">
                 <button class="btn btn-select dropdown-toggle" type="button"
@@ -82,6 +122,7 @@ const TreeList = {
                                 :style="[!item1lvl.showItems ? 'transform: rotate(270deg)' : '']"
                             ></i>
                             <label
+                                @click="checkItem(item1lvl, $event)"
                                 class="mb-0 w-100 d-flex align-items-center custom-checkbox">
                                 <input
                                     :value="item1lvl.id"
@@ -99,6 +140,7 @@ const TreeList = {
                                         :style="[!item2lvl.showItems ? 'transform: rotate(270deg)' : '']"
                                     ></i>
                                     <label
+                                        @click="checkItem(item2lvl, $event)"
                                         class="mb-0 w-100 d-flex align-items-center custom-checkbox">
                                         <input
                                             :value="item2lvl.id"
@@ -441,7 +483,6 @@ const dropdownsApp = Vue.createApp({
 
 dropdownsApp.mount('#dropdowns');
 
-$('.selectpicker_severity')
 $(".dropdown-menu.close-outside").on("click", function (event) {
     event.stopPropagation();
 });
