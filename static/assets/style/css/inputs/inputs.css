@@ -16,19 +16,29 @@
   border: solid 1px var(--gray500);
   border-radius: 4px;
   outline: none;
+  font-size: 14px;
 }
 .custom-input input:focus {
   box-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1), 0px -1px 1px rgba(36, 36, 93, 0.05);
 }
 .custom-input input::placeholder {
   color: var(--gray500);
+  font-size: 14px;
 }
-.custom-input__search input {
+.custom-input_search input {
   padding-left: 40px;
 }
-.custom-input__search .icon-search {
+.custom-input_search .icon-search {
   left: 16px;
   top: 11px;
+  color: var(--gray500);
+}
+.custom-input_search__sm input {
+  padding: 3px 12px 3px 34px;
+}
+.custom-input_search__sm .icon-search {
+  left: 12px;
+  top: 6px;
   color: var(--gray500);
 }
 .custom-input .input_error-msg {
@@ -83,7 +93,8 @@
 .bootstrap-select .filter-option-inner-inner {
   color: var(--gray700) !important;
 }
-.bootstrap-select.show {
+.bootstrap-select.show, .bootstrap-select:hover {
+  transition: all 0.3s;
   border: 1px solid var(--gray400);
   box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
   border-radius: 4px;
