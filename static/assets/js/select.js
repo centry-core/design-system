@@ -1,6 +1,6 @@
 const coloredClassNameRegexp = new RegExp(/colored-select-(\w+)/, 'i');
 const palette = {
-    red: {"border-color": "#FFF0F0", "color": "#F32626", "background-color": "#FFF0F0"},
+    red: {"border-color": "#F2B4B4", "color": "#F32626", "background-color": "#FFF0F0"},
     orange: {"border-color": "#FFEDDD", "color": "#E97912", "background-color": "#FFEDDD"},
     yellow: {"border-color": "#FFFBE7", "color": "#DBC714", "background-color": "#FFFBE7"},
     green: {"border-color": "#E7FFE7", "color": "#18B64D", "background-color": "#E7FFE7"},

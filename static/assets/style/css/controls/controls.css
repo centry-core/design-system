@@ -1,10 +1,9 @@
-input[type=checkbox].custom-checkbox {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
+/* custom-checkbox */
+.custom-checkbox input[type=checkbox] {
+  position: relative;
+  -webkit-appearance: none;
 }
-
-.custom-checkbox + label::before {
+.custom-checkbox input[type=checkbox]:before {
   content: "";
   display: inline-block;
   width: 18px;
@@ -18,44 +17,36 @@ input[type=checkbox].custom-checkbox {
   background-size: 50% 50%;
   cursor: pointer;
 }
-
-.custom-checkbox + label:hover:before {
+.custom-checkbox input[type=checkbox]:hover:before {
   border: 1px solid var(--gray600);
 }
-
-.custom-checkbox:checked + label::before {
+.custom-checkbox input[type=checkbox]:checked::before {
   border-color: var(--purple);
   background-color: var(--purple);
   background-image: url("../../../../../static/assets/ico/check-white.svg");
   background-size: 10px;
 }
-
-.custom-checkbox.custom-checkbox__minus:checked + label::before {
-  background-image: url("../../../../../static/assets/ico/minus.svg");
-}
-
-.custom-checkbox:disabled + label::before {
-  background-color: var(--gray400);
-  border-color: var(--gray400);
-}
-
-.custom-checkbox:checked:not(:disabled) + label:hover:before {
+.custom-checkbox input[type=checkbox]:checked:not(:disabled):hover:before {
   background-color: var(--purple-hover);
   border-color: var(--purple-hover);
 }
-
-/* checkbox multicolor */
-/* ANY COLOR */
-.custom-checkbox.custom-checkbox_multicolor + label::before {
-  border: 1px solid var(--cbx-color);
+.custom-checkbox input[type=checkbox]:disabled:checked::before {
+  background-color: var(--gray400);
+  border-color: var(--gray400);
+}
+.custom-checkbox input[type=checkbox]:disabled:not(:checked)::before {
+  border-color: var(--gray400);
 }
 
-.custom-checkbox.custom-checkbox_multicolor:checked + label::before {
+/* checkbox multicolor */
+.custom-checkbox.custom-checkbox__multicolor input[type=checkbox]::before {
+  border: 1px solid var(--cbx-color);
+}
+.custom-checkbox.custom-checkbox__multicolor input[type=checkbox]:checked::before {
   border-color: var(--cbx-color);
   background-color: var(--cbx-color);
 }
-
-.custom-checkbox.custom-checkbox_multicolor:checked:not(:disabled) + label:hover:before {
+.custom-checkbox.custom-checkbox__multicolor input[type=checkbox]:checked:not(:disabled):hover:before {
   border-color: var(--cbx-color);
   background-color: var(--cbx-color);
 }
