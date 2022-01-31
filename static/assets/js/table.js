@@ -20,28 +20,34 @@ function updateCell(el, row, field) {
 }
 
 function dataTypeFormatter(value, row, index, field) {
-    var content = `<select class="selectpicker mr-2 datatype-selectpicker" data-style="btn-gray">`;
-    var types = ['String', 'Number', 'List'];
-    types.forEach(function(item){
-        if (value == item) {
-            content += `<option selected>${item}</option>`
-        } else {
-            content += `<option>${item}</option>`
-        }
-    })
-    content += "</select>"
-    return content
+    const options = ['String', 'Number', 'List'].map(item =>
+        `<option 
+            value=${item} 
+            ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
+        >
+            ${item}
+        </option>
+        `
+    )
+    return `
+        <select class="selectpicker mr-2" data-style="btn-gray" onchange="updateCell(this, '${index}', '${field}')">
+            ${options.join('')}
+        </select>
+    `
 }
 
-function addEmptyParamsRow(id) {
-    $(`#${id}`).bootstrapTable('append', {"name": "", "default": "", "type": "", "description": "", "action": ""})
+const addEmptyParamsRow = source => {
+    $(source).closest('.section').find('.params-table').bootstrapTable(
+        'append',
+        {"name": "", "default": "", "type": "string", "description": "", "action": ""}
+    )
 }
 
 
 function parametersDeleteFormatter(value, row, index) {
     return `
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-16 btn-action" onclick="deleteParams(${index})"><i class="fas fa-trash-alt"></i></button>
+        <button type="button" class="btn btn-16 btn-action" onclick="deleteParams(${index}, this)"><i class="fas fa-trash-alt"></i></button>
     </div>
     `
 }
@@ -57,26 +63,15 @@ function actionFormatter(value, row, index) {
     `
 }
 
-$('.params-table').on('all.bs.table', function (ev) {
-    $(ev.target).find('.selectpicker').each(function(index) {
-        $(this).selectpicker('render')
-        if (
-            $('.params-table').bootstrapTable('getData').length != 0 &&
-            Boolean($('.params-table').bootstrapTable('getData')[parseInt($(this).closest('tr').attr('data-index'))]?.type)
-        ) {
-            $(this).selectpicker('val', $('.params-table').bootstrapTable('getData')[parseInt($(this).closest('tr').attr('data-index'))].type)
-        }
-    })
-    $(".datatype-selectpicker").on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
-        if (
-            $('.params-table').bootstrapTable('getData').length != 0 &&
-            $('.params-table').bootstrapTable('getData')[parseInt($(this).closest('tr').attr('data-index'))]?.type != this.value
-        ) {
-            updateCell(this, parseInt($(this).closest('tr').attr('data-index')), 'type')
-        }
-    })
-})
+$('.params-table').on('all.bs.table', () => $('.selectpicker').selectpicker('render'))
 
 function nameStyle(value, row, index) {
     return {css: {"max-width": "100px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
+}
+
+const deleteParams = (index, source) => {
+    $(source).closest('.params-table').bootstrapTable('remove', {
+        field: '$index',
+        values: [index]
+    })
 }
