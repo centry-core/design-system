@@ -269,8 +269,16 @@
                 <h4 class="pt-2">List Tree</h4>
                 <div class="card w-100 mr-2 card-stripped">
                     <div class="d-flex m-4">
-                        <tree-list></tree-list>
-                        <tree-list></tree-list>
+                        <div class="dropdown_tree-list">
+                            <button class="btn btn-select dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Select items</span>
+                            </button>
+                            <div class="dropdown-menu close-outside pb-0 pr-4">
+                                <div class="tree"></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -324,9 +332,11 @@
     </div>
 </main>
 <script src="https://unpkg.com/vue@next"></script>
+<script src="assets/js/treejs-master/dist/tree.min.js"></script>
 <script src="assets/js/dropdowns.js"></script>
 <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="assets/js/select.js"></script>
+
 
 </body>
 

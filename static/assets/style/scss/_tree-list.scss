@@ -1,0 +1,50 @@
+.treejs-switcher {
+  position: absolute;
+  left: 46px;
+}
+.treejs .treejs-nodes {
+  padding-top: 12px;
+}
+.treejs .treejs-node__checked > .treejs-checkbox:before,
+.treejs .treejs-node__halfchecked > .treejs-checkbox:before {
+  background-color: var(--basic) !important;
+  border-color: var(--basic) !important;
+}
+.treejs .treejs-checkbox:hover:before {
+  box-shadow: none !important;
+}
+.treejs .treejs-checkbox:before {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 0.25em !important;
+}
+.treejs .treejs-node__checked > .treejs-checkbox:after {
+  top: 5px !important;
+  left: 7px !important;
+}
+
+.treejs .treejs-node__halfchecked > .treejs-checkbox:after {
+  left: 4px !important;
+  top: 10px !important;
+  border-radius: 0.25em !important;
+}
+.tree > .treejs > .treejs-nodes{
+  padding-left: 0 !important;
+}
+.treejs-node.treejs-placeholder {
+  margin-bottom: 12px;
+}
+
+.treejs-switcher~.treejs-label {
+  margin-left: 19px;
+}
+.treejs-checkbox {
+  margin-right: 15px;
+}
+
+.treejs .treejs-switcher:before {
+  top: 9px !important;
+  left: 3px !important;
+  border: 6px solid transparent !important;
+  border-top: 5px solid var(--gray400) !important;
+}

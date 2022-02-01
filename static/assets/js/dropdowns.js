@@ -39,162 +39,6 @@ const SimpleList = {
             </div>`
 }
 
-const TreeList = {
-    data() {
-        return {
-            itemsListTree: [
-                { id: 1, title: 'Group 1.1', showItems: true, type: 'group', items: [
-                        { id: 2, title: 'Item 1.1' },
-                        { id: 3, title: 'Group 1.2', showItems: true, type: 'group', items: [
-                                { id: 4, title: 'Item 1.1.1' },
-                            ]
-                        },
-                    ]
-                },
-                { id: 5, title: 'Group 2', showItems: true, type: 'group', items: [
-                        { id: 6, title: 'Item 2.1' },
-                        { id: 7, title: 'Item 2.2' },
-                    ]
-                },
-                { id: 9, title: 'Item 3' },
-            ],
-            selectedItems: [],
-        }
-    },
-    watch: {
-        selectedItems: (val) => {
-            console.log(`SELECTED TREE ITEMS: ${val}`)
-        }
-    },
-<<<<<<< Updated upstream
-=======
-    // mounted() {
-    //     if (this.allSelected) this.selectAllItems(this.itemsListTree);
-    // },
-    methods: {
-        selectAllItems(values) {
-            values.forEach(value => {
-                if(value.hasOwnProperty('items')) {
-                    this.selectAllItems(value.items)
-                }
-                this.selectedItems.push(value.id);
-            })
-        },
-        selectRelatedItems(item) {
-            const relatedItems = [];
-            item.items.forEach(v => {
-                if(v.hasOwnProperty('items')) {
-                    v.items.forEach(v2 => {
-                        relatedItems.push(v2.id);
-                    });
-                }
-                relatedItems.push(v.id);
-            });
-            return relatedItems;
-        },
-        toggleItem(item, e, relatedId = null, type = 'item') {
-            if(type === 'group' && !e.target.checked && e.target.checked !== undefined) {
-                console.log(e)
-            }
-
-
-            // if(!relatedId) {
-            //     this.selectedItems.push(item.id)
-            // }
-            // console.log(relatedId, item, e);
-
-            // if (!e.target.checked && e.target.checked !== undefined) {
-            //     this.selectedItems = this.selectedItems
-            //         .filter(v => !this.selectRelatedItems(item).includes(v))
-            //         .filter(v => v !== item.id)
-            // } else if (e.target.checked) {
-            //     this.selectedItems = [...this.selectedItems, ...this.selectRelatedItems(item), item.id];
-            // }
-        }
-    },
->>>>>>> Stashed changes
-    template: `
-            <div class="dropdown_tree-list">
-                <button class="btn btn-select dropdown-toggle" type="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span v-if="selectedItems.length > 0">{{ selectedItems.length }} selected</span>
-                <span v-else class="complex-list_empty">Select Step</span>
-                </button>
-                <div class="dropdown-menu close-outside pt-3 pb-0">
-                    <div v-for="item1lvl in itemsListTree" :key="item1lvl.id">
-                        <p v-if="item1lvl.type === 'group'" class="d-flex align-items-center px-3 position-relative">
-                             <i class="fa fa-sort-down position-absolute"
-                                v-if="item1lvl.items"
-                                @click="item1lvl.showItems = !item1lvl.showItems"
-                                :style="[!item1lvl.showItems ? 'transform: rotate(270deg)' : '']"
-                            ></i>
-                            <label
-<<<<<<< Updated upstream
-=======
-                                @click="toggleItem(item1lvl, $event, null, item1lvl.type)"
-                                class="mb-0 w-100 d-flex align-items-center custom-checkbox">
-                                <input
-                                    type="checkbox">
-                                <span class="w-100 d-inline-block ml-3">{{ item1lvl.title }}</span>
-                            </label>
-                        </p>
-                        <p v-else class="d-flex align-items-center px-3 position-relative">
-                            <label
->>>>>>> Stashed changes
-                                class="mb-0 w-100 d-flex align-items-center custom-checkbox">
-                                <input
-                                    @click="toggleItem(item1lvl, $event)"
-                                    type="checkbox">
-                                <span class="w-100 d-inline-block ml-3">{{ item1lvl.title }}</span>
-                            </label>
-                        </p>
-                        <div v-if="item1lvl.items && item1lvl.showItems" class="ml-4">
-                            <div v-for="item2lvl in item1lvl.items" :key="item2lvl.id">
-<!--                                <p v-if="item2lvl.type === 'group'" class="d-flex align-items-center px-3 position-relative">-->
-<!--                                    <i class="fa fa-sort-down position-absolute"-->
-<!--                                        v-if="item2lvl.items"-->
-<!--                                        @click="item2lvl.showItems = !item2lvl.showItems"-->
-<!--                                        :style="[!item2lvl.showItems ? 'transform: rotate(270deg)' : '']"-->
-<!--                                    ></i>-->
-<!--                                    <label-->
-<!--                                        @click="checkItem(item2lvl, $event)"-->
-<!--                                        class="mb-0 w-100 d-flex align-items-center custom-checkbox">-->
-<!--                                        <input-->
-<!--                                            type="checkbox">-->
-<!--                                        <span class="w-100 d-inline-block ml-3">{{ item2lvl.title }}</span>-->
-<!--                                    </label>-->
-<!--                                </p>-->
-                                <p v-if="item2lvl.type !== 'group'" class="d-flex align-items-center px-3 position-relative">
-                                    <label
-                                        class="mb-0 w-100 d-flex align-items-center custom-checkbox">
-                                        <input
-                                            @click="toggleItem(item2lvl, $event, item1lvl.id)"
-                                            type="checkbox">
-                                        <span class="w-100 d-inline-block ml-3">{{ item2lvl.title }}</span>
-                                    </label>
-                                </p>
-<!--                                <div v-if="item2lvl.items && item2lvl.showItems" class="ml-4">-->
-<!--                                    <div v-for="item3lvl in item2lvl.items" :key="item3lvl.id">-->
-<!--                                        <p class="d-flex align-items-center px-3">-->
-<!--                                            <label-->
-<!--                                                class="mb-0 w-100 d-flex align-items-center custom-checkbox">-->
-<!--                                                <input-->
-<!--                                                    :value="item3lvl.id"-->
-<!--                                                    v-model="selectedItems"-->
-<!--                                                    type="checkbox">-->
-<!--                                                <span class="w-100 d-inline-block ml-3">{{ item3lvl.title }}</span>-->
-<!--                                            </label>-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
-}
-
 const ComplexList = {
     data() {
         return {
@@ -502,7 +346,6 @@ const RemovableFilter = {
 const dropdownsApp = Vue.createApp({
     components: {
         'simple-list': SimpleList,
-        'tree-list': TreeList,
         'complex-list': ComplexList,
         'complex-list-filter': ComplexListFilter,
         'removable-filter': RemovableFilter,
@@ -511,7 +354,43 @@ const dropdownsApp = Vue.createApp({
 
 dropdownsApp.mount('#dropdowns');
 
-$('.selectpicker_severity')
+let data = [{
+    "id": "1",
+    "text": "node-1",
+    "children": [
+        {
+            "id": "1-2",
+            "text": "node-1-2",
+        },
+        {
+            "id": "1-1",
+            "text": "node-1-1",
+            "children": [
+                {
+                    "id": "1-1-1",
+                    "text": "node-1-1-1"
+                },
+                {
+                    "id": "1-1-2",
+                    "text": "node-1-1-2"
+                }
+            ],
+        }],
+},
+    {
+        "id": "2",
+        "text": "node-2",
+    }
+]
+let tree = new Tree('.tree', {
+    data,
+    loaded: function () {
+        this.values = ['1', '2'];
+        // console.log(this.selectedNodes)
+        // console.log(this.values)
+    },
+})
+
 $(".dropdown-menu.close-outside").on("click", function (event) {
     event.stopPropagation();
 });
