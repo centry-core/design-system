@@ -603,10 +603,6 @@ input.form-control {
   margin-bottom: 5px;
 }
 
-.form-control-label + .dropdown .btn {
-  margin-top: 5px;
-}
-
 input[type=file] {
   border: 1px dashed var(--lines);
   padding-top: 4px;
@@ -2174,7 +2170,7 @@ td.disabled input {
 .custom-checkbox input[type=checkbox]:checked::before {
   border-color: var(--purple);
   background-color: var(--purple);
-  background-image: url("../../../../../static/assets/ico/check-white.svg");
+  background-image: url("/design-system/static/assets/ico/check-white.svg");
   background-size: 10px;
 }
 .custom-checkbox input[type=checkbox]:checked:not(:disabled):hover:before {
@@ -2379,7 +2375,7 @@ input[type=range]::-moz-range-thumb {
 .custom-checkbox input[type=checkbox]:checked::before {
   border-color: var(--purple);
   background-color: var(--purple);
-  background-image: url("../../../../../static/assets/ico/check-white.svg");
+  background-image: url("/design-system/static/assets/ico/check-white.svg");
   background-size: 10px;
 }
 .custom-checkbox input[type=checkbox]:checked:not(:disabled):hover:before {
@@ -2648,8 +2644,16 @@ input[type=range]::-moz-range-thumb {
 }
 
 .bootstrap-select {
-  width: auto !important;
+  /*width: auto !important;*/
   border: 1px solid transparent;
+}
+.bootstrap-select__b {
+  border: solid 1px var(--gray400);
+  border-radius: 4px;
+}
+.bootstrap-select__b .dropdown-toggle {
+  height: 38px;
+  padding: 7px 16px;
 }
 .bootstrap-select .filter-option-inner-inner {
   color: var(--gray700) !important;
@@ -2754,8 +2758,8 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .dropdown-item:active::after {
   content: "";
   display: inline-block;
-  background: url("../../../../../static/assets/ico/check.svg") no-repeat top right;
-  width: 15px;
+  background: url("/design-system/static/assets/ico/check.svg") no-repeat top right;
+  width: 18px;
   height: 12px;
 }
 
@@ -2769,8 +2773,8 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .dropdown-toggle::after {
   content: "";
   display: inline-block;
-  background: url("../../../../../static/assets/ico/arrow-down.svg") no-repeat center right;
-  width: 15px;
+  background: url("/design-system/static/assets/ico/arrow-down.svg") no-repeat center right;
+  width: 18px;
   height: 12px;
   border: 0;
 }
@@ -2778,8 +2782,8 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .dropdown-toggle[aria-expanded=true]::after {
   content: "";
   display: inline-block;
-  background: url("../../../../../static/assets/ico/arrow-up.svg") no-repeat center right;
-  width: 15px;
+  background: url("/design-system/static/assets/ico/arrow-up.svg") no-repeat center right;
+  width: 18px;
   height: 12px;
   border: 0;
 }
@@ -2963,7 +2967,7 @@ input[type=range]::-moz-range-thumb {
   display: inline-block;
   content: "";
   border: none;
-  background: url(../../../../../static/assets/ico/arrow-down.svg) no-repeat bottom right;
+  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat bottom right;
   width: 23px;
   height: 8px;
   vertical-align: 0;
@@ -2983,7 +2987,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .btn-select.dropdown-toggle[aria-expanded=true]::after {
-  background: url(../../../../../static/assets/ico/arrow-up.svg) no-repeat center right;
+  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
 }
 
 .filter-option-inner-inner > i {
