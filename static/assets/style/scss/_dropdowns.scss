@@ -71,7 +71,7 @@
   content: "";
   display: inline-block;
   background: url("/design-system/static/assets/ico/check.svg") no-repeat top right;
-  width: 15px;
+  width: 18px;
   height: 12px;
 }
 
@@ -86,7 +86,7 @@
   content: "";
   display: inline-block;
   background: url("/design-system/static/assets/ico/arrow-down.svg") no-repeat center right;
-  width: 15px;
+  width: 18px;
   height: 12px;
   border: 0;
 }
@@ -95,7 +95,7 @@
   content: "";
   display: inline-block;
   background: url("/design-system/static/assets/ico/arrow-up.svg") no-repeat center right;
-  width: 15px;
+  width: 18px;
   height: 12px;
   border: 0;
 }
@@ -315,7 +315,7 @@
 }
 
 .btn-select.dropdown-toggle[aria-expanded="true"]::after {
-  background: url(../../../../../static/assets/ico/arrow-up.svg) no-repeat center right;
+  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
 }
 .filter-option-inner-inner > i {
   display: none;

@@ -35,7 +35,7 @@ select.selectpicker {
   display: none !important;
 }
 .bootstrap-select {
-  width: 220px \0;
+  /*width: 220px \0;*/
   /*IE9 and below*/
   vertical-align: middle;
 }
@@ -124,9 +124,9 @@ select.selectpicker {
 .bootstrap-select.fit-width {
   width: auto !important;
 }
-.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-  width: 220px;
-}
+/*.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {*/
+/*  width: 220px;*/
+/*}*/
 .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
 .bootstrap-select .dropdown-toggle:focus {
   outline: thin dotted #333333 !important;

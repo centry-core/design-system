@@ -51,7 +51,7 @@
     input {
       border-color: var(--error);
       padding-right: 40px;
-      background-image: url('../../../../../static/assets/ico/alarm.svg');
+      background-image: url('/design-system/static/assets/ico/alarm.svg');
       background-repeat: no-repeat;
       background-position: right 18px center;
       background-size: 16px;
@@ -94,6 +94,14 @@
 }
 
 .bootstrap-select {
+  &__b {
+    border: solid 1px var(--gray400);
+    border-radius: 4px;
+      .dropdown-toggle {
+      height: 38px;
+      padding: 7px 16px;
+    }
+  }
   width: auto !important;
   border: 1px solid transparent;
   .filter-option-inner-inner {
