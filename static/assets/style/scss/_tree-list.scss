@@ -48,3 +48,6 @@
   border: 6px solid transparent !important;
   border-top: 5px solid var(--gray400) !important;
 }
+.treejs > .treejs-nodes > li:last-child {
+  margin-bottom: 0;
+}

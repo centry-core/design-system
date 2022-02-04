@@ -94,7 +94,14 @@
 }
 
 .bootstrap-select {
-  width: auto !important;
+  &__b {
+    border: solid 1px var(--gray400);
+    border-radius: 4px;
+    .dropdown-toggle {
+      height: 40px;
+      padding: 10px;
+    }
+  }
   border: 1px solid transparent;
   .filter-option-inner-inner {
     color: var(--gray700) !important;

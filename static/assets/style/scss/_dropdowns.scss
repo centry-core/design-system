@@ -70,7 +70,7 @@
 .bootstrap-select .dropdown-item:active::after {
   content: "";
   display: inline-block;
-  background: url("../../../../../static/assets/ico/check.svg") no-repeat top right;
+  background: url("/design-system/static/assets/ico/check.svg") no-repeat top right;
   width: 15px;
   height: 12px;
 }
@@ -85,7 +85,7 @@
 .bootstrap-select .dropdown-toggle::after {
   content: "";
   display: inline-block;
-  background: url("../../../../../static/assets/ico/arrow-down.svg") no-repeat center right;
+  background: url("/design-system/static/assets/ico/arrow-down.svg") no-repeat center right;
   width: 15px;
   height: 12px;
   border: 0;
@@ -94,7 +94,7 @@
 .bootstrap-select .dropdown-toggle[aria-expanded="true"]::after {
   content: "";
   display: inline-block;
-  background: url("../../../../../static/assets/ico/arrow-up.svg") no-repeat center right;
+  background: url("/design-system/static/assets/ico/arrow-up.svg") no-repeat center right;
   width: 15px;
   height: 12px;
   border: 0;
@@ -294,7 +294,7 @@
   display: inline-block;
   content: "";
   border: none;
-  background: url(../../../../../static/assets/ico/arrow-down.svg) no-repeat bottom right;
+  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat bottom right;
   width: 23px;
   height: 8px;
   vertical-align: 0;
@@ -315,7 +315,7 @@
 }
 
 .btn-select.dropdown-toggle[aria-expanded="true"]::after {
-  background: url(../../../../../static/assets/ico/arrow-up.svg) no-repeat center right;
+  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
 }
 .filter-option-inner-inner > i {
   display: none;
@@ -331,6 +331,10 @@
     }
     &.btn {
       padding: 6px 8px;
+    }
+    &__sm {
+      height: 24px;
+      padding: 2px 2px;
     }
   }
   &.show {
@@ -361,7 +365,7 @@
       border: solid 1px var(--gray500);
       border-radius: 4px;
       padding-left: 32px;
-      background: url(../../../../../static/assets/ico/search.svg) no-repeat 8px 7px;
+      background: url(/design-system/static/assets/ico/search.svg) no-repeat 8px 7px;
       &:focus {
         box-shadow: none;
       }
