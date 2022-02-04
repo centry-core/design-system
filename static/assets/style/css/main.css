@@ -37,6 +37,7 @@
   --basic60: rgba(89, 51, 198, 0.35);
   --basic-hover: #6947cb;
   --purple-hover: #6c44dd;
+  --purple-active-bg: #F2F2FF;
   --purple-outline: #D5CCF1;
   --basic25: #d5ccf1;
   --pressed: #4627a0;
@@ -601,10 +602,6 @@ input.form-control {
 .form-control-label + .input-group div, .form-control-label + .input-group input {
   margin-top: 5px;
   margin-bottom: 5px;
-}
-
-.form-control-label + .dropdown .btn {
-  margin-top: 5px;
 }
 
 input[type=file] {
@@ -1474,10 +1471,6 @@ td.disabled input {
   background-color: var(--basic) !important;
 }
 
-.d-flex .btn {
-  margin-right: 5px;
-}
-
 .d-flex .btn-32 {
   margin-right: 10px;
 }
@@ -2174,7 +2167,7 @@ td.disabled input {
 .custom-checkbox input[type=checkbox]:checked::before {
   border-color: var(--purple);
   background-color: var(--purple);
-  background-image: url("../../../../../static/assets/ico/check-white.svg");
+  background-image: url("/design-system/static/assets/ico/check-white.svg");
   background-size: 10px;
 }
 .custom-checkbox input[type=checkbox]:checked:not(:disabled):hover:before {
@@ -2409,7 +2402,7 @@ input[type=range]::-moz-range-thumb {
 .custom-input.invalid-input input {
   border-color: var(--error);
   padding-right: 40px;
-  background-image: url("../../../../../static/assets/ico/alarm.svg");
+  background-image: url("/design-system/static/assets/ico/alarm.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
   background-size: 16px;
@@ -2449,6 +2442,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .bootstrap-select {
+  width: auto !important;
   border: 1px solid transparent;
 }
 .bootstrap-select__b {
@@ -2456,13 +2450,13 @@ input[type=range]::-moz-range-thumb {
   border-radius: 4px;
 }
 .bootstrap-select__b .dropdown-toggle {
-  height: 40px;
-  padding: 10px;
+  height: 38px;
+  padding: 7px 16px;
 }
 .bootstrap-select .filter-option-inner-inner {
   color: var(--gray700) !important;
 }
-.bootstrap-select.show, .bootstrap-select:hover {
+.bootstrap-select.show:not(.main-select), .bootstrap-select:hover:not(.main-select) {
   transition: all 0.3s;
   border: 1px solid var(--gray400);
   box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
@@ -2547,7 +2541,6 @@ input[type=range]::-moz-range-thumb {
 
 .dropdown-item.active,
 .dropdown-item:active {
-  color: var(--basic);
   text-decoration: none;
   font-weight: 400;
   background-color: var(--white);
@@ -2563,7 +2556,7 @@ input[type=range]::-moz-range-thumb {
   content: "";
   display: inline-block;
   background: url("/design-system/static/assets/ico/check.svg") no-repeat top right;
-  width: 15px;
+  width: 18px;
   height: 12px;
 }
 
@@ -2578,7 +2571,7 @@ input[type=range]::-moz-range-thumb {
   content: "";
   display: inline-block;
   background: url("/design-system/static/assets/ico/arrow-down.svg") no-repeat center right;
-  width: 15px;
+  width: 18px;
   height: 12px;
   border: 0;
 }
@@ -2587,7 +2580,7 @@ input[type=range]::-moz-range-thumb {
   content: "";
   display: inline-block;
   background: url("/design-system/static/assets/ico/arrow-up.svg") no-repeat center right;
-  width: 15px;
+  width: 18px;
   height: 12px;
   border: 0;
 }
@@ -2715,6 +2708,9 @@ input[type=range]::-moz-range-thumb {
   margin-right: 10px;
   color: var(--basic);
 }
+.complex-list .dropdown-toggle_label__just-icon {
+  margin-right: 0;
+}
 .complex-list .dropdown-toggle_label::after {
   content: "";
   display: inline-block;
@@ -2777,6 +2773,11 @@ input[type=range]::-moz-range-thumb {
   vertical-align: 0;
 }
 
+.dropdown-toggle_label__just-icon .btn-select.dropdown-toggle::after {
+  width: 11px;
+  margin-left: 0;
+}
+
 .complex-list__removable .btn-select.dropdown-toggle::after {
   position: absolute;
   right: 2.5rem;
@@ -2808,9 +2809,10 @@ input[type=range]::-moz-range-thumb {
 .dropdown_action .dropdown-toggle.btn {
   padding: 6px 8px;
 }
-.dropdown_action .dropdown-toggle__sm {
+.dropdown_action .dropdown-toggle__sm.btn {
   height: 24px;
-  padding: 2px 2px;
+  padding: 2px 4px;
+  font-size: 12px;
 }
 .dropdown_action.show .btn-secondary.dropdown-toggle {
   border-color: var(--purple);
@@ -2846,6 +2848,40 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .no-results {
   background: #fff;
   padding: 4px 16px;
+}
+
+/* main-select */
+.main-select .btn {
+  background: var(--purple-active-bg);
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 40px;
+  padding-top: 10px;
+}
+.main-select .dropdown-toggle::after {
+  background: url(/design-system/static/assets/ico/arrow-down__purple.svg) no-repeat center right;
+}
+.main-select .btn-projects:hover {
+  color: white;
+  background-color: var(--purple-hover);
+  border: 0;
+}
+.main-select .dropdown-toggle:hover::after {
+  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat center right;
+}
+.main-select.show .btn-projects {
+  background-color: var(--basic);
+  color: white;
+}
+.main-select.show .dropdown-toggle::after {
+  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
+}
+.main-select .dropdown-menu li a {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.main-select .dropdown-menu li a.active, .main-select .dropdown-menu li a:active {
+  color: #212529;
 }
 
 .treejs-switcher {

@@ -120,7 +120,7 @@ const ComplexList = {
                     </li>
                 </ul>
                 <div class="p-3">
-                    <button class="btn btn-basic" type="submit">Primary</button>
+                    <button class="btn btn-basic mr-2" type="submit">Primary</button>
                     <button type="button" class="btn btn-secondary">Secondary</button>
                 </div>
             </div>
@@ -134,6 +134,9 @@ const ComplexListFilter = {
         },
         fixWidth: {
             default: false,
+        },
+        showSelected: {
+            default: true,
         }
     },
     data() {
@@ -180,8 +183,8 @@ const ComplexListFilter = {
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false">
-                <span class="dropdown-toggle_label font-weight-bold">LABEL</span>
-                <p class="d-flex mb-0"
+                <slot name="label"></slot>
+                <p v-if="showSelected" class="d-flex mb-0"
                     :class="{'w-100': fixWidth}">
                     <span v-if="selectedItems.length === itemsList.length">All</span>
                     <span v-else-if="selectedItems.length > 0">{{ selectedItems.length }} selected</span>
@@ -226,7 +229,7 @@ const ComplexListFilter = {
                     </li>
                 </ul>
                 <div class="p-3">
-                    <button class="btn btn-basic" type="submit">Primary</button>
+                    <button class="btn btn-basic mr-2" type="submit">Primary</button>
                     <button type="button" class="btn btn-secondary">Secondary</button>
                 </div>
             </div>
@@ -258,6 +261,9 @@ const RemovableFilter = {
             return this.inputSearch ?
                 this.itemsList.filter(item => item.title.toUpperCase().includes(this.inputSearch.toUpperCase())) :
                 this.itemsList
+        },
+        isAllSelected() {
+            return (this.selectedItems.length < this.itemsList.length) && this.selectedItems.length > 0
         }
     },
     watch: {
@@ -314,7 +320,8 @@ const RemovableFilter = {
                     <li
                         class="dropdown-item dropdown-menu_item d-flex align-items-center">
                         <label
-                            class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                            class="mb-0 w-100 d-flex align-items-center custom-checkbox"
+                            :class="{ 'custom-checkbox__minus': isAllSelected }">
                             <input
                                 @click="handlerSelectAll"
                                 :ref="refSearchId"
@@ -336,7 +343,7 @@ const RemovableFilter = {
                     </li>
                 </ul>
                 <div class="p-3">
-                    <button class="btn btn-basic" type="submit">Primary</button>
+                    <button class="btn btn-basic mr-2" type="submit">Primary</button>
                     <button type="button" class="btn btn-secondary">Secondary</button>
                 </div>
             </div>
