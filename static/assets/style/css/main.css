@@ -82,12 +82,16 @@
   --warn40: rgba(252, 154, 67, 0.4);
   --green: rgb(43, 212, 141);
   --success: rgb(43, 212, 141);
+  --green-underline: #94E5B0;
   --green60: rgba(43, 212, 141, 0.35);
   --error: rgb(243, 38, 38);
+  --red-underline: #F2B4B4;
+  --orange-underline: #FBCFA6;
   --error60: rgba(243, 38, 38, 0.35);
   --error40: rgba(243, 38, 38, 0.4);
   --border-red20: rgba(242, 180, 180, 0.2);
   --info: rgb(41, 184, 245);
+  --blue-underline: #94DBFA;
   --info60: rgba(41, 184, 245, 0.35);
   --card-magento: #ede8ff;
   --border-magento20: rgba(196, 150, 241, 0.2);
@@ -2945,6 +2949,125 @@ input[type=range]::-moz-range-thumb {
 
 .treejs > .treejs-nodes > li:last-child {
   margin-bottom: 0;
+}
+
+.notification-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 0.5s linear;
+}
+
+.notification.animation-slide-in {
+  animation: right-slide-in 0.5s forwards, bounceIn 0.7s forwards;
+  transform: translateX(100%);
+}
+
+.notification.animation-slide-out {
+  animation: right-slide-out 0.5s forwards;
+}
+
+@keyframes right-slide-in {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes right-slide-out {
+  to {
+    transform: translateX(100%);
+  }
+}
+.notification {
+  transition-property: all;
+  transition-duration: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: var(--b-color);
+  border-style: solid;
+  padding: 7px 20px;
+  background: white;
+}
+.notification-close {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+}
+.notification-close svg {
+  display: none;
+}
+.notification-body {
+  display: flex;
+  align-items: center;
+}
+.notification-icon {
+  display: inline-block;
+}
+.notification-content {
+  display: inline-block;
+}
+.notification-desc {
+  display: none;
+}
+.notification::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  top: 9px;
+  width: 18px;
+  height: 18px;
+}
+.notification-title {
+  color: var(--gray800);
+}
+.notification-error {
+  border-color: var(--red-underline);
+}
+.notification-warning {
+  border-color: var(--orange-underline);
+}
+.notification-info {
+  border-color: var(--blue-underline);
+}
+.notification-success {
+  border-color: var(--green-underline);
+}
+.notification-basic {
+  border-color: var(--purple-outline);
+  box-shadow: 0 2px 4px rgba(84, 51, 181, 0.1), 0 1px 12px rgba(55, 32, 149, 0.08);
+  background: var(--purple-active-bg);
+}
+.notification-error::before {
+  background: url("/design-system/static/assets/ico/error_icon.svg");
+}
+.notification-warning::before {
+  background: url("/design-system/static/assets/ico/warning_icon.svg") no-repeat;
+}
+.notification-info::before {
+  background: url("/design-system/static/assets/ico/info_icon.svg");
+}
+.notification-success::before {
+  background: url("/design-system/static/assets/ico/success_icon.svg");
+}
+
+.notification-body {
+  padding-left: 28px;
+  position: relative;
+}
+.notification-body .notification-icon {
+  position: absolute;
+  left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
