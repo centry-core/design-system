@@ -97,7 +97,7 @@
   &__b {
     border: solid 1px var(--gray400);
     border-radius: 4px;
-      .dropdown-toggle {
+    .dropdown-toggle {
       height: 38px;
       padding: 7px 16px;
     }
@@ -107,7 +107,7 @@
   .filter-option-inner-inner {
     color: var(--gray700) !important;
   }
-  &.show, &:hover {
+  &.show:not(.main-select), &:hover:not(.main-select) {
     transition: all .3s;
     border: 1px solid var(--gray400);
     box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
