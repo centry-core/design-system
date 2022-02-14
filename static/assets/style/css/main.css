@@ -3195,4 +3195,64 @@ p {
   display: none;
 }
 
+.tooltip > .tooltip-inner {
+  background-color: var(--gray600);
+  padding: 4px 16px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.tooltip__info {
+  position: relative;
+}
+
+.tooltip-close {
+  right: 20px;
+  top: 10px;
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+}
+
+.tooltip__info > .tooltip-inner {
+  background-color: white;
+  border: 1px solid #DBE2E8;
+  padding: 8px 36px 8px 16px;
+  box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
+  border-radius: 4px;
+  color: var(--gray800);
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+.bs-tooltip-top .arrow::before,
+.bs-tooltip-auto[x-placement^=top] .arrow::before {
+  border-top-color: var(--gray600) !important;
+}
+
+.bs-tooltip-right .arrow::before,
+.bs-tooltip-auto[x-placement^=right] .arrow::before {
+  border-right-color: var(--gray600) !important;
+}
+
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before {
+  border-bottom-color: var(--gray600) !important;
+}
+
+.bs-tooltip-left .arrow::before,
+.bs-tooltip-auto[x-placement^=left] .arrow::before {
+  border-left-color: var(--gray600) !important;
+}
+
+.fas.fa-gray {
+  color: var(--gray500);
+}
+
 /*# sourceMappingURL=main.css.map */
