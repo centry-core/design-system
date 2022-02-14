@@ -116,93 +116,25 @@
     </aside>
     <div class="card mt-3 w-100">
         <div class="card-header">
-            <h1> Inputs </h1>
+            <h1> Drag & Drop </h1>
         </div>
         <div class="card-body row">
             <div class="col-6">
                 <h4 class="pt-2">Fields</h4>
                 <div class="card w-100 card-stripped p-3">
-                    <h4 class="mt-4 mb-1">Height 40px</h4>
-                    <div class="custom-input mb-3">
-                        <input
-                            type="text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input mb-3">
-                        <input
-                            type="text"
-                            value="Text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input invalid-input mb-3">
-                        <input
-                            type="text"
-                            value="Wrong data"
-                            placeholder="Text">
-                        <span class="input_error-msg">Сlarifying error message</span>
-                    </div>
-                    <div class="custom-input custom-input_search position-relative">
-                        <input
-                            type="text"
-                            placeholder="Search">
-                        <img src="assets/ico/search.svg" class="icon-search position-absolute">
-                    </div>
-                    <h4 class="mt-4 mb-1">Height 32px: add class 'custom-input__sm'</h4>
-                    <div class="custom-input custom-input__sm mb-3">
-                        <input
-                            type="text"
-                            placeholder="Text">
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="pt-2">Fields & label</h4>
-                <div class="card w-100 card-stripped p-3">
-                    <div class="custom-input mb-3">
-                        <label for="fieldOne" class="font-weight-bold mb-0">Label</label>
-                        <p class="custom-input_desc mb-2">Description</p>
-                        <input
-                            id="fieldOne"
-                            type="text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input mb-3">
-                        <label for="fieldTwo" class="font-weight-bold mb-1">Label</label>
-                        <input
-                                id="fieldTwo"
-                                type="text"
-                                placeholder="Text">
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="pt-2">Select</h4>
-                <div class="card w-100 card-stripped p-3">
-                    <select class="selectpicker" data-style="btn">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
-                    </select>
-                    <select class="selectpicker bootstrap-select__b" data-style="btn">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="pt-2">Input stepper</h4>
-                <div class="card w-100 card-stripped p-3 align-items-start">
-                    <div id="inputStepper" class="input-stepper">
-                        <button
-                            @click="counter--"
-                            :disabled="counter <= 0"
-                        ><i class="fas fa-minus"></i>
-                        </button>
-                        <span role="textbox" contenteditable @input="changeCounter">{{ counter }}</span>
-                        <button
-                            @click="counter++"
-                        ><i class="fas fa-plus"></i></button>
+                    <div class="mb-3">
+                        <div id="dragDropArea" class="drop-area">
+                            <input type="file" id="dropInput" multiple accept="image/*" onchange="handleFiles(this.files)">
+                            <label for="dropInput" class="mb-0 d-flex align-items-center justify-content-center">Drag & drop file or <span>&nbsp;browse</span></label>
+                        </div>
+                        <div id="previewArea" class="preview-area">
+                            <div class="preview-area_item preview-area_loader">
+                                <span>Uploading File 1</span>
+                            </div>
+                            <div class="preview-area_item preview-area_close">
+                                <span>Uploading File 1</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -210,8 +142,8 @@
     </div>
 </main>
 <script src="https://unpkg.com/vue@next"></script>
-<script src="assets/js/inputs.js"></script>
 <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="assets/js/select.js"></script>
+<script src="assets/js/drag&drop.js"></script>
 </body>
 </html>

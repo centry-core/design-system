@@ -2376,6 +2376,10 @@ input[type=range]::-moz-range-thumb {
   border-radius: 4px;
   outline: none;
   font-size: 14px;
+  line-height: 24px;
+}
+.custom-input__sm input {
+  padding: 3px 12px;
 }
 .custom-input input:focus {
   box-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1), 0px -1px 1px rgba(36, 36, 93, 0.05);
@@ -3068,6 +3072,127 @@ input[type=range]::-moz-range-thumb {
 .notification-body .notification-icon {
   position: absolute;
   left: 0;
+}
+
+.drop-area {
+  border: dashed 2px var(--gray400);
+  border-radius: 4px;
+  padding: 6px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.drop-area:hover {
+  border-color: var(--purple-hover);
+  cursor: pointer;
+}
+.drop-area.highlight {
+  border-color: var(--purple-hover);
+}
+.drop-area input {
+  display: none;
+}
+.drop-area label {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--gray600);
+}
+.drop-area label span {
+  color: var(--basic);
+}
+.drop-area label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 16px;
+  margin-right: 10px;
+  background: url("/design-system/static/assets/ico/drop-area.svg") no-repeat center;
+}
+
+.preview-area_loader::after {
+  animation: load 1.1s infinite linear;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: url("/design-system/static/assets/ico/loading.svg") no-repeat;
+}
+.preview-area_close::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+  cursor: pointer;
+}
+.preview-area_item {
+  background: var(--background);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--gray800);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  width: 480px;
+  font-family: sans-serif;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+#drop-area.highlight {
+  border-color: purple;
+}
+
+p {
+  margin-top: 0;
+}
+
+.my-form {
+  margin-bottom: 10px;
+}
+
+#gallery {
+  margin-top: 10px;
+}
+
+#gallery img {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.button:hover {
+  background: #ddd;
+}
+
+#fileElem {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
