@@ -4,3 +4,8 @@
 .dropdown-item.active, .dropdown-item:active {
   color: var(--gray700);
 }
+.bootstrap-table .fixed-table-container .table thead th .asc,
+.bootstrap-table .fixed-table-container .table thead th .desc,
+.bootstrap-table .fixed-table-container .table thead th .both {
+  background-image: none;
+}

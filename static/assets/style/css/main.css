@@ -6,6 +6,12 @@
   color: var(--gray700);
 }
 
+.bootstrap-table .fixed-table-container .table thead th .asc,
+.bootstrap-table .fixed-table-container .table thead th .desc,
+.bootstrap-table .fixed-table-container .table thead th .both {
+  background-image: none;
+}
+
 /* common */
 /* latin */
 @font-face {
@@ -51,7 +57,7 @@
   --border-gray: #9fa7bb;
   --border-gray20: #eaeaf4;
   --tip: #abb3b9;
-  --lines: #cad1d7;
+  --lines: #EAEDEF;
   --lines40: #eaedef;
   --inactive: #f3f5f8;
   --disabled: #c1c2d1;
@@ -1313,14 +1319,34 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   border: 0;
 }
 
+.table-hover tbody tr:hover {
+  background-color: var(--gray100);
+}
+
 .thead-light th {
   background-color: var(--background) !important;
   border-top: 1px solid var(--lines) !important;
   border-bottom: 1px solid var(--lines) !important;
   text-transform: uppercase;
   font-size: 12px !important;
-  color: var(--somegray) !important;
-  font-weight: 400;
+  color: var(--gray600) !important;
+  font-weight: 600;
+}
+.thead-light th .sortable::after {
+  content: "";
+  position: relative;
+  top: 7px;
+  margin-left: 4px;
+  display: inline-block;
+  background: url("/design-system/static/assets/ico/sorting_arrows.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+}
+.thead-light th .sortable.asc::after {
+  background: url("/design-system/static/assets/ico/sorting_arrows__down.svg") no-repeat;
+}
+.thead-light th .sortable.desc::after {
+  background: url("/design-system/static/assets/ico/sorting_arrows__up.svg") no-repeat;
 }
 
 /*
@@ -1443,17 +1469,19 @@ td.disabled input {
 
 .bootstrap-table .fixed-table-pagination > .pagination-detail .pagination-info {
   line-height: 24px;
+  position: relative;
+  top: 3px;
 }
 
 .card-table .bootstrap-table .fixed-table-pagination > .pagination-detail,
 .card-table .bootstrap-table .fixed-table-pagination > .pagination {
-  margin-top: 25px;
-  margin-bottom: 30px;
+  margin-top: 16px;
+  margin-bottom: 20px;
 }
 
 .card-table-sm .bootstrap-table .fixed-table-pagination > .pagination-detail,
 .card-table-sm .bootstrap-table .fixed-table-pagination > .pagination {
-  margin-top: 20px;
+  margin-top: 16px;
   margin-bottom: 20px;
 }
 
@@ -1471,8 +1499,83 @@ td.disabled input {
   background-color: var(--gray100) !important;
 }
 
-.table-list tr.selected td.bs-checkbox {
-  background-color: var(--basic) !important;
+.table tbody tr td {
+  color: var(--gray800);
+  font-size: 14px;
+}
+
+.bs-checkbox input[type=checkbox] {
+  position: relative;
+  -webkit-appearance: none;
+}
+.bs-checkbox input[type=checkbox]:before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid var(--gray400);
+  border-radius: 4px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  cursor: pointer;
+}
+.bs-checkbox input[type=checkbox]:hover:before {
+  border: 1px solid var(--gray600);
+}
+.bs-checkbox input[type=checkbox]:checked::before {
+  border-color: var(--purple);
+  background-color: var(--purple);
+  background-image: url("/design-system/static/assets/ico/check-white.svg");
+  background-size: 10px;
+}
+.bs-checkbox input[type=checkbox]:checked:not(:disabled):hover:before {
+  background-color: var(--purple-hover);
+  border-color: var(--purple-hover);
+}
+.bs-checkbox input[type=checkbox]:disabled:checked::before {
+  background-color: var(--gray400);
+  border-color: var(--gray400);
+}
+.bs-checkbox input[type=checkbox]:disabled:not(:checked)::before {
+  border-color: var(--gray400);
+}
+
+.page-item .page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray600);
+}
+
+.page-list .btn {
+  color: var(--gray800);
+  border-color: transparent;
+}
+.page-list .btn:hover {
+  transition: all 0.3s;
+  border: 1px solid var(--gray400);
+  box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
+  border-radius: 4px;
+}
+.page-list .btn-secondary:focus {
+  border: 1px solid var(--gray400);
+}
+.page-list .dropup .dropdown-toggle::after {
+  border-bottom: none;
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat center right;
+  width: 18px;
+  height: 12px;
+  border: 0;
+}
+.page-list .dropup.show .dropdown-toggle::after {
+  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
 }
 
 .d-flex .btn-32 {
@@ -2023,12 +2126,40 @@ td.disabled input {
   box-shadow: none;
 }
 
+.table-action .btn-action {
+  background-color: transparent;
+  border: solid 1px transparent;
+}
+
 .btn-action,
 .card-body .page-link {
   color: var(--text-decoration);
   background-color: var(--white);
   border: none;
   text-transform: capitalize;
+}
+
+.table-action .btn-action:hover,
+.table-action .btn-action:active,
+.table-action .btn-action:focus {
+  background-color: transparent !important;
+  border: solid 1px var(--purple-outline);
+  outline: none;
+}
+
+.bootstrap-table .fixed-table-container .table tbody tr.selected td {
+  background-color: transparent;
+}
+
+.bootstrap-table .pagination-detail .pagination-info, .bootstrap-table .pagination-detail .page-list {
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--gray600);
+  font-weight: 400;
+}
+
+.bootstrap-table .fixed-table-pagination > .pagination-detail .pagination-info {
+  margin-right: 22px;
 }
 
 .btn-action.hover,
@@ -2160,6 +2291,7 @@ td.disabled input {
   flex-grow: 0;
   border: 1px solid var(--gray400);
   border-radius: 0.25em;
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50% 50%;

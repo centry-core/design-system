@@ -54,7 +54,7 @@ function parametersDeleteFormatter(value, row, index) {
 
 function actionFormatter(value, row, index) {
     return `
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end table-action">
         <button type="button" class="btn btn-24 btn-action"><i class="fas fa-play"></i></button>
         <button type="button" class="btn btn-24 btn-action"><i class="fas fa-cog"></i></button>
         <button type="button" class="btn btn-24 btn-action"><i class="fas fa-share-alt"></i></button>
@@ -75,3 +75,19 @@ const deleteParams = (index, source) => {
         values: [index]
     })
 }
+(function ($) {
+    'use strict';
+    $.fn.bootstrapTable.locales['en-US-custom'] = {
+        formatRecordsPerPage: function (pageNumber) {
+            return `<span style="position: relative; top: 3px">Show: </span>${pageNumber}`;
+        },
+        formatShowingRows: function (pageFrom, pageTo, totalRows) {
+            return `${totalRows} items`;
+        },
+        formatDetailPagination: function (totalRows) {
+            return `${totalRows} items`;
+        },
+    };
+
+    $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
+})(jQuery);
