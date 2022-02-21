@@ -542,13 +542,43 @@
 .show > .btn-danger.dropdown-toggle:focus {
   box-shadow: none;
 }
-
+.table-action {
+  .btn-action {
+    background-color: transparent;
+    border: solid 1px transparent;
+  }
+}
 .btn-action,
 .card-body .page-link {
   color: var(--text-decoration);
   background-color: var(--white);
   border: none;
   text-transform: capitalize;
+}
+.table-action {
+  .btn-action:hover,
+  .btn-action:active,
+  .btn-action:focus {
+    background-color: transparent !important;
+    border: solid 1px var(--purple-outline);
+    outline: none;
+  }
+}
+.bootstrap-table .fixed-table-container .table tbody tr.selected td {
+  background-color: transparent;
+}
+.bootstrap-table {
+  .pagination-detail {
+    .pagination-info, .page-list {
+      font-size: 14px;
+      line-height: 24px;
+      color: var(--gray600);
+      font-weight: 400;
+    }
+  }
+}
+.bootstrap-table .fixed-table-pagination>.pagination-detail .pagination-info {
+  margin-right: 22px;
 }
 
 .btn-action.hover,
