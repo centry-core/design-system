@@ -162,11 +162,11 @@
             <div class="d-flex">
                 <div class="card w-100 mr-2 card-stripped">
                     <div class="d-flex m-4">
-                        <a class="btn btn-basic" href="#" role="button">Link</a>
-                        <button class="btn btn-basic" type="submit">Button</button>
-                        <input class="btn btn-basic" type="button" value="Input">
-                        <input class="btn btn-basic" type="submit" value="Submit">
-                        <input class="btn btn-basic" type="reset" value="Reset">
+                        <a class="btn btn-basic mr-2" href="#" role="button">Link</a>
+                        <button class="btn btn-basic mr-2" type="submit">Button</button>
+                        <input class="btn btn-basic mr-2" type="button" value="Input">
+                        <input class="btn btn-basic mr-2" type="submit" value="Submit">
+                        <input class="btn btn-basic mr-2" type="reset" value="Reset">
                     </div>
                 </div>
                 <div class="card w-100 ml-2 card-sm">
@@ -179,16 +179,16 @@
             <div class="d-flex">
                 <div class="card w-100 mr-2 card-stripped">
                     <div class="d-flex m-4">
-                        <button class="btn btn-lg btn-basic" type="submit">.btn .btn-lg</button>
-                        <button class="btn btn-basic" type="submit">.btn</button>
-                        <button class="btn btn-sm btn-basic" type="submit">.btn .btn-sm</button>
+                        <button class="btn btn-lg btn-basic mr-2" type="submit">.btn .btn-lg</button>
+                        <button class="btn btn-basic mr-2" type="submit">.btn</button>
+                        <button class="btn btn-sm btn-basic mr-2" type="submit">.btn .btn-sm</button>
                     </div>
                 </div>
                 <div class="card w-100 ml-2 card-stripped">
                     <div class="d-flex m-4">
-                        <button class="btn btn-lg btn-secondary" type="submit">.btn .btn-lg</button>
-                        <button class="btn btn-secondary" type="submit">.btn</button>
-                        <button class="btn btn-sm btn-secondary" type="submit">.btn .btn-sm</button>
+                        <button class="btn btn-lg btn-secondary mr-2" type="submit">.btn .btn-lg</button>
+                        <button class="btn btn-secondary mr-2" type="submit">.btn</button>
+                        <button class="btn btn-sm btn-secondary mr-2" type="submit">.btn .btn-sm</button>
                     </div>
                 </div>
             </div>
@@ -196,11 +196,11 @@
             <div class="card card-stripped">
                 <div class="d-flex vertical-center m-4">
                     <h6 class="m-0">By class: </h6>
-                    <button type="button" class="btn btn-primary">Primary</button>
-                    <button type="button" class="btn btn-basic">Basic</button>
-                    <button type="button" class="btn btn-secondary">Secondary</button>
-                    <button type="button" class="btn btn-warning">Warning</button>
-                    <button type="button" class="btn btn-danger">Danger</button>
+                    <button type="button" class="btn btn-primary mr-2">Primary</button>
+                    <button type="button" class="btn btn-basic mr-2">Basic</button>
+                    <button type="button" class="btn btn-secondary mr-2">Secondary</button>
+                    <button type="button" class="btn btn-warning mr-2">Warning</button>
+                    <button type="button" class="btn btn-danger mr-2">Danger</button>
                 </div>
                 <div class="d-flex vertical-center m-4">
                     <h6 class="m-0">default/hover/active/disabled (secondary and 32): </h6>
@@ -218,8 +218,8 @@
                 </div>
                 <div class="d-flex vertical-center m-4">
                     <h6 class="m-0">Basic busy buttons: </h6>
-                    <button class="btn btn-basic disabled updating" type="submit">disabled updating</button>
-                    <button class="btn btn-secondary disabled updating" type="submit">disabled updating</button>
+                    <button class="btn btn-basic disabled updating mr-2" type="submit">disabled updating</button>
+                    <button class="btn btn-secondary disabled updating mr-2" type="submit">disabled updating</button>
                 </div>
                 <div class="d-flex vertical-center m-4">
                     <h6 class="m-0">Action buttons (24 and 16): </h6>
@@ -235,127 +235,6 @@
                     <button type="button" class="btn btn-16 btn-action disabled"><i class="fas fa-play"></i></button>
                     <button type="button" class="btn btn-16 btn-action disabled updating"><i
                             class="fas fa-play"></i></button>
-                </div>
-            </div>
-            <h4 class="pt-2">Select</h4>
-            <div class="d-flex">
-                <div class="card w-75 mr-2 card-stripped">
-                    <div class="d-flex m-4">
-                        <select id="basicSelect" class="selectpicker mr-2" data-style="btn-basic">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                        <select id="secondarySelect" class="selectpicker mr-2" data-style="btn-secondary">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                        <select id="secondarySelect" class="selectpicker mr-2" data-style="btn-danger">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                        <select id="secondarySelect" class="selectpicker" data-style="btn-warning">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="card w-25 ml-2 card-sm">
-                    Selects is done mostly using bootstrap-select extention
-                </div>
-            </div>
-            <div class="d-flex">
-                <div class="card w-75 mr-2 card-stripped">
-                    <h5 class="pt-2 pl-2">Colored select</h5>
-                    <div class="d-flex m-4">
-                        <select id="coloredSelect" class="selectpicker btn-colored-select mr-2"
-                            data-style="btn-colored">
-                            <option class="colored-select-red">Critical</option>
-                            <option class="colored-select-orange">High</option>
-                            <option class="colored-select-yellow">Medium</option>
-                            <option class="colored-select-green">Low</option>
-                            <option class="colored-select-blue">Info</option>
-                            <option>Unexpected</option>
-                            <option class="colored-select-darkblue">Ignore</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="card w-25 ml-2 card-sm">
-                    Selects is done mostly using bootstrap-select extention
-                </div>
-            </div>
-            <h4 class="pt-2">Dropdown</h4>
-            <div class="card w-100 mr-2 card-stripped">
-                <div class="d-flex m-4">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown secondary
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-projects dropdown-toggle" type="button" id="dropdownMenuButton2"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown projects
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton3"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown primary
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-basic dropdown-toggle" type="button" id="dropdownMenuButton4"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown basic
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton4"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown warning
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton4"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown danger
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

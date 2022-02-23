@@ -9,20 +9,23 @@ function lgFormatter(value, row, index) {
 }
 
 function inputFormatter(value, row, index, field) {
-    return `
-        <input type="text" class="form-control form-control-alternative" onchange="updateCell(this, ${index}, '${field}')" value="${value}">
-        <div class="invalid-tooltip invalid-tooltip-custom"></div>
-    `
+    return `<div class="custom-input">
+        <input
+            type="text"
+            placeholder="Text"
+            onchange="updateCell(this, '${index}', '${field}')" value="${value}">
+    </div>`
 }
 
 function updateCell(el, row, field) {
+    console.log(el, row, field)
     $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
 }
 
 function dataTypeFormatter(value, row, index, field) {
-    const options = ['String', 'Number', 'List'].map(item =>
-        `<option 
-            value=${item} 
+    const options = ["name", "default", "type", "description", "action"].map(item =>
+        `<option
+            value=${item}
             ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
         >
             ${item}
@@ -30,7 +33,7 @@ function dataTypeFormatter(value, row, index, field) {
         `
     )
     return `
-        <select class="selectpicker mr-2" data-style="btn-gray" onchange="updateCell(this, '${index}', '${field}')">
+        <select class="selectpicker bootstrap-select__b" data-style="btn">
             ${options.join('')}
         </select>
     `
