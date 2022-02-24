@@ -1576,7 +1576,30 @@
 
             var method = function(e) {
                 e = fixEvent(e, data.pageOffset, data.target || element);
+                const getBackgroundSize = (currentValue) => {
+                    const min = 0;
+                    const max = 6000;
+                    const size = (currentValue - min) / (max - min) * 10;
+                    console.log(size, 'SIZE')
+                    return size;
+                }
 
+                const markers = document.querySelectorAll('.noUi-marker-large');
+                const range = document.querySelector('.noUi-handle');
+                const target = document.querySelector('.noUi-target');
+                const curret = document.querySelector('.noUi-touch-area');
+                const area = document.querySelector('#vuh-slider');
+
+                function paintWizard() {
+                    const currentValue = range.getAttribute('aria-valuenow');
+                    const width = getBackgroundSize(currentValue);
+                    target.style.setProperty("--background-range-size", `${width}%`);
+                    markers.forEach(marker => {
+                        marker.style.backgroundColor = width > +(marker.style.left).slice(0, -1) ? '#5933c6' : '#dee2e6';
+                    })
+                }
+
+                paintWizard();
                 // fixEvent returns false if this event has a different target
                 // when handling (multi-) touch events;
                 if (!e) {
@@ -1674,7 +1697,6 @@
                     if (targetTouches.length > 1) {
                         return false;
                     }
-
                     x = targetTouches[0].pageX;
                     y = targetTouches[0].pageY;
                 } else {
