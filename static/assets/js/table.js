@@ -91,6 +91,17 @@ const deleteParams = (index, source) => {
             return `${totalRows} items`;
         },
     };
-
     $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
 })(jQuery);
+
+const renderSelectpicker = () => {
+    setTimeout(() => {
+        $('.selectpicker').selectpicker('render');
+    }, 0)
+}
+
+renderSelectpicker();
+
+$('#tests-list-inputs').on('sort.bs.table', function (e, name, order) {
+    renderSelectpicker();
+})

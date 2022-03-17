@@ -90,6 +90,10 @@
   border: 0;
 }
 
+.dropdown-toggle {
+  background: white !important;
+}
+
 .bootstrap-select .dropdown-toggle[aria-expanded="true"]::after {
   content: "";
   display: inline-block;
