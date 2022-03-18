@@ -14,19 +14,11 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Extensions -->
     <link type="text/css" href="assets/vendor/nouislider/nouislider.css" rel="stylesheet">
-    <link type="text/css" href="assets/css/slider.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/vendor/bootstrap-table/bootstrap-table.min.css">
     <link rel="stylesheet" type="text/css"
           href="assets/vendor/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
     <!-- CSS Files -->
-    <link type="text/css" href="assets/css/theme.css" rel="stylesheet">
-    <link type="text/css" href="assets/css/brand.css" rel="stylesheet">
-    <link type="text/css" href="assets/css/buttons.css" rel="stylesheet">
-    <link type="text/css" href="assets/css/dropdown.css" rel="stylesheet">
-    <link type="text/css" href="assets/css/navbar.css" rel="stylesheet">
-    <link type="text/css" href="assets/css/card.css" rel="stylesheet">
-    <link type="text/css" href="assets/css/select.css" rel="stylesheet">
     <link type="text/css" href="assets/style/css/main.css" rel="stylesheet">
     <!--   Core JS Files   -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -57,12 +49,9 @@
     </button>
     <div class="collapse navbar-collapse" id="chapterSelectNav">
         <div class="navbar-nav">
-            <a class="nav-link" href="#">Tables</a>
-            <a class="nav-link" href="cards.html">Cards</a>
-            <a class="nav-link" href="modals.html">Modals</a>
-            <a class="nav-link" href="buttons.html">Buttons</a>
-            <a class="nav-link" href="#">Forms</a>
-            <a class="nav-link" href="#">Charts</a>
+            <a class="nav-link" href="#">Link 1</a>
+            <a class="nav-link" href="#">Link 2</a>
+            <a class="nav-link" href="#">Link 3</a>
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
     </div>
@@ -107,12 +96,47 @@
             </li>
             <li class="nav-item border-bottom">
                 <span class="nav-item">
-                    <h3><a class="nav-link" class="color-secondary" href="dropdowns.html">Dropdowns</a></h3>
+                    <h3><a class="nav-link" href="dropdowns.html">Dropdowns</a></h3>
                 </span>
             </li>
             <li class="nav-item border-bottom">
                 <span class="nav-item">
-                    <h3><a class="nav-link" class="color-secondary" href="tabs.html">Tabs</a></h3>
+                    <h3><a class="nav-link" href="tabs.html">Tabs</a></h3>
+                </span>
+            </li>
+            <li class="nav-item border-bottom">
+                <span class="nav-item">
+                    <h3><a class="nav-link" href="notifications.html">Notifications</a></h3>
+                </span>
+            </li>
+            <li class="nav-item border-bottom">
+                <span class="nav-item">
+                    <h3><a class="nav-link" href="tables.html">Tables</a></h3>
+                </span>
+            </li>
+            <li class="nav-item border-bottom">
+                <span class="nav-item">
+                    <h3><a class="nav-link" href="buttons.html">Buttons</a></h3>
+                </span>
+            </li>
+            <li class="nav-item border-bottom">
+                <span class="nav-item">
+                    <h3><a class="nav-link" href="cards.html">Cards</a></h3>
+                </span>
+            </li>
+            <li class="nav-item border-bottom">
+                <span class="nav-item">
+                    <h3><a class="nav-link" href="modals.html">Modals</a></h3>
+                </span>
+            </li>
+            <li class="nav-item border-bottom">
+                <span class="nav-item">
+                    <h3><a class="nav-link" href="tooltips.html">Tooltips</a></h3>
+                </span>
+            </li>
+            <li class="nav-item border-bottom">
+                <span class="nav-item">
+                    <h3><a class="nav-link" href="drag&drop.html">Drag & Drop</a></h3>
                 </span>
             </li>
         </ul>
@@ -125,6 +149,7 @@
             <div class="col-6">
                 <h4 class="pt-2">Fields</h4>
                 <div class="card w-100 card-stripped p-3">
+                    <h4 class="mt-4 mb-1">Height 40px</h4>
                     <div class="custom-input mb-3">
                         <input
                             type="text"
@@ -143,11 +168,17 @@
                             placeholder="Text">
                         <span class="input_error-msg">Сlarifying error message</span>
                     </div>
-                    <div class="custom-input custom-input__search position-relative">
+                    <div class="custom-input custom-input_search position-relative">
                         <input
                             type="text"
                             placeholder="Search">
                         <img src="assets/ico/search.svg" class="icon-search position-absolute">
+                    </div>
+                    <h4 class="mt-4 mb-1">Height 32px: add class 'custom-input__sm'</h4>
+                    <div class="custom-input custom-input__sm mb-3">
+                        <input
+                            type="text"
+                            placeholder="Text">
                     </div>
                 </div>
             </div>
@@ -174,7 +205,12 @@
             <div class="col-6">
                 <h4 class="pt-2">Select</h4>
                 <div class="card w-100 card-stripped p-3">
-                    <select id="secondarySelect" class="selectpicker" data-style="btn">
+                    <select class="selectpicker" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <select class="selectpicker bootstrap-select__b" data-style="btn">
                         <option>Mustard</option>
                         <option>Ketchup</option>
                         <option>Relish</option>

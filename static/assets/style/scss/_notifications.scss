@@ -1,0 +1,118 @@
+.notification-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 0.5s linear;
+}
+.notification.animation-slide-in {
+  animation: right-slide-in 0.5s forwards, bounceIn 0.7s forwards;
+  transform: translateX(100%);
+}
+.notification.animation-slide-out,{
+  animation: right-slide-out 0.5s forwards;
+}
+@keyframes right-slide-in {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes right-slide-out {
+  to {
+    transform: translateX(100%);
+  }
+}
+.notification {
+  transition-property: all;
+  transition-duration: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 10px;
+  &-close{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+    svg {
+      display: none;
+    }
+  }
+  &-body {
+    display: flex;
+    align-items: center;
+  }
+  &-icon {
+    display: inline-block;
+  }
+  &-content {
+    display: inline-block;
+  }
+  &-desc {
+    display: none;
+  }
+  position: relative;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: var(--b-color);
+  border-style: solid;
+  padding: 7px 20px;
+  background: white;
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    top: 9px;
+    width: 18px;
+    height: 18px;
+  }
+  &-title {
+    //margin-left: 28px;
+    color: var(--gray800);
+  }
+  &-error {
+    border-color: var(--red-underline);
+  }
+  &-warning {
+    border-color: var(--orange-underline);
+  }
+  &-info {
+    border-color: var(--blue-underline);
+  }
+  &-success {
+    border-color: var(--green-underline);
+  }
+  &-basic {
+    border-color: var(--purple-outline);
+    box-shadow: 0 2px 4px rgba(84, 51, 181, 0.1), 0 1px 12px rgba(55, 32, 149, 0.08);
+    background: var(--purple-active-bg);
+  }
+
+  &-error::before {
+    background: url("/design-system/static/assets/ico/error_icon.svg");
+  }
+  &-warning::before {
+    background: url("/design-system/static/assets/ico/warning_icon.svg") no-repeat;
+  }
+  &-info::before {
+    background: url("/design-system/static/assets/ico/info_icon.svg");
+  }
+  &-success::before {
+    background: url("/design-system/static/assets/ico/success_icon.svg");
+  }
+}
+
+.notification-body {
+  padding-left: 28px;
+  position: relative;
+  .notification-icon {
+    position: absolute;
+    left: 0;
+  }
+}

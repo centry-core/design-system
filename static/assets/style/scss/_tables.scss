@@ -1,0 +1,283 @@
+.table-borderless {
+  border: 0;
+}
+
+.table-border {
+  border: 1px solid var(--lines) !important;
+}
+
+.table-border th,
+.table-border td,
+.table-border thead th,
+.table-border tbody + tbody {
+  border: 0;
+}
+.table-hover tbody tr:hover {
+  background-color: var(--gray100);
+}
+.thead-light th {
+  background-color: var(--background) !important;
+  border-top: 1px solid var(--lines) !important;
+  border-bottom: 1px solid var(--lines) !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  color: var(--gray600) !important;
+  font-weight: 600;
+  .sortable {
+    &::after {
+      content: '';
+      position: relative;
+      top: 7px;
+      margin-left: 4px;
+      display: inline-block;
+      background: url("/design-system/static/assets/ico/sorting_arrows.svg") no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+    &.asc::after {
+     background: url("/design-system/static/assets/ico/sorting_arrows__down.svg") no-repeat;
+    }
+    &.desc::after {
+      background: url("/design-system/static/assets/ico/sorting_arrows__up.svg") no-repeat;
+    }
+  }
+}
+
+/*
+.params-table td input.form-control {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+*/
+
+.params-table td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.card-body table tr {
+  border-bottom: 1px solid var(--lines);
+}
+
+.card-body table th:first-child .th-inner {
+  padding-left: 20px !important;
+  padding-right: 4px !important;
+}
+
+.card-body table th:last-child .th-inner {
+  padding-right: 20px !important;
+}
+
+.card-body table td:first-child {
+  padding-left: 20px;
+  padding-right: 4px;
+}
+
+.card-body table td:last-child {
+  padding-right: 20px;
+}
+
+.card-body table td {
+  font-size: 12px;
+  font-weight: 300px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.card-body table td {
+  line-height: 18px;
+}
+
+.card-table .card-body table td {
+  line-height: 32px;
+}
+
+.card-table .card-body table th {
+  line-height: 24px;
+}
+
+.card-body .bootstrap-table .fixed-table-container .fixed-table-body {
+  height: unset;
+  min-height: 210px;
+}
+
+.bootstrap-table .fixed-table-container .table thead th .th-inner {
+  padding: 0.5rem;
+}
+
+.card-body .pagination-info {
+  font-size: 12px;
+  font-weight: 300;
+  padding-left: 20px;
+}
+
+.card-table .card-body .pagination-info {
+  padding-left: 0px;
+}
+
+.card-body ul.pagination {
+  padding-right: 20px;
+}
+
+.card-table .card-body ul.pagination {
+  padding-right: 0px;
+}
+
+.card-body ul.pagination li {
+  margin-left: 5px;
+}
+
+.card-body .page-link {
+  font-size: 12px;
+  padding: 4px 8px;
+  height: 24px !important;
+  min-width: 24px;
+  max-width: 24px;
+  font-weight: 400;
+  border-radius: 4px;
+}
+
+.card-body table .bs-checkbox input {
+  font-size: 24px;
+}
+
+td.disabled input {
+  pointer-events: none;
+  color: var(--main-text);
+  background-color: var(--gray100);
+  opacity: 1;
+}
+
+.params-table .thead-light th {
+  background-color: var(--white) !important;
+  border-top: 0 !important;
+}
+
+.params-table tbody tr {
+  border-top: 1px solid var(--lines) !important;
+}
+
+.col.sidebar {
+  -ms-flex: 0 0 260px;
+  flex: 0 0 260px;
+}
+
+.bootstrap-table .fixed-table-pagination > .pagination-detail .pagination-info {
+  line-height: 24px;
+  position: relative;
+  top: 3px;
+}
+
+.card-table .bootstrap-table .fixed-table-pagination > .pagination-detail,
+.card-table .bootstrap-table .fixed-table-pagination > .pagination {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.card-table-sm .bootstrap-table .fixed-table-pagination > .pagination-detail,
+.card-table-sm .bootstrap-table .fixed-table-pagination > .pagination {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.table-list input[type="radio"] {
+  display: none;
+}
+
+.table-list .bs-checkbox {
+  padding: 0;
+  max-width: 2px !important;
+  width: 2px !important;
+}
+
+.table-list tr.selected td {
+  background-color: var(--gray100) !important;
+}
+.table {
+  tbody {
+    tr {
+      td {
+        color: var(--gray800);
+        font-size: 14px;
+      }
+    }
+  }
+}
+.bs-checkbox  {
+  input[type=checkbox] {
+    position: relative;
+    -webkit-appearance: none;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid var(--gray400);
+      border-radius: 4px;
+      background-color: white;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+      cursor: pointer;
+    }
+    &:hover:before {
+      border: 1px solid var(--gray600);
+    }
+    &:checked::before {
+      border-color: var(--purple);
+      background-color: var(--purple);
+      background-image: url("/design-system/static/assets/ico/check-white.svg");
+      background-size: 10px;
+    }
+    &:checked:not(:disabled):hover:before {
+      background-color: var(--purple-hover);
+      border-color: var(--purple-hover);
+    }
+    &:disabled:checked::before {
+      background-color: var(--gray400);
+      border-color: var(--gray400);
+    }
+    &:disabled:not(:checked)::before {
+      border-color: var(--gray400);
+    }
+  }
+}
+.page-item {
+  .page-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray600);
+  }
+}
+
+.page-list {
+  .btn {
+    color: var(--gray800);
+    border-color: transparent;
+    &:hover {
+      transition: all .3s;
+      border: 1px solid var(--gray400);
+      box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
+      border-radius: 4px;
+    }
+  }
+  .btn-secondary:focus {
+    border: 1px solid var(--gray400);
+  }
+  .dropup .dropdown-toggle::after {
+    border-bottom: none;
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat center right;
+    width: 18px;
+    height: 12px;
+    border: 0;
+  }
+  .dropup.show .dropdown-toggle::after {
+    background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
+  }
+}
