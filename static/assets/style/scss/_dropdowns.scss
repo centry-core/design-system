@@ -89,8 +89,11 @@
   height: 12px;
   border: 0;
 }
+.bootstrap-select .dropdown-toggle.disabled::after {
+  background: url("/design-system/static/assets/ico/arrow-down__white.svg") no-repeat center right;
+}
 
-.dropdown-toggle {
+.table .dropdown-toggle {
   background: white !important;
 }
 
@@ -103,19 +106,6 @@
   border: 0;
 }
 
-.main-nav .bootstrap-select .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  width: unset;
-  height: unset;
-  background: transparent;
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
-}
 /* dropdown simple-list*/
 .dropdown_simple-list {
   .complex-list_empty {
@@ -422,7 +412,7 @@ option {
 /* main-select */
 .main-select {
   .btn{
-    background: var(--purple-active-bg);
+    background: var(--purple-active-bg) !important;
     text-transform: uppercase;
     font-weight: bold;
     height: 40px;
@@ -434,8 +424,14 @@ option {
   .btn-projects:hover,
   .btn-projects:active {
     color: white;
-    background-color: var(--purple-hover);
+    background-color: var(--purple-hover) !important;
     border: 0;
+  }
+  &.show .btn-projects {
+    background-color: var(--basic) !important;
+    .dropdown-toggle::after {
+      background: transparent;
+    }
   }
   .dropdown-toggle:hover::after {
     background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat center right;

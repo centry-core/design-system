@@ -14,7 +14,6 @@
 .btn-lg {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 700;
   height: 40px !important;
   padding: 10px 20px 10px 20px;
 }
@@ -22,7 +21,7 @@
 .btn-sm {
   font-size: 12px;
   line-height: 16px;
-  height: 26px !important;
+  height: 28px !important;
   font-weight: 300;
   padding: 5px 15px 5px 15px;
 }
@@ -154,8 +153,8 @@
 .btn-chapters:not(:disabled):not(.disabled):active,
 .show > .btn-chapters.dropdown-toggle {
   color: var(--tabs-btns-icns);
-  background-color: var(--basic-hover);
-  border: 0;
+  background-color: var(--pressed);
+  //border: 0;
 }
 
 .btn-chapters:not(:disabled):not(.disabled).active:focus,
@@ -205,7 +204,7 @@
 .btn-basic.hover,
 .btn-basic:hover {
   color: var(--white);
-  background-color: var(--basic-hover) !important;
+  background-color: var(--basic-hover);
   border: none;
   box-shadow: var(--hover-shadow);
 }
@@ -687,4 +686,88 @@
   border-radius: 50% !important;
   background-color: var(--white);
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn-basic:disabled:hover,
+.btn-basic:disabled {
+  background: var(--gray400);
+}
+
+.select-primary {
+  background: var(--basic);
+  color: white;
+}
+.select-secondary {
+  background: white;
+  color: var(--basic);
+  border: 1px solid var(--basic);
+}
+.bootstrap-select {
+  .select-primary {
+    background: var(--basic);
+    color: white;
+    &:hover {
+      background: var(--purple-hover);
+    }
+  }
+  &.show {
+    .select-primary {
+      background: var(--pressed);
+    }
+  }
+}
+
+.bootstrap-select.disabled {
+  .select-primary {
+    background: var(--gray400);
+  }
+}
+
+.btn-default {
+  color: var(--basic);
+  &:hover {
+    color: var(--basic);
+    border: 1px solid var(--purple-outline);
+  }
+  &:active {
+    color: var(--basic);
+    border: 1px solid var(--pressed);
+  }
+  &:disabled{
+    color: var(--disabled);
+    border: 1px solid transparent;
+  }
+}
+
+.btn-painted {
+  color: var(--text-color);
+  border: 1px solid var(--brd-color);
+  &:hover {
+    color: var(--text-color);
+    box-shadow: 0px 2px 4px rgba(203, 39, 39, 0.1), 0px 1px 12px rgba(190, 29, 29, 0.08);
+  }
+  &:active, &:focus {
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+  }
+  &:disabled {
+    color: var(--disabled);
+    border: 1px solid var(--disabled);
+  }
+}
+
+.btn-icon {
+  padding: 5px 10px;
+}
+.btn-xs {
+  height: 24px;
+  font-size: 11px;
+  padding: 2px 7px;
+}
+.select__sm {
+  .btn {
+    height: 28px;
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
