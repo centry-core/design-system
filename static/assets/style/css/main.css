@@ -3501,4 +3501,59 @@ p {
   color: var(--gray500);
 }
 
+.font-h1 {
+  color: var(--gray800);
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 0;
+}
+
+.font-h2 {
+  color: var(--gray800);
+  font-size: 22px;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+
+.font-h3 {
+  color: var(--gray800);
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.font-h4 {
+  color: var(--gray800);
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.font-h5 {
+  color: var(--gray800);
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.font-h6 {
+  color: var(--gray800);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-uppercase {
+  text-transform: uppercase;
+}
+
 /*# sourceMappingURL=main.css.map */
