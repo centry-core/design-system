@@ -1594,7 +1594,6 @@ td.disabled input {
 .btn-lg {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 700;
   height: 40px !important;
   padding: 10px 20px 10px 20px;
 }
@@ -1602,7 +1601,7 @@ td.disabled input {
 .btn-sm {
   font-size: 12px;
   line-height: 16px;
-  height: 26px !important;
+  height: 28px !important;
   font-weight: 300;
   padding: 5px 15px 5px 15px;
 }
@@ -1734,8 +1733,7 @@ td.disabled input {
 .btn-chapters:not(:disabled):not(.disabled):active,
 .show > .btn-chapters.dropdown-toggle {
   color: var(--tabs-btns-icns);
-  background-color: var(--basic-hover);
-  border: 0;
+  background-color: var(--pressed);
 }
 
 .btn-chapters:not(:disabled):not(.disabled).active:focus,
@@ -1775,13 +1773,6 @@ td.disabled input {
   border: 0;
 }
 
-.btn-projects:not(:disabled):not(.disabled).active,
-.btn-projects:not(:disabled):not(.disabled):active {
-  color: var(--basic);
-  background-color: var(--tabs-btns-icns);
-  border: 0;
-}
-
 .btn-basic {
   color: var(--white);
   background-color: var(--basic);
@@ -1792,7 +1783,7 @@ td.disabled input {
 .btn-basic.hover,
 .btn-basic:hover {
   color: var(--white);
-  background-color: var(--basic-hover) !important;
+  background-color: var(--basic-hover);
   border: none;
   box-shadow: var(--hover-shadow);
 }
@@ -2277,6 +2268,86 @@ td.disabled input {
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+.btn-basic:disabled:hover,
+.btn-basic:disabled {
+  background: var(--gray400);
+}
+
+.select-primary {
+  background: var(--basic);
+  color: white;
+}
+
+.select-secondary {
+  background: white;
+  color: var(--basic);
+  border: 1px solid var(--basic);
+}
+
+.bootstrap-select .select-primary {
+  background: var(--basic);
+  color: white;
+}
+.bootstrap-select .select-primary:hover {
+  background: var(--purple-hover);
+}
+.bootstrap-select.show .select-primary {
+  background: var(--pressed);
+}
+
+.bootstrap-select.disabled .select-primary {
+  background: var(--gray400);
+}
+
+.btn-default {
+  color: var(--basic);
+}
+.btn-default:hover {
+  color: var(--basic);
+  border: 1px solid var(--purple-outline);
+}
+.btn-default:active {
+  color: var(--basic);
+  border: 1px solid var(--pressed);
+}
+.btn-default:disabled {
+  color: var(--disabled);
+  border: 1px solid transparent;
+}
+
+.btn-painted {
+  color: var(--text-color);
+  border: 1px solid var(--brd-color);
+}
+.btn-painted:hover {
+  color: var(--text-color);
+  box-shadow: 0px 2px 4px rgba(203, 39, 39, 0.1), 0px 1px 12px rgba(190, 29, 29, 0.08);
+}
+.btn-painted:active, .btn-painted:focus {
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+.btn-painted:disabled {
+  color: var(--disabled);
+  border: 1px solid var(--disabled);
+}
+
+.btn-icon {
+  padding: 5px 10px;
+}
+
+.btn-xs {
+  height: 24px;
+  font-size: 11px;
+  padding: 2px 7px;
+}
+
+.select__sm .btn {
+  height: 28px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
 /* custom-checkbox */
 .custom-checkbox input[type=checkbox] {
   position: relative;
@@ -2590,20 +2661,39 @@ input[type=range]::-moz-range-thumb {
   border-radius: 4px;
 }
 .bootstrap-select__b .dropdown-toggle {
-  height: 38px;
-  padding: 7px 16px;
+  height: 40px;
+  padding: 8px 16px;
 }
 .bootstrap-select .filter-option-inner-inner {
   color: var(--gray700) !important;
 }
-.bootstrap-select.show:not(.main-select), .bootstrap-select:hover:not(.main-select) {
+.bootstrap-select .dropdown-toggle {
+  border: 1px solid transparent;
+}
+.bootstrap-select .dropdown-toggle.select-secondary {
+  border: 1px solid var(--purple-outline);
+}
+.bootstrap-select.show .dropdown-toggle, .bootstrap-select:hover .dropdown-toggle {
   transition: all 0.3s;
   border: 1px solid var(--gray400);
   box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
   border-radius: 4px;
 }
-.bootstrap-select .dropdown-toggle:focus {
-  outline: none !important;
+.bootstrap-select.show .dropdown-toggle.select-primary, .bootstrap-select:hover .dropdown-toggle.select-primary {
+  border: 1px solid var(--basic);
+  box-shadow: var(--hover-shadow);
+}
+.bootstrap-select.show .dropdown-toggle.select-secondary, .bootstrap-select:hover .dropdown-toggle.select-secondary {
+  border: 1px solid var(--purple-outline);
+  box-shadow: var(--hover-shadow);
+  color: var(--basic);
+}
+.bootstrap-select.show .dropdown-toggle.select-primary.disabled, .bootstrap-select:hover .dropdown-toggle.select-primary.disabled {
+  border: 1px solid var(--gray400);
+}
+.bootstrap-select .dropdown-toggle.select-secondary.disabled {
+  border: 1px solid var(--gray400);
+  color: var(--disabled);
 }
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
@@ -2716,6 +2806,14 @@ input[type=range]::-moz-range-thumb {
   border: 0;
 }
 
+.bootstrap-select .dropdown-toggle.disabled::after {
+  background: url("/design-system/static/assets/ico/arrow-down__white.svg") no-repeat center right;
+}
+
+.table .dropdown-toggle {
+  background: white !important;
+}
+
 .bootstrap-select .dropdown-toggle[aria-expanded=true]::after {
   content: "";
   display: inline-block;
@@ -2723,20 +2821,6 @@ input[type=range]::-moz-range-thumb {
   width: 18px;
   height: 12px;
   border: 0;
-}
-
-.main-nav .bootstrap-select .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  width: unset;
-  height: unset;
-  background: transparent;
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
 }
 
 /* dropdown simple-list*/
@@ -2990,9 +3074,32 @@ input[type=range]::-moz-range-thumb {
   padding: 4px 16px;
 }
 
+.table-selectpicker {
+  height: 40px;
+  padding: 2px 16px;
+  -webkit-appearance: none;
+  width: 100%;
+  -moz-appearance: none;
+  outline: none;
+  background: white;
+  cursor: pointer;
+  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat;
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+}
+.table-selectpicker:focus {
+  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+}
+
+option {
+  display: inline-block;
+  height: 40px !important;
+  padding: 8px 16px !important;
+  background: red;
+}
+
 /* main-select */
 .main-select .btn {
-  background: var(--purple-active-bg);
+  background: var(--purple-active-bg) !important;
   text-transform: uppercase;
   font-weight: bold;
   height: 40px;
@@ -3001,10 +3108,17 @@ input[type=range]::-moz-range-thumb {
 .main-select .dropdown-toggle::after {
   background: url(/design-system/static/assets/ico/arrow-down__purple.svg) no-repeat center right;
 }
-.main-select .btn-projects:hover {
+.main-select .btn-projects:hover,
+.main-select .btn-projects:active {
   color: white;
-  background-color: var(--purple-hover);
+  background-color: var(--purple-hover) !important;
   border: 0;
+}
+.main-select.show .btn-projects {
+  background-color: var(--basic) !important;
+}
+.main-select.show .btn-projects .dropdown-toggle::after {
+  background: transparent;
 }
 .main-select .dropdown-toggle:hover::after {
   background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat center right;
@@ -3385,6 +3499,61 @@ p {
 
 .fas.fa-gray {
   color: var(--gray500);
+}
+
+.font-h1 {
+  color: var(--gray800);
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 0;
+}
+
+.font-h2 {
+  color: var(--gray800);
+  font-size: 22px;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+
+.font-h3 {
+  color: var(--gray800);
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.font-h4 {
+  color: var(--gray800);
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.font-h5 {
+  color: var(--gray800);
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.font-h6 {
+  color: var(--gray800);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-uppercase {
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */

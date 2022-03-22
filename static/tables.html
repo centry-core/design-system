@@ -418,6 +418,149 @@
             </table>
         </div>
     </div>
+    <div class="card card-12 card-table">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-4">
+                    <h3>Table & Inputs</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table
+                class="table table-border"
+                id="tests-list-inputs"
+                data-toggle="table"
+                data-unique-id="id"
+                data-data='{
+                "total": 1 ,
+                "rows": [
+                    {
+                        "id": 4,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "action"
+                    },
+                    {
+                        "id": 3,
+                        "project_id": 13,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "description"
+                    },
+                    {
+                        "id": 2,
+                        "project_id": 76,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "action"
+                    },
+                    {
+                        "id": 1,
+                        "project_id": 163,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "description"
+                    },
+                    {
+                        "id": 5,
+                        "project_id": 736,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "action"
+                    },
+                    {
+                        "id": 6,
+                        "project_id": 1653,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "description"
+                    }
+                ]
+                }'>
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" data-checkbox="true"></th>
+                            <th data-visible="false" data-field="id">index</th>
+                            <th scope="col" data-field="name">Name</th>
+                            <th scope="col" data-sortable="true" data-field="entrypoint">Entrypoint</th>
+                            <th scope="col" data-field="job_type" data-formatter=dataTypeFormatter>UUID</th>
+                            <th scope="col" data-field="emails" data-formatter=inputFormatter>Tool</th>
+                            <th scope="col" data-align="right" data-formatter=actionFormatter>Actions</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div class="card card-12 card-table-sm">
         <div class="card-header">
             <div class="row">
@@ -438,7 +581,7 @@
         </div>
         <div class="card-body">
             <table class="table table-borderless"
-                id="tests-list"
+                id="tests-list-2"
                 data-toggle="table"
                 data-unique-id="id"
                 data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
@@ -556,7 +699,7 @@
                         "job_type": "perfmeter"
                     }
                 ]
-            }' data-page-size=5 data-pagination="true" data-unique-id="id">
+            }' data-page-size=5 data-pagination="true">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col" data-checkbox="true"></th>

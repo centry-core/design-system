@@ -37,7 +37,7 @@
 <nav class="navbar navbar-expand-xl main-nav">
     <div class="d-flex chapters">
         <div class="logo"><img src="assets/ico/logo.svg"></div>
-        <select id="chapterSelect" class="selectpicker" data-style="btn-chapters">
+        <select class="selectpicker" data-style="btn-chapters">
             <option>Mustard</option>
             <option>Ketchup</option>
             <option>Relish</option>
@@ -55,13 +55,6 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
     </div>
-
-    <select id="projectSelect" class="selectpicker" data-style="btn-projects" data-dropdown-align-right="true">
-        <option>Mustard</option>
-        <option>Ketchup</option>
-        <option>Relish</option>
-        <option>Some long ass creepy name</option>
-    </select>
     <div class="vl"></div>
     <div class="dropdown ml-1">
         <button class="btn btn-primary dropdown-toggle" type="button" id="userDropDown" data-toggle="dropdown"
@@ -286,15 +279,17 @@
                 <h4 class="pt-2">Main section select</h4>
                 <div class="card w-100 mr-2 card-stripped p-2">
                     <div class="d-flex">
-                        <select class="selectpicker main-select" data-style="btn-projects" data-dropdown-align-right="true">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                            <option>Some long ass creepy name</option>
-                        </select>
+                        <nav class="navbar navbar-expand-xl main-nav">
+                            <div class="d-flex chapters">
+                                <select class="selectpicker" data-style="btn-chapters">
+                                    <option>Mustard</option>
+                                    <option>Ketchup</option>
+                                    <option>Relish</option>
+                                </select>
+                            </div>
+                        </nav>
                     </div>
                 </div>
-
             </div>
             <div class="col-4">
                 <h4 class="pt-2">Action Buttons</h4>
