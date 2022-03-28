@@ -1573,14 +1573,12 @@
         function attachEvent(events, element, callback, data) {
             // This function can be used to 'filter' events to the slider.
             // element is a node, not a nodeList
-
             var method = function(e) {
                 e = fixEvent(e, data.pageOffset, data.target || element);
                 const getBackgroundSize = (currentValue) => {
                     const min = 0;
                     const max = 6000;
                     const size = (currentValue - min) / (max - min) * 10;
-                    console.log(size, 'SIZE')
                     return size;
                 }
 
@@ -1916,6 +1914,7 @@
 
         // Move closest handle to tapped location.
         function eventTap(event) {
+            console.log('TAP');
             // The tap event shouldn't propagate up
             event.stopPropagation();
 
