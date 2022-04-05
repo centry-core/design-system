@@ -1094,10 +1094,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   height: 10px;
 }
 
-.noUi-marker-horizontal.noUi-marker-large {
-  height: 15px;
-}
-
 .noUi-pips-vertical {
   padding: 0 10px;
   height: 100%;
@@ -1122,10 +1118,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .noUi-marker-vertical.noUi-marker-sub {
   width: 10px;
-}
-
-.noUi-marker-vertical.noUi-marker-large {
-  width: 15px;
 }
 
 .noUi-tooltip {
@@ -1176,7 +1168,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .noUi-connect {
-  background: #5e72e4;
+  background: var(--basic);
   box-shadow: none;
 }
 
@@ -2533,7 +2525,7 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type=range]::-webkit-slider-runnable-track {
   height: 6px;
-  background: linear-gradient(to right, var(--purple), var(--purple)), #D7D7D7;
+  background: linear-gradient(to right, var(--purple), var(--purple)), var(--borders);
   background-size: var(--background-range-size, 0%) 100%;
   background-repeat: no-repeat;
   border-radius: 2px;
@@ -4080,7 +4072,7 @@ label {
   display: none;
 }
 
-.noUi-marker.noUi-marker-horizontal.noUi-marker-large {
+#vuh-slider .noUi-marker.noUi-marker-horizontal.noUi-marker-large {
   top: -9px;
   width: 12px;
   height: 12px;
@@ -4088,6 +4080,11 @@ label {
   box-shadow: none;
   cursor: pointer;
   background-color: #dee2e6;
+}
+
+#vuh-time-picker .noUi-marker.noUi-marker-horizontal.noUi-marker-large {
+  width: 0;
+  height: 0;
 }
 
 .noUi-value.noUi-value-horizontal.noUi-value-large {
