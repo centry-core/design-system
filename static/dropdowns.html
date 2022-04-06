@@ -37,7 +37,7 @@
 <nav class="navbar navbar-expand-xl main-nav">
     <div class="d-flex chapters">
         <div class="logo"><img src="assets/ico/logo.svg"></div>
-        <select id="chapterSelect" class="selectpicker" data-style="btn-chapters">
+        <select class="selectpicker" data-style="btn-chapters">
             <option>Mustard</option>
             <option>Ketchup</option>
             <option>Relish</option>
@@ -55,13 +55,6 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
     </div>
-
-    <select id="projectSelect" class="selectpicker" data-style="btn-projects" data-dropdown-align-right="true">
-        <option>Mustard</option>
-        <option>Ketchup</option>
-        <option>Relish</option>
-        <option>Some long ass creepy name</option>
-    </select>
     <div class="vl"></div>
     <div class="dropdown ml-1">
         <button class="btn btn-primary dropdown-toggle" type="button" id="userDropDown" data-toggle="dropdown"
@@ -75,72 +68,50 @@
     </div>
 </nav>
 <main class="d-flex align-items-start" id="app">
-    <aside class="m-3 p-3 card position-sticky" style="width: 200px">
-        <ul class="nav flex-column" id="accordion1">
-            <li class="nav-item border-bottom" id="heading1">
-                <span class="nav-item" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapseOne1">
-                    <h3 class="nav-link">Form</h3>
-                </span>
-                <ul id="collapse1" class="nav collapse" aria-labelledby="heading1" data-parent="#accordion1">
-                    <li class="nav-item">
-                        <a class="nav-link" href="controls.html">
-                            <span>Controls</span>
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link color-success" href="inputs.html">
-                            <span>Inputs</span>
-                        </a>
-                    </li>
-                </ul>
+    <aside class="m-3 card position-sticky" style="width: 200px">
+        <ul class="custom-nav flex-column" id="accordion1">
+            <li class="custom-nav_item">
+                <a class="" href="controls.html">Controls</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="dropdowns.html">Dropdowns</a></h3>
-                </span>
+            <li class="custom-nav_item">
+                <a class="" href="inputs.html">Inputs</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="tabs.html">Tabs</a></h3>
-                </span>
+            <li class="custom-nav_item active">
+                <a class="" href="dropdowns.html">Dropdowns</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="notifications.html">Notifications</a></h3>
-                </span>
+            <li class="custom-nav_item">
+                <a class="" href="tabs.html">Tabs</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="tables.html">Tables</a></h3>
-                </span>
+            <li class="custom-nav_item">
+                <a class="" href="notifications.html">Notifications</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="buttons.html">Buttons</a></h3>
-                </span>
+            <li class="custom-nav_item">
+                <a class="" href="tables.html">Tables</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="cards.html">Cards</a></h3>
-                </span>
+            <li class="custom-nav_item">
+                <a class="" href="buttons.html">Buttons</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="modals.html">Modals</a></h3>
-                </span>
+            <li class="custom-nav_item">
+                <a class="" href="cards.html">Cards</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="tooltips.html">Tooltips</a></h3>
-                </span>
+            <li class="custom-nav_item">
+                <a class="" href="modals.html">Modals</a>
             </li>
-            <li class="nav-item border-bottom">
-                <span class="nav-item">
-                    <h3><a class="nav-link" href="drag&drop.html">Drag & Drop</a></h3>
-                </span>
+            <li class="custom-nav_item">
+                <a class="" href="tooltips.html">Tooltips</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="drag&drop.html">Drag & Drop</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="slider.html">Slider</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="typography.html">Typography</a>
             </li>
         </ul>
     </aside>
+
     <div id="dropdowns" class="card mt-3 w-100">
         <div class="card-header">
             <h1>Dropdowns</h1>
@@ -286,15 +257,17 @@
                 <h4 class="pt-2">Main section select</h4>
                 <div class="card w-100 mr-2 card-stripped p-2">
                     <div class="d-flex">
-                        <select class="selectpicker main-select" data-style="btn-projects" data-dropdown-align-right="true">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                            <option>Some long ass creepy name</option>
-                        </select>
+                        <nav class="navbar navbar-expand-xl main-nav">
+                            <div class="d-flex chapters">
+                                <select class="selectpicker" data-style="btn-chapters">
+                                    <option>Mustard</option>
+                                    <option>Ketchup</option>
+                                    <option>Relish</option>
+                                </select>
+                            </div>
+                        </nav>
                     </div>
                 </div>
-
             </div>
             <div class="col-4">
                 <h4 class="pt-2">Action Buttons</h4>

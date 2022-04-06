@@ -32,12 +32,11 @@
             crossorigin="anonymous"></script>
 </head>
 
-
 <body>
 <nav class="navbar navbar-expand-xl main-nav">
     <div class="d-flex chapters">
         <div class="logo"><img src="assets/ico/logo.svg"></div>
-        <select id="chapterSelect" class="selectpicker" data-style="btn-chapters">
+        <select class="selectpicker" data-style="btn-chapters">
             <option>Mustard</option>
             <option>Ketchup</option>
             <option>Relish</option>
@@ -74,7 +73,7 @@
         </div>
     </div>
 </nav>
-<main class="d-flex align-items-start">
+<main class="d-flex align-items-start" id="app">
     <aside class="m-3 card position-sticky" style="width: 200px">
         <ul class="custom-nav flex-column" id="accordion1">
             <li class="custom-nav_item">
@@ -107,13 +106,13 @@
             <li class="custom-nav_item">
                 <a class="" href="tooltips.html">Tooltips</a>
             </li>
-            <li class="custom-nav_item active">
+            <li class="custom-nav_item">
                 <a class="" href="drag&drop.html">Drag & Drop</a>
             </li>
             <li class="custom-nav_item">
                 <a class="" href="slider.html">Slider</a>
             </li>
-            <li class="custom-nav_item">
+            <li class="custom-nav_item active">
                 <a class="" href="typography.html">Typography</a>
             </li>
         </ul>
@@ -121,24 +120,36 @@
 
     <div class="card mt-3 w-100">
         <div class="card-header">
-            <h1> Drag & Drop </h1>
+            <h1>Typography</h1>
         </div>
-        <div class="card-body row">
-            <div class="col-6">
-                <h4 class="pt-2">Fields</h4>
-                <div class="card w-100 card-stripped p-3">
-                    <div class="mb-3">
-                        <div id="dragDropArea" class="drop-area">
-                            <input type="file" id="dropInput" multiple accept="image/*" onchange="handleFiles(this.files)">
-                            <label for="dropInput" class="mb-0 d-flex align-items-center justify-content-center">Drag & drop file or <span>&nbsp;browse</span></label>
-                        </div>
-                        <div id="previewArea" class="preview-area">
-                            <div class="preview-area_item preview-area_loader">
-                                <span>Uploading File 1</span>
-                            </div>
-                            <div class="preview-area_item preview-area_close">
-                                <span>Uploading File 1</span>
-                            </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h4 class="pt-2">Buttons 40px</h4>
+                    <div class="d-flex">
+                        <div class="card w-100 p-4 card-stripped">
+                            <h4 class="mb-1">H1 (36/44)</h4>
+                            <p class="font-h1 font-bold"><b>BOLD: </b>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H2 (22/32)</h4>
+                            <p class="font-h2 font-bold"><b>BOLD: </b>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H3 (18/28)</h4>
+                            <p class="font-h3 font-bold"><b>BOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h3"><b>REGULAR:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H4 (16/24)</h4>
+                            <p class="font-h4 font-bold"><b>BOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h4"><b>REGULAR:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H5 (14/24)</h4>
+                            <p class="font-h5 font-bold"><b>BOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h5 font-bold font-uppercase"><b>BOLD UPPERCASE:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h5"><b>REGULAR:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h5 font-semibold"><b>SEMIBOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h5 font-semibold font-uppercase"><b>SEMIBOLD UPPERCASE:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H6 (14/24)</h4>
+                            <p class="font-h6 font-bold"><b>BOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h6 font-bold font-uppercase"><b>BOLD UPPERCASE:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h6"><b>REGULAR:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h6 font-semibold"><b>SEMIBOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h6 font-semibold font-uppercase"><b>SEMIBOLD UPPERCASE:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
                         </div>
                     </div>
                 </div>
@@ -146,9 +157,8 @@
         </div>
     </div>
 </main>
-<script src="https://unpkg.com/vue@next"></script>
 <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="assets/js/select.js"></script>
-<script src="assets/js/drag&drop.js"></script>
 </body>
+
 </html>
