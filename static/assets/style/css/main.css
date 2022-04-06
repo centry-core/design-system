@@ -1341,15 +1341,15 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   top: 7px;
   margin-left: 4px;
   display: inline-block;
-  background: url("/design-system/static/assets/ico/sorting_arrows.svg") no-repeat;
+  background: url("../../../assets/ico/sorting_arrows.svg") no-repeat;
   width: 20px;
   height: 20px;
 }
 .thead-light th .sortable.asc::after {
-  background: url("/design-system/static/assets/ico/sorting_arrows__down.svg") no-repeat;
+  background: url("../../../assets/ico/sorting_arrows__down.svg") no-repeat;
 }
 .thead-light th .sortable.desc::after {
-  background: url("/design-system/static/assets/ico/sorting_arrows__up.svg") no-repeat;
+  background: url("../../../assets/ico/sorting_arrows__up.svg") no-repeat;
 }
 
 /*
@@ -1532,7 +1532,7 @@ td.disabled input {
 .bs-checkbox input[type=checkbox]:checked::before {
   border-color: var(--purple);
   background-color: var(--purple);
-  background-image: url("/design-system/static/assets/ico/check-white.svg");
+  background-image: url("../../../assets/ico/check-white.svg");
   background-size: 10px;
 }
 .bs-checkbox input[type=checkbox]:checked:not(:disabled):hover:before {
@@ -1572,13 +1572,13 @@ td.disabled input {
   position: relative;
   top: 5px;
   display: inline-block;
-  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat center right;
+  background: url(../../../assets/ico/arrow-down.svg) no-repeat center right;
   width: 18px;
   height: 12px;
   border: 0;
 }
 .page-list .dropup.show .dropdown-toggle::after {
-  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
+  background: url(../../../assets/ico/arrow-up.svg) no-repeat center right;
 }
 
 .d-flex .btn-32 {
@@ -2381,7 +2381,7 @@ td.disabled input {
 .custom-checkbox input[type=checkbox]:checked::before {
   border-color: var(--purple);
   background-color: var(--purple);
-  background-image: url("/design-system/static/assets/ico/check-white.svg");
+  background-image: url("../../../assets/ico/check-white.svg");
   background-size: 10px;
 }
 .custom-checkbox input[type=checkbox]:checked:not(:disabled):hover:before {
@@ -2398,7 +2398,7 @@ td.disabled input {
 .custom-checkbox__minus input[type=checkbox]::before {
   border-color: var(--purple);
   background-color: var(--purple);
-  background-image: url("../../../../../static/assets/ico/minus.svg");
+  background-image: url("../../../assets/ico/minus.svg");
   background-size: 10px;
 }
 
@@ -2621,7 +2621,7 @@ input[type=range]::-moz-range-thumb {
 .custom-input.invalid-input input {
   border-color: var(--error);
   padding-right: 40px;
-  background-image: url("/design-system/static/assets/ico/alarm.svg");
+  background-image: url("../../../assets/ico/alarm.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
   background-size: 16px;
@@ -2800,7 +2800,7 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .dropdown-item:active::after {
   content: "";
   display: inline-block;
-  background: url("/design-system/static/assets/ico/check.svg") no-repeat top right;
+  background: url("../../../assets/ico/check.svg") no-repeat top right;
   width: 18px;
   height: 12px;
 }
@@ -2815,14 +2815,14 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .dropdown-toggle::after {
   content: "";
   display: inline-block;
-  background: url("/design-system/static/assets/ico/arrow-down.svg") no-repeat center right;
+  background: url("../../../assets/ico/arrow-down.svg") no-repeat center right;
   width: 18px;
   height: 12px;
   border: 0;
 }
 
 .bootstrap-select .dropdown-toggle.disabled::after {
-  background: url("/design-system/static/assets/ico/arrow-down__white.svg") no-repeat center right;
+  background: url("../../../assets/ico/arrow-down__white.svg") no-repeat center right;
 }
 
 .table .dropdown-toggle {
@@ -2832,7 +2832,7 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .dropdown-toggle[aria-expanded=true]::after {
   content: "";
   display: inline-block;
-  background: url("/design-system/static/assets/ico/arrow-up.svg") no-repeat center right;
+  background: url("../../../assets/ico/arrow-up.svg") no-repeat center right;
   width: 18px;
   height: 12px;
   border: 0;
@@ -3006,7 +3006,7 @@ input[type=range]::-moz-range-thumb {
   display: inline-block;
   content: "";
   border: none;
-  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat bottom right;
+  background: url(../../../assets/ico/arrow-down.svg) no-repeat bottom right;
   width: 23px;
   height: 8px;
   vertical-align: 0;
@@ -3031,7 +3031,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .btn-select.dropdown-toggle[aria-expanded=true]::after {
-  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
+  background: url(../../../assets/ico/arrow-up.svg) no-repeat center right;
 }
 
 .filter-option-inner-inner > i {
@@ -3079,7 +3079,7 @@ input[type=range]::-moz-range-thumb {
   border: solid 1px var(--gray500);
   border-radius: 4px;
   padding-left: 32px;
-  background: url(/design-system/static/assets/ico/search.svg) no-repeat 8px 7px;
+  background: url(../../../assets/ico/search.svg) no-repeat 8px 7px;
 }
 .bootstrap-select .bs-searchbox .form-control:focus {
   box-shadow: none;
@@ -3098,11 +3098,11 @@ input[type=range]::-moz-range-thumb {
   outline: none;
   background: white;
   cursor: pointer;
-  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat;
+  background: url(../../../assets/ico/arrow-down.svg) no-repeat;
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
 }
 .table-selectpicker:focus {
-  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background: url(../../../assets/ico/arrow-up.svg) no-repeat calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
 }
 
 option {
@@ -3136,14 +3136,14 @@ option {
   background: transparent;
 }
 .main-select .dropdown-toggle:hover::after {
-  background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat center right;
+  background: url(../../../assets/ico/arrow-down.svg) no-repeat center right;
 }
 .main-select.show .btn-projects {
   background-color: var(--basic);
   color: white;
 }
 .main-select.show .dropdown-toggle::after {
-  background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
+  background: url(../../../assets/ico/arrow-up.svg) no-repeat center right;
 }
 .main-select .dropdown-menu li a {
   font-weight: bold;
@@ -3266,7 +3266,7 @@ option {
   height: 20px;
   margin-left: 20px;
   cursor: pointer;
-  background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+  background: url("../../../assets/ico/close_notify_icon.svg") no-repeat;
 }
 .notification-close svg {
   display: none;
@@ -3314,16 +3314,16 @@ option {
   background: var(--purple-active-bg);
 }
 .notification-error::before {
-  background: url("/design-system/static/assets/ico/error_icon.svg");
+  background: url("../../../assets/ico/error_icon.svg");
 }
 .notification-warning::before {
-  background: url("/design-system/static/assets/ico/warning_icon.svg") no-repeat;
+  background: url("../../../assets/ico/warning_icon.svg") no-repeat;
 }
 .notification-info::before {
-  background: url("/design-system/static/assets/ico/info_icon.svg");
+  background: url("../../../assets/ico/info_icon.svg");
 }
 .notification-success::before {
-  background: url("/design-system/static/assets/ico/success_icon.svg");
+  background: url("../../../assets/ico/success_icon.svg");
 }
 
 .notification-body {
@@ -3476,7 +3476,7 @@ p {
   height: 20px;
   margin-left: 20px;
   cursor: pointer;
-  background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+  background: url("../../../assets/ico/close_notify_icon.svg") no-repeat;
 }
 
 .tooltip__info > .tooltip-inner {

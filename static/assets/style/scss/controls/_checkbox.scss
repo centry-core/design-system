@@ -24,7 +24,7 @@
     &:checked::before {
       border-color: var(--purple);
       background-color: var(--purple);
-      background-image: url("/design-system/static/assets/ico/check-white.svg");
+      background-image: url("../../../assets/ico/check-white.svg");
       background-size: 10px;
     }
     &:checked:not(:disabled):hover:before {
@@ -43,7 +43,7 @@
     input[type=checkbox]::before {
       border-color: var(--purple);
       background-color: var(--purple);
-      background-image: url("../../../../../static/assets/ico/minus.svg");
+      background-image: url("../../../assets/ico/minus.svg");
       background-size: 10px;
     }
   }
