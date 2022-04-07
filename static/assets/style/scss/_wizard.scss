@@ -440,15 +440,22 @@ label {
   background: var(--white)!important;
   display: none;
 }
-
-.noUi-marker.noUi-marker-horizontal.noUi-marker-large {
-  top: -9px;
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  box-shadow: none;
-  cursor: pointer;
-  background-color: #dee2e6;
+#vuh-slider {
+  .noUi-marker.noUi-marker-horizontal.noUi-marker-large {
+    top: -9px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    box-shadow: none;
+    cursor: pointer;
+    background-color: #dee2e6;
+  }
+}
+#vuh-time-picker {
+  .noUi-marker.noUi-marker-horizontal.noUi-marker-large {
+    width: 0;
+    height: 0;
+  }
 }
 
 .noUi-value.noUi-value-horizontal.noUi-value-large {

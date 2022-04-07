@@ -194,10 +194,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   height: 10px;
 }
 
-.noUi-marker-horizontal.noUi-marker-large {
-  height: 15px;
-}
-
 .noUi-pips-vertical {
   padding: 0 10px;
   height: 100%;
@@ -222,10 +218,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .noUi-marker-vertical.noUi-marker-sub {
   width: 10px;
-}
-
-.noUi-marker-vertical.noUi-marker-large {
-  width: 15px;
 }
 
 .noUi-tooltip {
@@ -276,7 +268,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .noUi-connect {
-  background: #5e72e4;
+  background: var(--basic);
   box-shadow: none;
 }
 
