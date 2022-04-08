@@ -22,6 +22,44 @@ function updateCell(el, row, field) {
     $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
 }
 
+const SEVERITY = [
+        {
+            className: "colored-select-red",
+            title: "CRITICAL"
+        },
+        {
+            className: "colored-select-orange",
+            title: "HIGH"
+        }
+    ]
+// <select className="selectpicker btn-colored-select mr-2"
+//         data-style="btn-colored">
+//     <option className="colored-select-red">CRITICAL</option>
+//     <option className="colored-select-orange">HIGH</option>
+//     <option className="colored-select-yellow">MEDIUM</option>
+//     <option className="colored-select-green">LOW</option>
+//     <option className="colored-select-blue">INFO</option>
+//     <option>UNEXPECTED</option>
+//     <option className="colored-select-darkblue">IGNORE</option>
+// </select>
+function formatterSeverity(value, row, index, field) {
+    const options = SEVERITY.map(item =>
+        `<option
+            className=${item.className}
+            value=${item.title}
+            ${item.title.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
+        >
+            ${item.title}
+        </option>
+        `
+    )
+    return `
+        <select class="selectpicker btn-colored-select" data-style="btn">
+            ${options.join('')}
+        </select>
+    `
+}
+
 function dataTypeFormatter(value, row, index, field) {
     const options = ["name", "default", "type", "description", "action"].map(item =>
         `<option
