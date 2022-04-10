@@ -30,15 +30,15 @@
       top: 7px;
       margin-left: 4px;
       display: inline-block;
-      background: url("/design-system/static/assets/ico/sorting_arrows.svg") no-repeat;
+      background: url("../../../assets/ico/sorting_arrows.svg") no-repeat;
       width: 20px;
       height: 20px;
     }
     &.asc::after {
-     background: url("/design-system/static/assets/ico/sorting_arrows__down.svg") no-repeat;
+     background: url("../../../assets/ico/sorting_arrows__down.svg") no-repeat;
     }
     &.desc::after {
-      background: url("/design-system/static/assets/ico/sorting_arrows__up.svg") no-repeat;
+      background: url("../../../assets/ico/sorting_arrows__up.svg") no-repeat;
     }
   }
 }
@@ -228,7 +228,7 @@ td.disabled input {
     &:checked::before {
       border-color: var(--purple);
       background-color: var(--purple);
-      background-image: url("/design-system/static/assets/ico/check-white.svg");
+      background-image: url("../../../assets/ico/check-white.svg");
       background-size: 10px;
     }
     &:checked:not(:disabled):hover:before {
@@ -272,12 +272,12 @@ td.disabled input {
     position: relative;
     top: 5px;
     display: inline-block;
-    background: url(/design-system/static/assets/ico/arrow-down.svg) no-repeat center right;
+    background: url(../../../assets/ico/arrow-down.svg) no-repeat center right;
     width: 18px;
     height: 12px;
     border: 0;
   }
   .dropup.show .dropdown-toggle::after {
-    background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
+    background: url(../../../assets/ico/arrow-up.svg) no-repeat center right;
   }
 }
