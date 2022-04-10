@@ -13,6 +13,16 @@
   background-image: none;
 }
 
+.dropdown-menu {
+  padding: 4px 0 !important;
+}
+.dropdown-menu .btn {
+  font-size: 12px;
+  line-height: 16px;
+  height: auto;
+  font-weight: 600;
+}
+
 /* common */
 /* latin */
 @font-face {
@@ -1065,7 +1075,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .noUi-marker-large,
 .noUi-marker-sub {
-  background: #aaa;
+  background: #eef3f6;
 }
 
 .noUi-pips-horizontal {
@@ -1145,7 +1155,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .noUi-target {
-  background: linear-gradient(to right, var(--purple), var(--purple)), #dee2e6;
+  background: linear-gradient(to right, var(--purple), var(--purple)), #eef3f6;
   background-size: var(--background-range-size, 0%) 100%;
   background-repeat: no-repeat;
   border-radius: 5px;
@@ -1237,7 +1247,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 [disabled].noUi-connect,
 [disabled] .noUi-connect {
-  background: #b2b2b2;
+  background: #cad1d7;
 }
 
 [disabled] .noUi-handle,
@@ -1579,25 +1589,26 @@ td.disabled input {
 
 .btn {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   height: 32px;
-  font-weight: 400;
   white-space: nowrap !important;
-  padding: 6px 15px 6px 15px;
+  padding: 4px 15px 4px 15px;
+  font-weight: 600;
 }
 
 .btn-lg {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   height: 40px !important;
-  padding: 10px 20px 10px 20px;
+  padding: 8px 20px 8px 20px;
+  font-weight: 700;
 }
 
 .btn-sm {
   font-size: 12px;
   line-height: 16px;
   height: 28px !important;
-  font-weight: 300;
+  font-weight: 600;
   padding: 5px 15px 5px 15px;
 }
 
@@ -1815,6 +1826,7 @@ td.disabled input {
 
 .btn-secondary {
   color: var(--basic);
+  font-weight: 600;
   background-color: var(--white);
   border: 1px solid var(--basic60);
   text-transform: capitalize;
@@ -2355,8 +2367,8 @@ td.disabled input {
 .custom-checkbox input[type=checkbox]:before {
   content: "";
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
   flex-grow: 0;
   border: 1px solid var(--gray400);
@@ -2525,7 +2537,7 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type=range]::-webkit-slider-runnable-track {
   height: 6px;
-  background: linear-gradient(to right, var(--purple), var(--purple)), var(--borders);
+  background: linear-gradient(to right, var(--purple), var(--purple)), #eef3f6;
   background-size: var(--background-range-size, 0%) 100%;
   background-repeat: no-repeat;
   border-radius: 2px;
@@ -2562,6 +2574,14 @@ input[type=range]::-moz-range-thumb {
 .custom-input {
   color: var(--gray800);
 }
+.custom-input input::-webkit-outer-spin-button,
+.custom-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.custom-input input[type=number] {
+  -moz-appearance: textfield;
+}
 .custom-input .label {
   font-size: 14px !important;
   line-height: 24px;
@@ -2580,6 +2600,9 @@ input[type=range]::-moz-range-thumb {
   outline: none;
   font-size: 14px;
   line-height: 24px;
+}
+.custom-input.input-wizard {
+  text-align: right;
 }
 .custom-input__sm input {
   padding: 3px 12px;
@@ -2604,7 +2627,7 @@ input[type=range]::-moz-range-thumb {
 }
 .custom-input_search__sm .icon-search {
   left: 12px;
-  top: 6px;
+  top: 8px;
   color: var(--gray500);
 }
 .custom-input .input_error-msg {
@@ -2660,9 +2683,9 @@ input[type=range]::-moz-range-thumb {
   width: auto !important;
   border: 1px solid transparent;
 }
-.bootstrap-select.show .dropdown-toggle, .bootstrap-select:hover .dropdown-toggle {
+.bootstrap-select.show .dropdown-toggle:not(.btn-chapters), .bootstrap-select:hover .dropdown-toggle:not(.btn-chapters) {
   transition: all 0.3s;
-  border: 1px solid var(--gray400);
+  border: 1px solid #cad1d7;
   box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
   border-radius: 4px;
 }
@@ -2712,7 +2735,7 @@ input[type=range]::-moz-range-thumb {
   color: var(--gray600);
   font-size: 12px;
   line-height: 24px;
-  padding: 4px 16px;
+  padding: 8px 16px;
   border-bottom: solid 1px var(--gray200);
 }
 .custom-tabs a.active {
@@ -2734,6 +2757,11 @@ input[type=range]::-moz-range-thumb {
 .dropdown-menu.show .dropdown-item {
   font-size: 14px;
   line-height: 24px;
+}
+
+.btn-colored-select .dropdown-item {
+  font-size: 12px !important;
+  line-height: 16px !important;
 }
 
 .bootstrap-select .dropdown-toggle:focus,
@@ -3183,6 +3211,7 @@ option {
 
 .tree > .treejs > .treejs-nodes {
   padding-left: 0 !important;
+  padding-right: 16px;
 }
 
 .treejs-node.treejs-placeholder {
@@ -3453,14 +3482,16 @@ p {
   padding: 4px 16px;
   font-size: 14px;
   line-height: 24px;
+  text-align: left;
 }
 
 .tooltip__info {
+  padding: 0;
   position: relative;
 }
 
 .tooltip-close {
-  right: 20px;
+  right: 10px;
   top: 10px;
   position: absolute;
   display: inline-block;
@@ -3509,42 +3540,42 @@ p {
 }
 
 .font-h1 {
-  color: var(--gray800);
+  color: #32325d;
   font-size: 36px;
   line-height: 44px;
   margin-bottom: 0;
 }
 
 .font-h2 {
-  color: var(--gray800);
+  color: #32325d;
   font-size: 22px;
   line-height: 32px;
   margin-bottom: 0;
 }
 
 .font-h3 {
-  color: var(--gray800);
+  color: #32325d;
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 0;
 }
 
 .font-h4 {
-  color: var(--gray800);
+  color: #32325d;
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 0;
 }
 
 .font-h5 {
-  color: var(--gray800);
+  color: #32325d;
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
 }
 
 .font-h6 {
-  color: var(--gray800);
+  color: #32325d;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
@@ -3557,6 +3588,10 @@ p {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-weight-500 {
+  font-weight: 500;
 }
 
 .font-uppercase {
@@ -3731,7 +3766,6 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: #222;
-  font-weight: 500;
   margin: 0px;
   background: #f8f8f8;
 }
@@ -4022,11 +4056,6 @@ div-content .row {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 0 rgba(118, 135, 232, 0.5);
 }
 
-label {
-  width: 100%;
-  font-size: 1rem;
-}
-
 .input-group-append.form-control {
   border-radius: 0px;
 }
@@ -4079,7 +4108,7 @@ label {
   border-radius: 100%;
   box-shadow: none;
   cursor: pointer;
-  background-color: #dee2e6;
+  background-color: #eef3f6;
 }
 
 #vuh-time-picker .noUi-marker.noUi-marker-horizontal.noUi-marker-large {
@@ -4143,6 +4172,18 @@ label {
 .card-stats {
   margin: 15px 15px 0px 0px;
   padding: 6px 20px;
+}
+
+.wizard-title {
+  color: #32325d;
+}
+.wizard .noUi-value {
+  font-weight: 400 !important;
+}
+
+.wizard[disabled=true] .noUi-touch-area {
+  background: #cad1d7;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -3,12 +3,14 @@
   padding: 4px 16px;
   font-size: 14px;
   line-height: 24px;
+  text-align: left;
 }
 .tooltip__info {
+  padding: 0;
   position: relative;
 }
 .tooltip-close {
-  right: 20px;
+  right: 10px;
   top: 10px;
   position: absolute;
   display: inline-block;

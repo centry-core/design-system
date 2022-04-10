@@ -1597,7 +1597,7 @@
                     const currentValue = range.getAttribute('aria-valuenow');
                     const width = getBackgroundSize(currentValue);
                     markers.forEach(marker => {
-                        marker.style.backgroundColor = width > +(marker.style.left).slice(0, -1) ? '#5933c6' : '#dee2e6';
+                        marker.style.backgroundColor = width > +(marker.style.left).slice(0, -1) ? '#5933c6' : '#eef3f6';
                     })
                 }
 

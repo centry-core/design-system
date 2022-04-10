@@ -254,7 +254,7 @@ const ComplexList = {
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div v-if="itemsList.length > 4" class="px-3 py-2">
+                <div v-if="itemsList.length > 4" class="px-3 pb-2 pt-3">
                     <div class="custom-input custom-input_search__sm position-relative">
                         <input
                             type="text"
@@ -363,7 +363,7 @@ const ComplexListFilter = {
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div v-if="itemsList.length > 4" class="px-3 py-2">
+                <div v-if="itemsList.length > 4" class="px-3 pb-2 pt-3">
                     <div class="custom-input custom-input_search__sm position-relative">
                         <input
                             type="text"
@@ -463,7 +463,7 @@ const RemovableFilter = {
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false">
-                <span class="font-weight-bold mr-2">LABEL:</span>
+                <span class="font-weight-500 mr-2">LABEL:</span>
                 <p class="d-flex mb-0"
                     :class="{'w-100': fixWidth}">
                     <span v-if="selectedItems.length === itemsList.length">All</span>
@@ -477,7 +477,7 @@ const RemovableFilter = {
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div v-if="itemsList.length > 4" class="px-3 py-2">
+                <div v-if="itemsList.length > 4" class="px-3 pb-2 pt-3">
                     <div class="custom-input custom-input_search__sm position-relative">
                         <input
                             type="text"

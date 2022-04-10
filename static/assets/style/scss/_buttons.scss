@@ -4,25 +4,26 @@
 
 .btn {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   height: 32px;
-  font-weight: 400;
   white-space: nowrap !important;
-  padding: 6px 15px 6px 15px;
+  padding: 4px 15px 4px 15px;
+  font-weight: 600;
 }
 
 .btn-lg {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   height: 40px !important;
-  padding: 10px 20px 10px 20px;
+  padding: 8px 20px 8px 20px;
+  font-weight: 700;
 }
 
 .btn-sm {
   font-size: 12px;
   line-height: 16px;
   height: 28px !important;
-  font-weight: 300;
+  font-weight: 600;
   padding: 5px 15px 5px 15px;
 }
 
@@ -241,6 +242,7 @@
 
 .btn-secondary {
   color: var(--basic);
+  font-weight: 600;
   background-color: var(--white);
   border: 1px solid var(--basic60);
   text-transform: capitalize;
