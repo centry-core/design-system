@@ -17,7 +17,7 @@ const SimpleList = {
         <div id="simpleList" class="dropdown_simple-list">
             <button class="btn btn-select dropdown-toggle" type="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span v-if="selectedItems1.length > 0">{{ selectedItems1.length }} selected</span>
+            <span class="complex-list_filled" v-if="selectedItems1.length > 0">{{ selectedItems1.length }} selected</span>
             <span v-else class="complex-list_empty">Select Step</span>
             </button>
             <ul class="dropdown-menu close-outside"
@@ -249,12 +249,12 @@ const ComplexList = {
         <div id="complexList" class="complex-list">
             <button class="btn btn-select dropdown-toggle" type="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span v-if="selectedItems.length > 0">{{ selectedItems.length }} selected</span>
+                <span v-if="selectedItems.length > 0" class="complex-list_filled">{{ selectedItems.length }} selected</span>
                 <span v-else class="complex-list_empty">Select Step</span>
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div v-if="itemsList.length > 4" class="px-3 pb-2 pt-3">
+                <div v-if="itemsList.length > 4" class="px-3 pb-2 search-group">
                     <div class="custom-input custom-input_search__sm position-relative">
                         <input
                             type="text"
@@ -356,14 +356,14 @@ const ComplexListFilter = {
                 <slot name="label"></slot>
                 <p v-if="showSelected" class="d-flex mb-0"
                     :class="{'w-100': fixWidth}">
-                    <span v-if="selectedItems.length === itemsList.length">All</span>
-                    <span v-else-if="selectedItems.length > 0">{{ selectedItems.length }} selected</span>
+                    <span v-if="selectedItems.length === itemsList.length" class="complex-list_filled">All</span>
+                    <span v-else-if="selectedItems.length > 0" class="complex-list_filled">{{ selectedItems.length }} selected</span>
                     <span v-else class="complex-list_empty">Select Step</span>  
                 </p>
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div v-if="itemsList.length > 4" class="px-3 pb-2 pt-3">
+                <div v-if="itemsList.length > 4" class="px-3 pb-2 search-group">
                     <div class="custom-input custom-input_search__sm position-relative">
                         <input
                             type="text"
@@ -466,9 +466,9 @@ const RemovableFilter = {
                 <span class="font-weight-500 mr-2">LABEL:</span>
                 <p class="d-flex mb-0"
                     :class="{'w-100': fixWidth}">
-                    <span v-if="selectedItems.length === itemsList.length">All</span>
-                    <span v-else-if="selectedItems.length > 0">{{ selectedItems.length }} selected</span>
-                    <span v-else class="complex-list_empty">Select Step</span> 
+                    <span v-if="selectedItems.length === itemsList.length" class="complex-list_filled">All</span>
+                    <span v-else-if="selectedItems.length > 0" class="complex-list_filled">{{ selectedItems.length }} selected</span>
+                    <span v-else class="complex-list_empty">Select Step</span>
                     <span class="icon-times font-weight-bold d-flex align-items-center pl-2"
                         @click.stop="removeList">
                         <i class="fa fa-times"></i>
@@ -477,7 +477,7 @@ const RemovableFilter = {
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div v-if="itemsList.length > 4" class="px-3 pb-2 pt-3">
+                <div v-if="itemsList.length > 4" class="px-3 pb-2 search-group">
                     <div class="custom-input custom-input_search__sm position-relative">
                         <input
                             type="text"

@@ -8,7 +8,7 @@
   height: 32px;
   white-space: nowrap !important;
   padding: 4px 15px 4px 15px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .btn-lg {
@@ -16,14 +16,14 @@
   line-height: 24px;
   height: 40px !important;
   padding: 8px 20px 8px 20px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .btn-sm {
   font-size: 12px;
   line-height: 16px;
   height: 28px !important;
-  font-weight: 600;
+  font-weight: 500;
   padding: 5px 15px 5px 15px;
 }
 
@@ -122,11 +122,13 @@
   color: var(--basic);
   background-color: var(--tabs-btns-icns);
   border: 0;
-  font-weight: 700;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 20px;
   height: 40px !important;
+  .filter-option-inner-inner {
+    font-weight: 500;
+  }
 }
 
 .btn-chapters:hover {
@@ -360,8 +362,7 @@
   border: 0;
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 400;
-  /*max-width: 110px;*/
+  font-weight: 500;
 }
 .btn-colored.hover,
 .btn-colored:hover {

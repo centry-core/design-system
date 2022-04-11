@@ -37,6 +37,7 @@
     }
     &:disabled:not(:checked)::before {
       border-color: var(--gray400);
+      background-color: $gray100;
     }
   }
   &__minus {

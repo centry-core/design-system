@@ -128,11 +128,12 @@
 }
 .card-gray {
   background-color: var(--background);
-  color: var(--main-text);
+  color: $gray700;
   border: 1px solid var(--border-gray20);
 }
 .card-gray .card-body {
-  border-bottom-color: var(--border-gray);
+  border-bottom-color: $gray700;
+  font-weight: 600;
 }
 
 .card-yellow {

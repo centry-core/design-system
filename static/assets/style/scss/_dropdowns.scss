@@ -285,6 +285,13 @@
 .complex-list .complex-list_empty {
   color: var(--gray500);
 }
+.complex-list {
+  &_filled, &_empty {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+}
 
 .btn-select {
   border: solid 1px var(--gray400);
@@ -326,6 +333,14 @@
 }
 .filter-option-inner-inner > i {
   display: none;
+}
+.filter-option-inner-inner {
+  font-weight: $font-w-400;
+}
+.dropdown-toggle.select-secondary, .dropdown-toggle.select-primary {
+  .filter-option-inner-inner {
+    font-weight: 500 !important;
+  }
 }
 /* dropdown actions */
 .dropdown_action {

@@ -28,7 +28,7 @@
       width: 20px;
       height: 16px;
       margin-right: 10px;
-      background: url('/design-system/static/assets/ico/drop-area.svg') no-repeat center;
+      background: url('../../../assets/ico/drop-area.svg') no-repeat center;
     }
   }
 }
@@ -38,13 +38,13 @@
     content: "";
     width: 16px;
     height: 16px;
-    background: url("/design-system/static/assets/ico/loading.svg") no-repeat;
+    background: url("../../../assets/ico/loading.svg") no-repeat;
   }
   &_close::after {
     content: "";
     width: 16px;
     height: 16px;
-    background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+    background: url("../../../assets/ico/close_notify_icon.svg") no-repeat;
     cursor: pointer;
   }
   &_item {
