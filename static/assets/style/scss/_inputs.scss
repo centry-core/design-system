@@ -10,9 +10,10 @@
     color: var(--gray600);
   }
   input {
+    text-align: left;
     width: 100%;
     padding: 7px 16px;
-    border: solid 1px var(--gray500);
+    border: solid 1px var(--gray400);
     border-radius: 4px;
     outline: none;
     font-size: 14px;
@@ -70,6 +71,10 @@
       display: block;
     }
   }
+  input:disabled {
+    background: var(--gray100);
+    border: solid 1px var(--gray300);
+  }
 }
 
 .input-stepper {
@@ -100,12 +105,37 @@
 }
 
 .bootstrap-select {
+  &.show, &:hover {
+    .dropdown-toggle {
+      transition: all .3s;
+      border: 1px solid var(--gray400);
+      box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
+      border-radius: 4px;
+    }
+    .dropdown-toggle.select-primary {
+      border: 1px solid var(--basic);
+      box-shadow: var(--hover-shadow);
+    }
+    .dropdown-toggle.select-secondary {
+      border: 1px solid var(--purple-outline);
+      box-shadow: var(--hover-shadow);
+      color: var(--basic);
+    }
+    .dropdown-toggle.select-primary.disabled {
+      border: 1px solid var(--gray400);
+    }
+  }
   &__b {
     border: solid 1px var(--gray400);
     border-radius: 4px;
     .dropdown-toggle {
-      height: 38px;
-      padding: 7px 16px;
+      height: 40px;
+      padding: 8px 16px;
+    }
+    &.show, &:hover {
+      .dropdown-toggle {
+        border: 1px solid transparent;
+      }
     }
   }
   width: auto !important;
@@ -113,14 +143,15 @@
   .filter-option-inner-inner {
     color: var(--gray700) !important;
   }
-  &.show:not(.main-select), &:hover:not(.main-select) {
-    transition: all .3s;
-    border: 1px solid var(--gray400);
-    box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
-    border-radius: 4px;
+  .dropdown-toggle {
+    border: 1px solid transparent;
   }
-  .dropdown-toggle:focus {
-    outline: none !important;
+  .dropdown-toggle.select-secondary {
+    border: 1px solid var(--purple-outline);
+  }
+  .dropdown-toggle.select-secondary.disabled {
+    border: 1px solid var(--gray400);
+    color: var(--disabled);
   }
 }
 
