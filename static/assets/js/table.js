@@ -32,20 +32,10 @@ const SEVERITY = [
             title: "HIGH"
         }
     ]
-// <select className="selectpicker btn-colored-select mr-2"
-//         data-style="btn-colored">
-//     <option className="colored-select-red">CRITICAL</option>
-//     <option className="colored-select-orange">HIGH</option>
-//     <option className="colored-select-yellow">MEDIUM</option>
-//     <option className="colored-select-green">LOW</option>
-//     <option className="colored-select-blue">INFO</option>
-//     <option>UNEXPECTED</option>
-//     <option className="colored-select-darkblue">IGNORE</option>
-// </select>
+
 function formatterSeverity(value, row, index, field) {
     const options = SEVERITY.map(item =>
         `<option
-            className=${item.className}
             value=${item.title}
             ${item.title.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
         >
@@ -54,7 +44,7 @@ function formatterSeverity(value, row, index, field) {
         `
     )
     return `
-        <select class="selectpicker btn-colored-select" data-style="btn">
+        <select class="selectpicker bootstrap-select__b">
             ${options.join('')}
         </select>
     `

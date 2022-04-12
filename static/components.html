@@ -28,6 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
             integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
             crossorigin="anonymous"></script>
+    <script src="/design-system/static/assets/js/notification-master/notification.js"></script>
 </head>
 
 <body>
@@ -117,16 +118,39 @@
     </aside>
     <div class="w-100">
         <div class="card mt-3 card-table">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-4">
-                        <h3>Table & Inputs</h3>
-                    </div>
-                </div>
-            </div>
             <div class="card-body">
+                <div class="pt-4" id="vueApp">
+                    <modal-save-filter
+                        v-if="showModal"
+                        @save-filter-as="saveFilterAs"
+                    ></modal-save-filter>
+                    <div class="d-flex justify-content-end pb-4">
+                        <ul class="custom-tabs nav nav-pills mr-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ALL</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">VALID</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-setting-tab" data-toggle="pill" href="#pills-setting" role="tab" aria-controls="pills-setting" aria-selected="false">FALSE POSITIVES</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-ignored-tab" data-toggle="pill" href="#pills-ignored" role="tab" aria-controls="pills-ignored" aria-selected="false">IGNORED</a>
+                            </li>
+                        </ul>
+                        <choose-filter @set-filter="setFilter"></choose-filter>
+                    </div>
+                    <report-filter
+                        @remove-filter="currentFilter = null"
+                        v-if="currentFilter"
+                        :key="currentFilter"
+                        :filter="currentFilter"
+                        @save-filter-as="saveFilterAs"
+                    ></report-filter>
+                </div>
                 <table
-                    class="table table-border"
+                    class="table table-border mt-4"
                     id="tests-list-inputs"
                     data-toggle="table"
                     data-unique-id="id"
@@ -370,23 +394,17 @@
                     <tbody>
                     </tbody>
                 </table>
-                <select class="selectpicker btn-colored-select mr-2" data-style="btn-colored">
-                    <option class="colored-select-red">CRITICAL</option>
-                    <option class="colored-select-orange">HIGH</option>
-                    <option class="colored-select-yellow">MEDIUM</option>
-                    <option class="colored-select-green">LOW</option>
-                    <option class="colored-select-blue">INFO</option>
-                    <option>UNEXPECTED</option>
-                    <option class="colored-select-darkblue">IGNORE</option>
-                </select>
             </div>
         </div>
     </div>
 </main>
+<script src="https://unpkg.com/vue@next"></script>
 <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>
 <script src="assets/js/table.js"></script>
+<script src="assets/js/report-filter.js"></script>
 <script src="assets/js/select.js"></script>
+<script src="assets/js/notifications.js"></script>
 </body>
 
 </html>

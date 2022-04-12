@@ -2,7 +2,7 @@ const popup = Notification({
     duration: 3000,
 });
 
-const showNotify = (type) => {
+const showNotify = (type, title = '') => {
     switch (type) {
         case 'ERROR':
             popup.error({
@@ -21,7 +21,7 @@ const showNotify = (type) => {
             break;
         case 'SUCCESS':
             popup.success({
-                title: 'Message success',
+                title,
             });
             break;
         default:

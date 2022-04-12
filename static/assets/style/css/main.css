@@ -13,6 +13,10 @@
   background-image: none;
 }
 
+label {
+  margin-bottom: 0 !important;
+}
+
 /* common */
 /* latin */
 @font-face {
@@ -1363,7 +1367,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   padding-bottom: 0px;
 }
 
-.card-body table tr {
+.card-body .table tr {
   border-bottom: 1px solid var(--lines);
 }
 
@@ -1376,12 +1380,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   padding-right: 20px !important;
 }
 
-.card-body table td:first-child {
+.card-body .table td:first-child {
   padding-left: 20px;
   padding-right: 4px;
 }
 
-.card-body table td:last-child {
+.card-body .table td:last-child {
   padding-right: 20px;
 }
 
@@ -1581,6 +1585,55 @@ td.disabled input {
   background: url(/design-system/static/assets/ico/arrow-up.svg) no-repeat center right;
 }
 
+.table-filter thead tr {
+  border: none;
+  font-weight: 600;
+}
+.table-filter tbody tr {
+  border: none;
+}
+.table-filter tbody tr td {
+  padding: 0;
+}
+
+.modal-component {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.modal-component .modal-card {
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 28px;
+  border-radius: 4px;
+}
+
+.preview-loader {
+  animation: load 1.1s infinite linear;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../../../assets/ico/loading.svg");
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 .d-flex .btn-32 {
   margin-right: 10px;
 }
@@ -2691,7 +2744,7 @@ input[type=range]::-moz-range-thumb {
   border-radius: 4px;
 }
 .bootstrap-select__b .dropdown-toggle {
-  height: 40px;
+  height: 38px;
   padding: 8px 16px;
 }
 .bootstrap-select__b.show .dropdown-toggle, .bootstrap-select__b:hover .dropdown-toggle {
@@ -2720,7 +2773,7 @@ input[type=range]::-moz-range-thumb {
   color: var(--gray600);
   font-size: 12px;
   line-height: 24px;
-  padding: 4px 16px;
+  padding: 10px 16px;
   border-bottom: solid 1px var(--gray200);
 }
 .custom-tabs a.active {
@@ -4028,11 +4081,6 @@ div-content .row {
 .actions ul li a.focus {
   outline: 0;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 0 rgba(118, 135, 232, 0.5);
-}
-
-label {
-  width: 100%;
-  font-size: 1rem;
 }
 
 .input-group-append.form-control {
