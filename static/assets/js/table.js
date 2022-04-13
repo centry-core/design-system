@@ -1,20 +1,18 @@
-function lgFormatter(value, row, index) {
-    if (value === "perfmeter") {
-        return '<img src="assets/ico/jmeter.png" width="20">'
-    } else if (value === "perfgun") {
-        return '<img src="assets/ico/gatling.png" width="20">'
-    } else {
-        return value
-    }
-}
+// function lgFormatter(value, row, index) {
+//     if (value === "perfmeter") {
+//         return '<img src="assets/ico/jmeter.png" width="20">'
+//     } else if (value === "perfgun") {
+//         return '<img src="assets/ico/gatling.png" width="20">'
+//     } else {
+//         return value
+//     }
+// }
 
 function inputFormatter(value, row, index, field) {
-    return `<div class="custom-input">
-        <input
-            type="text"
-            placeholder="Text"
-            onchange="updateCell(this, '${index}', '${field}')" value="${value}">
-    </div>`
+    return `
+        <input type="text" class="form-control form-control-alternative" onchange="updateCell(this, ${index}, '${field}')" value="${value}">
+        <div class="invalid-tooltip invalid-tooltip-custom"></div>
+    `
 }
 
 function updateCell(el, row, field) {
@@ -22,9 +20,9 @@ function updateCell(el, row, field) {
 }
 
 function dataTypeFormatter(value, row, index, field) {
-    const options = ["name", "default", "type", "description", "action"].map(item =>
-        `<option
-            value=${item}
+    const options = ['String', 'Number', 'List'].map(item =>
+        `<option 
+            value=${item} 
             ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
         >
             ${item}
@@ -32,7 +30,7 @@ function dataTypeFormatter(value, row, index, field) {
         `
     )
     return `
-        <select class="selectpicker bootstrap-select__b" data-style="btn">
+        <select class="selectpicker mr-2" data-style="btn-gray" onchange="updateCell(this, '${index}', '${field}')">
             ${options.join('')}
         </select>
     `
@@ -65,8 +63,6 @@ function actionFormatter(value, row, index) {
     `
 }
 
-$('.params-table').on('all.bs.table', () => $('.selectpicker').selectpicker('render'))
-
 function nameStyle(value, row, index) {
     return {css: {"max-width": "100px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
 }
@@ -98,14 +94,9 @@ wait_for('bootstrapTable', jQuery.fn).then(v => (
     })(jQuery)
 )
 
-const renderSelectpicker = () => {
-    setTimeout(() => {
-        $('.selectpicker').selectpicker('render');
-    }, 0)
-}
 
-renderSelectpicker();
-
-$('#tests-list-inputs').on('sort.bs.table', function (e, name, order) {
-    renderSelectpicker();
+$(document).on('vue_init', () => {
+    $('.params-table').on('all.bs.table', () => {
+        $('.selectpicker').selectpicker('render')
+    })
 })
