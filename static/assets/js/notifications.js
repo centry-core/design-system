@@ -6,17 +6,17 @@ const showNotify = (type, title = '') => {
     switch (type) {
         case 'ERROR':
             popup.error({
-                title: 'Message error',
+                title,
             });
             break;
         case 'WARNING':
             popup.warning({
-                title: 'Message warning',
+                title,
             });
             break;
         case 'INFO':
             popup.info({
-                title: 'Message info',
+                title,
             });
             break;
         case 'SUCCESS':

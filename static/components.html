@@ -123,6 +123,7 @@
                     <modal-save-filter
                         v-if="showModal"
                         @save-filter-as="saveFilterAs"
+                        :filters-name="filtersName"
                     ></modal-save-filter>
                     <div class="d-flex justify-content-end pb-4">
                         <ul class="custom-tabs nav nav-pills mr-3" id="pills-tab" role="tablist">
@@ -139,7 +140,10 @@
                                 <a class="" id="pills-ignored-tab" data-toggle="pill" href="#pills-ignored" role="tab" aria-controls="pills-ignored" aria-selected="false">IGNORED</a>
                             </li>
                         </ul>
-                        <choose-filter @set-filter="setFilter"></choose-filter>
+                        <choose-filter
+                                @set-filter="setFilter"
+                                @set-filters="setFilters"
+                        ></choose-filter>
                     </div>
                     <report-filter
                         @remove-filter="currentFilter = null"

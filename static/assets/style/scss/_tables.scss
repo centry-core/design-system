@@ -298,7 +298,9 @@ td.disabled input {
     }
   }
 }
-
+.min-w-100 {
+  min-width: 100% !important;
+}
 .modal-component {
   position: fixed;
   z-index: 100;

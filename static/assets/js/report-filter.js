@@ -1,42 +1,85 @@
+const filtersData = [
+    {
+        id: 1,
+        title: 'First',
+        options: [
+            {
+                id: 1,
+                column: 'Description',
+                operator: 'Relish',
+                title: 'knowlege',
+            },
+            {
+                id: 2,
+                column: 'Ketchup',
+                operator: 'Mustard',
+                title: 'Lorem ipsum',
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: 'User filter 2',
+        options: [
+            {
+                id: 2,
+                column: 'Description',
+                operator: 'Ketchup',
+                title: 'knowlege',
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: 'Two',
+        options: [
+            {
+                id: 3,
+                column: '',
+                operator: '',
+                title: 'knowlege',
+            }
+        ]
+    }
+]
+
+const fetch = new Promise(resolve => {
+    setTimeout(() => {
+        resolve(filtersData)
+    }, 1000)
+})
+
+const requestSave = (filterName) => {
+    console.log(filterName)
+    return  new Promise((resolve, reject) => {
+        const isNameExist = filtersData.some(filter => filter.title.toLowerCase() === filterName.toLowerCase().trim())
+        if (isNameExist) {
+            reject('Filter name already exist')
+        } else (resolve('Filter saved'))
+    })
+}
+
 const ChooseFilter = {
     data() {
         return {
-            filters: [
-                {
-                    id: 1,
-                    title: 'User filter 1',
-                    options: [
-                        {
-                            id: 1,
-                            column: 'Description',
-                            operator: 'Relish',
-                            title: 'knowlege',
-                        },
-                        {
-                            id: 2,
-                            column: 'Ketchup',
-                            operator: 'Mustard',
-                            title: 'Lorem ipsum',
-                        }
-                    ]
-                },
-                {
-                    id: 2,
-                    title: 'User filter 2',
-                    options: [
-                        {
-                            id: 2,
-                            column: 'Description',
-                            operator: 'Ketchup',
-                            title: 'knowlege',
-                        }
-                    ]
-                }
-            ],
-            selectedFilter: {}
+            filters: null,
+            selectedFilter: {},
+            loadingFilters: false,
         }
     },
+    mounted() {
+        this.fetchFilters();
+    },
     methods: {
+        fetchFilters() {
+            this.loadingFilters = true;
+            fetch.then(res => {
+                this.filters = res;
+                this.$emit('setFilters', this.filters)
+            }).finally(() => {
+                this.loadingFilters = false;
+            })
+        },
         selectFilter(filter) {
             this.selectedFilter = Object.assign({}, filter);
             this.$emit('setFilter', filter)
@@ -64,7 +107,8 @@ const ChooseFilter = {
                     id="dropdownMenuLink"
                     data-toggle="dropdown"
                     aria-expanded="false">
-                <i class="fas fa-filter"></i>
+                <i v-if="loadingFilters" class="preview-loader"></i>
+                <i v-else class="fas fa-filter"></i>
             </button>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -79,6 +123,7 @@ const ChooseFilter = {
 }
 
 const modalSaveFilter = {
+    props: ['filtersName'],
     data() {
         return {
             filterName: '',
@@ -87,17 +132,25 @@ const modalSaveFilter = {
     },
     computed: {
         hasError() {
-            return this.filterName.length < 3
+            return this.isShortName();
         }
     },
     methods: {
+        isShortName() {
+            return this.filterName.length < 3;
+        },
         saveFilter() {
             this.loading = true;
             setTimeout(() => {
-                this.loading = false;
-                this.$emit('save-filter-as');
-                showNotify('SUCCESS', 'Filter saved');
-            }, 1000)
+                requestSave(this.filterName).then(response => {
+                    this.$emit('save-filter-as');
+                    showNotify('SUCCESS', 'Filter saved');
+                }).catch(error => {
+                    showNotify('ERROR', error);
+                }).finally(() => {
+                    this.loading = false;
+                })
+            }, 500)
         }
     },
     template:`
@@ -109,7 +162,7 @@ const modalSaveFilter = {
                         type="text"
                         v-model="filterName"
                         placeholder="Text">
-                    <span class="input_error-msg">Сlarifying error message</span>
+                    <span class="input_error-msg">Filter name less then 3 letters</span>
                     <div class="d-flex justify-content-end mt-4">
                         <button type="button" class="btn btn-secondary mr-2" @click="$emit('save-filter-as')">Reset</button>
                         <button
@@ -134,10 +187,24 @@ const ReportFilter = {
         }
     },
     mounted() {
-        this.editableFilter = Object.assign({}, this.filter);
+        this.editableFilter = this.deepClone(this.filter);
         this.renderSelect();
     },
     methods: {
+        deepClone(obj) {
+            if (obj === null) return null;
+            let clone = Object.assign({}, obj);
+            Object.keys(clone).forEach(
+                key =>
+                    (clone[key] =
+                        typeof obj[key] === 'object' ? this.deepClone(obj[key]) : obj[key])
+            );
+            if (Array.isArray(obj)) {
+                clone.length = obj.length;
+                return Array.from(clone);
+            }
+            return clone;
+        },
         renderSelect() {
             this.$nextTick(() => {
                 $('.selectpicker').selectpicker('render');
@@ -153,10 +220,13 @@ const ReportFilter = {
             this.renderSelect();
         },
         removeOption(optionId) {
-            this.editableFilter.options = this.editableFilter.options.filter(elem => elem.id !== optionId)
+            this.editableFilter.options = this.editableFilter.options.filter(elem => elem.id !== optionId);
         },
         removeFilter() {
-            this.$emit('remove-filter')
+            this.$emit('remove-filter');
+        },
+        resetFilter() {
+            this.editableFilter = this.deepClone(this.filter);
         }
     },
     template:`
@@ -173,9 +243,9 @@ const ReportFilter = {
                     <th>Data</th>
                 </tr>
                 </thead>
-                <tr v-for="option in editableFilter.options">
+                <tr v-for="option in editableFilter.options" :key="option.id">
                     <td class="pr-2 pb-2">
-                        <select class="selectpicker bootstrap-select__b" data-style="btn" v-model="option.column">
+                        <select class="selectpicker min-w-100 bootstrap-select__b" data-style="btn" v-model="option.column">
                             <option>Mustard</option>
                             <option>Ketchup</option>
                             <option>Relish</option>
@@ -183,7 +253,7 @@ const ReportFilter = {
                         </select>
                     </td>
                     <td class="pr-2 pb-2">
-                        <select class="selectpicker bootstrap-select__b" data-style="btn" :value="option.operator">
+                        <select class="selectpicker min-w-100 bootstrap-select__b" data-style="btn" v-model="option.operator">
                             <option>Mustard</option>
                             <option>Ketchup</option>
                             <option>Relish</option>
@@ -193,7 +263,7 @@ const ReportFilter = {
                         <div class="custom-input">
                             <input
                                 type="text"
-                                :value="option.title"
+                                v-model="option.title"
                                 placeholder="Some data">
                         </div>
                     </td>
@@ -211,7 +281,7 @@ const ReportFilter = {
             </table>
             <div class="mb-4">
                 <button class="btn btn-basic mr-2" type="submit">Apply</button>
-                <button type="button" class="btn btn-secondary mr-2">Reset</button>
+                <button type="button" class="btn btn-secondary mr-2" @click="resetFilter">Reset</button>
                 <button class="btn btn-default mr-2">Save</button>
                 <button class="btn btn-default" @click="$emit('save-filter-as')">Save as...</button>
             </div>
@@ -229,11 +299,15 @@ const vueApp = Vue.createApp({
         return {
             currentFilter: null,
             showModal: false,
+            filtersName: [],
         }
     },
     methods: {
         setFilter(filter) {
             this.currentFilter = filter;
+        },
+        setFilters(filters) {
+            this.filtersName = filters.map(filter => filter.title);
         },
         saveFilterAs() {
             this.showModal = !this.showModal;
