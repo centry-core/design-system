@@ -165,7 +165,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .noUi-marker-large,
 .noUi-marker-sub {
-  background: #aaa;
+  background: $gray200;
 }
 
 .noUi-pips-horizontal {
@@ -245,7 +245,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .noUi-target {
-  background: linear-gradient(to right, var(--purple), var(--purple)), rgb(222, 226, 230);
+  background: linear-gradient(to right, var(--purple), var(--purple)), $gray200;
   background-size: var(--background-range-size, 0%) 100%;
   background-repeat: no-repeat;
   border-radius: 5px;
@@ -337,7 +337,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 [disabled].noUi-connect,
 [disabled] .noUi-connect {
-  background: #b2b2b2;
+  background: $gray400;
 }
 
 [disabled] .noUi-handle,

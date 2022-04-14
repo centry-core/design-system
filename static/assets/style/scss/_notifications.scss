@@ -38,7 +38,7 @@
     height: 20px;
     margin-left: 20px;
     cursor: pointer;
-    background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+    background: url("../../../assets/ico/close_notify_icon.svg") no-repeat;
     svg {
       display: none;
     }
@@ -95,16 +95,16 @@
   }
 
   &-error::before {
-    background: url("/design-system/static/assets/ico/error_icon.svg");
+    background: url("../../../assets/ico/error_icon.svg");
   }
   &-warning::before {
-    background: url("/design-system/static/assets/ico/warning_icon.svg") no-repeat;
+    background: url("../../../assets/ico/warning_icon.svg") no-repeat;
   }
   &-info::before {
-    background: url("/design-system/static/assets/ico/info_icon.svg");
+    background: url("../../../assets/ico/info_icon.svg");
   }
   &-success::before {
-    background: url("/design-system/static/assets/ico/success_icon.svg");
+    background: url("../../../assets/ico/success_icon.svg");
   }
 }
 

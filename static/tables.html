@@ -123,68 +123,6 @@
             </div>
         </div>
 
-        <div class="card my-3 col-4 px-0">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-4">
-                        <h3>Buckets</h3>
-                    </div>
-                    <div class="col-8">
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
-                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
-                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
-                            <button type="button" class="btn btn-32 btn-secondary" disabled><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <select class="selectpicker bootstrap-select__b m-3" data-style="btn">
-                <option>Mustard</option>
-                <option>Ketchup</option>
-                <option>Relish</option>
-            </select>
-            <ul class="custom-nav flex-column">
-                <li class="custom-nav_item d-flex justify-content-between align-items-center">
-                    <a class="" href="#">Modals</a>
-                    <button class="btn btn-default btn-xs btn-table btn-icon mr-2">
-                        <i class="fas fa-sync"></i>
-                    </button>
-                    <button class="btn btn-default btn-xs btn-table btn-icon">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </li>
-                <li class="custom-nav_item d-flex justify-content-between align-items-center active">
-                    <a class="" href="#">Tooltips</a>
-                    <button class="btn btn-default btn-xs btn-table btn-icon mr-2">
-                        <i class="fas fa-sync"></i>
-                    </button>
-                    <button class="btn btn-default btn-xs btn-table btn-icon">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </li>
-                <li class="custom-nav_item d-flex justify-content-between align-items-center">
-                    <a class="" href="#">Drag & Drop</a>
-                    <button class="btn btn-default btn-xs btn-table btn-icon mr-2">
-                        <i class="fas fa-sync"></i>
-                    </button>
-                    <button class="btn btn-default btn-xs btn-table btn-icon">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </li>
-                <li class="custom-nav_item d-flex justify-content-between align-items-center">
-                    <a class="" href="#">Slider</a>
-                    <button class="btn btn-default btn-xs btn-table btn-icon mr-2">
-                        <i class="fas fa-sync"></i>
-                    </button>
-                    <button class="btn btn-default btn-xs btn-table btn-icon">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-
-
         <div class="card mt-3 card-table">
             <div class="card-header">
                 <div class="row">
@@ -209,8 +147,8 @@
                     data-unique-id="id"
                     data-page-list="[5, 10, 15]"
                     data-pagination="true"
-                    data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
-                    data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
+                    data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                    data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
                     data-page-size=5
                     data-data='{
                     "total": 12 ,
@@ -620,8 +558,8 @@
                     id="tests-list-2"
                     data-toggle="table"
                     data-unique-id="id"
-                    data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
-                    data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
+                    data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                    data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
                     data-pagination-parts='["pageInfoShort", "pageList"]' data-data='{
                     "total": 6,
                     "rows": [
@@ -757,46 +695,38 @@
                 </table>
             </div>
         </div>
-        <div class="d-flex">
-            <div class="card card-x">
-                <div class="card-header">
-                    <h2>card-x</h2>
-                </div>
-                <div class="card-body">
-                    <h9>Card card-x in d-flex container uses all available width, if there are few of those, they will share
-                        a row</h9>
-                </div>
-            </div>
-            <div class="card card-x card-table-sm">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-4">
-                            <h3>Table Widget</h3>
-                        </div>
-                        <div class="col-8">
-                            <div class="d-flex justify-content-end">
-                                <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
-                                <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
-                                <button type="button" class="btn btn-32 btn-secondary"><i
-                                        class="fas fa-filter"></i></button>
-                                <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
-                                <button type="button" class="btn btn-32 btn-secondary"><i
-                                        class="fas fa-trash-alt"></i></button>
+        <div class="flex-container my-3">
+            <div class="flex-item-2">
+                <div class="card card-table-sm">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h3>Table Widget</h3>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i
+                                            class="fas fa-filter"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i
+                                            class="fas fa-trash-alt"></i></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-                <div class="card-body">
-                    <table
-                        class="table table-borderless"
-                        id="tests-list"
-                        data-toggle="table"
-                        data-unique-id="id"
-                        data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
-                        data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
-                        data-page-size=5 data-pagination="true"
-                        data-data='{
+                    </div>
+                    <div class="card-body">
+                        <table
+                                class="table table-borderless"
+                                id="tests-list"
+                                data-toggle="table"
+                                data-unique-id="id"
+                                data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                                data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                                data-page-size=5 data-pagination="true"
+                                data-data='{
                             "total": 6,
                             "rows": [
                                 {
@@ -910,7 +840,172 @@
                                 }
                             ]
                         }'>
-                        <thead class="thead-light">
+                            <thead class="thead-light">
+                            <tr>
+                                <th data-visible="false" data-field="id">index</th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">Name</th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">UUID
+                                </th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
+                                    Entrypoint</th>
+                                <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                    data-field="job_type">Tool</th>
+                                <th scope="col" data-align="right" data-cell-style="cellStyle"
+                                    data-formatter=actionFormatter>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-item-2">
+                <div class="card card-table-sm">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h3>Table Widget</h3>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i
+                                            class="fas fa-filter"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i
+                                            class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <table
+                                class="table table-borderless"
+                                id="tests-list"
+                                data-toggle="table"
+                                data-unique-id="id"
+                                data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                                data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                                data-page-size=5 data-pagination="true"
+                                data-data='{
+                            "total": 6,
+                            "rows": [
+                                {
+                                    "id": 4,
+                                    "project_id": 3,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 3,
+                                    "project_id": 3,
+                                    "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                                    "name": "TestDistributed",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "tests",
+                                    "file": "Archive_flood.zip",
+                                    "entrypoint": "FloodIO.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "mykhailo_hunko@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "git": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 2,
+                                    "project_id": 3,
+                                    "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                                    "name": "PetsDemo",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                }, {
+                                    "id": 5,
+                                    "project_id": 3,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 1,
+                                    "project_id": 3,
+                                    "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                                    "name": "TestDistributed",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "tests",
+                                    "file": "Archive_flood.zip",
+                                    "entrypoint": "FloodIO.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "mykhailo_hunko@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "git": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 6,
+                                    "project_id": 3,
+                                    "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                                    "name": "PetsDemo",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                }
+                            ]
+                        }'>
+                            <thead class="thead-light">
                             <tr>
                                 <th scope="col" data-checkbox="true"></th>
                                 <th data-visible="false" data-field="id">index</th>
@@ -924,10 +1019,201 @@
                                 <th scope="col" data-align="right" data-cell-style="cellStyle"
                                     data-formatter=actionFormatter>Actions</th>
                             </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-container my-3">
+            <div class="flex-item-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h3>Buckets</h3>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary" disabled><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select class="selectpicker bootstrap-select__b m-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <ul class="custom-nav flex-column">
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Modals</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center active">
+                            <a class="" href="#">Tooltips</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Drag & Drop</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Slider</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-item-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h3>Buckets</h3>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary" disabled><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select class="selectpicker bootstrap-select__b m-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <ul class="custom-nav flex-column">
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Modals</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center active">
+                            <a class="" href="#">Tooltips</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Drag & Drop</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Slider</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-item-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h3>Buckets</h3>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary" disabled><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select class="selectpicker bootstrap-select__b m-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <ul class="custom-nav flex-column">
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Modals</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center active">
+                            <a class="" href="#">Tooltips</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Drag & Drop</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Slider</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

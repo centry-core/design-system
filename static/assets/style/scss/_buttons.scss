@@ -4,25 +4,29 @@
 
 .btn {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   height: 32px;
-  font-weight: 400;
   white-space: nowrap !important;
-  padding: 6px 15px 6px 15px;
+  padding: 4px 15px 4px 15px;
+  font-weight: 500;
 }
 
 .btn-lg {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   height: 40px !important;
-  padding: 10px 20px 10px 20px;
+  padding: 8px 20px 8px 20px;
+  font-weight: 500;
 }
 
 .btn-sm {
   font-size: 12px;
   line-height: 16px;
   height: 28px !important;
-  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
   padding: 5px 15px 5px 15px;
 }
 
@@ -121,11 +125,13 @@
   color: var(--basic);
   background-color: var(--tabs-btns-icns);
   border: 0;
-  font-weight: 700;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 20px;
   height: 40px !important;
+  .filter-option-inner-inner {
+    font-weight: 500;
+  }
 }
 
 .btn-chapters:hover {
@@ -241,6 +247,7 @@
 
 .btn-secondary {
   color: var(--basic);
+  font-weight: 600;
   background-color: var(--white);
   border: 1px solid var(--basic60);
   text-transform: capitalize;
@@ -358,8 +365,7 @@
   border: 0;
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 400;
-  /*max-width: 110px;*/
+  font-weight: 500;
 }
 .btn-colored.hover,
 .btn-colored:hover {
@@ -755,14 +761,28 @@
     border: 1px solid var(--disabled);
   }
 }
+.btn-icon__lg {
+  width: 40px;
+  padding: 0;
+}
 
 .btn-icon {
-  padding: 5px 10px;
+  width: 32px;
+  padding: 0;
+}
+
+.btn-icon__sm {
+  width: 28px;
+  padding: 0;
 }
 .btn-xs {
   height: 24px;
   font-size: 11px;
   padding: 2px 7px;
+}
+.btn-icon__xs {
+  width: 24px;
+  padding: 0;
 }
 .btn-table {
   color: var(--gray600);

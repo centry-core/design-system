@@ -55,6 +55,74 @@ $(document).ready(function() {
         }
     })
 
+
+
+    const sliderInput = noUiSlider.create($('#vuh-slider-input')[0], {
+        start: 40,
+        connect: 'lower',
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
+    sliderInput.on('update', function (values, handle, unencoded, isTap, positions) {
+        const vuh = parseInt(values[handle])
+        $("#vuh-input").val(vuh);
+        if(vuh !== sliderInput.options.range.max) {
+            $('#vuh-btn-max').prop("checked", false)
+        } else {
+            $('#vuh-btn-max').prop("checked", true)
+        }
+    })
+    $("#vuh-input").on('change', (e) => {
+        const inputedNumber = +e.target.value;
+        sliderInput.set(inputedNumber);
+    });
+    function toggle(element) {
+        if (this.checked) {
+            sliderInput.set(sliderInput.options.range.max);
+        } else {
+            sliderInput.reset();
+        }
+    }
+    $('#vuh-btn-max').on('change', function() {
+        toggle.call(this, $('#vuh-slider-input')[0]);
+    })
+
+    const sliderInputSimple = noUiSlider.create($('#vuh-slider-input-simple')[0], {
+        start: 20,
+        connect: 'lower',
+        range: {
+            'min': 0,
+            'max': 100
+        },
+    });
+
+    $("#vuh-input-simple").on('change', (e) => {
+        const inputedNumber = +e.target.value;
+        sliderInputSimple.set(inputedNumber);
+    });
+
+    sliderInputSimple.on('update', function (values, handle, unencoded, isTap, positions) {
+        const vuh = parseInt(values[handle])
+        $("#vuh-input-simple").val(vuh);
+    })
+
+    const sliderInputSimple2 = noUiSlider.create($('#vuh-slider-input-simple-2')[0], {
+        start: 50,
+        connect: 'lower',
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
+    $('#vuh-slider-input-simple-2')[0].setAttribute('disabled', true);
+
+    sliderInputSimple2.on('update', function (values, handle, unencoded, isTap, positions) {
+        const vuh = parseInt(values[handle])
+        $("#vuh-input-simple-2").val(vuh);
+    })
+
     noUiSlider.create($("#vuh-slider")[0], {
         start: 500,
         range: {
