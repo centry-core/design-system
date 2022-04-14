@@ -309,7 +309,7 @@ const ChooseFilter = {
         },
         createFilter() {
             this.selectedFilter = {
-                id: Math.round(Math.random() * 1000),
+                id: null,
                 title: '',
                 options: [
                     {
@@ -413,6 +413,11 @@ const ReportFilter = {
         this.editableFilter = this.deepClone(this.filter);
         this.renderSelect();
     },
+    computed: {
+      computedTitle() {
+          return this.editableFilter.title || 'New Filter'
+      }
+    },
     methods: {
         deepClone(obj) {
             if (obj === null) return null;
@@ -455,7 +460,7 @@ const ReportFilter = {
     template:`
         <div class="report-filter">
             <div class="d-flex justify-content-between mt-4 mb-2 pr-4">
-                <p class="font-h5 font-bold">New Filter</p>
+                <p class="font-h5 font-bold">{{ computedTitle }}</p>
                 <a class="notification-close" @click="removeFilter"></a>
             </div>
             <table class="w-100 table-filter mb-3" id="table-filter">
@@ -504,9 +509,9 @@ const ReportFilter = {
             </table>
             <div class="mb-4">
                 <button class="btn btn-basic mr-2" type="submit">Apply</button>
-                <button type="button" class="btn btn-secondary mr-2" @click="resetFilter">Reset</button>
+                <button v-if="this.editableFilter.id" type="button" class="btn btn-secondary mr-2" @click="resetFilter">Reset</button>
                 <button class="btn btn-default mr-2">Save</button>
-                <button class="btn btn-default" @click="$emit('save-filter-as')">Save as...</button>
+                <button v-if="this.editableFilter.id" class="btn btn-default" @click="$emit('save-filter-as')">Save as...</button>
             </div>
         </div>
     `
@@ -533,7 +538,8 @@ const vueApp = Vue.createApp({
     },
     methods: {
         fetchTableData() {
-            // window.$table.bootstrapTable('load', tableData);
+            this.tableData = tableData
+            // $('#tests-list-inputs').bootstrapTable('load', tableData);
         },
         setFilter(filter) {
             this.currentFilter = filter;
@@ -543,6 +549,30 @@ const vueApp = Vue.createApp({
         },
         saveFilterAs() {
             this.showModal = !this.showModal;
+            const newtTbleData = `{
+                "total": 1 ,
+                "rows": [
+                    {
+                        "id": 4,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    }]
+                }`
+            $('#tests-list-inputs').bootstrapTable('load', newtTbleData);
+            console.log($('#userDropDown'))
         }
     }
 });
