@@ -123,7 +123,9 @@
                     <modal-save-filter
                         v-if="showModal"
                         @save-filter-as="saveFilterAs"
-                        :filters-name="filtersName"
+                        @open-modal="openModal"
+                        @save-new-filter="saveNewFilter"
+                        :loading="loadingSaveAs"
                     ></modal-save-filter>
                     <div class="d-flex justify-content-end pb-4">
                         <ul class="custom-tabs nav nav-pills mr-3" id="pills-tab" role="tablist">
@@ -141,47 +143,36 @@
                             </li>
                         </ul>
                         <choose-filter
-                                @set-filter="setFilter"
-                                @set-filters="setFilters"
+                            :filters="filters"
+                            :loading-filters="loadingFilters"
+                            @select-filter="selectFilter"
+                            @create-filter="createFilter"
                         ></choose-filter>
                     </div>
                     <report-filter
-                        @remove-filter="currentFilter = null"
-                        v-if="currentFilter"
-                        :key="currentFilter"
-                        :filter="currentFilter"
-                        @save-filter-as="saveFilterAs"
+                        @remove-filter="selectedFilter = null"
+                        v-if="selectedFilter"
+                        :key="selectedFilter"
+                        :selected-filter="selectedFilter"
+                        @open-modal="openModal"
+                        @update-curent-filter="updateCurentFilter"
+                        @save="saveFilter"
+                        :loading-save="loadingSave"
+                        :loading-apply="loadingApply"
+                        @apply="updateTable"
                     ></report-filter>
                     <table
-                        :key="tableData"
+                        id="table"
                         class="table table-border mt-4"
-                        id="tests-list-inputs"
-                        data-toggle="table"
-                        data-unique-id="id"
                         data-pagination="true"
-                        data-page-size=5
+                        data-page-list="[5, 10, 15]"
                         data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
                         data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
-                        :data-data="tableData">
-                        <thead class="thead-light">
-                        <tr>
-                            <th scope="col" data-checkbox="true"></th>
-                            <th data-visible="false" data-field="id">index</th>
-                            <th scope="col" data-field="name">Name</th>
-                            <th scope="col" data-sortable="true" data-field="entrypoint">Entrypoint</th>
-                            <th scope="col" data-field="job_type" data-formatter=dataTypeFormatter>UUID</th>
-                            <th scope="col" data-field="emails" data-formatter=formatterSeverity>Tool</th>
-                            <th scope="col" data-align="right" data-formatter=actionFormatter>Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
+                        data-page-size=5>
                     </table>
                 </div>
             </div>
-            <div id="table">
 
-            </div>
         </div>
     </div>
 </main>

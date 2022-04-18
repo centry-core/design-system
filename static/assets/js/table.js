@@ -50,6 +50,40 @@ function formatterSeverity(value, row, index, field) {
     `
 }
 
+function severityFormatter(value, row, index, field) {
+    const options = ["LOW", "MEDIUM", "CRITICAL", "INFO", "VALID"].map(item =>
+        `<option
+            value=${item}
+            ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
+        >
+            ${item}
+        </option>
+        `
+    )
+    return `
+        <select class="selectpicker bootstrap-select__b" data-style="btn">
+            ${options.join('')}
+        </select>
+    `
+}
+
+function statusFormatter(value, row, index, field) {
+    const options = ["IGNORE", "MEDIUM", "CRITICAL", "INFO", "VALID"].map(item =>
+        `<option
+            value=${item}
+            ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
+        >
+            ${item}
+        </option>
+        `
+    )
+    return `
+        <select class="selectpicker bootstrap-select__b" data-style="btn">
+            ${options.join('')}
+        </select>
+    `
+}
+
 function dataTypeFormatter(value, row, index, field) {
     const options = ["name", "default", "type", "description", "action"].map(item =>
         `<option

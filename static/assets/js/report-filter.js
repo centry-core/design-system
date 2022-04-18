@@ -1,227 +1,66 @@
-const tableData = `{
-    "total": 12 ,
-    "rows": [
-        {
-            "id": 4,
-            "project_id": 3,
-            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-            "name": "PetsDemoKaren1",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 123,
-            "project_id": 3,
-            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-            "name": "PetsDemoKaren1",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 4435,
-            "project_id": 3,
-            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-            "name": "PetsDemoKaren1",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 454,
-            "project_id": 3,
-            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-            "name": "PetsDemoKaren1",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 4211,
-            "project_id": 3,
-            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-            "name": "PetsDemoKaren1",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 1231234,
-            "project_id": 3,
-            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-            "name": "PetsDemoKaren1",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 434643,
-            "project_id": 3,
-            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-            "name": "PetsDemoKaren1",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 3,
-            "project_id": 3,
-            "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
-            "name": "TestDistributed",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "tests",
-            "file": "Archive_flood.zip",
-            "entrypoint": "FloodIO.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "mykhailo_hunko@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "git": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 2,
-            "project_id": 3,
-            "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
-            "name": "PetsDemo",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        }, {
-            "id": 5,
-            "project_id": 3,
-            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-            "name": "PetsDemoKaren1",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 1,
-            "project_id": 3,
-            "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
-            "name": "TestDistributed",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "tests",
-            "file": "Archive_flood.zip",
-            "entrypoint": "FloodIO.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "mykhailo_hunko@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "git": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        },
-        {
-            "id": 6,
-            "project_id": 3,
-            "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
-            "name": "PetsDemo",
-            "parallel": 1,
-            "region": "default",
-            "bucket": "",
-            "file": "",
-            "entrypoint": "Petclinic.jmx",
-            "runner": "getcarrier/perfmeter:latest-5.3",
-            "emails": "karen_florykian@epam.com",
-            "env_vars": {},
-            "customization": {},
-            "cc_env_vars": {},
-            "last_run": null,
-            "job_type": "perfmeter"
-        }
-    ]
-}`
+const tableColumns = [{
+    title: 'ID',
+    field: 'id',
+    checkbox: true
+}, {
+    title: 'test name',
+    field: 'name',
+    sortable: true,
+}, {
+    title: 'scan type',
+    field: 'scan_type',
+    sortable: true,
+}, {
+    title: 'scanner',
+    field: 'scanner',
+    sortable: true,
+}, {
+    title: 'description',
+    field: 'description',
+    sortable: true,
+    class: 'w-100',
+}, {
+    title: 'severity',
+    field: 'severity',
+    formatter: 'severityFormatter',
+    sortable: true,
+}, {
+    title: 'status',
+    field: 'status',
+    formatter: 'statusFormatter',
+    sortable: true,
+}]
 
-const filtersData = [
+const tableData = [
+    { name: 'George', scan_type: 'Monkey', scanner: 'OWASP ZAP', description: 'Lorem ipsum dolor sit amet', severity: 'low', status: 'valid' },
+    { name: 'Jeffrey', scan_type: 'Giraffe', scanner: 'OWASP ZAP', description: 'Lorem ipsum dolor sit amet', severity: 'medium', status: 'valid' },
+    { name: 'Alice', scan_type: 'Giraffe', scanner: 'Qualys', description: 'Lorem ipsum dolor sit amet', severity: 'low', status: 'ignore' },
+    { name: 'Alice', scan_type: 'Tiger', scanner: 'Qualys', description: 'Lorem ipsum dolor sit amet', severity: 'low', status: 'valid' },
+    { name: 'Jeffrey', scan_type: 'Giraffe', scanner: 'OWASP ZAP', description: 'Lorem ipsum dolor sit amet', severity: 'medium', status: 'valid' },
+    { name: 'George', scan_type: 'Monkey', scanner: 'OWASP ZAP', description: 'Lorem ipsum dolor sit amet', severity: 'low', status: 'valid' },
+]
+
+const tableColumnsNew = [{
+    title: 'ID',
+    field: 'id',
+    checkbox: true
+}, {
+    title: 'test name',
+    field: 'name',
+    sortable: true,
+}, {
+    title: 'scan type',
+    field: 'scan_type',
+    sortable: true,
+}]
+
+const tableDataNew = [
+    { name: 'George', scan_type: 'Monkey' },
+    { name: 'Jeffrey', scan_type: 'Giraffe' },
+    { name: 'Alice', scan_type: 'Giraffe' },
+]
+
+let filtersData = [
     {
         id: 1,
         title: 'First',
@@ -272,57 +111,67 @@ const fetch = new Promise(resolve => {
     }, 1000)
 })
 
-const requestSave = (filterName) => {
-    console.log(filterName)
-    return  new Promise((resolve, reject) => {
-        const isNameExist = filtersData.some(filter => filter.title.toLowerCase() === filterName.toLowerCase().trim())
+const fetchTable = new Promise(resolve => {
+    resolve({
+        data: tableDataNew,
+        columns: tableColumnsNew,
+    })
+})
+
+function deepClone(obj) {
+    if (obj === null) return null;
+    let clone = Object.assign({}, obj);
+    Object.keys(clone).forEach(
+        key =>
+            (clone[key] =
+                typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+    );
+    if (Array.isArray(obj)) {
+        clone.length = obj.length;
+        return Array.from(clone);
+    }
+    return clone;
+}
+
+const requestSave = (currentFilter) => {
+    return new Promise((resolve, reject) => {
+        let indexFilter = null;
+        filtersData.forEach((filter, index) => {
+            if(filter.id === currentFilter.id) {
+                indexFilter = index
+            }
+        })
+        filtersData.splice(indexFilter, 1, currentFilter);
+        resolve({
+            data: currentFilter,
+            message: 'Filter saved'
+        })
+    })
+}
+
+const requestSaveAs = (currentFilter, filterTitle) => {
+    return new Promise((resolve, reject) => {
+        const isNameExist = filtersData.some(filter => filter.title.toLowerCase() === filterTitle.toLowerCase().trim())
         if (isNameExist) {
             reject('Filter name already exist')
-        } else (resolve('Filter saved'))
+        } else {
+            const createdFilter = {
+                ...currentFilter,
+                id: Math.round(Math.random() * 1000),
+                title: filterTitle,
+            }
+
+            filtersData.push(createdFilter);
+            resolve({
+                data: createdFilter,
+                message: 'Filter saved'
+            })
+        }
     })
 }
 
 const ChooseFilter = {
-    data() {
-        return {
-            filters: null,
-            selectedFilter: {},
-            loadingFilters: false,
-        }
-    },
-    mounted() {
-        this.fetchFilters();
-    },
-    methods: {
-        fetchFilters() {
-            this.loadingFilters = true;
-            fetch.then(res => {
-                this.filters = res;
-                this.$emit('setFilters', this.filters)
-            }).finally(() => {
-                this.loadingFilters = false;
-            })
-        },
-        selectFilter(filter) {
-            this.selectedFilter = Object.assign({}, filter);
-            this.$emit('setFilter', filter)
-        },
-        createFilter() {
-            this.selectedFilter = {
-                id: null,
-                title: '',
-                options: [
-                    {
-                        id: Math.round(Math.random() * 1000),
-                        column: '',
-                        operator: '',
-                        title: '',
-                    }
-                ]
-            },
-            this.$emit('setFilter', this.selectedFilter)
-        }
-    },
+    props: ['filters', 'loadingFilters'],
     template:`
         <div class="dropdown dropleft dropdown_action mr-2">
             <button class="btn dropdown-toggle btn-secondary"
@@ -335,8 +184,8 @@ const ChooseFilter = {
             </button>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li class="dropdown-item" @click="createFilter">Create new</li>
-                <li v-for="filter in filters" class="dropdown-item" @click="selectFilter(filter)">
+                <li class="dropdown-item" @click="$emit('create-filter')">Create new</li>
+                <li v-for="filter in filters" class="dropdown-item" @click="$emit('select-filter', filter)">
                     <i class='fa fa-trash mr-2'></i>
                     {{ filter.title }}
                 </li>
@@ -346,11 +195,10 @@ const ChooseFilter = {
 }
 
 const modalSaveFilter = {
-    props: ['filtersName'],
+    props: ['loading'],
     data() {
         return {
-            filterName: '',
-            loading: false,
+            filterTitle: '',
         }
     },
     computed: {
@@ -360,20 +208,10 @@ const modalSaveFilter = {
     },
     methods: {
         isShortName() {
-            return this.filterName.length < 3;
+            return this.filterTitle.length < 3;
         },
-        saveFilter() {
-            this.loading = true;
-            setTimeout(() => {
-                requestSave(this.filterName).then(response => {
-                    this.$emit('save-filter-as');
-                    showNotify('SUCCESS', 'Filter saved');
-                }).catch(error => {
-                    showNotify('ERROR', error);
-                }).finally(() => {
-                    this.loading = false;
-                })
-            }, 500)
+        saveNewFilter() {
+            if(!this.hasError) this.$emit('save-new-filter', this.filterTitle)
         }
     },
     template:`
@@ -383,18 +221,17 @@ const modalSaveFilter = {
                 <div class="custom-input" :class="{'invalid-input': hasError}">
                     <input
                         type="text"
-                        v-model="filterName"
+                        v-model="filterTitle"
                         placeholder="Text">
                     <span class="input_error-msg">Filter name less then 3 letters</span>
                     <div class="d-flex justify-content-end mt-4">
-                        <button type="button" class="btn btn-secondary mr-2" @click="$emit('save-filter-as')">Reset</button>
+                        <button type="button" class="btn btn-secondary mr-2" @click="$emit('open-modal')">Cencel</button>
                         <button
                             :disabled="hasError"
                             class="btn btn-basic mr-2 d-flex align-items-center"
-                            :class="{'btn-secondary': loading}"
                             type="submit"
-                            @click="saveFilter"
-                        >Save <i v-if="loading" class="preview-loader"></i></button>
+                            @click="saveNewFilter"
+                        >Save <i v-if="loading" class="preview-loader__white ml-2"></i></button>
                     </div>
                 </div>
             </div>
@@ -403,36 +240,43 @@ const modalSaveFilter = {
 }
 
 const ReportFilter = {
-    props: ['filter'],
+    props: [
+        'selectedFilter',
+        'loadingSave',
+        'loadingApply'
+    ],
     data() {
         return {
             editableFilter: {},
+            isInvalidFilter: false,
         }
     },
     mounted() {
-        this.editableFilter = this.deepClone(this.filter);
+        this.editableFilter = deepClone(this.selectedFilter);
         this.renderSelect();
     },
+    watch: {
+        editableFilter: {
+            handler: function() {
+                this.$nextTick(() => {
+                    const arr = []
+                    $('.table-filter > tbody > tr').each(function (index, element) {
+                        $(element).find('td > div').each(function (index, cell) {
+                            arr.push(cell.getAttribute('data-valid'));
+                        })
+                    })
+                    this.isInvalidFilter = arr.every(elem => elem !== 'true')
+                });
+            },
+            deep: true
+        }
+    },
     computed: {
-      computedTitle() {
-          return this.editableFilter.title || 'New Filter'
-      }
+        computedTitle() {
+            return this.editableFilter.title || 'New Filter'
+        }
     },
     methods: {
-        deepClone(obj) {
-            if (obj === null) return null;
-            let clone = Object.assign({}, obj);
-            Object.keys(clone).forEach(
-                key =>
-                    (clone[key] =
-                        typeof obj[key] === 'object' ? this.deepClone(obj[key]) : obj[key])
-            );
-            if (Array.isArray(obj)) {
-                clone.length = obj.length;
-                return Array.from(clone);
-            }
-            return clone;
-        },
         renderSelect() {
             this.$nextTick(() => {
                 $('.selectpicker').selectpicker('render');
@@ -454,7 +298,21 @@ const ReportFilter = {
             this.$emit('remove-filter');
         },
         resetFilter() {
-            this.editableFilter = this.deepClone(this.filter);
+            this.editableFilter = deepClone(this.selectedFilter);
+            this.renderSelect();
+        },
+        saveAs() {
+            this.$emit('open-modal');
+            this.$emit('update-curent-filter', this.editableFilter)
+        },
+        save() {
+            this.$emit('save', this.editableFilter)
+        },
+        hasError(value) {
+            return value.length > 0;
+        },
+        apply() {
+            this.$emit('apply', this.editableFilter)
         }
     },
     template:`
@@ -465,53 +323,84 @@ const ReportFilter = {
             </div>
             <table class="w-100 table-filter mb-3" id="table-filter">
                 <thead>
-                <tr class="font-h6">
-                    <th>Column</th>
-                    <th>Operator</th>
-                    <th>Data</th>
-                </tr>
+                    <tr class="font-h6">
+                        <th>Column</th>
+                        <th>Operator</th>
+                        <th>Data</th>
+                    </tr>
                 </thead>
-                <tr v-for="option in editableFilter.options" :key="option.id">
-                    <td class="pr-2 pb-2">
-                        <select class="selectpicker min-w-100 bootstrap-select__b" data-style="btn" v-model="option.column">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                            <option>Description</option>
-                        </select>
-                    </td>
-                    <td class="pr-2 pb-2">
-                        <select class="selectpicker min-w-100 bootstrap-select__b" data-style="btn" v-model="option.operator">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                    </td>
-                    <td class="w-100 pb-2">
-                        <div class="custom-input">
-                            <input
-                                type="text"
-                                v-model="option.title"
-                                placeholder="Some data">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex justify-content-end table-action align-items-center pl-2 pr-4">
-                            <button 
-                                v-if="editableFilter.options.length > 1"
-                                type="button" class="btn btn-24 btn-action"
-                                @click="removeOption(option.id)"><i class="fas fa-minus"></i>
-                             </button>
-                            <button type="button" class="btn btn-24 btn-action" @click="addOption"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </td>
-                </tr>
+                <tbody>
+                    <tr v-for="option in editableFilter.options" :key="option.id">
+                        <td class="pr-2 pb-2 cell-input">
+                            <div class="select-validation" :class="{'invalid-select': !hasError(option.column)}"
+                                :data-valid="!hasError(option.column)">
+                                <select class="selectpicker bootstrap-select__b"
+                                    v-model="option.column"
+                                    data-style="btn">
+                                    <option>Mustard</option>
+                                    <option>Ketchup</option>
+                                    <option>Relish</option>
+                                    <option>Description</option>
+                                </select>
+                                <span class="select_error-msg">Column is required!</span>
+                            </div>
+                        </td>
+                        <td class="pr-2 pb-2 cell-input">
+                            <div class="select-validation" :class="{'invalid-select': !hasError(option.operator)}"
+                                :data-valid="!hasError(option.operator)">
+                                <select class="selectpicker bootstrap-select__b"
+                                    v-model="option.operator"
+                                    data-style="btn">
+                                    <option>Mustard</option>
+                                    <option>Ketchup</option>
+                                    <option>Relish</option>
+                                    <option>Description</option>
+                                </select>
+                                <span class="select_error-msg">Operator is required!</span>
+                            </div>
+                        </td>
+                        <td class="w-100 pb-2 cell-input">
+                            <div class="custom-input" :class="{'invalid-input': !hasError(option.title)}"
+                                :data-valid="!hasError(option.title)">
+                                <input
+                                    type="text"
+                                    v-model="option.title"
+                                    placeholder="Some data">
+                                <span class="input_error-msg">Data is required!</span>
+                            </div>
+                        </td>
+                        <td class="cell-icon">
+                            <div class="d-flex justify-content-end table-action align-items-center pl-2 pr-4 pt-2">
+                                <button 
+                                    v-if="editableFilter.options.length > 1"
+                                    type="button" class="btn btn-24 btn-action"
+                                    @click="removeOption(option.id)"><i class="fas fa-minus"></i>
+                                 </button>
+                                <button type="button" class="btn btn-24 btn-action" @click="addOption"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-            <div class="mb-4">
-                <button class="btn btn-basic mr-2" type="submit">Apply</button>
-                <button v-if="this.editableFilter.id" type="button" class="btn btn-secondary mr-2" @click="resetFilter">Reset</button>
-                <button class="btn btn-default mr-2">Save</button>
-                <button v-if="this.editableFilter.id" class="btn btn-default" @click="$emit('save-filter-as')">Save as...</button>
+            <div class="d-flex justify-content-start">
+                <button class="btn btn-basic mr-2 d-flex align-items-center"
+                    type="button"
+                    @click="apply"
+                    :disabled="!isInvalidFilter">Apply
+                        <i v-if="loadingApply" class="preview-loader__white ml-2"></i>
+                    </button>
+                <button v-if="this.editableFilter.id"
+                    type="button"
+                    class="btn btn-secondary mr-2"
+                    @click="resetFilter">Reset</button>
+                <button v-if="this.editableFilter.id" 
+                    :class="{'btn-secondary': loadingSave}"
+                    :disabled="!isInvalidFilter"
+                    @click="save"
+                    class="btn btn-default d-flex align-items-center"
+                    >Save <i v-if="loadingSave" class="preview-loader ml-2"></i>
+                </button>
+                <button class="btn btn-default" @click="saveAs" :disabled="!isInvalidFilter">Save as...</button>
             </div>
         </div>
     `
@@ -522,57 +411,118 @@ const vueApp = Vue.createApp({
         'report-filter': ReportFilter,
         'choose-filter': ChooseFilter,
         'modal-save-filter': modalSaveFilter,
-        'bootstrap-table': BootstrapTable,
     },
     data() {
         return {
-            currentFilter: null,
             showModal: false,
             filtersName: [],
-            tableData: null,
-            loading: false,
+            loadingSave: false,
+            loadingSaveAs: false,
+            loadingApply: false,
+            filters: null,
+            selectedFilter: null,
+            loadingFilters: false,
+            updatedFilter: null,
         }
     },
     mounted() {
-        this.fetchTableData();
+        this.fetchFilters();
+        this.initTable();
     },
     methods: {
-        fetchTableData() {
-            this.tableData = tableData
-            // $('#tests-list-inputs').bootstrapTable('load', tableData);
+        initTable() {
+            const tableOptions = {
+                columns: tableColumns,
+                data: tableData,
+                theadClasses: 'thead-light'
+            }
+            $('#table').bootstrapTable(tableOptions)
         },
-        setFilter(filter) {
-            this.currentFilter = filter;
+        fetchFilters() {
+            this.loadingFilters = true;
+            fetch.then(res => {
+                this.filters = res;
+            }).finally(() => {
+                this.loadingFilters = false;
+            })
+        },
+        updateTable(filterSetting) {
+            this.loadingApply = true;
+            $('#table').bootstrapTable('destroy');
+            setTimeout(() => {
+                console.log('SETTING FOR SERVER:', filterSetting.options)
+                fetchTable.then(response => {
+                    const { columns, data } = response;
+                    const tableOptions = {
+                        columns,
+                        data,
+                        theadClasses: 'thead-light'
+                    }
+                    $('#table').bootstrapTable(tableOptions);
+                    $('.selectpicker').selectpicker('render');
+                }).finally(() => {
+                    this.loadingApply = false;
+                })
+            }, 500)
+        },
+        createFilter() {
+            this.selectedFilter = {
+                id: null,
+                title: '',
+                options: [
+                    {
+                        id: Math.round(Math.random() * 1000),
+                        column: '',
+                        operator: '',
+                        title: '',
+                    }
+                ]
+            }
+        },
+        selectFilter(filter) {
+            this.selectedFilter = filter;
         },
         setFilters(filters) {
             this.filtersName = filters.map(filter => filter.title);
         },
-        saveFilterAs() {
+        openModal() {
             this.showModal = !this.showModal;
-            const newtTbleData = `{
-                "total": 1 ,
-                "rows": [
-                    {
-                        "id": 4,
-                        "project_id": 3,
-                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
-                        "name": "PetsDemoKaren1",
-                        "parallel": 1,
-                        "region": "default",
-                        "bucket": "",
-                        "file": "",
-                        "entrypoint": "Petclinic.jmx",
-                        "runner": "getcarrier/perfmeter:latest-5.3",
-                        "emails": "karen_florykian@epam.com",
-                        "env_vars": {},
-                        "customization": {},
-                        "cc_env_vars": {},
-                        "last_run": null,
-                        "job_type": "perfmeter"
-                    }]
-                }`
-            $('#tests-list-inputs').bootstrapTable('load', newtTbleData);
-            console.log($('#userDropDown'))
+        },
+        saveFilterAs(createdFilter) {
+            this.filters.push(createdFilter);
+            this.openModal();
+        },
+        saveFilter(currentFilter) {
+            this.loadingSave = true;
+            setTimeout(() => {
+                requestSave(currentFilter).then(response => {
+                    this.selectFilter(response.data);
+                    showNotify('SUCCESS', response.message);
+                    this.fetchFilters();
+                }).catch(error => {
+                    showNotify('ERROR', error);
+                }).finally(() => {
+                    this.loadingSave = false;
+                })
+            }, 500)
+        },
+        saveNewFilter(filterName) {
+            this.loadingSaveAs = true;
+            setTimeout(() => {
+                requestSaveAs(this.updatedFilter, filterName).then(response => {
+                    this.selectFilter(response.data);
+                    showNotify('SUCCESS', response.message);
+                    this.openModal();
+                    this.fetchFilters();
+                }).catch(error => {
+                    showNotify('ERROR', error);
+                }).finally(() => {
+                    this.loadingSaveAs = false;
+                })
+            }, 500)
+        },
+        updateCurentFilter(updatedFilter) {
+            this.updatedFilter = deepClone(updatedFilter);
         }
     }
 });
