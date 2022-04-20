@@ -117,7 +117,19 @@
     outline: 0;
   }
 }
-
+.bootstrap-select.btn-colored-select{
+  .dropdown-toggle {
+    height: 38px;
+    padding: 8px 16px;
+    &:hover {
+      border: 1px solid var(--b-color) !important;
+    }
+    .filter-option-inner-inner {
+      font-weight: 500;
+      line-height: 20px;
+    }
+  }
+}
 .bootstrap-select {
   &.show, &:hover {
     .dropdown-toggle:not(.btn-chapters) {
@@ -143,7 +155,7 @@
     border: solid 1px var(--gray400);
     border-radius: 4px;
     .dropdown-toggle {
-      height: 40px;
+      height: 38px;
       padding: 8px 16px;
     }
     &.show, &:hover {

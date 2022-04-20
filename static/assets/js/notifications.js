@@ -2,26 +2,26 @@ const popup = Notification({
     duration: 3000,
 });
 
-const showNotify = (type) => {
+const showNotify = (type, title = '') => {
     switch (type) {
         case 'ERROR':
             popup.error({
-                title: 'Message error',
+                title,
             });
             break;
         case 'WARNING':
             popup.warning({
-                title: 'Message warning',
+                title,
             });
             break;
         case 'INFO':
             popup.info({
-                title: 'Message info',
+                title,
             });
             break;
         case 'SUCCESS':
             popup.success({
-                title: 'Message success',
+                title,
             });
             break;
         default:

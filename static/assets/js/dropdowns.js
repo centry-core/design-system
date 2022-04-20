@@ -72,9 +72,6 @@ const TreeList = {
             console.log(`SELECTED TREE ITEMS: ${val}`)
         }
     },
-    // mounted() {
-    //     if (this.allSelected) this.selectAllItems(this.itemsListTree);
-    // },
     methods: {
         selectAllItems(values) {
             values.forEach(value => {
@@ -100,20 +97,6 @@ const TreeList = {
             if(type === 'group' && !e.target.checked && e.target.checked !== undefined) {
                 console.log(e)
             }
-
-
-            // if(!relatedId) {
-            //     this.selectedItems.push(item.id)
-            // }
-            // console.log(relatedId, item, e);
-
-            // if (!e.target.checked && e.target.checked !== undefined) {
-            //     this.selectedItems = this.selectedItems
-            //         .filter(v => !this.selectRelatedItems(item).includes(v))
-            //         .filter(v => v !== item.id)
-            // } else if (e.target.checked) {
-            //     this.selectedItems = [...this.selectedItems, ...this.selectRelatedItems(item), item.id];
-            // }
         }
     },
     template: `
@@ -165,20 +148,6 @@ const TreeList = {
                         </p>
                         <div v-if="item1lvl.items && item1lvl.showItems" class="ml-4">
                             <div v-for="item2lvl in item1lvl.items" :key="item2lvl.id">
-<!--                                <p v-if="item2lvl.type === 'group'" class="d-flex align-items-center px-3 position-relative">-->
-<!--                                    <i class="fa fa-sort-down position-absolute"-->
-<!--                                        v-if="item2lvl.items"-->
-<!--                                        @click="item2lvl.showItems = !item2lvl.showItems"-->
-<!--                                        :style="[!item2lvl.showItems ? 'transform: rotate(270deg)' : '']"-->
-<!--                                    ></i>-->
-<!--                                    <label-->
-<!--                                        @click="checkItem(item2lvl, $event)"-->
-<!--                                        class="mb-0 w-100 d-flex align-items-center custom-checkbox">-->
-<!--                                        <input-->
-<!--                                            type="checkbox">-->
-<!--                                        <span class="w-100 d-inline-block ml-3">{{ item2lvl.title }}</span>-->
-<!--                                    </label>-->
-<!--                                </p>-->
                                 <p v-if="item2lvl.type !== 'group'" class="d-flex align-items-center px-3 position-relative">
                                     <label
                                         class="mb-0 w-100 d-flex align-items-center custom-checkbox">
@@ -188,20 +157,6 @@ const TreeList = {
                                         <span class="w-100 d-inline-block ml-3">{{ item2lvl.title }}</span>
                                     </label>
                                 </p>
-<!--                                <div v-if="item2lvl.items && item2lvl.showItems" class="ml-4">-->
-<!--                                    <div v-for="item3lvl in item2lvl.items" :key="item3lvl.id">-->
-<!--                                        <p class="d-flex align-items-center px-3">-->
-<!--                                            <label-->
-<!--                                                class="mb-0 w-100 d-flex align-items-center custom-checkbox">-->
-<!--                                                <input-->
-<!--                                                    :value="item3lvl.id"-->
-<!--                                                    v-model="selectedItems"-->
-<!--                                                    type="checkbox">-->
-<!--                                                <span class="w-100 d-inline-block ml-3">{{ item3lvl.title }}</span>-->
-<!--                                            </label>-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
                             </div>
                         </div>
                     </div>

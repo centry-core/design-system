@@ -1,12 +1,14 @@
 const coloredClassNameRegexp = new RegExp(/colored-select-(\w+)/, 'i');
 const palette = {
-    red: {"border-color": "#F2B4B4", "color": "#F32626", "background-color": "#FFF0F0"},
-    orange: {"border-color": "#FBCFA6", "color": "#E97912", "background-color": "#FFEDDD"},
-    yellow: {"border-color": "#EFE482", "color": "#DBC714", "background-color": "#FFFBE7"},
-    green: {"border-color": "#94E5B0", "color": "#18B64D", "background-color": "#E7FFE7"},
-    blue: {"border-color": "#96C0FF", "color": "#2F7DF1", "background-color": "#E0F2FE"},
-    darkblue: {"border-color": "#CACDDC", "color": "#32325D", "background-color": "#E0E8F3"},
-    default: {"border-color": "inherit", "color": "inherit", "background-color": "inherit"},
+    red: {"--b-color": "#F2B4B4", "color": "#F32626", "background-color": "#FFF0F0"},
+    orange: {"--b-color": "#FBCFA6", "color": "#E97912", "background-color": "#FFEDDD"},
+    yellow: {"--b-color": "#EFE482", "color": "#DBC714", "background-color": "#FFFBE7"},
+    green: {"--b-color": "#94E5B0", "color": "#18B64D", "background-color": "#E7FFE7"},
+    blue: {"--b-color": "#96C0FF", "color": "#2F7DF1", "background-color": "#E0F2FE"},
+    darkblue: {"--b-color": "#CACDDC", "color": "#32325D", "background-color": "#E0E8F3"},
+    ignored: {"--b-color": "#CACDDC", "color": "#32325D", "background-color": "#E0E8F3"},
+    notdefined: {"--b-color": "#CACDDC", "color": "inherit", "background-color": "inherit"},
+    default: {"--b-color": "inherit", "color": "inherit", "background-color": "inherit"},
 }
 
 const paintSelect = el => {

@@ -98,7 +98,7 @@
   background: url("../../../assets/ico/arrow-down__white.svg") no-repeat center right;
 }
 
-.table .dropdown-toggle {
+.table .dropdown-toggle:not(.btn-colored) {
   background: white !important;
 }
 
@@ -349,16 +349,16 @@
       display: none;
     }
     i {
-      width: 14px;
+      width: 16px;
     }
     &.btn {
-      padding: 6px 8px;
+      padding: 6px 7px;
     }
   }
   .dropdown-toggle__sm {
     &.btn {
       height: 24px;
-      padding: 2px 4px;
+      padding: 2px 3px;
       font-size: 12px;
     }
   }
