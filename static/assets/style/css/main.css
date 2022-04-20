@@ -2768,6 +2768,11 @@ input[type=range]::-moz-range-thumb {
   outline: 0;
 }
 
+.bootstrap-select.btn-colored-table .dropdown-toggle {
+  height: 38px;
+  padding: 8px 16px;
+}
+
 .bootstrap-select {
   width: auto !important;
   border: 1px solid transparent;
@@ -2929,7 +2934,7 @@ input[type=range]::-moz-range-thumb {
   background: url("/design-system/static/assets/ico/arrow-down__white.svg") no-repeat center right;
 }
 
-.table .dropdown-toggle {
+.table .dropdown-toggle:not(.btn-colored) {
   background: white !important;
 }
 

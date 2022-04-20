@@ -1,178 +1,17 @@
-const tableColumns = [{
-    title: 'ID',
-    field: 'id',
-    checkbox: true
-}, {
-    title: 'test name',
-    field: 'name',
-    sortable: true,
-}, {
-    title: 'scan type',
-    field: 'scan_type',
-    sortable: true,
-}, {
-    title: 'scanner',
-    field: 'scanner',
-    sortable: true,
-}, {
-    title: 'description',
-    field: 'description',
-    sortable: true,
-    class: 'w-100',
-}, {
-    title: 'severity',
-    field: 'severity',
-    formatter: 'severityFormatter',
-    sortable: true,
-}, {
-    title: 'status',
-    field: 'status',
-    formatter: 'statusFormatter',
-    sortable: true,
-}]
-
-const tableData = [
-    { name: 'George', scan_type: 'Monkey', scanner: 'OWASP ZAP', description: 'Lorem ipsum dolor sit amet', severity: 'low', status: 'valid' },
-    { name: 'Jeffrey', scan_type: 'Giraffe', scanner: 'OWASP ZAP', description: 'Lorem ipsum dolor sit amet', severity: 'medium', status: 'valid' },
-    { name: 'Alice', scan_type: 'Giraffe', scanner: 'Qualys', description: 'Lorem ipsum dolor sit amet', severity: 'low', status: 'ignore' },
-    { name: 'Alice', scan_type: 'Tiger', scanner: 'Qualys', description: 'Lorem ipsum dolor sit amet', severity: 'low', status: 'valid' },
-    { name: 'Jeffrey', scan_type: 'Giraffe', scanner: 'OWASP ZAP', description: 'Lorem ipsum dolor sit amet', severity: 'medium', status: 'valid' },
-    { name: 'George', scan_type: 'Monkey', scanner: 'OWASP ZAP', description: 'Lorem ipsum dolor sit amet', severity: 'low', status: 'valid' },
-]
-
-const tableColumnsNew = [{
-    title: 'ID',
-    field: 'id',
-    checkbox: true
-}, {
-    title: 'test name',
-    field: 'name',
-    sortable: true,
-}, {
-    title: 'scan type',
-    field: 'scan_type',
-    sortable: true,
-}]
-
-const tableDataNew = [
-    { name: 'George', scan_type: 'Monkey' },
-    { name: 'Jeffrey', scan_type: 'Giraffe' },
-    { name: 'Alice', scan_type: 'Giraffe' },
-]
-
-let filtersData = [
-    {
-        id: 1,
-        title: 'First',
-        options: [
-            {
-                id: 1,
-                column: 'Description',
-                operator: 'Relish',
-                title: 'knowlege',
-            },
-            {
-                id: 2,
-                column: 'Ketchup',
-                operator: 'Mustard',
-                title: 'Lorem ipsum',
-            }
-        ]
-    },
-    {
-        id: 2,
-        title: 'User filter 2',
-        options: [
-            {
-                id: 2,
-                column: 'Description',
-                operator: 'Ketchup',
-                title: 'knowlege',
-            }
-        ]
-    },
-    {
-        id: 3,
-        title: 'Two',
-        options: [
-            {
-                id: 3,
-                column: '',
-                operator: '',
-                title: 'knowlege',
-            }
-        ]
-    }
-]
-
-const fetch = new Promise(resolve => {
-    setTimeout(() => {
-        resolve(filtersData)
-    }, 1000)
-})
-
-const fetchTable = new Promise(resolve => {
-    resolve({
-        data: tableDataNew,
-        columns: tableColumnsNew,
-    })
-})
-
-function deepClone(obj) {
-    if (obj === null) return null;
-    let clone = Object.assign({}, obj);
-    Object.keys(clone).forEach(
-        key =>
-            (clone[key] =
-                typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
-    );
-    if (Array.isArray(obj)) {
-        clone.length = obj.length;
-        return Array.from(clone);
-    }
-    return clone;
-}
-
-const requestSave = (currentFilter) => {
-    return new Promise((resolve, reject) => {
-        let indexFilter = null;
-        filtersData.forEach((filter, index) => {
-            if(filter.id === currentFilter.id) {
-                indexFilter = index
-            }
-        })
-        filtersData.splice(indexFilter, 1, currentFilter);
-        resolve({
-            data: currentFilter,
-            message: 'Filter saved'
-        })
-    })
-}
-
-const requestSaveAs = (currentFilter, filterTitle) => {
-    return new Promise((resolve, reject) => {
-        const isNameExist = filtersData.some(filter => filter.title.toLowerCase() === filterTitle.toLowerCase().trim())
-        if (isNameExist) {
-            reject('Filter name already exist')
-        } else {
-            const createdFilter = {
-                ...currentFilter,
-                id: Math.round(Math.random() * 1000),
-                title: filterTitle,
-            }
-
-            filtersData.push(createdFilter);
-            resolve({
-                data: createdFilter,
-                message: 'Filter saved'
-            })
-        }
-    })
-}
-
 const ChooseFilter = {
-    props: ['filters', 'loadingFilters'],
-    template:`
+    props: ['filters', 'loadingFilters', 'loadingDelete'],
+    data() {
+        return {
+            deletingId: null,
+        }
+    },
+    methods: {
+        deleteFilter(filter) {
+          this.deletingId = filter.id;
+          this.$emit('delete-filter', filter)
+      }
+    },
+    template: `
         <div class="dropdown dropleft dropdown_action mr-2">
             <button class="btn dropdown-toggle btn-secondary"
                     role="button"
@@ -185,8 +24,14 @@ const ChooseFilter = {
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li class="dropdown-item" @click="$emit('create-filter')">Create new</li>
-                <li v-for="filter in filters" class="dropdown-item" @click="$emit('select-filter', filter)">
-                    <i class='fa fa-trash mr-2'></i>
+                <li v-for="filter in filters" class="dropdown-item custom-nav_item"
+                    @click="$emit('select-filter', filter)"
+                    >
+                    <button class="btn btn-default btn-xs btn-table btn-icon p-1"
+                        @click.stop="deleteFilter(filter)">
+                        <i v-if="loadingDelete && deletingId === filter.id" class="preview-loader"></i>
+                        <i v-else className="fas fa-trash-alt"></i>
+                    </button>
                     {{ filter.title }}
                 </li>
             </ul>
@@ -211,10 +56,10 @@ const modalSaveFilter = {
             return this.filterTitle.length < 3;
         },
         saveNewFilter() {
-            if(!this.hasError) this.$emit('save-new-filter', this.filterTitle)
+            if (!this.hasError) this.$emit('save-new-filter', this.filterTitle)
         }
     },
-    template:`
+    template: `
         <div class="modal-component">
             <div class="modal-card">
                 <p class="font-bold font-h3 mb-4">Create filter</p>
@@ -254,10 +99,12 @@ const ReportFilter = {
     mounted() {
         this.editableFilter = deepClone(this.selectedFilter);
         this.renderSelect();
+        const event = new Event('vue_init')
+        document.dispatchEvent(event);
     },
     watch: {
         editableFilter: {
-            handler: function() {
+            handler: function () {
                 this.$nextTick(() => {
                     const arr = []
                     $('.table-filter > tbody > tr').each(function (index, element) {
@@ -315,7 +162,7 @@ const ReportFilter = {
             this.$emit('apply', this.editableFilter)
         }
     },
-    template:`
+    template: `
         <div class="report-filter">
             <div class="d-flex justify-content-between mt-4 mb-2 pr-4">
                 <p class="font-h5 font-bold">{{ computedTitle }}</p>
@@ -422,12 +269,15 @@ const vueApp = Vue.createApp({
             filters: null,
             selectedFilter: null,
             loadingFilters: false,
+            loadingDelete: false,
             updatedFilter: null,
         }
     },
     mounted() {
         this.fetchFilters();
         this.initTable();
+        const event = new Event('vue_init');
+        document.dispatchEvent(event);
     },
     methods: {
         initTable() {
@@ -440,7 +290,7 @@ const vueApp = Vue.createApp({
         },
         fetchFilters() {
             this.loadingFilters = true;
-            fetch.then(res => {
+            apiFetchFilters.then(res => {
                 this.filters = res;
             }).finally(() => {
                 this.loadingFilters = false;
@@ -451,8 +301,8 @@ const vueApp = Vue.createApp({
             $('#table').bootstrapTable('destroy');
             setTimeout(() => {
                 console.log('SETTING FOR SERVER:', filterSetting.options)
-                fetchTable.then(response => {
-                    const { columns, data } = response;
+                apiFetchTable.then(response => {
+                    const {columns, data} = response;
                     const tableOptions = {
                         columns,
                         data,
@@ -495,7 +345,7 @@ const vueApp = Vue.createApp({
         saveFilter(currentFilter) {
             this.loadingSave = true;
             setTimeout(() => {
-                requestSave(currentFilter).then(response => {
+                apiSaveFilter(currentFilter).then(response => {
                     this.selectFilter(response.data);
                     showNotify('SUCCESS', response.message);
                     this.fetchFilters();
@@ -509,7 +359,7 @@ const vueApp = Vue.createApp({
         saveNewFilter(filterName) {
             this.loadingSaveAs = true;
             setTimeout(() => {
-                requestSaveAs(this.updatedFilter, filterName).then(response => {
+                apiSaveAsFilter(this.updatedFilter, filterName).then(response => {
                     this.selectFilter(response.data);
                     showNotify('SUCCESS', response.message);
                     this.openModal();
@@ -523,8 +373,20 @@ const vueApp = Vue.createApp({
         },
         updateCurentFilter(updatedFilter) {
             this.updatedFilter = deepClone(updatedFilter);
+        },
+        deleteFilter(filter) {
+            this.loadingDelete= true;
+            setTimeout(() => {
+                apiDeleteFilter(filter).then((response) => {
+                    showNotify('SUCCESS', response.message);
+                    this.fetchFilters();
+                }).finally(() => {
+                    this.loadingDelete = false;
+                })
+            }, 500);
         }
     }
 });
 
 vueApp.mount('#vueApp');
+initColoredSelect();

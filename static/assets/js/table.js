@@ -22,20 +22,41 @@ function updateCell(el, row, field) {
     $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
 }
 
-const SEVERITY = [
-        {
-            className: "colored-select-red",
-            title: "CRITICAL"
-        },
-        {
-            className: "colored-select-orange",
-            title: "HIGH"
-        }
-    ]
+const SEVERITY_TYPES = [
+    {
+        className: "colored-select-red",
+        title: "CRITICAL"
+    },
+    {
+        className: "colored-select-orange",
+        title: "HIGH"
+    },
+    {
+        className: "colored-select-yellow",
+        title: "MEDIUM"
+    },
+    {
+        className: "colored-select-green",
+        title: "LOW"
+    },
+    {
+        className: "colored-select-blue",
+        title: "INFO"
+    },
+    {
+        className: "colored-select-default",
+        title: "UNEXPECTED"
+    },
+    {
+        className: "colored-select-darkblue",
+        title: "IGNORE"
+    }
+]
 
 function formatterSeverity(value, row, index, field) {
-    const options = SEVERITY.map(item =>
+    const options = SEVERITY_TYPES.map(item =>
         `<option
+            class=${item.className}
             value=${item.title}
             ${item.title.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
         >
@@ -44,41 +65,7 @@ function formatterSeverity(value, row, index, field) {
         `
     )
     return `
-        <select class="selectpicker bootstrap-select__b">
-            ${options.join('')}
-        </select>
-    `
-}
-
-function severityFormatter(value, row, index, field) {
-    const options = ["LOW", "MEDIUM", "CRITICAL", "INFO", "VALID"].map(item =>
-        `<option
-            value=${item}
-            ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
-        >
-            ${item}
-        </option>
-        `
-    )
-    return `
-        <select class="selectpicker bootstrap-select__b" data-style="btn">
-            ${options.join('')}
-        </select>
-    `
-}
-
-function statusFormatter(value, row, index, field) {
-    const options = ["IGNORE", "MEDIUM", "CRITICAL", "INFO", "VALID"].map(item =>
-        `<option
-            value=${item}
-            ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
-        >
-            ${item}
-        </option>
-        `
-    )
-    return `
-        <select class="selectpicker bootstrap-select__b" data-style="btn">
+        <select class="selectpicker btn-colored-select mr-2 btn-colored-table" data-style="btn-colored">
             ${options.join('')}
         </select>
     `
@@ -155,15 +142,14 @@ const deleteParams = (index, source) => {
     };
     $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
 })(jQuery);
-
-const renderSelectpicker = () => {
-    setTimeout(() => {
+// script fot tables with vue.js when injected event (vue_init)
+$(document).on('vue_init', () => {
+    $('.table').on('all.bs.table', () => {
         $('.selectpicker').selectpicker('render');
-    }, 0)
-}
-
-renderSelectpicker();
-
-$('#tests-list-inputs').on('sort.bs.table', function (e, name, order) {
-    renderSelectpicker();
+        initColoredSelect();
+    })
+})
+// script fot tables without vue.js
+$('.table').on('all.bs.table', () => {
+    $('.selectpicker').selectpicker('render');
 })
