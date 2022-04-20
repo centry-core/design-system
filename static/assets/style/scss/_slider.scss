@@ -165,7 +165,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .noUi-marker-large,
 .noUi-marker-sub {
-  background: #aaa;
+  background: $gray200;
 }
 
 .noUi-pips-horizontal {
@@ -194,10 +194,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   height: 10px;
 }
 
-.noUi-marker-horizontal.noUi-marker-large {
-  height: 15px;
-}
-
 .noUi-pips-vertical {
   padding: 0 10px;
   height: 100%;
@@ -222,10 +218,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .noUi-marker-vertical.noUi-marker-sub {
   width: 10px;
-}
-
-.noUi-marker-vertical.noUi-marker-large {
-  width: 15px;
 }
 
 .noUi-tooltip {
@@ -253,7 +245,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .noUi-target {
-  background: linear-gradient(to right, var(--purple), var(--purple)), rgb(222, 226, 230);
+  background: linear-gradient(to right, var(--purple), var(--purple)), $gray200;
   background-size: var(--background-range-size, 0%) 100%;
   background-repeat: no-repeat;
   border-radius: 5px;
@@ -276,7 +268,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .noUi-connect {
-  background: #5e72e4;
+  background: var(--basic);
   box-shadow: none;
 }
 
@@ -345,7 +337,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 [disabled].noUi-connect,
 [disabled] .noUi-connect {
-  background: #b2b2b2;
+  background: $gray400;
 }
 
 [disabled] .noUi-handle,

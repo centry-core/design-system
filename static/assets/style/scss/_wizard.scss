@@ -112,7 +112,6 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: #222;
-  font-weight: 500;
   margin: 0px;
   background: #f8f8f8;
 }
@@ -435,15 +434,22 @@ div-content .row {
   background: var(--white)!important;
   display: none;
 }
-
-.noUi-marker.noUi-marker-horizontal.noUi-marker-large {
-  top: -9px;
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  box-shadow: none;
-  cursor: pointer;
-  background-color: #dee2e6;
+#vuh-slider {
+  .noUi-marker.noUi-marker-horizontal.noUi-marker-large {
+    top: -9px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    box-shadow: none;
+    cursor: pointer;
+    background-color: $gray200;
+  }
+}
+#vuh-time-picker {
+  .noUi-marker.noUi-marker-horizontal.noUi-marker-large {
+    width: 0;
+    height: 0;
+  }
 }
 
 .noUi-value.noUi-value-horizontal.noUi-value-large {
@@ -505,4 +511,19 @@ div-content .row {
 .card-stats {
   margin: 15px 15px 0px 0px;
   padding: 6px 20px;
+}
+
+.wizard {
+  &-title {
+    color: $gray800;
+  }
+  .noUi-value {
+    font-weight: 400 !important;
+  }
+}
+.wizard[disabled=true] {
+  .noUi-touch-area {
+    background: $gray400;
+    border-radius: 50%;
+  }
 }
