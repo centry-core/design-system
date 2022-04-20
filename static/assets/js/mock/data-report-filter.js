@@ -23,12 +23,12 @@ const tableColumns = [
     }, {
         title: 'severity',
         field: 'severity',
-        formatter: 'formatterSeverity',
+        formatter: 'tableSeverityButtonFormatter',
         sortable: true,
     }, {
         title: 'status',
         field: 'status',
-        formatter: 'dataTypeFormatter',
+        formatter: 'tableStatusButtonFormatter',
         sortable: true,
     }
 ]
@@ -56,7 +56,7 @@ const tableData = [
         scanner: 'Qualys',
         description: 'Lorem ipsum dolor sit amet',
         severity: 'low',
-        status: 'ignore'
+        status: 'ignored'
     },
     {
         name: 'Alice',
@@ -64,7 +64,7 @@ const tableData = [
         scanner: 'Qualys',
         description: 'Lorem ipsum dolor sit amet',
         severity: 'low',
-        status: 'valid'
+        status: 'not defined'
     },
     {
         name: 'Jeffrey',

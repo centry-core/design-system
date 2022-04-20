@@ -18,63 +18,61 @@ function inputFormatter(value, row, index, field) {
 }
 
 function updateCell(el, row, field) {
-    console.log(el, row, field)
     $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
 }
 
-const SEVERITY_TYPES = [
-    {
-        className: "colored-select-red",
-        title: "CRITICAL"
-    },
-    {
-        className: "colored-select-orange",
-        title: "HIGH"
-    },
-    {
-        className: "colored-select-yellow",
-        title: "MEDIUM"
-    },
-    {
-        className: "colored-select-green",
-        title: "LOW"
-    },
-    {
-        className: "colored-select-blue",
-        title: "INFO"
-    },
-    {
-        className: "colored-select-default",
-        title: "UNEXPECTED"
-    },
-    {
-        className: "colored-select-darkblue",
-        title: "IGNORE"
-    }
+const compareValues = (value1, value2) => value1.toLowerCase() === value2.toLowerCase()
+
+const severityOptions = [
+    {name: 'critical', className: 'colored-select-red'},
+    {name: 'high', className: 'colored-select-orange'},
+    {name: 'medium', className: 'colored-select-yellow'},
+    {name: 'low', className: 'colored-select-green'},
+    {name: 'info', className: 'colored-select-blue'},
 ]
 
-function formatterSeverity(value, row, index, field) {
-    const options = SEVERITY_TYPES.map(item =>
-        `<option
-            class=${item.className}
-            value=${item.title}
-            ${item.title.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
+const statusOptions = [
+    {name: 'valid', className: 'colored-select-red'},
+    {name: 'false positive', className: 'colored-select-blue'},
+    {name: 'ignored',  className: 'colored-select-darkblue'},
+    {name: 'not defined', className: 'colored-select-notdefined'},
+]
+
+function tableSeverityButtonFormatter(value, row, index) {
+    return tableColoredSelectFormatter(value, row, index, severityOptions, 'severity')
+}
+
+function tableStatusButtonFormatter(value, row, index) {
+    return tableColoredSelectFormatter(value, row, index, statusOptions, 'status')
+}
+
+const tableColoredSelectFormatter = (value, row, index, optionsList, fieldName) => {
+    const options = optionsList.map(item => `
+        <option 
+            class="${item.className}" 
+            ${compareValues(item.name, value) ? 'selected' : ''}
         >
-            ${item.title}
+            ${item.name.toUpperCase()}
         </option>
-        `
-    )
+    `);
+    const unexpectedValue = optionsList.find(item => compareValues(item.name, value))
+    unexpectedValue === undefined && options.push(`<option selected>${value}</option>`)
+
     return `
-        <select class="selectpicker btn-colored-select mr-2 btn-colored-table" data-style="btn-colored">
+        <select 
+            class="selectpicker btn-colored-select mr-2 btn-colored-table" 
+            data-style="btn-colored" 
+            onchange="updateCell(this, '${index}', '${fieldName}')"
+        >
             ${options.join('')}
         </select>
     `
 }
 
 function dataTypeFormatter(value, row, index, field) {
-    const options = ["name", "default", "type", "description", "action"].map(item =>
-        `<option
-            value=${item}
+    const options = ['String', 'Number', 'List'].map(item =>
+        `<option 
+            value=${item} 
             ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
         >
             ${item}
@@ -82,7 +80,7 @@ function dataTypeFormatter(value, row, index, field) {
         `
     )
     return `
-        <select class="selectpicker bootstrap-select__b" data-style="btn">
+        <select class="selectpicker mr-2" data-style="btn-gray" onchange="updateCell(this, '${index}', '${field}')">
             ${options.join('')}
         </select>
     `
@@ -127,27 +125,38 @@ const deleteParams = (index, source) => {
         values: [index]
     })
 }
-(function ($) {
-    'use strict';
-    $.fn.bootstrapTable.locales['en-US-custom'] = {
-        formatRecordsPerPage: function (pageNumber) {
-            return `<span style="position: relative; top: 3px">Show: </span>${pageNumber}`;
-        },
-        formatShowingRows: function (pageFrom, pageTo, totalRows) {
-            return `${totalRows} items`;
-        },
-        formatDetailPagination: function (totalRows) {
-            return `${totalRows} items`;
-        },
-    };
-    $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
-})(jQuery);
+
+window.wait_for = async (prop_name, root = window, poll_length = 1000) => {
+    while (!root.hasOwnProperty(prop_name))
+        await new Promise(resolve => setTimeout(resolve, poll_length))
+    return root[prop_name]
+}
+
+wait_for('bootstrapTable', jQuery.fn).then(v => (
+    function ($) {
+        'use strict';
+        $.fn.bootstrapTable.locales['en-US-custom'] = {
+            formatRecordsPerPage: function (pageNumber) {
+                return `<span style="position: relative; top: 3px">Show: </span>${pageNumber}`;
+            },
+            formatShowingRows: function (pageFrom, pageTo, totalRows) {
+                return `${totalRows} items`;
+            },
+            formatDetailPagination: function (totalRows) {
+                return `${totalRows} items`;
+            },
+        };
+
+        $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
+    })(jQuery)
+)
 // script fot tables with vue.js when injected event (vue_init)
 $(document).on('vue_init', () => {
     $('.table').on('all.bs.table', () => {
         $('.selectpicker').selectpicker('render');
         initColoredSelect();
     })
+    initColoredSelect();
 })
 // script fot tables without vue.js
 $('.table').on('all.bs.table', () => {

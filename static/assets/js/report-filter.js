@@ -271,6 +271,7 @@ const vueApp = Vue.createApp({
             loadingFilters: false,
             loadingDelete: false,
             updatedFilter: null,
+            tableData,
         }
     },
     mounted() {
@@ -283,7 +284,7 @@ const vueApp = Vue.createApp({
         initTable() {
             const tableOptions = {
                 columns: tableColumns,
-                data: tableData,
+                data: this.tableData,
                 theadClasses: 'thead-light'
             }
             $('#table').bootstrapTable(tableOptions)
@@ -388,5 +389,4 @@ const vueApp = Vue.createApp({
     }
 });
 
-vueApp.mount('#vueApp');
-initColoredSelect();
+const reportFilter = vueApp.mount('#vueApp');
