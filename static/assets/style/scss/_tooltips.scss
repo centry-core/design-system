@@ -3,12 +3,14 @@
   padding: 4px 16px;
   font-size: 14px;
   line-height: 24px;
+  text-align: left;
 }
 .tooltip__info {
+  padding: 0;
   position: relative;
 }
 .tooltip-close {
-  right: 20px;
+  right: 10px;
   top: 10px;
   position: absolute;
   display: inline-block;
@@ -16,7 +18,7 @@
   height: 20px;
   margin-left: 20px;
   cursor: pointer;
-  background: url("/design-system/static/assets/ico/close_notify_icon.svg") no-repeat;
+  background: url("../../../assets/ico/close_notify_icon.svg") no-repeat;
 }
 .tooltip__info > .tooltip-inner {
   background-color: white;

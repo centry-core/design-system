@@ -1587,13 +1587,17 @@
                 const target = document.querySelector('.noUi-target');
                 const curret = document.querySelector('.noUi-touch-area');
                 const area = document.querySelector('#vuh-slider');
+                const line = document.querySelector('.noUi-connects');
+
+                line.addEventListener('click', () => {
+                    paintWizard();
+                })
 
                 function paintWizard() {
                     const currentValue = range.getAttribute('aria-valuenow');
                     const width = getBackgroundSize(currentValue);
-                    target.style.setProperty("--background-range-size", `${width}%`);
                     markers.forEach(marker => {
-                        marker.style.backgroundColor = width > +(marker.style.left).slice(0, -1) ? '#5933c6' : '#dee2e6';
+                        marker.style.backgroundColor = width > +(marker.style.left).slice(0, -1) ? '#5933c6' : '#eef3f6';
                     })
                 }
 
@@ -1914,7 +1918,6 @@
 
         // Move closest handle to tapped location.
         function eventTap(event) {
-            console.log('TAP');
             // The tap event shouldn't propagate up
             event.stopPropagation();
 

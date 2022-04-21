@@ -1,5 +1,13 @@
 .custom-input {
   color: var(--gray800);
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
   .label {
     font-size: 14px !important;
     line-height: 24px;
@@ -18,6 +26,9 @@
     outline: none;
     font-size: 14px;
     line-height: 24px;
+  }
+  &.input-wizard {
+    text-align: right;
   }
   &__sm {
     input {
@@ -47,7 +58,7 @@
     }
     .icon-search{
       left: 12px;
-      top: 6px;
+      top: 8px;
       color: var(--gray500);
     }
   }
@@ -58,7 +69,7 @@
     input {
       border-color: var(--error);
       padding-right: 40px;
-      background-image: url('/design-system/static/assets/ico/alarm.svg');
+      background-image: url('../../../assets/ico/alarm.svg');
       background-repeat: no-repeat;
       background-position: right 18px center;
       background-size: 16px;
@@ -77,6 +88,9 @@
   }
 }
 
+.search-group {
+  padding-top: 13px;
+}
 .input-stepper {
   color: var(--gray800);
   border: solid 1px var(--gray500);
@@ -103,12 +117,24 @@
     outline: 0;
   }
 }
-
+.bootstrap-select.btn-colored-select{
+  .dropdown-toggle {
+    height: 38px;
+    padding: 8px 16px;
+    &:hover {
+      border: 1px solid var(--b-color) !important;
+    }
+    .filter-option-inner-inner {
+      font-weight: 500;
+      line-height: 20px;
+    }
+  }
+}
 .bootstrap-select {
   &.show, &:hover {
-    .dropdown-toggle {
+    .dropdown-toggle:not(.btn-chapters) {
       transition: all .3s;
-      border: 1px solid var(--gray400);
+      border: 1px solid $gray400;
       box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
       border-radius: 4px;
     }
@@ -129,12 +155,12 @@
     border: solid 1px var(--gray400);
     border-radius: 4px;
     .dropdown-toggle {
-      height: 40px;
+      height: 38px;
       padding: 8px 16px;
     }
     &.show, &:hover {
       .dropdown-toggle {
-        border: 1px solid transparent;
+        border: 1px solid transparent !important;
       }
     }
   }

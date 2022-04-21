@@ -9,3 +9,16 @@
 .bootstrap-table .fixed-table-container .table thead th .both {
   background-image: none;
 }
+label {
+  margin-bottom: 0 !important;
+}
+
+.dropdown-menu {
+  padding: 4px 0 !important;
+  .btn {
+    font-size: 12px;
+    line-height: 16px;
+    height: auto;
+    font-weight: 600;
+  }
+}

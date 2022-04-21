@@ -6,8 +6,8 @@
     &:before {
       content: '';
       display: inline-block;
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       flex-shrink: 0;
       flex-grow: 0;
       border: 1px solid var(--gray400);
@@ -24,7 +24,7 @@
     &:checked::before {
       border-color: var(--purple);
       background-color: var(--purple);
-      background-image: url("/design-system/static/assets/ico/check-white.svg");
+      background-image: url("../../../assets/ico/check-white.svg");
       background-size: 10px;
     }
     &:checked:not(:disabled):hover:before {
@@ -37,13 +37,14 @@
     }
     &:disabled:not(:checked)::before {
       border-color: var(--gray400);
+      background-color: $gray100;
     }
   }
   &__minus {
     input[type=checkbox]::before {
       border-color: var(--purple);
       background-color: var(--purple);
-      background-image: url("../../../../../static/assets/ico/minus.svg");
+      background-image: url("../../../assets/ico/minus.svg");
       background-size: 10px;
     }
   }

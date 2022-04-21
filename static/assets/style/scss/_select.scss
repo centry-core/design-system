@@ -25,3 +25,30 @@
     border-color: #E0E8F3;
     color: #32325D;
 }
+.select-validation {
+    .bootstrap-select {
+        min-width: 100%;
+    }
+    .select_error-msg {
+        display: none;
+    }
+}
+.select-validation.invalid-select {
+    .bootstrap-select {
+        border-color: var(--error);
+        background-image: url('../../../assets/ico/alarm.svg');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 16px;
+        button {
+            padding-right: 33px;
+        }
+    }
+    .select_error-msg {
+        color: var(--error);
+        margin-top: 4px;
+        font-size: 12px;
+        line-height: 16px;
+        display: block;
+    }
+}
