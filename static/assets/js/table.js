@@ -1,20 +1,18 @@
-function lgFormatter(value, row, index) {
-    if (value === "perfmeter") {
-        return '<img src="assets/ico/jmeter.png" width="20">'
-    } else if (value === "perfgun") {
-        return '<img src="assets/ico/gatling.png" width="20">'
-    } else {
-        return value
-    }
-}
+// function lgFormatter(value, row, index) {
+//     if (value === "perfmeter") {
+//         return '<img src="assets/ico/jmeter.png" width="20">'
+//     } else if (value === "perfgun") {
+//         return '<img src="assets/ico/gatling.png" width="20">'
+//     } else {
+//         return value
+//     }
+// }
 
 function inputFormatter(value, row, index, field) {
-    return `<div class="custom-input">
-        <input
-            type="text"
-            placeholder="Text"
-            onchange="updateCell(this, '${index}', '${field}')" value="${value}">
-    </div>`
+    return `
+        <input type="text" class="form-control form-control-alternative" onchange="updateCell(this, ${index}, '${field}')" value="${value}">
+        <div class="invalid-tooltip invalid-tooltip-custom"></div>
+    `
 }
 
 function updateCell(el, row, field) {
@@ -113,8 +111,6 @@ function actionFormatter(value, row, index) {
     `
 }
 
-$('.params-table').on('all.bs.table', () => $('.selectpicker').selectpicker('render'))
-
 function nameStyle(value, row, index) {
     return {css: {"max-width": "100px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
 }
@@ -126,11 +122,6 @@ const deleteParams = (index, source) => {
     })
 }
 
-window.wait_for = async (prop_name, root = window, poll_length = 1000) => {
-    while (!root.hasOwnProperty(prop_name))
-        await new Promise(resolve => setTimeout(resolve, poll_length))
-    return root[prop_name]
-}
 
 wait_for('bootstrapTable', jQuery.fn).then(v => (
     function ($) {
@@ -150,15 +141,24 @@ wait_for('bootstrapTable', jQuery.fn).then(v => (
         $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
     })(jQuery)
 )
-// script fot tables with vue.js when injected event (vue_init)
+
+
 $(document).on('vue_init', () => {
-    $('.table').on('all.bs.table', () => {
-        $('.selectpicker').selectpicker('render');
-        initColoredSelect();
+    $('.params-table').on('all.bs.table', () => {
+        $('.selectpicker').selectpicker('render')
     })
-    initColoredSelect();
+  // script fot tables with vue.js when injected event (vue_init)
+
+    $('.table').on('all.bs.table', () => {
+          $('.selectpicker').selectpicker('render');
+          initColoredSelect();
+      })
+      initColoredSelect();
 })
+
+
 // script fot tables without vue.js
 $('.table').on('all.bs.table', () => {
     $('.selectpicker').selectpicker('render');
 })
+
