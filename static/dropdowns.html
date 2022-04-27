@@ -123,7 +123,7 @@
                     <div class="d-flex justify-content-start m-4">
                         <div class="mr-2">
                             <p><small>Simple select.</small></p>
-                            <select class="selectpicker" data-style="btn">
+                            <select class="selectpicker dropdown-menu__simple font-weight-400" data-style="btn">
                                 <option>Mustard</option>
                                 <option>Ketchup</option>
                                 <option>Relish</option>
@@ -131,7 +131,7 @@
                         </div>
                         <div class="mr-2">
                             <p><small>Select (& icons).</small></p>
-                            <select class="selectpicker " data-style="btn">
+                            <select class="selectpicker dropdown-menu__simple" data-style="btn">
                                 <option data-content="<i class='fa fa-edit mr-2'></i> Mustard"></option>
                                 <option data-content="<i class='fa fa-trash mr-2'></i> Ketchup"></option>
                                 <option data-content="<i class='fa fa-cog mr-2'></i> Relish"></option>
@@ -139,10 +139,10 @@
                         </div>
                         <div class="mr-2">
                             <p><small>Select with search (& icons).</small></p>
-                            <select class="selectpicker" data-style="btn" data-live-search="true">
-                                <option data-content="<i class='fa fa-edit mr-2'></i> Mustard"></option>
-                                <option data-content="<i class='fa fa-trash mr-2'></i> Ketchup"></option>
-                                <option data-content="<i class='fa fa-cog mr-2'></i> Relish"></option>
+                            <select class="selectpicker dropdown-menu__simple" data-style="btn" data-live-search="true">
+                                <option data-content="<i class='fa fa-edit mr-2'></i>Mustard"></option>
+                                <option data-content="<i class='fa fa-trash mr-2'></i>Ketchup"></option>
+                                <option data-content="<i class='fa fa-cog mr-2'></i>Relish"></option>
                             </select>
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                                     :fix-width="true"
                             >
                                 <template v-slot:label>
-                                    <span class="dropdown-toggle_label font-weight-bold">LABEL</span>
+                                    <span class="dropdown-toggle_label font-weight-500">LABEL</span>
                                 </template>
                             </complex-list-filter>
                         </div>
@@ -206,7 +206,7 @@
                             <p>Flexible width.</p>
                             <complex-list-filter>
                                 <template v-slot:label>
-                                    <span class="dropdown-toggle_label font-weight-bold">LABEL</span>
+                                    <span class="dropdown-toggle_label font-weight-500">LABEL</span>
                                 </template>
                             </complex-list-filter>
                         </div>
@@ -223,7 +223,7 @@
                                 :fix-width="true"
                             >
                                 <template v-slot:label>
-                                    <span class="dropdown-toggle_label font-weight-bold">
+                                    <span class="dropdown-toggle_label font-weight-500">
                                         <i class="fa fa-filter"></i>
                                     </span>
                                 </template>
@@ -232,7 +232,7 @@
                         <div class="mr-2">
                             <complex-list-filter>
                                 <template v-slot:label>
-                                    <span class="dropdown-toggle_label font-weight-bold">
+                                    <span class="dropdown-toggle_label font-weight-500">
                                         <i class="fa fa-filter"></i>
                                     </span>
                                 </template>
@@ -244,7 +244,7 @@
                                     class="dropdown-toggle_label__just-icon"
                             >
                                 <template v-slot:label>
-                                    <span class="dropdown-toggle_label font-weight-bold ">
+                                    <span class="dropdown-toggle_label font-weight-500">
                                         <i class="fa fa-filter"></i>
                                     </span>
                                 </template>
@@ -302,7 +302,7 @@
                             </button>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
-                                <li class="px-4 py-1 font-weight-bold">Create  Test</li>
+                                <li class="px-4 py-1 font-weight-500">Create  Test</li>
                                 <li class="dropdown-item">
                                     <span class="pl-2">Backend</span></li>
                                 <li class="dropdown-item">
@@ -366,7 +366,7 @@
                 <div class="card w-100 mr-2 card-stripped">
                     <div class="d-flex m-4">
                         <div class="dropdown_tree-list">
-                            <button class="btn btn-select dropdown-toggle" type="button"
+                            <button class="btn btn-select dropdown-toggle font-weight-400" type="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span>Select items</span>
                             </button>
@@ -394,7 +394,7 @@
                 <div class="card w-100 mr-2 card-stripped">
                     <div class="d-flex m-4">
                         <div class="dropdown_multilevel">
-                            <button class="btn btn-secondary btn-select dropdown-toggle" type="button"
+                            <button class="btn btn-secondary btn-select dropdown-toggle font-weight-400" type="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Actions
                             </button>

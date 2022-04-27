@@ -21,17 +21,15 @@
     <!-- CSS Files -->
     <link type="text/css" href="assets/style/css/main.css" rel="stylesheet">
     <!--   Core JS Files   -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
             integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
             integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
             crossorigin="anonymous"></script>
+    <script src="/design-system/static/assets/js/notification-master/notification.js"></script>
 </head>
-
 
 <body>
 <nav class="navbar navbar-expand-xl main-nav">
@@ -80,7 +78,7 @@
             <li class="custom-nav_item">
                 <a class="" href="controls.html">Controls</a>
             </li>
-            <li class="custom-nav_item active">
+            <li class="custom-nav_item">
                 <a class="" href="inputs.html">Inputs</a>
             </li>
             <li class="custom-nav_item">
@@ -92,7 +90,7 @@
             <li class="custom-nav_item">
                 <a class="" href="notifications.html">Notifications</a>
             </li>
-            <li class="custom-nav_item">
+            <li class="custom-nav_item active">
                 <a class="" href="tables.html">Tables</a>
             </li>
             <li class="custom-nav_item">
@@ -118,125 +116,77 @@
             </li>
         </ul>
     </aside>
-
-    <div class="card mt-3 w-100">
-        <div class="card-header">
-            <h1> Inputs </h1>
-        </div>
-        <div class="card-body row">
-            <div class="col-6">
-                <h4 class="pt-2">Fields</h4>
-                <div class="card w-100 card-stripped p-3">
-                    <h4 class="mt-4 mb-1">Height 40px</h4>
-                    <div class="custom-input mb-3">
-                        <input
-                            type="text"
-                            placeholder="Text">
+    <div class="w-100">
+        <div class="card mt-3 card-table">
+            <div class="card-body">
+                <div class="pt-4" id="vueApp">
+                    <modal-save-filter
+                        v-if="showModal"
+                        @save-filter-as="saveFilterAs"
+                        @open-modal="openModal"
+                        @save-new-filter="saveNewFilter"
+                        :loading="loadingSaveAs"
+                    ></modal-save-filter>
+                    <div class="d-flex justify-content-end pb-4">
+                        <ul class="custom-tabs nav nav-pills mr-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ALL</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">VALID</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-setting-tab" data-toggle="pill" href="#pills-setting" role="tab" aria-controls="pills-setting" aria-selected="false">FALSE POSITIVES</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-ignored-tab" data-toggle="pill" href="#pills-ignored" role="tab" aria-controls="pills-ignored" aria-selected="false">IGNORED</a>
+                            </li>
+                        </ul>
+                        <choose-filter
+                            :filters="filters"
+                            :loading-filters="loadingFilters"
+                            :loading-delete="loadingDelete"
+                            @select-filter="selectFilter"
+                            @create-filter="createFilter"
+                            @delete-filter="deleteFilter"
+                        ></choose-filter>
                     </div>
-                    <div class="custom-input mb-3">
-                        <input
-                            type="text"
-                            value="Text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input mb-3">
-                        <input
-                            disabled
-                            type="text"
-                            value="Text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input invalid-input mb-3">
-                        <input
-                            type="text"
-                            value="Wrong data"
-                            placeholder="Text">
-                        <span class="input_error-msg">Сlarifying error message</span>
-                    </div>
-                    <div class="custom-input custom-input_search position-relative">
-                        <input
-                            type="text"
-                            placeholder="Search">
-                        <img src="assets/ico/search.svg" class="icon-search position-absolute">
-                    </div>
-                    <h4 class="mt-4 mb-1">Height 32px: add class 'custom-input__sm'</h4>
-                    <div class="custom-input custom-input__sm mb-3">
-                        <input
-                            type="text"
-                            placeholder="Text">
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="pt-2">Fields & label</h4>
-                <div class="card w-100 card-stripped p-3">
-                    <div class="custom-input mb-3">
-                        <label for="fieldOne" class="font-weight-bold mb-0">Label</label>
-                        <p class="custom-input_desc mb-2">Description</p>
-                        <input
-                            id="fieldOne"
-                            type="text"
-                            placeholder="Text">
-                    </div>
-                    <div class="custom-input mb-3">
-                        <label for="fieldTwo" class="font-weight-bold mb-1">Label</label>
-                        <input
-                                id="fieldTwo"
-                                type="text"
-                                placeholder="Text">
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="pt-2">Select</h4>
-                <div class="card w-100 card-stripped p-3">
-                    <select class="selectpicker mb-3" data-style="btn">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
-                    </select>
-                    <select class="selectpicker bootstrap-select__b mb-3" data-style="btn">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
-                    </select>
-                    <select class="selectpicker bootstrap-select__b invalid-input mb-3" data-style="btn">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
-                    </select>
-                    <div class="select-validation invalid-select">
-                        <select class="selectpicker bootstrap-select__b" data-style="btn">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                        <span class="select_error-msg">Сlarifying error message</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="pt-2">Input stepper</h4>
-                <div class="card w-100 card-stripped p-3 align-items-start">
-                    <div id="inputStepper" class="input-stepper">
-                        <button
-                            @click="counter--"
-                            :disabled="counter <= 0"
-                        ><i class="fas fa-minus"></i>
-                        </button>
-                        <span role="textbox" contenteditable @input="changeCounter">{{ counter }}</span>
-                        <button
-                            @click="counter++"
-                        ><i class="fas fa-plus"></i></button>
-                    </div>
+                    <report-filter
+                        @remove-filter="selectedFilter = null"
+                        v-if="selectedFilter"
+                        :key="selectedFilter"
+                        :selected-filter="selectedFilter"
+                        @open-modal="openModal"
+                        @update-curent-filter="updateCurentFilter"
+                        @save="saveFilter"
+                        :loading-save="loadingSave"
+                        :loading-apply="loadingApply"
+                        @apply="updateTable"
+                    ></report-filter>
+                    <table
+                        id="table"
+                        class="table table-border mt-4"
+                        data-pagination="true"
+                        data-page-list="[5, 10, 15]"
+                        data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
+                        data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
+                        data-page-size=5>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </main>
 <script src="https://unpkg.com/vue@next"></script>
-<script src="assets/js/inputs.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/mock/data-report-filter.js"></script>
+<script src="assets/js/api/api-report-filter.js"></script>
 <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="assets/js/table.js"></script>
 <script src="assets/js/select.js"></script>
+<script src="assets/js/report-filter.js"></script>
+<script src="assets/js/notifications.js"></script>
 </body>
+
 </html>
