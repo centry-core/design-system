@@ -32,7 +32,7 @@ const severityOptions = [
 const statusOptions = [
     {name: 'valid', className: 'colored-select-red'},
     {name: 'false positive', className: 'colored-select-blue'},
-    {name: 'ignored',  className: 'colored-select-darkblue'},
+    {name: 'ignored', className: 'colored-select-darkblue'},
     {name: 'not defined', className: 'colored-select-notdefined'},
 ]
 
@@ -147,13 +147,14 @@ $(document).on('vue_init', () => {
     $('.params-table').on('all.bs.table', () => {
         $('.selectpicker').selectpicker('render')
     })
-  // script fot tables with vue.js when injected event (vue_init)
+    // script fot tables with vue.js when injected event (vue_init)
 
     $('.table').on('all.bs.table', () => {
-          $('.selectpicker').selectpicker('render');
-          initColoredSelect();
-      })
-      initColoredSelect();
+        $('.selectpicker').selectpicker('render')
+        initColoredSelect();
+    })
+    initColoredSelect();
+    $('.selectpicker').selectpicker('render')
 })
 
 
