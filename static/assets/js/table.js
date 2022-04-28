@@ -17,8 +17,24 @@ function inputFormatter(value, row, index, field) {
     </div>`
 }
 
-function updateCell(el, row, field) {
-    $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
+function updateCell(el, row, field, title = '') {
+
+    $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: { checked: el.checked, title: title }})
+}
+
+function checkboxFormatter (value, row, index, field) {
+    const isChacked = value.checked ? 'checked' : ''
+    return `
+        <label
+            class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+            <input
+                value="${value.checked}"
+                onchange="updateCell(this, '${index}', '${field}', '${value.title}')" 
+                ${isChacked}
+                type="checkbox">
+            <span class="w-100 d-inline-block ml-3">${value.title}</span>
+        </label>
+    `
 }
 
 const compareValues = (value1, value2) => value1.toLowerCase() === value2.toLowerCase()

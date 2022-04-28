@@ -361,6 +361,90 @@ const ComplexListFilter = {
         </div>`
 };
 
+const VDropdown = {
+    props: ['items'],
+    data() {
+        return {
+            selectedItem: {
+                id: null,
+                title: 'Default preset'
+            },
+            loadingDelete: false,
+            deletedId: null,
+        }
+    },
+    methods: {
+        deleteItem(item) {
+            this.deletedId = item.id;
+            this.loadingDelete = true;
+            console.log(item)
+        },
+        selectDefault() {
+            this.selectedItem = {
+                id: null,
+                title: 'Default preset'
+            }
+        },
+    },
+    template: `
+        <div class="d-flex">
+            <div class="complex-list">
+                <button class="btn btn-select btn-select__sm dropdown-toggle br-left d-flex align-items-center"
+                    type="button"   
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                    <p class="d-flex mb-0">
+                        <span class="complex-list_filled">{{ selectedItem.title }}</span>
+                    </p>
+                </button>
+                <div class="dropdown-menu"
+                    :class="{'close-outside': closeOntside}">
+                    <ul class="my-0">
+                        <li
+                            class="dropdown-item dropdown-menu_item d-flex align-items-center">
+                            <label
+                                @click="selectDefault"
+                                class="mb-0 w-100 d-flex align-items-center">
+                                <span class="w-100 d-inline-block">Default preset</span>
+                                <img v-if="!selectedItem.id" src="./assets/ico/check.svg">
+                            </label>
+                        </li>
+                        <li
+                            class="dropdown-item dropdown-menu_item d-flex align-items-center"
+                            v-for="item in items" :key="item.id">
+                            <label
+                                @click="selectedItem = item"
+                                class="mb-0 w-100 d-flex align-items-center">
+                                <span class="w-100 d-inline-block">{{ item.title }}</span>
+                                <img v-if="item.id === selectedItem.id" src="./assets/ico/check.svg" class="mr-2">
+                            </label>
+                            <button 
+                                v-if="loadingDelete && deletedId === item.id"
+                                class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="preview-loader"></i>
+                            </button>
+                            <button 
+                                v-else
+                                class="btn btn-default btn-xs btn-table btn-icon__xs" @click.stop="deleteItem(item)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </li>
+                    </ul>   
+                </div>
+            </div>
+            <div class="dropdown_action">
+                <button class="btn btn-secondary_item__right btn-secondary btn-icon"
+                        role="button"
+                        id="dropdownMenuLink"
+                        aria-expanded="false">
+                    <i class="fa fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    `
+};
+
 const RemovableFilter = {
     props: {
         minWidth: {
@@ -481,6 +565,7 @@ const dropdownsApp = Vue.createApp({
         'complex-list': ComplexList,
         'complex-list-filter': ComplexListFilter,
         'removable-filter': RemovableFilter,
+        'v-dropdown': VDropdown,
     }
 });
 

@@ -296,6 +296,9 @@
 .btn-select {
   border: solid 1px var(--gray400);
   height: 40px;
+  &__sm {
+    height: 32px;
+  }
 }
 
 .btn-select.dropdown-toggle::after {
