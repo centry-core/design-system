@@ -20,20 +20,11 @@ const ChoosePreset = {
                 aria-expanded="false">
                 <p class="d-flex mb-0">
                     <i v-if="loadingPresets" class="preview-loader"></i>
-                    <span v-if="!loadingPresets" class="complex-list_filled">{{ selectedPreset.title }}</span>
+                    <span class="complex-list_filled">{{ selectedPreset.title }}</span>
                 </p>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
                 <ul class="my-0">
-                    <li
-                        class="dropdown-item dropdown-menu_item d-flex align-items-center">
-                        <label
-                            @click="selectDefault"
-                            class="mb-0 w-100 d-flex align-items-center">
-                            <span class="d-inline-block">Default preset</span>
-                            <img v-if="!selectedPreset.id" src="./assets/ico/check.svg" class="mx-2">
-                        </label>
-                    </li>
                     <li
                         class="dropdown-item dropdown-menu_item d-flex align-items-center justify-content-between"
                         @click="selectPreset(item)"
@@ -45,6 +36,7 @@ const ChoosePreset = {
                         </label>
                         <div class="pl-2">
                             <button
+                                v-if="item.type !== 'default'"
                                 class="btn btn-default btn-xs btn-table btn-icon__xs" @click.stop="deleteItem(item)">
                                 <i class="fas fa-trash"></i>
                             </button>
@@ -89,7 +81,7 @@ const EditPreset = {
         saveAs() {
             this.$emit('open-modal');
             const updatedData = $('#presetTable').bootstrapTable('getData');
-            this.editablePreset = { ...this.editablePreset, data: updatedData }
+            this.editablePreset = { ...this.editablePreset, type: 'custom', data: updatedData }
             this.$emit('create-new-preset', this.editablePreset)
         },
         save() {
@@ -101,6 +93,14 @@ const EditPreset = {
             this.editablePreset = deepClone(this.selectedPreset);
             $('#presetTable').bootstrapTable('destroy');
             this.initTable()
+        },
+        resetToDefault() {
+            this.$emit('reset-to-default')
+            this.$nextTick(() => {
+                this.editablePreset = deepClone(this.selectedPreset);
+                $('#presetTable').bootstrapTable('destroy');
+                this.initTable()
+            })
         },
     },
     template: ` 
@@ -118,20 +118,20 @@ const EditPreset = {
                     <div class="d-flex justify-content-between">
                         <h3 class="font-h3 mr-4">{{ editablePreset.title }}</h3>
                         <div class="d-flex justify-content-start">
-                            <button class="btn btn-basic mr-2 d-flex align-items-center"
-                                type="button"
-                                @click="apply">Apply
-                                <i v-if="loadingApply" class="preview-loader__white ml-2"></i>
-                            </button>
                             <button 
                                 v-if="editablePreset.id"
-                                :class="{'btn-secondary': loadingSave}"
                                 @click="save"
-                                class="btn btn-secondary d-flex align-items-center mr-2"
+                                class="btn btn-basic d-flex align-items-center mr-2"
                                 >Save <i v-if="loadingSave" class="preview-loader ml-2"></i>
                             </button>
                             <button class="btn btn-secondary mr-2" @click="saveAs">Save as...</button>
                             <button
+                                v-if="editablePreset.type === 'default'"
+                                type="button"
+                                class="btn btn-secondary"
+                                @click="resetToDefault">Reset to default</button>
+                            <button
+                                v-else
                                 type="button"
                                 class="btn btn-secondary"
                                 @click="resetPreset">Reset</button>
@@ -236,14 +236,23 @@ const vueApp = Vue.createApp({
             showConfirm: false,
             prepearDeletedPreset: null,
             prepearedNewPreset: null,
-            selectedPreset: defaultPreset,
             defaultPreset,
+            selectedPreset: {
+                title: ''
+            },
         }
     },
-    mounted() {
-        this.selectedPreset = deepClone(this.defaultPreset)
-        this.fetchPresets();
-        this.fetchTableData(this.selectedPreset);
+    async mounted() {
+        this.loadingPresets = true;
+        this.loadingTable = true;
+        try {
+            this.presets = await apiFetchPresets;
+            this.selectedPreset = deepClone(this.presets[0])
+            this.loadingPresets = false;
+            this.fetchTableData(this.selectedPreset)
+        } catch (e) {
+
+        }
         const event = new Event('vue_init');
         document.dispatchEvent(event);
     },
@@ -251,7 +260,6 @@ const vueApp = Vue.createApp({
         fetchPresets() {
             this.loadingPresets = true;
             apiFetchPresets.then(res => {
-                console.log('fetched')
                 this.presets = res;
             }).finally(() => {
                 this.loadingPresets = false;
@@ -268,7 +276,7 @@ const vueApp = Vue.createApp({
                 }).finally(() => {
                     this.loadingTable = false
                 })
-            }, 700)
+            }, 1700)
         },
         renderSelect() {
             this.$nextTick(() => {
@@ -345,6 +353,15 @@ const vueApp = Vue.createApp({
                 })
             }, 500)
         },
+        resetToDefault() {
+            this.selectedPreset = deepClone(this.defaultPreset);
+            apiResetToDefault(this.selectedPreset).then(response => {
+                this.fetchPresets();
+                showNotify('SUCCESS', response.message);
+            }).catch(error => {
+                showNotify('ERROR', error);
+            })
+        }
     }
 });
 

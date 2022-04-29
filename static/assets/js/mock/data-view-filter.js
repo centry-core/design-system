@@ -135,9 +135,10 @@ const tablesData = [
 ]
 
 const defaultPreset = {
-    id: 0,
+    id: "0",
     title: 'Default Preset',
     tableId: 0,
+    type: "default",
     colums: [
         {
             title: 'test name',
@@ -193,9 +194,67 @@ const defaultPreset = {
 
 const presetsData = [
     {
+        id: "0",
+        title: 'Default Preset',
+        tableId: 0,
+        type: "default",
+        colums: [
+            {
+                title: 'test name',
+                field: 'name',
+                formatter: 'checkboxFormatter',
+            }, {
+                title: 'scan type',
+                field: 'scan_type',
+                formatter: 'checkboxFormatter',
+            }, {
+                title: 'scanner',
+                field: 'scanner',
+                formatter: 'checkboxFormatter',
+            }, {
+                title: 'description',
+                field: 'description',
+                formatter: 'checkboxFormatter',
+            }
+        ],
+        data: [
+            {
+                name: { title: 'Metric', checked: true },
+                scan_type: { title: 'Metric', checked: false },
+                scanner: { title: 'Metric', checked: true },
+                description: { title: 'Metric', checked: false },
+            },
+            {
+                name: { title: 'Metric', checked: false },
+                scan_type: { title: 'Metric', checked: true },
+                scanner: { title: 'Metric', checked: false },
+                description: { title: 'Metric', checked: true },
+            },
+            {
+                name: { title: 'Metric', checked: true },
+                scan_type: { title: 'Metric', checked: false },
+                scanner: { title: 'Metric', checked: true },
+                description: { title: 'Metric', checked: false },
+            },
+            {
+                name: { title: 'Metric', checked: false },
+                scan_type: { title: 'Metric', checked: true },
+                scanner: { title: 'Metric', checked: false },
+                description: { title: 'Metric', checked: true },
+            },
+            {
+                name: { title: 'Metric', checked: true },
+                scan_type: { title: 'Metric', checked: false },
+                scanner: { title: 'Metric', checked: true },
+                description: { title: 'Metric', checked: false },
+            },
+        ]
+    },
+    {
         id: "1",
         title: 'First Preset',
         tableId: "1",
+        type: 'custom',
         colums: [
             {
                 title: 'test name',
@@ -252,6 +311,7 @@ const presetsData = [
         id: "2",
         title: 'Second Preset',
         tableId: "2",
+        type: 'custom',
         colums: [
             {
                 title: 'test name',
