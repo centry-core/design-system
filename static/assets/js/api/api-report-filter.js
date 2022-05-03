@@ -58,7 +58,19 @@ const apiDeleteFilter = (currentFilter) => {
         })
         filtersData.splice(indexFilter, 1);
         resolve({
-            message: 'Filter delete'
+            data: createdFilter,
+            message: 'Filter saved'
+        })
+    })
+}
+
+const apiTabFilter = (activeTab) => {
+    return new Promise((resolve, reject) => {
+        const filteredData = activeTab === 'all' ? tableData : tableData.filter(row => row['status'] === activeTab)
+
+        resolve({
+            data: { data: filteredData, columns: tableColumns },
+            message: 'Tables filtered'
         })
     })
 }
