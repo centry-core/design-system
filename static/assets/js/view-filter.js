@@ -122,7 +122,7 @@ const EditPreset = {
                                 v-if="editablePreset.id"
                                 @click="save"
                                 class="btn btn-basic d-flex align-items-center mr-2"
-                                >Save <i v-if="loadingSave" class="preview-loader ml-2"></i>
+                                >Save <i v-if="loadingSave"  class="preview-loader__white ml-2"></i>
                             </button>
                             <button class="btn btn-secondary mr-2" @click="saveAs">Save as...</button>
                             <button
@@ -357,6 +357,7 @@ const vueApp = Vue.createApp({
             this.selectedPreset = deepClone(this.defaultPreset);
             apiResetToDefault(this.selectedPreset).then(response => {
                 this.fetchPresets();
+                this.fetchTableData(this.selectedPreset);
                 showNotify('SUCCESS', response.message);
             }).catch(error => {
                 showNotify('ERROR', error);
