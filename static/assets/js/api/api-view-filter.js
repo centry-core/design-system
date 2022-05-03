@@ -1,6 +1,7 @@
-const apiFetchPresets = new Promise(resolve => {
+const apiFetchPresets = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(presetsData)
+        reject('error')
     }, 500)
 })
 
@@ -58,6 +59,16 @@ const apiDeletePreset = (deletedPreset) => {
         presetsData.splice(indexPreset, 1);
         resolve({
             message: 'Preset delete'
+        })
+    })
+}
+
+const apiResetToDefault = (savedPerset) => {
+    return new Promise((resolve, reject) => {
+        presetsData.splice(0, 1, savedPerset);
+        resolve({
+            data: savedPerset,
+            message: 'Preset reseted to default'
         })
     })
 }
