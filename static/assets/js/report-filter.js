@@ -144,8 +144,6 @@ const ReportFilter = {
     mounted() {
         this.editableFilter = deepClone(this.selectedFilter);
         this.renderSelect();
-        const event = new Event('vue_init')
-        document.dispatchEvent(event);
     },
     watch: {
         editableFilter: {
@@ -339,7 +337,12 @@ const vueApp = Vue.createApp({
                 data: this.tableData,
                 theadClasses: 'thead-light'
             }
-            $('#table').bootstrapTable(tableOptions)
+            $('#table').bootstrapTable(tableOptions);
+            document.addEventListener('select-event', (e) => {
+                if (this.activeTab !== 'all' && e.detail.field === 'status') {
+                    $('#table').bootstrapTable('hideRow', { index: e.detail.row })
+                }
+            }, false);
         },
         fetchTableData() {
             this.loadingTable = true;
