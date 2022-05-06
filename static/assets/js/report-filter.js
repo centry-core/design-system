@@ -1,5 +1,42 @@
+const StatusFilter = {
+    props: ['activeTab'],
+    mounted() {
+        $('a[data-toggle="pill"]').on('shown.bs.tab', (e) => {
+            const activeTab = $(e.target).attr('aria-controls');
+            this.$emit('select-tab', activeTab)
+        })
+    },
+    watch: {
+        activeTab: {
+            handler: function (newVal) {
+                if (newVal === 'all') {
+                    $('a[aria-controls="all"]').tab('show');
+                }
+            },
+        }
+    },
+    template: `
+        <div>
+            <ul class="custom-tabs nav nav-pills mr-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="all" aria-selected="true">ALL</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="valid" aria-selected="false">VALID</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="" id="pills-setting-tab" data-toggle="pill" href="#pills-setting" role="tab" aria-controls="false_positive" aria-selected="false">FALSE POSITIVES</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="" id="pills-ignored-tab" data-toggle="pill" href="#pills-ignored" role="tab" aria-controls="ignored" aria-selected="false">IGNORED</a>
+                </li>
+            </ul>
+        </div>
+    `
+}
+
 const ChooseFilter = {
-    props: ['filters', 'loadingFilters', 'loadingDelete'],
+    props: ['filters', 'loadingFilters', 'loadingDelete', 'selectedFilter'],
     data() {
         return {
             deletingId: null,
@@ -12,8 +49,8 @@ const ChooseFilter = {
       }
     },
     template: `
-        <div class="dropdown dropleft dropdown_action mr-2">
-            <button class="btn dropdown-toggle btn-secondary"
+        <div class="dropdown_action">
+            <button class="btn btn-secondary btn-icon"
                     role="button"
                     id="dropdownMenuLink"
                     data-toggle="dropdown"
@@ -22,17 +59,25 @@ const ChooseFilter = {
                 <i v-else class="fas fa-filter"></i>
             </button>
 
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li class="dropdown-item" @click="$emit('create-filter')">Create new</li>
-                <li v-for="filter in filters" class="dropdown-item custom-nav_item"
+            <ul class="dropdown-menu dropdown-menu-right close-outside" aria-labelledby="dropdownMenuLink">
+                <li class="dropdown-item dropdown-menu_item d-flex align-items-center justify-content-between" 
+                    @click="$emit('create-filter')">Create new</li>
+                <li v-for="filter in filters" 
+                    class="dropdown-item dropdown-menu_item d-flex align-items-center justify-content-between"
                     @click="$emit('select-filter', filter)"
                     >
-                    <button class="btn btn-default btn-xs btn-table btn-icon p-1"
-                        @click.stop="deleteFilter(filter)">
-                        <i v-if="loadingDelete && deletingId === filter.id" class="preview-loader"></i>
-                        <i v-else className="fas fa-trash-alt"></i>
-                    </button>
-                    {{ filter.title }}
+                    <label
+                        class="mb-0 w-100 d-flex align-items-center justify-content-between">
+                        <span class="d-inline-block">{{ filter.title }}</span>
+                        <img v-if="selectedFilter && filter.id === selectedFilter.id" src="./assets/ico/check.svg" class="ml-3">
+                    </label>
+                    <div class="pl-2">
+                        <button
+                            class="btn btn-default btn-xs btn-table btn-icon__xs" @click.stop="deleteFilter(filter)">
+                            <i v-if="loadingDelete && deletingId === filter.id" class="preview-loader"></i>
+                            <i v-else class="fas fa-trash"></i>
+                        </button>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -99,8 +144,6 @@ const ReportFilter = {
     mounted() {
         this.editableFilter = deepClone(this.selectedFilter);
         this.renderSelect();
-        const event = new Event('vue_init')
-        document.dispatchEvent(event);
     },
     watch: {
         editableFilter: {
@@ -258,6 +301,7 @@ const vueApp = Vue.createApp({
         'report-filter': ReportFilter,
         'choose-filter': ChooseFilter,
         'modal-save-filter': modalSaveFilter,
+        'status-filter': StatusFilter
     },
     data() {
         return {
@@ -272,22 +316,44 @@ const vueApp = Vue.createApp({
             loadingDelete: false,
             updatedFilter: null,
             tableData,
+            showFilter: false,
+            activeTab: 'all',
+            loadingTable: false,
         }
     },
-    mounted() {
+    async mounted() {
+        this.loadingTable = true;
         this.fetchFilters();
-        this.initTable();
+        this.fetchTableData();
+
         const event = new Event('vue_init');
         document.dispatchEvent(event);
     },
     methods: {
-        initTable() {
+        initTable({ columns, data }) {
+            this.tableData = data;
             const tableOptions = {
-                columns: tableColumns,
+                columns,
                 data: this.tableData,
                 theadClasses: 'thead-light'
             }
-            $('#table').bootstrapTable(tableOptions)
+            $('#table').bootstrapTable(tableOptions);
+            document.addEventListener('select-event', (e) => {
+                if (this.activeTab !== 'all' && e.detail.field === 'status') {
+                    $('#table').bootstrapTable('hideRow', { index: e.detail.row })
+                }
+            }, false);
+        },
+        fetchTableData() {
+            this.loadingTable = true;
+            $('#table').bootstrapTable('destroy');
+            setTimeout(() => {
+                apiFetchTable.then(res => {
+                    this.initTable(res);
+                }).finally(() => {
+                    this.loadingTable = false
+                })
+            }, 700)
         },
         fetchFilters() {
             this.loadingFilters = true;
@@ -298,7 +364,9 @@ const vueApp = Vue.createApp({
             })
         },
         updateTable(filterSetting) {
+            this.activeTab = 'all'
             this.loadingApply = true;
+            this.loadingTable = true;
             $('#table').bootstrapTable('destroy');
             setTimeout(() => {
                 console.log('SETTING FOR SERVER:', filterSetting.options)
@@ -309,6 +377,7 @@ const vueApp = Vue.createApp({
                         data,
                         theadClasses: 'thead-light'
                     }
+                    this.loadingTable = false;
                     $('#table').bootstrapTable(tableOptions);
                     $('.selectpicker').selectpicker('render');
                 }).finally(() => {
@@ -317,6 +386,7 @@ const vueApp = Vue.createApp({
             }, 500)
         },
         createFilter() {
+            this.showFilter = true;
             this.selectedFilter = {
                 id: null,
                 title: '',
@@ -331,6 +401,7 @@ const vueApp = Vue.createApp({
             }
         },
         selectFilter(filter) {
+            this.showFilter = true;
             this.selectedFilter = filter;
         },
         setFilters(filters) {
@@ -385,6 +456,31 @@ const vueApp = Vue.createApp({
                     this.loadingDelete = false;
                 })
             }, 500);
+        },
+        removeFilter() {
+            this.selectedFilter = null;
+            this.showFilter = false;
+        },
+        selectTab(tab) {
+            this.removeFilter();
+            this.activeTab = tab;
+            this.loadingTable = true;
+            $('#table').bootstrapTable('destroy');
+            setTimeout(() => {
+                apiTabFilter(tab).then(response => {
+                    const { data, columns} = response.data;
+                    const tableOptions = {
+                        columns,
+                        data,
+                        theadClasses: 'thead-light'
+                    }
+                    this.loadingTable = false;
+                    $('#table').bootstrapTable(tableOptions);
+                    $('.selectpicker').selectpicker('render');
+                }).finally(() => {
+                    this.loadingApply = false;
+                })
+            }, 500)
         }
     }
 });

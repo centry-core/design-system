@@ -17,8 +17,29 @@ function inputFormatter(value, row, index, field) {
     </div>`
 }
 
-function updateCell(el, row, field) {
-    $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
+function updateCbxCell(el, row, field, title = '') {
+    $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: { checked: el.checked, title: title }})
+}
+
+function updateCell(el, row, field, title = '') {
+    const selectEvent = new CustomEvent('select-event',  { detail: { row, field }});
+    document.dispatchEvent(selectEvent);
+    $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: el.value })
+}
+
+function checkboxFormatter (value, row, index, field) {
+    const isChacked = value.checked ? 'checked' : ''
+    return `
+        <label
+            class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+            <input
+                value="${value.checked}"
+                onchange="updateCbxCell(this, '${index}', '${field}', '${value.title}')" 
+                ${isChacked}
+                type="checkbox">
+            <span class="w-100 d-inline-block ml-3">${value.title}</span>
+        </label>
+    `
 }
 
 const compareValues = (value1, value2) => value1.toLowerCase() === value2.toLowerCase()
@@ -47,17 +68,18 @@ function tableStatusButtonFormatter(value, row, index) {
 }
 
 const tableColoredSelectFormatter = (value, row, index, optionsList, fieldName) => {
-    const options = optionsList.map(item => `
+    const options = optionsList.map(item => {
+        return `
         <option 
             class="${item.className}" 
             ${compareValues(item.name, value) ? 'selected' : ''}
         >
             ${item.name.toUpperCase()}
         </option>
-    `);
+    `
+    });
     const unexpectedValue = optionsList.find(item => compareValues(item.name, value))
     unexpectedValue === undefined && options.push(`<option selected>${value}</option>`)
-
     return `
         <select 
             class="selectpicker btn-colored-select mr-2 btn-colored-table" 

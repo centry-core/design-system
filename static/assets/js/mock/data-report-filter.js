@@ -72,7 +72,7 @@ const tableData = [
         scanner: 'OWASP ZAP',
         description: 'Lorem ipsum dolor sit amet',
         severity: 'medium',
-        status: 'valid'
+        status: 'ignored'
     },
     {
         name: 'George',
@@ -97,13 +97,28 @@ const tableColumnsUpdated = [
         title: 'scan type',
         field: 'scan_type',
         sortable: true,
+    }, {
+        title: 'description',
+        field: 'description',
+        sortable: true,
+        class: 'w-100',
+    }, {
+        title: 'severity',
+        field: 'severity',
+        formatter: 'tableSeverityButtonFormatter',
+        sortable: true,
+    }, {
+        title: 'status',
+        field: 'status',
+        formatter: 'tableStatusButtonFormatter',
+        sortable: true,
     }
 ]
 
 const tableDataUpdated = [
-    {name: 'George', scan_type: 'Monkey'},
-    {name: 'Jeffrey', scan_type: 'Giraffe'},
-    {name: 'Alice', scan_type: 'Giraffe'},
+    {name: 'George', scan_type: 'Monkey', description: 'Lorem ipsum dolor sit amet', severity: 'critical', status: 'ignored'},
+    {name: 'Jeffrey', scan_type: 'Giraffe', description: 'Lorem ipsum dolor sit amet', severity: 'info', status: 'valid'},
+    {name: 'Alice', scan_type: 'Giraffe', description: 'Lorem ipsum dolor sit amet', severity: 'critical', status: 'valid'},
 ]
 
 let filtersData = [

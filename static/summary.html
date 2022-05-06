@@ -90,7 +90,7 @@
             <li class="custom-nav_item">
                 <a class="" href="notifications.html">Notifications</a>
             </li>
-            <li class="custom-nav_item active">
+            <li class="custom-nav_item">
                 <a class="" href="tables.html">Tables</a>
             </li>
             <li class="custom-nav_item">
@@ -114,55 +114,56 @@
             <li class="custom-nav_item">
                 <a class="" href="typography.html">Typography</a>
             </li>
+            <li class="custom-nav_item">
+                <a href="filters.html">Filters</a>
+            </li>
+            <li class="custom-nav_item active">
+                <a href="summary.html">Summary</a>
+            </li>
         </ul>
     </aside>
     <div class="w-100">
         <div class="card mt-3 card-table">
             <div class="card-body">
                 <div class="pt-4" id="vueApp">
-                    <modal-save-filter
-                        v-if="showModal"
-                        @save-filter-as="saveFilterAs"
-                        @open-modal="openModal"
-                        @save-new-filter="saveNewFilter"
-                        :loading="loadingSaveAs"
-                    ></modal-save-filter>
-                    <div class="d-flex justify-content-end pb-4">
-                        <ul class="custom-tabs nav nav-pills mr-3" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ALL</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">VALID</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="" id="pills-setting-tab" data-toggle="pill" href="#pills-setting" role="tab" aria-controls="pills-setting" aria-selected="false">FALSE POSITIVES</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="" id="pills-ignored-tab" data-toggle="pill" href="#pills-ignored" role="tab" aria-controls="pills-ignored" aria-selected="false">IGNORED</a>
-                            </li>
-                        </ul>
-                        <choose-filter
-                            :filters="filters"
-                            :loading-filters="loadingFilters"
+                    <div class="d-flex justify-content-between">
+                        <h1 class="font-h2">Summary</h1>
+                        <modal-save-preset
+                            v-if="showModal"
+                            @save-preset-as="savePresetAs"
+                            @open-modal="openModal"
+                            @save-new-preset="saveNewPreset"
+                            :loading="loadingSaveAs"
+                        ></modal-save-preset>
+                        <confirm-modal
+                            v-if="showConfirm"
+                            @close-confirm="openConfirm"
+                            :deleted-preset="prepearDeletedPreset"
+                            @delete-preset="deletePreset"
                             :loading-delete="loadingDelete"
-                            @select-filter="selectFilter"
-                            @create-filter="createFilter"
-                            @delete-filter="deleteFilter"
-                        ></choose-filter>
+                        ></confirm-modal>
+                        <div class="d-flex ">
+                            <choose-preset
+                                :loading-presets="loadingPresets"
+                                :items="presets"
+                                @open-confirm="openConfirm"
+                                @select-preset="selectPreset"
+                                @select-default="selectDefault"
+                                :selected-preset="selectedPreset"
+                            ></choose-preset>
+                            <edit-preset
+                                @save="savePreset"
+                                @open-modal="openModal"
+                                @create-new-preset="prepearNewPreset"
+                                @reset-to-default="resetToDefault"
+                                :loading-save="loadingSave"
+                                :selected-preset="selectedPreset"
+                            ></edit-preset>
+                        </div>
                     </div>
-                    <report-filter
-                        @remove-filter="selectedFilter = null"
-                        v-if="selectedFilter"
-                        :key="selectedFilter"
-                        :selected-filter="selectedFilter"
-                        @open-modal="openModal"
-                        @update-curent-filter="updateCurentFilter"
-                        @save="saveFilter"
-                        :loading-save="loadingSave"
-                        :loading-apply="loadingApply"
-                        @apply="updateTable"
-                    ></report-filter>
+                    <div v-if="loadingTable" class="d-flex align-items-center justify-content-center" style="height: 270px">
+                        <i class="preview-loader"></i>
+                    </div>
                     <table
                         id="table"
                         class="table table-border mt-4"
@@ -179,14 +180,14 @@
 </main>
 <script src="https://unpkg.com/vue@next"></script>
 <script src="assets/js/utils.js"></script>
-<script src="assets/js/mock/data-report-filter.js"></script>
-<script src="assets/js/api/api-report-filter.js"></script>
+<script src="assets/js/mock/data-view-filter.js"></script>
+<script src="assets/js/api/api-view-filter.js"></script>
 <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>
 <script src="assets/js/table.js"></script>
 <script src="assets/js/select.js"></script>
-<script src="assets/js/report-filter.js"></script>
 <script src="assets/js/notifications.js"></script>
+<script src="assets/js/view-filter.js"></script>
 </body>
 
 </html>
