@@ -92,9 +92,6 @@ wait_for('bootstrapTable', jQuery.fn).then(v => (
 
 
 $(document).on('vue_init', () => {
-    $('.params-table').on('all.bs.table', () => {
-        $('.selectpicker').selectpicker('render')
-    })
     // script fot tables with vue.js when injected event (vue_init)
 
     $('.table').on('all.bs.table', () => {
