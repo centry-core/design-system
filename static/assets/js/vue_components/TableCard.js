@@ -15,9 +15,9 @@ const TableCard = {
     //         return $(this.$refs.table)
     //     },
         container_class() {
-            return this.borders ?
-                `card card-table ${this.container_classes}` :
-                `card card-table-sm ${this.container_classes}`
+            let classes = this.borders ? 'card card-table' : 'card card-table-sm'
+            if (!!this.container_classes) classes = `${classes} ${this.container_classes}`
+            return classes
 
         }
     },
