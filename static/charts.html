@@ -3,6 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="build_id" content="{{ config['test_data']['build_id'] }}"/>
+    <meta property="test_id" content="{{ config['test_data']['id'] }}"/>
+    <meta property="lg_type" content="{{ config['test_data']['lg_type'] }}"/>
+    <meta property="test_name" content="{{ config['test_data']['name'] }}"/>
+    <meta property="environment" content="{{ config['test_data']['environment'] }}"/>
     <link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" href="assets/ico/favicon.png">
     <title>Carrier | Non-functional Testing Toolkit</title>
@@ -125,53 +130,100 @@
     </aside>
 
     <div class="card mt-3 w-100">
-        <div class="card-header">
-            <h1>Buttons</h1>
-        </div>
         <div class="card-body">
-            <div>
-                <div class="card-body" id="preset">
-                    <div class="float-left" style="width:100%;">
-                        <div class="chart float-left" style="width:75%;">
-                            <div class="chartjs-size-monitor">
-                                <div class="chartjs-size-monitor-expand">
-                                    <div class="">
+            <div class="p-3">
+                <div class="d-flex justify-content-between pb-4">
+                    <h1 class="font-h2">Requests summary</h1>
+                    <div class="d-flex align-items-center">
+                        <div class="complex-list">
+                            <select class="selectpicker dropdown-menu__simple" data-style="btn">
+                                <option>auto</option>
+                                <option>1s</option>
+                                <option>5s</option>
+                                <option>30s</option>
+                                <option>1m</option>
+                                <option>5m</option>
+                                <option>10m</option>
+                            </select>
+                        </div>
+                        <div class="complex-list">
+                            <select class="selectpicker dropdown-menu__simple" data-style="btn">
+                                <option>all</option>
+                                <option>ok</option>
+                                <option>ko</option>
+                            </select>
+                        </div>
+                        <div class="complex-list mr-3">
+                            <select class="selectpicker dropdown-menu__simple" data-style="btn">
+                                <option>Request</option>
+                            </select>
+                        </div>
+                        <ul class="custom-tabs nav nav-pills mr-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Responses</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Average</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-setting-tab" data-toggle="pill" href="#pills-setting" role="tab" aria-controls="pills-setting" aria-selected="false">TPS</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="" id="pills-setting-tab" data-toggle="pill" href="#pills-setting" role="tab" aria-controls="pills-setting" aria-selected="false">Analy</a>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary btn-icon mr-2">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="preset">
+                    <div class="d-flex">
+                        <div class="chart flex-grow-1 mr-4 d-flex flex-column justify-content-between">
+                            <div class="flex-grow-1">
+                                <div class="chartjs-size-monitor">
+                                    <div class="chartjs-size-monitor-expand">
+                                        <div class="">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink">
+                                        <div class=""></div>
                                     </div>
                                 </div>
-                                <div class="chartjs-size-monitor-shrink">
-                                    <div class=""></div>
+                                <canvas id="chart-requests" class="chart-canvas chartjs-render-monitor"
+                                        style="display: block; height: 450px; width: 100%;"></canvas>
+                            </div>
+                            <div>
+                                <p class="font-h5 font-semibold">Time Picker</p>
+                                <div>
+                                    <div id="input-slider-range" data-range-value-min="0" data-range-value-max="100"></div>
+                                    <div class="row d-none">
+                                        <div class="col-6">
+                                            <span class="range-slider-value value-low" data-range-value-low="0"
+                                                  id="input-slider-range-value-low"></span>
+                                                        </div>
+                                                        <div class="col-6 text-right">
+                                            <span class="range-slider-value value-high" data-range-value-high="100"
+                                                  id="input-slider-range-value-high"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <canvas id="chart-requests" class="chart-canvas chartjs-render-monitor"
-                                    style="display: block; height: 450px; width: 100%;"></canvas>
-
                         </div>
-                        <div class="float-left" style="width:25%;">
-                            <div class="d-flex flex-column mx-2">
-                                <input class="mx-2 custom-checkbox custom-checkbox_multicolor" type="checkbox" checked="true" id="all_checkbox" onclick="selectOrUnselectRequests()">
-                                <label class="mb-0 w-100 d-flex align-items-center custom-chart-legend-label" style="--cbx-color: rgb(94,114,228);" for="all_checkbox">
-                                    <span class="custom-chart-legend-span"></span>
-                                    Select/Unselect all
+                        <div class="card" style="width:280px;">
+                            <div class="d-flex flex-column p-3">
+                                <label
+                                        class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor" for="all_checkbox">
+                                    <input
+                                            class="mx-2"
+                                            checked="true" id="all_checkbox" onclick="selectOrUnselectRequests()"
+                                            style="--cbx-color: var(--basic);"
+                                            type="checkbox">
+                                    <span class="w-100 d-inline-block">Select/Unselect all</span>
                                 </label>
                             </div>
-                            <br>
-                            <div id="chartjs-custom-legend" class="custom-chart-legend d-flex flex-column mx-2"></div>
-                        </div>
-                    </div>
-                    <div class="col" style="width:75%;">
-                        <h6>Time Picker</h6>
-                        <div>
-                            <div id="input-slider-range" data-range-value-min="0" data-range-value-max="100"></div>
-                            <div class="row d-none">
-                                <div class="col-6">
-                            <span class="range-slider-value value-low" data-range-value-low="0"
-                                  id="input-slider-range-value-low"></span>
-                                </div>
-                                <div class="col-6 text-right">
-                            <span class="range-slider-value value-high" data-range-value-high="100"
-                                  id="input-slider-range-value-high"></span>
-                                </div>
-                            </div>
+                            <hr class="my-0">
+                            <div id="chartjs-custom-legend" class="custom-chart-legend d-flex flex-column px-3 py-3"></div>
                         </div>
                     </div>
                 </div>
@@ -180,7 +232,26 @@
     </div>
 </main>
 <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
 <script src="assets/js/select.js"></script>
+<script src="assets/js/mock/data-chart.js"></script>
+<script src="assets/js/mock/data-error-table.js"></script>
+<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="assets/js/chart.js"></script>
+<script src="assets/vendor/nouislider/distribute/nouislider.min.js"></script>
+<script src="assets/js/argon.js"></script>
+<script>
+    $(document).ready(function() {
+        console.log("Document ready")
+        setParams();
+        loadRequestData('/api/v1/chart/requests/summary', "Response time, ms");
+        fillSummaryTable();
+        fillErrorTable();
+        $('#RT').trigger( "click" )
+        $("#analytics").hide();
+        document.getElementById('input-slider-range').noUiSlider.on('set', function() { resizeChart(); });
+    });
+</script>
 </body>
 
 </html>

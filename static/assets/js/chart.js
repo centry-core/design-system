@@ -405,27 +405,9 @@ function setParams(){
 
 
 function fillSummaryTable(){
-    $.get(
-        '/api/v1/chart/requests/table',
-        {
-            build_id: build_id,
-            test_name: test_name,
-            lg_type: lg_type,
-            sampler: samplerType,
-            status: statusType,
-            start_time: $("#start_time").html(),
-            end_time: $("#end_time").html(),
-            // TODO set correct low_value and high_value
-            //low_value: $("#input-slider-range-value-low").html(),
-            //high_value: $("#input-slider-range-value-high").html()
-            low_value: 0,
-            high_value: 100
-        },
-        function( data ) {
-            data.forEach((item) => {
-                $('#summary_table').bootstrapTable('append', item)
-            })
-        });
+    dataErrorTable.forEach((item) => {
+        $('#summary_table').bootstrapTable('append', item)
+    })
 }
 
 function loadRequestData(url, y_label) {
@@ -439,29 +421,12 @@ function loadRequestData(url, y_label) {
 //    if ($("#end_time").html() != "") {
 //        $("#PP").hide();
 //    }
-    $.get(
-        url,
-        {
-            build_id: build_id,
-            test_name: test_name,
-            lg_type: lg_type,
-            sampler: samplerType,
-            aggregator: aggregator,
-            status: statusType,
-            start_time: $("#start_time").html(),
-            end_time: $("#end_time").html(),
-            low_value: $("#input-slider-range-value-low").html(),
-            high_value: $("#input-slider-range-value-high").html()
-
-        }, function( data ) {
-            lineChartData = data;
-            if(window.presetLine!=null){
-                window.presetLine.destroy();
-            }
-            drawCanvas(y_label);
-            document.getElementById('chartjs-custom-legend').innerHTML = window.presetLine.generateLegend();
-        }
-    );
+    lineChartData = dataChart;
+    if(window.presetLine!=null){
+        window.presetLine.destroy();
+    }
+    drawCanvas(y_label);
+    document.getElementById('chartjs-custom-legend').innerHTML = window.presetLine.generateLegend();
 }
 
 function switchSampler() {
@@ -529,10 +494,10 @@ function drawCanvas(y_label) {
                 var legendHtml = [];
                 for (var i=0; i<chart.data.datasets.length; i++) {
                     if (chart.data.datasets[i].label != "Active Users") {
-                        var cb = '<div class="d-flex my-2">';
-                        cb += '<input class="mx-2 custom-checkbox custom-checkbox_multicolor" type="checkbox" checked="true" '
-                        cb += 'id="'+chart.data.datasets[i].label+'" onclick="updateChart(event, ' + '\'' + chart.legend.legendItems[i].datasetIndex + '\'' + ')"/>';
-                        cb += '<label class="mb-0 w-100 d-flex align-items-center custom-chart-legend-label" style="--cbx-color: ' + chart.data.datasets[i].backgroundColor + ';" for="'+chart.data.datasets[i].label+'">'
+                        var cb = '<div class="d-flex mb-3">';
+                        cb += '<label class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor">'
+                        cb += '<input class="mx-2" type="checkbox" checked="true" style="--cbx-color: ' + chart.data.datasets[i].backgroundColor + ';" '
+                        cb += 'onclick="updateChart(event, ' + '\'' + chart.legend.legendItems[i].datasetIndex + '\'' + ')"/>';
                         cb += '<span class="custom-chart-legend-span"></span>'
                         cb += chart.data.datasets[i].label;
                         cb += '</label></div>'
