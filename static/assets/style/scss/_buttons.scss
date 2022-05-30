@@ -4,7 +4,6 @@
 
 .btn {
   font-size: 14px;
-  line-height: 24px;
   height: 32px;
   white-space: nowrap !important;
   padding: 4px 15px 4px 15px;
@@ -864,4 +863,10 @@
 
 .br-left {
   border-radius: 5px 0 0 5px;
+}
+.btn.btn-back {
+  padding: 0 10px 0 0;
+  .icon_arrow-back:after {
+    content: url("/static/assets/ico/arrow-back.svg");
+  }
 }

@@ -246,6 +246,22 @@ h2 a {
   overflow-y: scroll;
 }
 
+.p-28 {
+  padding: 28px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.text-gray-600 {
+  color: #757f99;
+}
+
+.text-gray-500 {
+  color: #abb3b9;
+}
+
 body {
   min-width: 1220px;
   background-color: var(--background);
@@ -444,17 +460,10 @@ body {
   line-height: 20px;
   color: var(--text-decoration);
   white-space: nowrap;
-  font-weight: 700;
 }
 
 .response-codes {
   width: fit-content !important;
-}
-
-.card-sm-table table td:nth-child(odd),
-.response-codes td:nth-child(odd),
-.card-sm-tag-table table tr:nth-child(odd) {
-  font-weight: 300;
 }
 
 .card-sm-table table td:nth-child(odd),
@@ -1688,7 +1697,6 @@ td.disabled input {
 
 .btn {
   font-size: 14px;
-  line-height: 24px;
   height: 32px;
   white-space: nowrap !important;
   padding: 4px 15px 4px 15px;
@@ -2539,6 +2547,13 @@ td.disabled input {
 
 .br-left {
   border-radius: 5px 0 0 5px;
+}
+
+.btn.btn-back {
+  padding: 0 10px 0 0;
+}
+.btn.btn-back .icon_arrow-back:after {
+  content: url("/static/assets/ico/arrow-back.svg");
 }
 
 /* custom-checkbox */
@@ -3792,7 +3807,6 @@ p {
 }
 
 .font-h6 {
-  color: #32325d;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
