@@ -1428,14 +1428,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .card-body table td {
-  line-height: 18px;
-}
-
-.card-table .card-body table td {
   line-height: 24px;
 }
 
-.card-table .card-body table th {
+.card-body table th {
   line-height: 18px;
 }
 
@@ -1738,6 +1734,7 @@ td.disabled input {
 .btn-32 {
   font-size: 14px;
   padding: 8px;
+  line-height: 14px;
   height: 32px !important;
   min-width: 32px;
   max-width: 32px;

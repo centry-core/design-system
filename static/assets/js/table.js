@@ -1,21 +1,12 @@
-function lgFormatter(value, row, index) {
-    if (value === "perfmeter") {
-        return '<img src="assets/ico/jmeter.png" width="20">'
-    } else if (value === "perfgun") {
-        return '<img src="assets/ico/gatling.png" width="20">'
-    } else {
-        return value
-    }
-}
-
-function inputFormatter(value, row, index, field) {
-    return `<div class="custom-input">
-        <input
-            type="text"
-            placeholder="Text"
-            onchange="updateCell(this, '${index}', '${field}')" value="${value}">
-    </div>`
-}
+// function lgFormatter(value, row, index) {
+//     if (value === "perfmeter") {
+//         return '<img src="assets/ico/jmeter.png" width="20">'
+//     } else if (value === "perfgun") {
+//         return '<img src="assets/ico/gatling.png" width="20">'
+//     } else {
+//         return value
+//     }
+// }
 
 function updateCell(el, row, field, title = '') {
 
@@ -50,7 +41,7 @@ const severityOptions = [
 const statusOptions = [
     {name: 'valid', className: 'colored-select-red'},
     {name: 'false positive', className: 'colored-select-blue'},
-    {name: 'ignored',  className: 'colored-select-darkblue'},
+    {name: 'ignored', className: 'colored-select-darkblue'},
     {name: 'not defined', className: 'colored-select-notdefined'},
 ]
 
@@ -85,68 +76,16 @@ const tableColoredSelectFormatter = (value, row, index, optionsList, fieldName) 
     `
 }
 
-function dataTypeFormatter(value, row, index, field) {
-    const options = ['String', 'Number', 'List'].map(item =>
-        `<option 
-            value=${item} 
-            ${item.toLowerCase() === value.toLowerCase() ? 'selected' : ''}
-        >
-            ${item}
-        </option>
-        `
-    )
-    return `
-        <select class="selectpicker mr-2" data-style="btn-gray" onchange="updateCell(this, '${index}', '${field}')">
-            ${options.join('')}
-        </select>
-    `
-}
-
-const addEmptyParamsRow = source => {
-    $(source).closest('.section').find('.params-table').bootstrapTable(
-        'append',
-        {"name": "", "default": "", "type": "string", "description": "", "action": ""}
-    )
-}
 
 
-function parametersDeleteFormatter(value, row, index) {
-    return `
-    <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-16 btn-action" onclick="deleteParams(${index}, this)"><i class="fas fa-trash-alt"></i></button>
-    </div>
-    `
-}
 
-function actionFormatter(value, row, index) {
-    return `
-    <div class="d-flex justify-content-end table-action">
-        <button type="button" class="btn btn-24 btn-action"><i class="fas fa-play"></i></button>
-        <button type="button" class="btn btn-24 btn-action"><i class="fas fa-cog"></i></button>
-        <button type="button" class="btn btn-24 btn-action"><i class="fas fa-share-alt"></i></button>
-        <button type="button" class="btn btn-24 btn-action"><i class="fas fa-trash-alt"></i></button>
-    </div>
-    `
-}
-
-$('.params-table').on('all.bs.table', () => $('.selectpicker').selectpicker('render'))
 
 function nameStyle(value, row, index) {
     return {css: {"max-width": "100px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
 }
 
-const deleteParams = (index, source) => {
-    $(source).closest('.params-table').bootstrapTable('remove', {
-        field: '$index',
-        values: [index]
-    })
-}
 
-window.wait_for = async (prop_name, root = window, poll_length = 1000) => {
-    while (!root.hasOwnProperty(prop_name))
-        await new Promise(resolve => setTimeout(resolve, poll_length))
-    return root[prop_name]
-}
+
 
 wait_for('bootstrapTable', jQuery.fn).then(v => (
     function ($) {
@@ -166,15 +105,25 @@ wait_for('bootstrapTable', jQuery.fn).then(v => (
         $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
     })(jQuery)
 )
-// script fot tables with vue.js when injected event (vue_init)
+
+
 $(document).on('vue_init', () => {
+    $('.params-table').on('all.bs.table', () => {
+        $('.selectpicker').selectpicker('render')
+    })
+    // script fot tables with vue.js when injected event (vue_init)
+
     $('.table').on('all.bs.table', () => {
-        $('.selectpicker').selectpicker('render');
+        $('.selectpicker').selectpicker('render')
         initColoredSelect();
     })
     initColoredSelect();
+    $('.selectpicker').selectpicker('render')
 })
+
+
 // script fot tables without vue.js
 $('.table').on('all.bs.table', () => {
     $('.selectpicker').selectpicker('render');
 })
+
