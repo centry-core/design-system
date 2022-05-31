@@ -1,0 +1,600 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="build_id" content="{{ config['test_data']['build_id'] }}"/>
+    <meta property="test_id" content="{{ config['test_data']['id'] }}"/>
+    <meta property="lg_type" content="{{ config['test_data']['lg_type'] }}"/>
+    <meta property="test_name" content="{{ config['test_data']['name'] }}"/>
+    <meta property="environment" content="{{ config['test_data']['environment'] }}"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" href="assets/ico/favicon.png">
+    <title>Carrier | Non-functional Testing Toolkit</title>
+    <!-- Fonts and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Extensions -->
+    <link type="text/css" href="assets/vendor/nouislider/nouislider.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-table/bootstrap-table.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="assets/vendor/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
+    <!-- CSS Files -->
+    <link type="text/css" href="assets/style/css/main.css" rel="stylesheet">
+    <!--   Core JS Files   -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-xl main-nav">
+    <div class="d-flex chapters">
+        <div class="logo"><img src="assets/ico/logo.svg"></div>
+        <select class="selectpicker" data-style="btn-chapters">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+        </select>
+    </div>
+    <button class="navbar-toggler btn-primary" type="button" data-toggle="collapse" data-target="#chapterSelectNav"
+            aria-controls="chapterSelectNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="chapterSelectNav">
+        <div class="navbar-nav">
+            <a class="nav-link" href="#">Link 1</a>
+            <a class="nav-link" href="#">Link 2</a>
+            <a class="nav-link" href="#">Link 3</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </div>
+    </div>
+
+    <select id="projectSelect" class="selectpicker" data-style="btn-projects" data-dropdown-align-right="true">
+        <option>Mustard</option>
+        <option>Ketchup</option>
+        <option>Relish</option>
+        <option>Some long ass creepy name</option>
+    </select>
+    <div class="vl"></div>
+    <div class="dropdown ml-1">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="userDropDown" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-user-circle"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropDown">
+            <button class="dropdown-item" type="button">Account page</button>
+            <button class="dropdown-item" type="button">Login Form</button>
+        </div>
+    </div>
+</nav>
+<main class="d-flex align-items-start" id="app">
+    <aside class="m-3 card position-sticky" style="width: 200px">
+        <ul class="custom-nav flex-column" id="accordion1">
+            <li class="custom-nav_item">
+                <a class="" href="controls.html">Controls</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="inputs.html">Inputs</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="dropdowns.html">Dropdowns</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="tabs.html">Tabs</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="notifications.html">Notifications</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="tables.html">Tables</a>
+            </li>
+            <li class="custom-nav_item active">
+                <a class="" href="buttons.html">Buttons</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="cards.html">Cards</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="modals.html">Modals</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="tooltips.html">Tooltips</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="drag&drop.html">Drag & Drop</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="slider.html">Slider</a>
+            </li>
+            <li class="custom-nav_item">
+                <a class="" href="typography.html">Typography</a>
+            </li>
+            <li class="custom-nav_item">
+                <a href="filters.html">Filters</a>
+            </li>
+            <li class="custom-nav_item">
+                <a href="summary.html">Summary</a>
+            </li>
+        </ul>
+    </aside>
+    <div class="mt-3 w-100">
+        <div class="card p-28">
+            <div class="d-flex justify-content-between mb-3">
+                <h2 class="d-flex align-items-center">
+                    <button class="btn btn-back">
+                        <i class="icon_arrow-back"></i>
+                    </button>Test Name
+                </h2>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-secondary">Refresh results</button>
+                    <button class="btn btn-painted ml-2" style="--text-color: rgb(243, 38, 38); --brd-color: rgb(242, 180, 180)">Stop test</button>
+                </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col pl-0">
+                    <div class="card card-sm card-blue">
+                        <div class="card-header">--</div>
+                        <div class="card-body">Metric</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-sm card-blue">
+                        <div class="card-header">--</div>
+                        <div class="card-body">Metric</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-sm card-blue">
+                        <div class="card-header">--</div>
+                        <div class="card-body">Metric</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-sm card-blue">
+                        <div class="card-header">--</div>
+                        <div class="card-body">Metric</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-sm card-blue">
+                        <div class="card-header">--</div>
+                        <div class="card-body">Metric</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-20">
+                <div class="col">
+                    <div class="card-sm-table">
+                        <table class="font-h6 font-semibold">
+                            <tr>
+                                <td class="text-gray-500">STATUS</td>
+                                <td>---</td>
+                                <td class="text-gray-500">started</td>
+                                <td>2021-01-25T16:43:56.684Z</td>
+                                <td class="text-gray-500">Test Type</td>
+                                <td>default</td>
+                                <td class="text-gray-500">responce codes</td>
+                                <td>1xx: ––   2xx: ––   3xx: ––   4xx: ––   5xx: ––</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-500">Duration</td>
+                                <td>58s</td>
+                                <td class="text-gray-500">End</td>
+                                <td>2021-01-25T16:43:56.684Z</td>
+                                <td class="text-gray-500">Environment</td>
+                                <td>Demo</td>
+                                <td class="text-gray-500">tags</td>
+                                <td class="d-flex">
+                                    <button class="btn btn-xs btn-painted mr-2 rounded-pill" style="--text-color: var(--error); --brd-color: var(--red-underline)">Business</button>
+                                    <button class="btn btn-xs btn-painted mr-2 rounded-pill" style="--text-color: var(--success); --brd-color: var(--green-underline)">System</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-12 d-flex align-items-center mt-4" id="dropdowns">
+                    <p class="mb-0 font-h6 text-gray-500 font-semibold">LOAD CONFIG</p>
+                    <multiselect-filter :title="'Carrier default'">
+                    </multiselect-filter>
+                    <multiselect-filter :title="'Custom location'">
+                    </multiselect-filter>
+                </div>
+            </div>
+        </div>
+        <div class="card p-28 mt-3">
+            <div class="d-flex justify-content-between pb-4">
+                <h1 class="font-h2">Requests summary</h1>
+                <div class="d-flex align-items-center">
+                    <div class="complex-list">
+                        <select class="selectpicker dropdown-menu__simple" data-style="btn">
+                            <option>auto</option>
+                            <option>1s</option>
+                            <option>5s</option>
+                            <option>30s</option>
+                            <option>1m</option>
+                            <option>5m</option>
+                            <option>10m</option>
+                        </select>
+                    </div>
+                    <div class="complex-list">
+                        <select class="selectpicker dropdown-menu__simple" data-style="btn">
+                            <option>all</option>
+                            <option>ok</option>
+                            <option>ko</option>
+                        </select>
+                    </div>
+                    <div class="complex-list mr-3">
+                        <select class="selectpicker dropdown-menu__simple" data-style="btn">
+                            <option>Request</option>
+                        </select>
+                    </div>
+                    <ul class="custom-tabs nav nav-pills mr-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="active" id="pills-responses-tab" data-toggle="pill" href="#pills-responses" role="tab" aria-controls="pills-home" aria-selected="true">Responses</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="" id="pills-average-tab" data-toggle="pill" href="#pills-average" role="tab" aria-controls="pills-profile" aria-selected="false">Average</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="" id="pills-TPS-tab" data-toggle="pill" href="#pills-TPS" role="tab" aria-controls="pills-setting" aria-selected="false">TPS</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="" id="pills-analytics-tab" data-toggle="pill" href="#pills-analytics" role="tab" aria-controls="pills-setting" aria-selected="false">Analytics</a>
+                        </li>
+                    </ul>
+                    <button class="btn btn-secondary btn-icon mr-2">
+                        <i class="fas fa-download"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="preset">
+                <div class="d-flex">
+                    <div class="chart flex-grow-1 mr-4 d-flex flex-column justify-content-between">
+                        <div class="flex-grow-1">
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class="">
+                                    </div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class=""></div>
+                                </div>
+                            </div>
+                            <canvas id="chart-requests" class="chart-canvas chartjs-render-monitor"
+                                    style="display: block; height: 450px; width: 100%;"></canvas>
+                        </div>
+                        <div>
+                            <p class="font-h5 font-semibold">Time Picker</p>
+                            <div>
+                                <div id="input-slider-range" data-range-value-min="0" data-range-value-max="100"></div>
+                                <div class="row d-none">
+                                    <div class="col-6">
+                                        <span class="range-slider-value value-low" data-range-value-low="0"
+                                              id="input-slider-range-value-low"></span>
+                                                    </div>
+                                                    <div class="col-6 text-right">
+                                        <span class="range-slider-value value-high" data-range-value-high="100"
+                                              id="input-slider-range-value-high"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="width:280px;">
+                        <div class="d-flex flex-column p-3">
+                            <label
+                                    class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor" for="all_checkbox">
+                                <input
+                                        class="mx-2"
+                                        checked="true" id="all_checkbox" onclick="selectOrUnselectRequests()"
+                                        style="--cbx-color: var(--basic);"
+                                        type="checkbox">
+                                <span class="w-100 d-inline-block">Select/Unselect all</span>
+                            </label>
+                        </div>
+                        <hr class="my-0">
+                        <div id="chartjs-custom-legend" class="custom-chart-legend d-flex flex-column px-3 py-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-28 mt-3">
+            <div class="row">
+                <div class="col-4 mb-4">
+                    <h3>Report Block</h3>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-border" id="tests-list-first"
+                       data-toggle="table"
+                       data-unique-id="id"
+                       data-page-list="[5, 10, 15]"
+                       data-pagination="true"
+                       data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                       data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                       data-page-size=5
+                       data-data='{
+                "total": 12 ,
+                "rows": [
+                    {
+                        "id": 4,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 123,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 4435,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 454,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 4211,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 1231234,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 434643,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 3,
+                        "project_id": 3,
+                        "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                        "name": "TestDistributed",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "tests",
+                        "file": "Archive_flood.zip",
+                        "entrypoint": "FloodIO.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "mykhailo_hunko@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "git": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 2,
+                        "project_id": 3,
+                        "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                        "name": "PetsDemo",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    }, {
+                        "id": 5,
+                        "project_id": 3,
+                        "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                        "name": "PetsDemoKaren1",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 1,
+                        "project_id": 3,
+                        "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                        "name": "TestDistributed",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "tests",
+                        "file": "Archive_flood.zip",
+                        "entrypoint": "FloodIO.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "mykhailo_hunko@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "git": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    },
+                    {
+                        "id": 6,
+                        "project_id": 3,
+                        "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                        "name": "PetsDemo",
+                        "parallel": 1,
+                        "region": "default",
+                        "bucket": "",
+                        "file": "",
+                        "entrypoint": "Petclinic.jmx",
+                        "runner": "getcarrier/perfmeter:latest-5.3",
+                        "emails": "karen_florykian@epam.com",
+                        "env_vars": {},
+                        "customization": {},
+                        "cc_env_vars": {},
+                        "last_run": null,
+                        "job_type": "perfmeter"
+                    }
+                ]
+            }'>
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col" data-checkbox="true"></th>
+                        <th data-visible="false" data-field="id">index</th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">Name</th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">UUID
+                        </th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
+                            Entrypoint</th>
+                        <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                            data-field="job_type">Tool</th>
+                        <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>Actions
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="assets/js/dropdowns.js"></script>
+<script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="assets/js/select.js"></script>
+<script src="assets/js/mock/data-chart.js"></script>
+<script src="assets/js/mock/data-error-table.js"></script>
+<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="assets/js/chart.js"></script>
+<script src="assets/vendor/nouislider/distribute/nouislider.min.js"></script>
+<script src="assets/js/argon.js"></script>
+<script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="assets/js/table.js"></script>
+<script>
+    $(document).ready(function() {
+        console.log("Document ready")
+        setParams();
+        loadRequestData('/api/v1/chart/requests/summary', "Response time, ms");
+        fillSummaryTable();
+        fillErrorTable();
+        $('#RT').trigger( "click" )
+        $("#analytics").hide();
+        document.getElementById('input-slider-range').noUiSlider.on('set', function() { resizeChart(); });
+        $(".dropdown-menu.close-outside").on("click", function (event) {
+            event.stopPropagation();
+        });
+    });
+</script>
+</body>
+
+</html>

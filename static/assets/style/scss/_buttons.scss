@@ -4,7 +4,6 @@
 
 .btn {
   font-size: 14px;
-  line-height: 24px;
   height: 32px;
   white-space: nowrap !important;
   padding: 4px 15px 4px 15px;
@@ -252,6 +251,69 @@
   background-color: var(--white);
   border: 1px solid var(--basic60);
   text-transform: capitalize;
+  &_item {
+    &__right {
+      border-top: 1px solid var(--basic60);
+      border-right: 1px solid var(--basic60);
+      border-bottom: 1px solid var(--basic60);
+      border-radius: 0 5px 5px 0;
+      margin-left: -1px;
+      .fa {
+        color: var(--basic);
+      }
+      &:hover {
+        transition: all 0.3s;
+        box-shadow: 0 2px 3px rgb(36 36 93 / 10%), 0 -1px 1px rgb(36 36 93 / 5%) !important;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+    &__left {
+      .dropdown-item span {
+        width: 100% !important;
+      }
+      &.dropleft .dropdown-toggle::before {
+        display: none !important;
+      }
+      border: none !important;
+      .btn_item__left {
+        border: 1px solid var(--basic60) !important;
+        border-radius: 5px 0 0 5px !important;
+      }
+      .btn_item__right:hover {
+          transition: all 0.3s;
+          box-shadow: 0 2px 3px rgb(36 36 93 / 10%), 0 -1px 1px rgb(36 36 93 / 5%) !important;
+          border-radius: 5px 0 0 5px !important;
+      }
+      .dropdown-toggle {
+        .filter-option-inner-inner {
+          line-height: 20px;
+          color: $gray800 !important;
+        }
+      }
+      .dropdown-menu {
+        li {
+          .dropdown-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 16px 6px 16px;
+            .text {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .fa {
+                margin-left: 40px;
+              }
+            }
+            &.active::after,  &:active::after,{
+              right: 42px;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 .btn-secondary.hover,
 .btn-secondary:hover {
@@ -782,7 +844,11 @@
   padding: 2px 7px;
 }
 .btn-icon__xs {
-  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px !important;
+  height: 24px !important;
   padding: 0;
 }
 .btn-table {
@@ -793,5 +859,15 @@
     height: 28px;
     font-size: 12px;
     line-height: 16px;
+  }
+}
+
+.br-left {
+  border-radius: 5px 0 0 5px;
+}
+.btn.btn-back {
+  padding: 0 10px 0 0;
+  .icon_arrow-back:after {
+    content: url("/static/assets/ico/arrow-back.svg");
   }
 }
