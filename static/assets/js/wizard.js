@@ -55,8 +55,6 @@ $(document).ready(function() {
         }
     })
 
-
-
     const sliderInput = noUiSlider.create($('#vuh-slider-input')[0], {
         start: 40,
         connect: 'lower',
