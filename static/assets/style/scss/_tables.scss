@@ -351,3 +351,16 @@ td.disabled input {
     min-width: 100%;
   }
 }
+
+.table {
+  .detail-icon {
+    i.fa-plus::before {
+      content: url("/static/assets/ico/detail-view.svg");
+    }
+    i.fa-minus::before {
+      content: url("/static/assets/ico/detail-view.svg");
+      transform: rotate(180deg);
+      display: inline-block;
+    }
+  }
+}
