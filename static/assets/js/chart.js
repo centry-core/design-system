@@ -1,7 +1,3 @@
-var presetsContext=document.getElementById("chart-requests").getContext("2d");
-//var analyticsContext=document.getElementById("chart-analytics").getContext("2d");
-
-
 function createTest() {
     $("#submit").addClass("disabled");
     $("#save").addClass("disabled");
@@ -421,11 +417,11 @@ function loadRequestData(url, y_label) {
 //    if ($("#end_time").html() != "") {
 //        $("#PP").hide();
 //    }
-    lineChartData = dataChart;
+    const lineChartData = dataChart; // mock from file.json
     if(window.presetLine!=null){
         window.presetLine.destroy();
     }
-    drawCanvas(y_label);
+    drawCanvas(y_label, lineChartData);
     document.getElementById('chartjs-custom-legend').innerHTML = window.presetLine.generateLegend();
 }
 
@@ -483,9 +479,10 @@ updateChart = function(e, datasetIndex) {
 };
 
 
-function drawCanvas(y_label) {
+function drawCanvas(y_label, data) {
+    const presetsContext=document.getElementById("chart-requests").getContext("2d");
     window.presetLine = Chart.Line(presetsContext, {
-        data: lineChartData,
+        data,
         options: {
             responsive: true,
             hoverMode: 'index',
@@ -586,11 +583,10 @@ function resizeChart() {
 
 function detailFormatter(index, row) {
     var html = []
-    html.push('<p><b>Method:</b> ' + row['Method'] + '</p>')
+    html.push('<div style="padding-left: 30px"><p><b>Method:</b> ' + row['Method'] + '</p>')
     html.push('<p><b>Request Params:</b> ' + row['Request params'] + '</p>')
     html.push('<p><b>Headers:</b> ' + row['Headers'] + '</p>')
-    html.push('<p><b>Response body:</b></p>')
-    html.push('<textarea disabled style="width: 100%">'+row['Response body']+'</textarea>')
+    html.push('<p><b>Response body:</b></p></div>')
     return html.join('')
 }
 

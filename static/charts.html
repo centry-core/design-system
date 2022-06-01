@@ -324,6 +324,8 @@
                        data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
                        data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
                        data-page-size=5
+                       data-detail-view="true"
+                       data-detail-formatter="detailFormatter"
                        data-data='{
                 "total": 12 ,
                 "rows": [
@@ -548,16 +550,15 @@
             }'>
                     <thead class="thead-light">
                     <tr>
-                        <th scope="col" data-checkbox="true"></th>
                         <th data-visible="false" data-field="id">index</th>
-                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">Name</th>
-                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">UUID
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">REQUEST NAME</th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">URL
                         </th>
                         <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
-                            Entrypoint</th>
+                            RESPONSE CODE</th>
                         <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
-                            data-field="job_type">Tool</th>
-                        <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>Actions
+                            data-field="job_type">ERROR MESSAGE</th>
+                        <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>COUNT
                         </th>
                     </tr>
                     </thead>
@@ -582,7 +583,6 @@
 <script src="assets/js/table.js"></script>
 <script>
     $(document).ready(function() {
-        console.log("Document ready")
         setParams();
         loadRequestData('/api/v1/chart/requests/summary', "Response time, ms");
         fillSummaryTable();

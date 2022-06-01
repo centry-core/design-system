@@ -1687,6 +1687,15 @@ td.disabled input {
   min-width: 100%;
 }
 
+.table .detail-icon i.fa-plus::before {
+  content: url("/static/assets/ico/detail-view.svg");
+}
+.table .detail-icon i.fa-minus::before {
+  content: url("/static/assets/ico/detail-view.svg");
+  transform: rotate(180deg);
+  display: inline-block;
+}
+
 .d-flex .btn-32 {
   margin-right: 10px;
 }
@@ -1734,7 +1743,7 @@ td.disabled input {
 .btn-32 {
   font-size: 14px;
   padding: 8px;
-  line-height: 14px;
+  line-height: 32px;
   height: 32px !important;
   min-width: 32px;
   max-width: 32px;
