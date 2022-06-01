@@ -8,9 +8,8 @@
 //     }
 // }
 
-function updateCell(el, row, field, title = '') {
-
-    $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: { checked: el.checked, title: title }})
+function updateCell(el, row, field) {
+    $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
 }
 
 function checkboxFormatter (value, row, index, field) {
