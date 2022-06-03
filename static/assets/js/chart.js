@@ -414,9 +414,7 @@ function loadRequestData(url, y_label) {
             analyticsLine.destroy();
         }
     }
-//    if ($("#end_time").html() != "") {
-//        $("#PP").hide();
-//    }
+
     const lineChartData = dataChart; // mock from file.json
     if(window.presetLine!=null){
         window.presetLine.destroy();
@@ -558,13 +556,12 @@ function drawCanvas(y_label, data) {
 function fillErrorTable() {
     var start_time = $("#start_time").html()
     var end_time = $("#end_time").html()
-    var low_value = $("#input-slider-range-value-low").html()
-    var high_value = $("#input-slider-range-value-high").html()
     test_name = document.querySelector("[property~=test_name][content]").content;
     $('#errors').bootstrapTable('refreshOptions', {url: `/api/v1/chart/errors/table?test_name=${test_name}&start_time=${start_time}&end_time=${end_time}&low_value=${low_value}&high_value=${high_value}`})
 }
 
 function resizeChart() {
+    console.log('resizeChart')
     if ( $("#analytics").is(":visible") ){
         analyticsData = null;
         analyticsLine.destroy();
@@ -583,10 +580,10 @@ function resizeChart() {
 
 function detailFormatter(index, row) {
     var html = []
-    html.push('<div style="padding-left: 30px"><p><b>Method:</b> ' + row['Method'] + '</p>')
-    html.push('<p><b>Request Params:</b> ' + row['Request params'] + '</p>')
-    html.push('<p><b>Headers:</b> ' + row['Headers'] + '</p>')
-    html.push('<p><b>Response body:</b></p></div>')
+    html.push('<div style="padding-left: 30px"><p>Method: ' + row['Method'] + '</p>')
+    html.push('<p>Request Params: ' + row['Request params'] + '</p>')
+    html.push('<p>Headers: ' + row['Headers'] + '</p>')
+    html.push('<p>Response body:</p></div>')
     return html.join('')
 }
 

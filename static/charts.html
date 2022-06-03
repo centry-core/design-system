@@ -204,7 +204,7 @@
                     </div>
                 </div>
                 <div class="col-12 d-flex align-items-center mt-4" id="dropdowns">
-                    <p class="mb-0 font-h6 text-gray-500 font-semibold">LOAD CONFIG</p>
+                    <p class="mb-0 mr-4 font-h6 text-gray-500 font-semibold">LOAD CONFIG</p>
                     <multiselect-filter :title="'Carrier default'">
                     </multiselect-filter>
                     <multiselect-filter :title="'Custom location'">
@@ -259,8 +259,8 @@
                 </div>
             </div>
             <div id="preset">
-                <div class="d-flex">
-                    <div class="chart flex-grow-1 mr-4 d-flex flex-column justify-content-between">
+                <div class="d-flex mt-3">
+                    <div class="chart flex-grow-1 d-flex flex-column justify-content-between">
                         <div class="flex-grow-1">
                             <div class="chartjs-size-monitor">
                                 <div class="chartjs-size-monitor-expand">
@@ -302,7 +302,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card" style="width:280px;">
+                    <div class="card" style="width:280px; margin-left: 28px">
                         <div class="d-flex flex-column p-3">
                             <label
                                     class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor" for="all_checkbox">
@@ -593,12 +593,14 @@
 <script src="assets/vendor/nouislider/nouislider.js"></script>
 <script src="assets/vendor/nouislider/wNumb.min.js"></script>
 <script>
+    let low_value = 0;
+    let high_value = 100;
     $(document).ready(function() {
         setParams();
         loadRequestData('/api/v1/chart/requests/summary', "Response time, ms");
         fillSummaryTable();
         fillErrorTable();
-        $('#RT').trigger( "click" )
+        // $('#RT').trigger( "click" )
         $("#analytics").hide();
         $(".dropdown-menu.close-outside").on("click", function (event) {
             event.stopPropagation();
@@ -608,14 +610,17 @@
                 'min': 0,
                 'max': 100
             },
-            start: [0, 100],
+            start: [low_value, high_value],
             connect: true,
             format: wNumb({
                 decimals: 0
             }),
         })
-        perfomanceTimePicker.on('set', function() { resizeChart(); });
-
+        perfomanceTimePicker.on('set', function(values) {
+            low_value = values[0]
+            high_value = values[1]
+            resizeChart();
+        });
     });
 </script>
 </body>
