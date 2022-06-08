@@ -86,24 +86,24 @@ function nameStyle(value, row, index) {
 
 
 
-wait_for('bootstrapTable', jQuery.fn).then(v => (
-    function ($) {
-        'use strict';
-        $.fn.bootstrapTable.locales['en-US-custom'] = {
-            formatRecordsPerPage: function (pageNumber) {
-                return `<span style="position: relative; top: 3px">Show: </span>${pageNumber}`;
-            },
-            formatShowingRows: function (pageFrom, pageTo, totalRows) {
-                return `${totalRows} items`;
-            },
-            formatDetailPagination: function (totalRows) {
-                return `${totalRows} items`;
-            },
-        };
-
-        $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
-    })(jQuery)
-)
+// wait_for('bootstrapTable', jQuery.fn).then(v => (
+//     function ($) {
+//         'use strict';
+//         $.fn.bootstrapTable.locales['en-US-custom'] = {
+//             formatRecordsPerPage: function (pageNumber) {
+//                 return `<span style="position: relative; top: 3px">Show: </span>${pageNumber}`;
+//             },
+//             formatShowingRows: function (pageFrom, pageTo, totalRows) {
+//                 return `${totalRows} items`;
+//             },
+//             formatDetailPagination: function (totalRows) {
+//                 return `${totalRows} items`;
+//             },
+//         };
+//
+//         $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
+//     })(jQuery)
+// )
 
 
 $(document).on('vue_init', () => {
