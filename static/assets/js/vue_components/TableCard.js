@@ -2,8 +2,7 @@ const TableCard = {
     delimiters: ['[[', ']]'],
     props: ['instance_name', 'header', 'borders', 'container_classes', 'table_attributes'],
     mounted() {
-        console.log('TableCard props', this.$props)
-        console.log('TableCard refs', this.$refs)
+        console.debug('TableCard mounted', {refs: this.$refs, props: this.$props})
     },
     data() {
         return {
@@ -23,7 +22,7 @@ const TableCard = {
     },
     methods: {
         table_action(method, ...options) {
-            console.log('RUNNING TABLE_ACTION', method, options)
+            console.debug('TableCard running action', method, options)
             this.table_data = $(this.$refs.table).bootstrapTable(method, ...options)
             return this.table_data
         }

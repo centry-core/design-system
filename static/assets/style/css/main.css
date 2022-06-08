@@ -1688,10 +1688,10 @@ td.disabled input {
 }
 
 .table .detail-icon i.fa-plus::before {
-  content: url("/static/assets/ico/detail-view.svg");
+  content: url("/design-system/static/assets/ico/detail-view.svg");
 }
 .table .detail-icon i.fa-minus::before {
-  content: url("/static/assets/ico/detail-view.svg");
+  content: url("/design-system/static/assets/ico/detail-view.svg");
   transform: rotate(180deg);
   display: inline-block;
 }
