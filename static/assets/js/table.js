@@ -84,26 +84,33 @@ function nameStyle(value, row, index) {
 }
 
 
+function detailFormatter(index, row) {
+    var html = []
+    html.push('<div style="padding-left: 30px"><p><b>Method:</b> ' + row['Method'] + '</p>')
+    html.push('<p><b>Request Params:</b> ' + row['Request params'] + '</p>')
+    html.push('<p><b>Headers:</b> ' + row['Headers'] + '</p>')
+    html.push('<p><b>Response body:</b></p></div>')
+    return html.join('')
+}
 
+wait_for('bootstrapTable', jQuery.fn).then(v => (
+    function ($) {
+        'use strict';
+        $.fn.bootstrapTable.locales['en-US-custom'] = {
+            formatRecordsPerPage: function (pageNumber) {
+                return `<span style="position: relative; top: 3px">Show: </span>${pageNumber}`;
+            },
+            formatShowingRows: function (pageFrom, pageTo, totalRows) {
+                return `${totalRows} items`;
+            },
+            formatDetailPagination: function (totalRows) {
+                return `${totalRows} items`;
+            },
+        };
 
-// wait_for('bootstrapTable', jQuery.fn).then(v => (
-//     function ($) {
-//         'use strict';
-//         $.fn.bootstrapTable.locales['en-US-custom'] = {
-//             formatRecordsPerPage: function (pageNumber) {
-//                 return `<span style="position: relative; top: 3px">Show: </span>${pageNumber}`;
-//             },
-//             formatShowingRows: function (pageFrom, pageTo, totalRows) {
-//                 return `${totalRows} items`;
-//             },
-//             formatDetailPagination: function (totalRows) {
-//                 return `${totalRows} items`;
-//             },
-//         };
-//
-//         $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
-//     })(jQuery)
-// )
+        $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US-custom']);
+    })(jQuery)
+)
 
 
 $(document).on('vue_init', () => {
