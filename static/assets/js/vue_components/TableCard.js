@@ -37,7 +37,9 @@ const TableCard = {
                     <h3>[[ header ]]</h3>
                 </div>
                 <div class="col-8">
-                    <slot name="actions"></slot>
+                    <slot name="actions"
+                        :master="this"
+                    ></slot>
                 </div>
             </div>
         </div>
@@ -62,7 +64,9 @@ const TableCard = {
             >
                 <thead class="thead-light">
                     <tr>
-                        <slot name="table_headers"></slot>
+                        <slot name="table_headers"
+                            :master="this"
+                        ></slot>
                     </tr>
                 </thead>
             </table>
