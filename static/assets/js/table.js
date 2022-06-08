@@ -1,8 +1,3 @@
-function updateCell(el, row, field) {
-    $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
-}
-
-
 function nameStyle(value, row, index) {
     return {css: {"max-width": "100px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
 }
