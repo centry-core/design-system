@@ -189,6 +189,9 @@
   }
 }
 
+.dropdown_multilevel .submenu.submenu__left {
+  left: -100%;
+}
 .dropdown_multilevel .submenu{
   display: none;
   position: absolute;
