@@ -1696,6 +1696,37 @@ td.disabled input {
   display: inline-block;
 }
 
+.container-logs {
+  height: 450px;
+  max-width: 1200px;
+  width: 100%;
+  overflow: auto;
+  background: black;
+  padding: 2rem;
+}
+.container-logs .table-logs tr td {
+  color: white;
+  white-space: nowrap;
+}
+.container-logs .colored-log {
+  padding: 0 16px;
+}
+.container-logs .colored-log__INFO {
+  color: #18B64D;
+}
+.container-logs .colored-log__DEBUG {
+  color: #fff;
+}
+.container-logs .colored-log__WARN {
+  color: #DBC714;
+}
+.container-logs .colored-log__ERROR {
+  color: #fd8484;
+}
+.container-logs .colored-log__FATAL {
+  color: #F32626;
+}
+
 .d-flex .btn-32 {
   margin-right: 10px;
 }

@@ -364,3 +364,35 @@ td.disabled input {
     }
   }
 }
+.container-logs {
+  height: 450px;
+  max-width: 1200px;
+  width: 100%;
+  overflow:auto;
+  background: black;
+  padding: 2rem;
+  .table-logs {
+    tr td {
+      color: white;
+      white-space: nowrap;
+    }
+  }
+  .colored-log {
+    padding: 0 16px;
+    &__INFO {
+      color: #18B64D;
+    }
+    &__DEBUG {
+      color: #fff;
+    }
+    &__WARN {
+      color: #DBC714;
+    }
+    &__ERROR {
+      color: #fd8484;
+    }
+    &__FATAL {
+      color: #F32626;
+    }
+  }
+}
