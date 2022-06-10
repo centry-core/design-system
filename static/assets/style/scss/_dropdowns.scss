@@ -32,7 +32,7 @@
 .bootstrap-select .dropdown-item {
   display: block;
   width: 100%;
-  padding: 6px 1.5rem;
+  padding: 6px 32px 6px 16px;
   clear: both;
   font-weight: 400;
   font-size: 14px;
@@ -93,6 +93,9 @@
   width: 18px;
   height: 12px;
   border: 0;
+}
+.bootstrap-select .select-primary.dropdown-toggle::after {
+  background: url("../../../assets/ico/arrow-down__white.svg") no-repeat center right;
 }
 .bootstrap-select .dropdown-toggle.disabled::after {
   background: url("../../../assets/ico/arrow-down__white.svg") no-repeat center right;
@@ -448,7 +451,7 @@ option {
 
 /* main-select */
 .main-select {
-  .btn{
+  .btn {
     background: var(--purple-active-bg) !important;
     text-transform: uppercase;
     font-weight: bold;
