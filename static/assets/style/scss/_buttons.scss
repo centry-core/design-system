@@ -351,7 +351,7 @@
 .show > .btn-secondary.dropdown-toggle {
   color: var(--pressed);
   background-color: var(--white) !important;
-  border: 1px solid var(--pressed60);
+  //border: 1px solid var(--pressed60);
   box-shadow: none;
 }
 
@@ -411,7 +411,7 @@
 .show > .btn-secondary.dropdown-toggle {
   color: var(--main-text);
   background-color: var(--white) !important;
-  border: 1px solid var(--lines);
+  //border: 1px solid var(--lines);
   outline: 0;
   box-shadow: none;
 }
