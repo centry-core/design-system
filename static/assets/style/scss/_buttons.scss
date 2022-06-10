@@ -135,17 +135,7 @@
 }
 
 .btn-chapters:hover {
-  color: var(--tabs-btns-icns);
-  background-color: var(--basic);
-  border: 0;
-}
-
-.btn-chapters.focus,
-.btn-chapters:focus {
-  color: var(--tabs-btns-icns);
-  background-color: var(--basic-hover);
-  border-color: 0;
-  box-shadow: none;
+  color: var(--basic);
 }
 
 .btn-chapters.disabled,
@@ -153,14 +143,6 @@
   color: var(--somegray);
   background-color: var(--disabled);
   border: 0;
-}
-
-.btn-chapters:not(:disabled):not(.disabled).active,
-.btn-chapters:not(:disabled):not(.disabled):active,
-.show > .btn-chapters.dropdown-toggle {
-  color: var(--tabs-btns-icns);
-  background-color: var(--pressed);
-  //border: 0;
 }
 
 .btn-chapters:not(:disabled):not(.disabled).active:focus,
@@ -249,7 +231,7 @@
   color: var(--basic);
   font-weight: 600;
   background-color: var(--white);
-  border: 1px solid var(--basic60);
+  border: 1px solid var(--purple-outline);
   text-transform: capitalize;
   &_item {
     &__right {
