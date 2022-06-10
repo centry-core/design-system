@@ -369,11 +369,9 @@ td.disabled input {
   max-width: 1200px;
   width: 100%;
   overflow:auto;
-  background: black;
-  padding: 2rem;
+  padding: 2rem 0;
   .table-logs {
     tr td {
-      color: white;
       white-space: nowrap;
     }
   }
@@ -381,9 +379,6 @@ td.disabled input {
     padding: 0 16px;
     &__INFO {
       color: #18B64D;
-    }
-    &__DEBUG {
-      color: #fff;
     }
     &__WARN {
       color: #DBC714;

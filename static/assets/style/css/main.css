@@ -1713,11 +1713,9 @@ td.disabled input {
   max-width: 1200px;
   width: 100%;
   overflow: auto;
-  background: black;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 .container-logs .table-logs tr td {
-  color: white;
   white-space: nowrap;
 }
 .container-logs .colored-log {
@@ -1725,9 +1723,6 @@ td.disabled input {
 }
 .container-logs .colored-log__INFO {
   color: #18B64D;
-}
-.container-logs .colored-log__DEBUG {
-  color: #fff;
 }
 .container-logs .colored-log__WARN {
   color: #DBC714;
