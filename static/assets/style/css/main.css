@@ -39,6 +39,14 @@ label {
   border: solid 1px var(--basic60);
 }
 
+.bootstrap-select > .dropdown-toggle:after {
+  margin-top: 0px;
+}
+
+.dropdown-item {
+  padding: 0.25rem 16px;
+}
+
 /* common */
 /* latin */
 @font-face {
@@ -1479,7 +1487,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .card-body .page-link {
-  font-size: 12px;
+  font-size: 14px;
   padding: 4px 8px;
   height: 24px !important;
   min-width: 24px;
@@ -1700,10 +1708,10 @@ td.disabled input {
 }
 
 .table .detail-icon i.fa-plus::before {
-  content: url("/static/assets/ico/detail-view.svg");
+  content: url("/design-system/static/assets/ico/detail-view.svg");
 }
 .table .detail-icon i.fa-minus::before {
-  content: url("/static/assets/ico/detail-view.svg");
+  content: url("/design-system/static/assets/ico/detail-view.svg");
   transform: rotate(180deg);
   display: inline-block;
 }
@@ -1871,17 +1879,7 @@ td.disabled input {
 }
 
 .btn-chapters:hover {
-  color: var(--tabs-btns-icns);
-  background-color: var(--basic);
-  border: 0;
-}
-
-.btn-chapters.focus,
-.btn-chapters:focus {
-  color: var(--tabs-btns-icns);
-  background-color: var(--basic-hover);
-  border-color: 0;
-  box-shadow: none;
+  color: var(--basic);
 }
 
 .btn-chapters.disabled,
@@ -1889,13 +1887,6 @@ td.disabled input {
   color: var(--somegray);
   background-color: var(--disabled);
   border: 0;
-}
-
-.btn-chapters:not(:disabled):not(.disabled).active,
-.btn-chapters:not(:disabled):not(.disabled):active,
-.show > .btn-chapters.dropdown-toggle {
-  color: var(--tabs-btns-icns);
-  background-color: var(--pressed);
 }
 
 .btn-chapters:not(:disabled):not(.disabled).active:focus,
@@ -1984,7 +1975,7 @@ td.disabled input {
   color: var(--basic);
   font-weight: 600;
   background-color: var(--white);
-  border: 1px solid var(--basic60);
+  border: 1px solid var(--purple-outline);
   text-transform: capitalize;
 }
 .btn-secondary_item__right {
@@ -3034,7 +3025,7 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .dropdown-item {
   display: block;
   width: 100%;
-  padding: 6px 1.5rem;
+  padding: 6px 32px 6px 16px;
   clear: both;
   font-weight: 400;
   font-size: 14px;
@@ -3096,6 +3087,10 @@ input[type=range]::-moz-range-thumb {
   width: 18px;
   height: 12px;
   border: 0;
+}
+
+.bootstrap-select .select-primary.dropdown-toggle::after {
+  background: url("../../../assets/ico/arrow-down__white.svg") no-repeat center right;
 }
 
 .bootstrap-select .dropdown-toggle.disabled::after {

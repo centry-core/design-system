@@ -204,7 +204,7 @@
                     </div>
                 </div>
                 <div class="col-12 d-flex align-items-center mt-4" id="dropdowns">
-                    <p class="mb-0 font-h6 text-gray-500 font-semibold">LOAD CONFIG</p>
+                    <p class="mb-0 mr-4 font-h6 text-gray-500 font-semibold">LOAD CONFIG</p>
                     <multiselect-filter :title="'Carrier default'">
                     </multiselect-filter>
                     <multiselect-filter :title="'Custom location'">
@@ -259,8 +259,8 @@
                 </div>
             </div>
             <div id="preset">
-                <div class="d-flex">
-                    <div class="chart flex-grow-1 mr-4 d-flex flex-column justify-content-between">
+                <div class="d-flex mt-3">
+                    <div class="chart flex-grow-1 d-flex flex-column justify-content-between">
                         <div class="flex-grow-1">
                             <div class="chartjs-size-monitor">
                                 <div class="chartjs-size-monitor-expand">
@@ -274,32 +274,43 @@
                             <canvas id="chart-requests" class="chart-canvas chartjs-render-monitor"
                                     style="display: block; height: 450px; width: 100%;"></canvas>
                         </div>
-                        <div>
-                            <p class="font-h5 font-semibold">Time Picker</p>
-                            <div>
-                                <div id="input-slider-range" data-range-value-min="0" data-range-value-max="100"></div>
-                                <div class="row d-none">
-                                    <div class="col-6">
-                                        <span class="range-slider-value value-low" data-range-value-low="0"
-                                              id="input-slider-range-value-low"></span>
-                                                    </div>
-                                                    <div class="col-6 text-right">
-                                        <span class="range-slider-value value-high" data-range-value-high="100"
-                                              id="input-slider-range-value-high"></span>
+                        <div class="my-4">
+<!--                            <div>-->
+<!--                                <div id="input-slider-range" data-range-value-min="0" data-range-value-max="100"></div>-->
+<!--                                <div class="row d-none">-->
+<!--                                    <div class="col-6">-->
+<!--                                        <span class="range-slider-value value-low" data-range-value-low="0"-->
+<!--                                              id="input-slider-range-value-low"></span>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="col-6 text-right">-->
+<!--                                        <span class="range-slider-value value-high" data-range-value-high="100"-->
+<!--                                              id="input-slider-range-value-high"></span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="row">
+                                <div class="col tab-content">
+                                    <label class="w-100 mb-0 font-h5 font-semibold">
+                                        Time picker
+                                    </label>
+                                    <div class="w-100">
+                                        <div class="slider-holder">
+                                            <div id="vuh-perfomance-time-picker"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card" style="width:280px;">
+                    <div class="card" style="width:280px; margin-left: 28px">
                         <div class="d-flex flex-column p-3">
                             <label
                                     class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor" for="all_checkbox">
                                 <input
-                                        class="mx-2"
-                                        checked="true" id="all_checkbox" onclick="selectOrUnselectRequests()"
-                                        style="--cbx-color: var(--basic);"
-                                        type="checkbox">
+                                    class="mx-2"
+                                    checked="true" id="all_checkbox" onclick="selectOrUnselectRequests()"
+                                    style="--cbx-color: var(--basic);"
+                                    type="checkbox">
                                 <span class="w-100 d-inline-block">Select/Unselect all</span>
                             </label>
                         </div>
@@ -577,21 +588,38 @@
 <script src="assets/js/mock/data-error-table.js"></script>
 <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="assets/js/chart.js"></script>
-<script src="assets/vendor/nouislider/distribute/nouislider.min.js"></script>
-<script src="assets/js/argon.js"></script>
 <script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>
 <script src="assets/js/table.js"></script>
+<script src="assets/vendor/nouislider/nouislider.js"></script>
+<script src="assets/vendor/nouislider/wNumb.min.js"></script>
 <script>
+    let low_value = 0;
+    let high_value = 100;
     $(document).ready(function() {
         setParams();
         loadRequestData('/api/v1/chart/requests/summary', "Response time, ms");
         fillSummaryTable();
         fillErrorTable();
-        $('#RT').trigger( "click" )
+        // $('#RT').trigger( "click" )
         $("#analytics").hide();
-        document.getElementById('input-slider-range').noUiSlider.on('set', function() { resizeChart(); });
         $(".dropdown-menu.close-outside").on("click", function (event) {
             event.stopPropagation();
+        });
+        const perfomanceTimePicker = noUiSlider.create($("#vuh-perfomance-time-picker")[0], {
+            range: {
+                'min': 0,
+                'max': 100
+            },
+            start: [low_value, high_value],
+            connect: true,
+            format: wNumb({
+                decimals: 0
+            }),
+        })
+        perfomanceTimePicker.on('set', function(values) {
+            low_value = values[0]
+            high_value = values[1]
+            resizeChart();
         });
     });
 </script>
