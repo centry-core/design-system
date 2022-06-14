@@ -2,8 +2,7 @@ const TableCard = {
     delimiters: ['[[', ']]'],
     props: ['instance_name', 'header', 'borders', 'container_classes', 'table_attributes'],
     mounted() {
-        console.log('TableCard props', this.$props)
-        console.log('TableCard refs', this.$refs)
+        console.debug('TableCard mounted', {refs: this.$refs, props: this.$props})
     },
     data() {
         return {
@@ -22,9 +21,9 @@ const TableCard = {
         }
     },
     methods: {
-        table_action(option, ...rest) {
-            console.log('RUNNING TABLE_ACTION', option, rest)
-            this.table_data = $(this.$refs.table).bootstrapTable(option, ...rest)
+        table_action(method, ...options) {
+            console.debug('TableCard running action', method, options)
+            this.table_data = $(this.$refs.table).bootstrapTable(method, ...options)
             return this.table_data
         }
     },
@@ -37,7 +36,9 @@ const TableCard = {
                     <h3>[[ header ]]</h3>
                 </div>
                 <div class="col-8">
-                    <slot name="actions"></slot>
+                    <slot name="actions"
+                        :master="this"
+                    ></slot>
                 </div>
             </div>
         </div>
@@ -62,7 +63,9 @@ const TableCard = {
             >
                 <thead class="thead-light">
                     <tr>
-                        <slot name="table_headers"></slot>
+                        <slot name="table_headers"
+                            :master="this"
+                        ></slot>
                     </tr>
                 </thead>
             </table>
@@ -70,66 +73,5 @@ const TableCard = {
     </div>
     `
 }
-
-// q = `
-// <div class="card card-table-sm">
-//     <div class="card-body">
-//         <table
-//                 class="table table-borderless"
-//                 id="tests-list"
-//                 data-toggle="table"
-//
-//
-//                 data-page-size=5 data-pagination="true"
-//      >
-//             <thead class="thead-light">
-//                 <tr>
-//                     <th data-visible="false" data-field="id">index</th>
-//                     <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">Name</th>
-//                     <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">UUID
-//                     </th>
-//                     <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
-//                         Entrypoint</th>
-//                     <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
-//                         data-field="job_type">Tool</th>
-//                     <th scope="col" data-align="right" data-cell-style="cellStyle"
-//                         data-formatter=actionFormatter>Actions</th>
-//                 </tr>
-//             </thead>
-//             <tbody>
-//             </tbody>
-//         </table>
-//     </div>
-// </div>
-// `
-
-// header='Reporters'
-// actions_area=`<div class="d-flex justify-content-end">
-//                         <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
-//                         <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-filter"></i></button>
-//                         <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
-//                         <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-trash-alt"></i></button>
-//                     </div>`
-// table_url='/api/v1/security/results/{{ tools.session_project.get() }}'
-// table_page_size=1
-// table_headers=`<th scope="col" data-checkbox="true"></th>
-//                     <th data-visible="false" data-field="id">index</th>
-//                     <th scope="col" data-sortable="true" data-field="test_name"
-//                         data-formatter="tableFormatters.reports_test_name_button">
-//                         Name
-//                     </th>
-//                     <th scope="col" data-sortable="true" data-field="start_date">Start</th>
-//                     <th scope="col" data-sortable="true" data-field="duration">Duration</th>
-//                     <th scope="col" data-sortable="true" data-field="findings">Findings</th>
-//                     <th scope="col" data-sortable="true" data-field="false_positive">False Positive</th>
-//                     <th scope="col" data-sortable="true" data-field="excluded">Excl</th>
-//                     <th scope="col" data-sortable="true" data-field="info">Info</th>
-//                     <th scope="col" data-sortable="true" data-field="tags" data-formatter="reportsTagFormatter">
-//                         Tag
-//                     </th>
-//                     <th scope="col" data-field="test_status.status"
-//                         data-formatter="tableFormatters.reports_status_formatter">
-//                         Status
-//                     </th>`
 
 register_component('TableCard', TableCard)
