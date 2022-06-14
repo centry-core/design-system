@@ -4487,4 +4487,21 @@ div-content .row {
   flex: 1 1 calc(50% - 2rem);
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  margin: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #eef3f6;
+  border-radius: 4px;
+}
+
 /*# sourceMappingURL=main.css.map */
