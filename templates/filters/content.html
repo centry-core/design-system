@@ -1,0 +1,61 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div class="w-100">
+        <div class="card mt-3 card-table">
+            <div class="card-body">
+                <div class="pt-4" id="vueApp">
+                    <modal-save-filter
+                        v-if="showModal"
+                        @save-filter-as="saveFilterAs"
+                        @open-modal="openModal"
+                        @save-new-filter="saveNewFilter"
+                        :loading="loadingSaveAs"
+                    ></modal-save-filter>
+                    <div class="d-flex justify-content-end pb-4">
+                        <status-filter
+                            :active-tab="activeTab"
+                            @select-tab="selectTab"
+                        ></status-filter>
+                        <choose-filter
+                            :filters="filters"
+                            :loading-filters="loadingFilters"
+                            :loading-delete="loadingDelete"
+                            :selected-filter="selectedFilter"
+                            @select-filter="selectFilter"
+                            @create-filter="createFilter"
+                            @delete-filter="deleteFilter"
+                        ></choose-filter>
+                    </div>
+                    <report-filter
+                        @remove-filter="removeFilter"
+                        v-if="showFilter"
+                        :key="selectedFilter"
+                        :selected-filter="selectedFilter"
+                        @open-modal="openModal"
+                        @update-curent-filter="updateCurentFilter"
+                        @save="saveFilter"
+                        :loading-save="loadingSave"
+                        :loading-apply="loadingApply"
+                        @apply="updateTable"
+                    ></report-filter>
+                    <div v-if="loadingTable" class="d-flex align-items-center justify-content-center" style="height: 270px">
+                        <i class="preview-loader"></i>
+                    </div>
+                    <table
+                        id="table"
+                        class="table table-border mt-4"
+                        data-pagination="true"
+                        data-page-list="[5, 10, 15]"
+                        data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
+                        data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
+                        data-page-size=5>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

@@ -1,0 +1,1187 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div class="w-100">
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h1>Tables</h1>
+            </div>
+        </div>
+
+        <div class="card mt-3 card-table-sm">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-4">
+                        <h4>Report Block</h4>
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-plus"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-sync"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-filter"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-tag"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-borderless"
+                    data-toggle="table"
+                    data-unique-id="id"
+                    data-page-list="[5, 10, 15]"
+                    data-pagination="true"
+                    data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                    data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                    data-page-size=5
+                    data-data='{
+                    "total": 12 ,
+                    "rows": [
+                        {
+                            "id": 4,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 123,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 4435,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 454,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 4211,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 1231234,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 434643,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 3,
+                            "project_id": 3,
+                            "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                            "name": "TestDistributed",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "tests",
+                            "file": "Archive_flood.zip",
+                            "entrypoint": "FloodIO.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "mykhailo_hunko@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "git": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 2,
+                            "project_id": 3,
+                            "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                            "name": "PetsDemo",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        }, {
+                            "id": 5,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 1,
+                            "project_id": 3,
+                            "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                            "name": "TestDistributed",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "tests",
+                            "file": "Archive_flood.zip",
+                            "entrypoint": "FloodIO.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "mykhailo_hunko@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "git": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 6,
+                            "project_id": 3,
+                            "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                            "name": "PetsDemo",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        }
+                    ]
+                }'>
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" data-checkbox="true"></th>
+                            <th data-visible="false" data-field="id">index</th>
+                            <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">Name</th>
+                            <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">UUID
+                            </th>
+                            <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
+                                Entrypoint</th>
+                            <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                data-field="job_type">Tool</th>
+                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card p-28 mt-3">
+            <div class="row">
+                <div class="col-4 mb-4">
+                    <h4>Report Block</h4>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-border"
+                       data-toggle="table"
+                       data-unique-id="id"
+                       data-page-list="[5, 10, 15]"
+                       data-pagination="true"
+                       data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                       data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                       data-page-size=5
+                       data-detail-view="true"
+                       data-detail-formatter="detailFormatter"
+                       data-data='{
+                            "total": 6,
+                            "rows": [
+                                {
+                                   "id": 48,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 47,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 46,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 45,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 44,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 24,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                }
+                            ]
+                       }'>
+                    <thead class="thead-light">
+                    <tr>
+                        <th data-visible="false" data-field="id">index</th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">REQUEST NAME</th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">URL
+                        </th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
+                            RESPONSE CODE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card mt-3 card-table">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-4">
+                        <h4>Table & Inputs</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table
+                    class="table table-border"
+                    id="tests-list-inputs"
+                    data-toggle="table"
+                    data-unique-id="id"
+                    data-data='{
+                    "total": 1 ,
+                    "rows": [
+                        {
+                            "id": 4,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "action"
+                        },
+                        {
+                            "id": 3,
+                            "project_id": 13,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "description"
+                        },
+                        {
+                            "id": 2,
+                            "project_id": 76,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "action"
+                        },
+                        {
+                            "id": 1,
+                            "project_id": 163,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "description"
+                        },
+                        {
+                            "id": 5,
+                            "project_id": 736,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "action"
+                        },
+                        {
+                            "id": 6,
+                            "project_id": 1653,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "description"
+                        }
+                    ]
+                    }'>
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" data-checkbox="true"></th>
+                                <th data-visible="false" data-field="id">index</th>
+                                <th scope="col" data-field="name">Name</th>
+                                <th scope="col" data-sortable="true" data-field="entrypoint">Entrypoint</th>
+                                <th scope="col" data-field="job_type" data-formatter=dataTypeFormatter>UUID</th>
+                                <th scope="col" data-field="emails" data-formatter=ParamsTable.inputFormatter>Tool</th>
+                                <th scope="col" data-align="right" data-formatter=actionFormatter>Actions</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card mt-3 card-table-sm">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-4">
+                        <h4>Table Block</h4>
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-filter"></i></button>
+                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <table class="table table-borderless"
+                    id="tests-list-2"
+                    data-toggle="table"
+                    data-unique-id="id"
+                    data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                    data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                    data-pagination-parts='["pageInfoShort", "pageList"]' data-data='{
+                    "total": 6,
+                    "rows": [
+                        {
+                            "id": 4,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 3,
+                            "project_id": 3,
+                            "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                            "name": "TestDistributed",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "tests",
+                            "file": "Archive_flood.zip",
+                            "entrypoint": "FloodIO.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "mykhailo_hunko@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "git": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 2,
+                            "project_id": 3,
+                            "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                            "name": "PetsDemo",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        }, {
+                            "id": 5,
+                            "project_id": 3,
+                            "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                            "name": "PetsDemoKaren1",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 1,
+                            "project_id": 3,
+                            "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                            "name": "TestDistributed",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "tests",
+                            "file": "Archive_flood.zip",
+                            "entrypoint": "FloodIO.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "mykhailo_hunko@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "git": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        },
+                        {
+                            "id": 6,
+                            "project_id": 3,
+                            "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                            "name": "PetsDemo",
+                            "parallel": 1,
+                            "region": "default",
+                            "bucket": "",
+                            "file": "",
+                            "entrypoint": "Petclinic.jmx",
+                            "runner": "getcarrier/perfmeter:latest-5.3",
+                            "emails": "karen_florykian@epam.com",
+                            "env_vars": {},
+                            "customization": {},
+                            "cc_env_vars": {},
+                            "last_run": null,
+                            "job_type": "perfmeter"
+                        }
+                    ]
+                }' data-page-size=5 data-pagination="true">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" data-checkbox="true"></th>
+                            <th data-visible="false" data-field="id">index</th>
+                            <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">Name</th>
+                            <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">UUID
+                            </th>
+                            <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
+                                Entrypoint</th>
+                            <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                data-field="job_type">Tool</th>
+                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="flex-container my-3">
+            <div class="flex-item-2">
+                <div class="card card-table-sm">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h4>Table Widget</h4>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i
+                                            class="fas fa-filter"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i
+                                            class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <table
+                                class="table table-borderless"
+                                data-toggle="table"
+                                data-unique-id="id"
+                                data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                                data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                                data-page-size=5 data-pagination="true"
+                                data-data='{
+                            "total": 6,
+                            "rows": [
+                                {
+                                    "id": 4,
+                                    "project_id": 3,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 3,
+                                    "project_id": 3,
+                                    "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                                    "name": "TestDistributed",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "tests",
+                                    "file": "Archive_flood.zip",
+                                    "entrypoint": "FloodIO.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "mykhailo_hunko@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "git": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 2,
+                                    "project_id": 3,
+                                    "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                                    "name": "PetsDemo",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                }, {
+                                    "id": 5,
+                                    "project_id": 3,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 1,
+                                    "project_id": 3,
+                                    "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                                    "name": "TestDistributed",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "tests",
+                                    "file": "Archive_flood.zip",
+                                    "entrypoint": "FloodIO.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "mykhailo_hunko@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "git": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 6,
+                                    "project_id": 3,
+                                    "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                                    "name": "PetsDemo",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                }
+                            ]
+                        }'>
+                            <thead class="thead-light">
+                            <tr>
+                                <th data-visible="false" data-field="id">index</th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">Name</th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">UUID
+                                </th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
+                                    Entrypoint</th>
+                                <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                    data-field="job_type">Tool</th>
+                                <th scope="col" data-align="right" data-cell-style="cellStyle"
+                                    data-formatter=actionFormatter>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-item-2">
+                <div class="card card-table-sm">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h4>Table Widget</h4>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i
+                                            class="fas fa-filter"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i
+                                            class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <table
+                                class="table table-borderless"
+                                id="tests-list"
+                                data-toggle="table"
+                                data-unique-id="id"
+                                data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                                data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                                data-page-size=5 data-pagination="true"
+                                data-data='{
+                            "total": 6,
+                            "rows": [
+                                {
+                                    "id": 4,
+                                    "project_id": 3,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 3,
+                                    "project_id": 3,
+                                    "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                                    "name": "TestDistributed",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "tests",
+                                    "file": "Archive_flood.zip",
+                                    "entrypoint": "FloodIO.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "mykhailo_hunko@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "git": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 2,
+                                    "project_id": 3,
+                                    "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                                    "name": "PetsDemo",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                }, {
+                                    "id": 5,
+                                    "project_id": 3,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 1,
+                                    "project_id": 3,
+                                    "test_uid": "592cc59f-c09d-4026-83e2-2d0be768b1b4",
+                                    "name": "TestDistributed",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "tests",
+                                    "file": "Archive_flood.zip",
+                                    "entrypoint": "FloodIO.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "mykhailo_hunko@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "git": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                },
+                                {
+                                    "id": 6,
+                                    "project_id": 3,
+                                    "test_uid": "4d4ea128-f32d-4bc4-a48d-1a4ac7053b03",
+                                    "name": "PetsDemo",
+                                    "parallel": 1,
+                                    "region": "default",
+                                    "bucket": "",
+                                    "file": "",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "runner": "getcarrier/perfmeter:latest-5.3",
+                                    "emails": "karen_florykian@epam.com",
+                                    "env_vars": {},
+                                    "customization": {},
+                                    "cc_env_vars": {},
+                                    "last_run": null,
+                                    "job_type": "perfmeter"
+                                }
+                            ]
+                        }'>
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col" data-checkbox="true"></th>
+                                <th data-visible="false" data-field="id">index</th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">Name</th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">UUID
+                                </th>
+                                <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
+                                    Entrypoint</th>
+                                <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                    data-field="job_type">Tool</th>
+                                <th scope="col" data-align="right" data-cell-style="cellStyle"
+                                    data-formatter=actionFormatter>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-container my-3">
+            <div class="flex-item-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h4>Buckets</h4>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary" disabled><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select class="selectpicker bootstrap-select__b m-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <ul class="custom-nav flex-column">
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Modals</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center active">
+                            <a class="" href="#">Tooltips</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Drag & Drop</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Slider</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-item-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h4>Buckets</h4>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary" disabled><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select class="selectpicker bootstrap-select__b m-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <ul class="custom-nav flex-column">
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Modals</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center active">
+                            <a class="" href="#">Tooltips</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Drag & Drop</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Slider</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-item-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h4>Buckets</h4>
+                            </div>
+                            <div class="col-8">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
+                                    <button type="button" class="btn btn-32 btn-secondary" disabled><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select class="selectpicker bootstrap-select__b m-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <ul class="custom-nav flex-column">
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Modals</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center active">
+                            <a class="" href="#">Tooltips</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Drag & Drop</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                        <li class="custom-nav_item d-flex justify-content-between align-items-center">
+                            <a class="" href="#">Slider</a>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                            <button class="btn btn-default btn-xs btn-table btn-icon__xs">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

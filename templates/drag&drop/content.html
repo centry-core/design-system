@@ -1,0 +1,33 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div class="card mt-3 w-100">
+        <div class="card-header">
+            <h1> Drag & Drop </h1>
+        </div>
+        <div class="card-body row">
+            <div class="col-6">
+                <h4 class="pt-2">Fields</h4>
+                <div class="card w-100 card-stripped p-3">
+                    <div class="mb-3">
+                        <div id="dragDropArea" class="drop-area">
+                            <input type="file" id="dropInput" multiple accept="image/*" onchange="handleFiles(this.files)">
+                            <label for="dropInput" class="mb-0 d-flex align-items-center justify-content-center">Drag & drop file or <span>&nbsp;browse</span></label>
+                        </div>
+                        <div id="previewArea" class="preview-area">
+                            <div class="preview-area_item preview-area_loader">
+                                <span>Uploading File 1</span>
+                            </div>
+                            <div class="preview-area_item preview-area_close">
+                                <span>Uploading File 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
