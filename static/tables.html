@@ -619,6 +619,12 @@
                 </table>
             </div>
         </div>
+        <div class="card p-4 mt-3">
+            <div class="container-logs">
+                <table id="tableLogs" class="table-logs">
+                </table>
+            </div>
+        </div>
         <div class="card mt-3 card-table-sm">
             <div class="card-header">
                 <div class="row">
@@ -1302,6 +1308,48 @@
         </div>
     </div>
 </main>
+<script>
+    fetch('assets/js/mock/logs.json')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            const logsTag = data.streams.map(logTag => {
+                if(logTag.stream.filename === "/tmp/jmeter_logs.log") {
+                    return logTag.stream.hostname;
+                }
+            })
+            const uniqTags = [...new Set(logsTag)]
+            const tagColors = [
+                '#f89033',
+                '#e127ff',
+                '#2BD48D',
+                '#2196C9',
+                '#6eaecb',
+                '#385eb0',
+                '#7345fc',
+                '#94E5B0',
+            ]
+            console.log(uniqTags)
+            data.streams.forEach(stream_item => {
+                stream_item.values.forEach(message_item => {
+                    if(stream_item.stream.filename === "/tmp/jmeter_logs.log") {
+                        const d = new Date(Number(message_item[0])/1000000)
+                        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                        const timestamp = d.toLocaleString("en-GB", {timeZone: tz})
+                        let messages = message_item[1].split(" ")
+                        const indexColor = uniqTags.indexOf(stream_item.stream.hostname);
+                        const coloredTag = `<span style="color: ${tagColors[indexColor]}" class="ml-4">[${stream_item.stream.hostname}]</span>`
+                        let coloredText = `${coloredTag}<span class="colored-log colored-log__${messages[2]}">${messages[2]}</span>`
+                        let message = message_item[1].split(" ").slice(3)
+
+                        const row = `<tr><td>${timestamp}</td><td>${coloredText}</td><td> ${message}</td><br>`
+                        $('#tableLogs').append(row)
+                    }
+                })
+            })
+        });
+</script>
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>
     <script src="assets/js/table.js"></script>
