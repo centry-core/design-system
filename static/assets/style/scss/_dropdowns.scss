@@ -32,7 +32,7 @@
 .bootstrap-select .dropdown-item {
   display: block;
   width: 100%;
-  padding: 6px 1.5rem;
+  padding: 6px 32px 6px 16px;
   clear: both;
   font-weight: 400;
   font-size: 14px;
@@ -93,6 +93,9 @@
   width: 18px;
   height: 12px;
   border: 0;
+}
+.bootstrap-select .select-primary.dropdown-toggle::after {
+  background: url("../../../assets/ico/arrow-down__white.svg") no-repeat center right;
 }
 .bootstrap-select .dropdown-toggle.disabled::after {
   background: url("../../../assets/ico/arrow-down__white.svg") no-repeat center right;
@@ -187,8 +190,19 @@
       box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
     }
   }
+  .dropdown-toggle.btn-select__purple {
+    color: var(--gray800);
+    &:hover {
+      transition: all .3s;
+      border: 1px solid var(--basic60);
+      box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
+    }
+  }
 }
 
+.dropdown_multilevel .submenu.submenu__left {
+  left: -101%;
+}
 .dropdown_multilevel .submenu{
   display: none;
   position: absolute;
@@ -298,6 +312,9 @@
   height: 40px;
   &__sm {
     height: 32px;
+  }
+  &__purple {
+    border: solid 1px var(--basic60);
   }
 }
 
@@ -434,7 +451,7 @@ option {
 
 /* main-select */
 .main-select {
-  .btn{
+  .btn {
     background: var(--purple-active-bg) !important;
     text-transform: uppercase;
     font-weight: bold;

@@ -22,3 +22,20 @@ label {
     font-weight: 600;
   }
 }
+.btn-secondary.btn-select:not(:disabled):not(.disabled).active,
+.btn-secondary.btn-select:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+  border: solid 1px var(--gray400);
+}
+
+.btn-secondary.btn-select__purple:not(:disabled):not(.disabled).active,
+.btn-secondary.btn-select__purple:not(:disabled):not(.disabled):active,
+.show>.btn-select__purple.dropdown-toggle {
+  border: solid 1px var(--basic60);
+}
+.bootstrap-select>.dropdown-toggle:after {
+  margin-top: 0px;
+}
+.dropdown-item {
+  padding: 0.25rem 16px;
+}
