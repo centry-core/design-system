@@ -1,0 +1,57 @@
+<script src="{{ url_for('design-system.static', filename='assets/js/mock/data-chart.js') }}"></script>
+<script src="{{ url_for('design-system.static', filename='assets/js/mock/data-error-table.js') }}"></script>
+<script src="{{ url_for('design-system.static', filename='assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+<script src="{{ url_for('design-system.static', filename='assets/js/chart.js') }}"></script>
+<script src="{{ url_for('design-system.static', filename='assets/vendor/nouislider/nouislider.js') }}"></script>
+<script src="{{ url_for('design-system.static', filename='assets/vendor/nouislider/wNumb.min.js') }}"></script>
+
+{#<script src="assets/js/dropdowns.js"></script>#}
+{#<script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>#}
+{#<script src="assets/js/select.js"></script>#}
+
+{#
+<script src="assets/js/mock/data-chart.js"></script>
+<script src="assets/js/mock/data-error-table.js"></script>
+<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="assets/js/chart.js"></script>
+#}
+
+{#<script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>#}
+{#<script src="assets/js/table.js"></script>#}
+
+{#
+<script src="assets/vendor/nouislider/nouislider.js"></script>
+<script src="assets/vendor/nouislider/wNumb.min.js"></script>
+#}
+
+<script>
+    let low_value = 0;
+    let high_value = 100;
+    $(document).ready(function() {
+        setParams();
+        loadRequestData('/api/v1/chart/requests/summary', "Response time, ms");
+        fillSummaryTable();
+        fillErrorTable();
+        // $('#RT').trigger( "click" )
+        $("#analytics").hide();
+        $(".dropdown-menu.close-outside").on("click", function (event) {
+            event.stopPropagation();
+        });
+        const perfomanceTimePicker = noUiSlider.create($("#vuh-perfomance-time-picker")[0], {
+            range: {
+                'min': 0,
+                'max': 100
+            },
+            start: [low_value, high_value],
+            connect: true,
+            format: wNumb({
+                decimals: 0
+            }),
+        })
+        perfomanceTimePicker.on('set', function(values) {
+            low_value = values[0]
+            high_value = values[1]
+            resizeChart();
+        });
+    });
+</script>

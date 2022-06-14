@@ -1,0 +1,335 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div class="card mt-3 w-100">
+        <div class="card-header">
+            <h1> Controls </h1>
+        </div>
+        <div class="card-body row">
+            <div class="col-6">
+                <h4 class="pt-2">Checkbox</h4>
+                <div class="card w-100 card-stripped px-3">
+                    <div class="row">
+                        <div class="p-4 d-flex flex-column align-items-center col-2">
+                            <h5>DEFAULT</h5>
+                            <div class="d-flex my-2">
+                                <label
+                                    class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                                    <input
+                                        class="mx-2"
+                                        type="checkbox">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                            <div class="d-flex my-2">
+                                <label
+                                    class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                                    <input
+                                        checked
+                                        class="mx-2"
+                                        type="checkbox">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column align-items-center col-2">
+                            <h5>DEFAULT</h5>
+                            <div class="d-flex my-2">
+                                <label
+                                    class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                                    <input
+                                        class="mx-2"
+                                        type="checkbox">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                            <div class="d-flex my-2">
+                                <label
+                                    class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                                    <input
+                                        checked
+                                        class="mx-2"
+                                        type="checkbox">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column align-items-center col-2">
+                            <h5 class="text-muted">DISABLE</h5>
+                            <div class="d-flex my-2">
+                                <label
+                                    class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                                    <input
+                                        class="mx-2"
+                                        disabled
+                                        type="checkbox">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                            <div class="d-flex my-2">
+                                <label
+                                    class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                                    <input
+                                        class="mx-2"
+                                        checked
+                                        disabled
+                                        type="checkbox">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column align-items-center col-4">
+                            <h5>Multicolor</h5>
+                            <div class="row">
+                                <div class="d-flex flex-column mx-2">
+                                    <div class="d-flex my-2">
+                                        <label
+                                            class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor">
+                                            <input
+                                                class="mx-2"
+                                                style="--cbx-color: var(--yellow);"
+                                                type="checkbox">
+                                            <span class="w-100 d-inline-block"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <label
+                                            class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor">
+                                            <input
+                                                    class="mx-2"
+                                                    checked
+                                                    style="--cbx-color: var(--yellow);"
+                                                    type="checkbox">
+                                            <span class="w-100 d-inline-block"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column mx-2">
+                                    <div class="d-flex my-2">
+                                        <label
+                                            class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor">
+                                            <input
+                                                class="mx-2"
+                                                style="--cbx-color: var(--pink);"
+                                                type="checkbox">
+                                            <span class="w-100 d-inline-block"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <label
+                                            class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor">
+                                            <input
+                                                class="mx-2"
+                                                checked
+                                                style="--cbx-color: var(--pink);"
+                                                type="checkbox">
+                                            <span class="w-100 d-inline-block"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column mx-2">
+                                    <div class="d-flex my-2">
+                                        <label
+                                            class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor">
+                                            <input
+                                                class="mx-2"
+                                                style="--cbx-color: var(--blue);"
+                                                type="checkbox">
+                                            <span class="w-100 d-inline-block"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <label
+                                                class="mb-0 w-100 d-flex align-items-center custom-checkbox custom-checkbox__multicolor">
+                                            <input
+                                                class="mx-2"
+                                                checked
+                                                style="--cbx-color: var(--blue);"
+                                                type="checkbox">
+                                            <span class="w-100 d-inline-block"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h4 class="pt-2">Radio buttons</h4>
+                <div class="card w-100 px-3 card-stripped">
+                    <div class="row">
+                        <div class="p-4 d-flex flex-column align-items-center col-2">
+                            <h5>DEFAULT</h5>
+                            <div class="d-flex my-2">
+                                <input
+                                        id="radioBtn1"
+                                        name="radio-group"
+                                        class="mx-2 custom-radio"
+                                        type="radio">
+                                <label
+                                        class="mb-0 w-100 d-flex align-items-center"
+                                        for="radioBtn1">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                            <div class="d-flex my-2">
+                                <input
+                                        id="radioBtn2"
+                                        name="radio-group"
+                                        checked
+                                        class="mx-2 custom-radio"
+                                        type="radio">
+                                <label
+                                        class="mb-0 w-100 d-flex align-items-center"
+                                        for="radioBtn2">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column align-items-center col-2">
+                            <h5 class="text-muted">DISABLED</h5>
+                            <div class="d-flex my-2">
+                                <input
+                                        id="radioBtn3"
+                                        name="radio-group__disabled"
+                                        disabled
+                                        class="mx-2 custom-radio"
+                                        type="radio">
+                                <label
+                                        class="mb-0 w-100 d-flex align-items-center"
+                                        for="radioBtn3">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                            <div class="d-flex my-2">
+                                <input
+                                        id="radioBtn4"
+                                        name="radio-group__disabled"
+                                        class="mx-2 custom-radio"
+                                        disabled
+                                        checked
+                                        type="radio">
+                                <label
+                                        class="mb-0 w-100 d-flex align-items-center"
+                                        for="radioBtn4">
+                                    <span class="w-100 d-inline-block"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <h4 class="pt-2">Toggle</h4>
+                <div class="card w-100 py-3 px-4 card-stripped">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-2 text-dark d-flex align-items-start flex-column justify-content-start">
+                                    <span class="font-weight-bold">Basic</span>
+                                    <h6><small>16x28px</small></h6>
+                                </div>
+                                <div class="col-2 d-flex flex-column align-items-center">
+                                    <h5>DEFAULT</h5>
+                                    <div class="d-flex my-2">
+                                        <label class="custom-toggle">
+                                            <input
+                                                name="toggle-group"
+                                                type="checkbox">
+                                            <span class="custom-toggle_slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <label class="custom-toggle">
+                                            <input
+                                                checked
+                                                name="toggle-group"
+                                                type="checkbox">
+                                            <span class="custom-toggle_slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2 d-flex flex-column align-items-center">
+                                    <h5 class="text-muted">DISABLED</h5>
+                                    <div class="d-flex my-2">
+                                        <label class="custom-toggle">
+                                            <input
+                                                    name="toggle-group"
+                                                    disabled
+                                                    type="checkbox">
+                                            <span class="custom-toggle_slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <label class="custom-toggle">
+                                            <input
+                                                    checked
+                                                    disabled
+                                                    name="toggle-group"
+                                                    type="checkbox">
+                                            <span class="custom-toggle_slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-2 text-dark d-flex align-items-start flex-column justify-content-start">
+                                    <span class="font-weight-bold">Basic</span>
+                                    <h6><small>16x32px</small></h6>
+                                </div>
+                                <div class="col-2 d-flex flex-column align-items-center">
+                                    <h5>DEFAULT</h5>
+                                    <div class="d-flex my-2">
+                                        <label class="custom-toggle">
+                                            <input
+                                                name="toggle-group"
+                                                type="checkbox">
+                                            <span class="custom-toggle_slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <label class="custom-toggle">
+                                            <input
+                                                checked
+                                                name="toggle-group"
+                                                type="checkbox">
+                                            <span class="custom-toggle_slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2 d-flex flex-column align-items-center">
+                                    <h5 class="text-muted">DISABLED</h5>
+                                    <div class="d-flex my-2">
+                                        <label class="custom-toggle">
+                                            <input
+                                                name="toggle-group"
+                                                disabled
+                                                type="checkbox">
+                                            <span class="custom-toggle_slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <label class="custom-toggle">
+                                            <input
+                                                checked
+                                                disabled
+                                                name="toggle-group"
+                                                type="checkbox">
+                                            <span class="custom-toggle_slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

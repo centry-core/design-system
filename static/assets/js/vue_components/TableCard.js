@@ -29,7 +29,6 @@ const TableCard = {
     },
     template: `
     <div :class="container_class">
-
         <div class="card-header">
             <div class="row">
                 <div class="col-4">
