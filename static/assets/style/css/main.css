@@ -47,6 +47,10 @@ label {
   padding: 0.25rem 16px;
 }
 
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+  color: #212529;
+}
+
 /* common */
 /* latin */
 @font-face {
@@ -270,8 +274,16 @@ h2 a {
   padding: 28px;
 }
 
+.p-20 {
+  padding: 20px;
+}
+
 .mt-20 {
   margin-top: 20px;
+}
+
+.mt-24 {
+  margin-top: 24px;
 }
 
 .text-gray-600 {
@@ -280,6 +292,10 @@ h2 a {
 
 .text-gray-500 {
   color: #abb3b9;
+}
+
+.bg-gray-000 {
+  background: #FAFBFD;
 }
 
 body {
@@ -1803,6 +1819,10 @@ td.disabled input {
   min-width: 24px;
   max-width: 24px;
   font-weight: 400;
+}
+
+.btn-24.btn__purple {
+  color: #5933C6;
 }
 
 .btn-16 {

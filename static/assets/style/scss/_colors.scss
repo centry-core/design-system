@@ -1,3 +1,4 @@
+$gray000: #FAFBFD;
 $gray50: #fbfeff;
 $gray100: #f6f9fc;
 $gray100: #f6f9fc;
@@ -9,10 +10,16 @@ $gray600: #757f99;
 $gray700: #525F7F;
 $gray800: #32325d;
 
+$purple-basic: #5933C6;
+
 .text-gray-600 {
   color: $gray600;
 }
 
 .text-gray-500 {
   color: $gray500;
+}
+
+.bg-gray-000 {
+  background: $gray000;
 }

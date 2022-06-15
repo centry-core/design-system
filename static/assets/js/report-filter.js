@@ -213,8 +213,8 @@ const ReportFilter = {
         }
     },
     template: `
-        <div class="report-filter">
-            <div class="d-flex justify-content-between mt-4 mb-2 pr-4">
+        <div class="report-filter bg-gray-000 p-20 mt-24">
+            <div class="d-flex justify-content-between mb-2">
                 <p class="font-h5 font-bold">{{ computedTitle }}</p>
                 <a class="notification-close" @click="removeFilter"></a>
             </div>
@@ -267,13 +267,13 @@ const ReportFilter = {
                             </div>
                         </td>
                         <td class="cell-icon">
-                            <div class="d-flex justify-content-end table-action align-items-center pl-2 pr-4 pt-2">
+                            <div class="d-flex justify-content-end table-action align-items-center pl-2 pt-2">
                                 <button 
                                     v-if="editableFilter.options.length > 1"
-                                    type="button" class="btn btn-24 btn-action"
+                                    type="button" class="btn btn-24 btn__purple"
                                     @click="removeOption(option.id)"><i class="fas fa-minus"></i>
                                  </button>
-                                <button type="button" class="btn btn-24 btn-action" @click="addOption"><i class="fas fa-plus"></i></button>
+                                <button type="button" class="btn btn-24 btn__purple" @click="addOption"><i class="fas fa-plus"></i></button>
                             </div>
                         </td>
                     </tr>
