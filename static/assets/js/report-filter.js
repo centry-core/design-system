@@ -138,7 +138,8 @@ const ReportFilter = {
     data() {
         return {
             editableFilter: {},
-            isInvalidFilter: false,
+            isValidFilter: true,
+            applyClicked: false,
         }
     },
     mounted() {
@@ -153,11 +154,12 @@ const ReportFilter = {
                 this.$nextTick(() => {
                     const arr = []
                     $('.table-filter > tbody > tr').each(function (index, element) {
-                        $(element).find('td > div').each(function (index, cell) {
+                        $(element).find('td.cell-input > div').each(function (index, cell) {
                             arr.push(cell.getAttribute('data-valid'));
                         })
                     })
-                    this.isInvalidFilter = arr.every(elem => elem !== 'true')
+                    let flag = this.applyClicked ? 'false' : 'true'
+                    this.isValidFilter = arr.every(elem => elem === flag)
                 });
             },
             deep: true
@@ -201,10 +203,13 @@ const ReportFilter = {
             this.$emit('save', this.editableFilter)
         },
         hasError(value) {
-            return value.length > 0;
+            return this.applyClicked ? value.length > 0 : true;
         },
         apply() {
-            this.$emit('apply', this.editableFilter)
+            this.applyClicked = true;
+            if(this.isValidFilter) {
+                this.$emit('apply', this.editableFilter)
+            }
         }
     },
     template: `
@@ -277,8 +282,7 @@ const ReportFilter = {
             <div class="d-flex justify-content-start">
                 <button class="btn btn-basic mr-2 d-flex align-items-center"
                     type="button"
-                    @click="apply"
-                    :disabled="!isInvalidFilter">Apply
+                    @click="apply">Apply
                         <i v-if="loadingApply" class="preview-loader__white ml-2"></i>
                     </button>
                 <button v-if="this.editableFilter.id"
@@ -292,7 +296,7 @@ const ReportFilter = {
                     class="btn btn-default d-flex align-items-center"
                     >Save <i v-if="loadingSave" class="preview-loader ml-2"></i>
                 </button>
-                <button class="btn btn-default" @click="saveAs" :disabled="!isInvalidFilter">Save as...</button>
+                <button class="btn btn-default" @click="saveAs" :disabled="!isValidFilter">Save as...</button>
             </div>
         </div>
     `
