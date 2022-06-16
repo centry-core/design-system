@@ -39,3 +39,6 @@ label {
 .dropdown-item {
   padding: 0.25rem 16px;
 }
+.bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+  color: #212529;
+}

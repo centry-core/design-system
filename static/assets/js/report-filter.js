@@ -138,7 +138,8 @@ const ReportFilter = {
     data() {
         return {
             editableFilter: {},
-            isInvalidFilter: false,
+            isValidFilter: true,
+            applyClicked: false,
         }
     },
     mounted() {
@@ -153,11 +154,12 @@ const ReportFilter = {
                 this.$nextTick(() => {
                     const arr = []
                     $('.table-filter > tbody > tr').each(function (index, element) {
-                        $(element).find('td > div').each(function (index, cell) {
+                        $(element).find('td.cell-input > div').each(function (index, cell) {
                             arr.push(cell.getAttribute('data-valid'));
                         })
                     })
-                    this.isInvalidFilter = arr.every(elem => elem !== 'true')
+                    let flag = this.applyClicked ? 'false' : 'true'
+                    this.isValidFilter = arr.every(elem => elem === flag)
                 });
             },
             deep: true
@@ -201,15 +203,18 @@ const ReportFilter = {
             this.$emit('save', this.editableFilter)
         },
         hasError(value) {
-            return value.length > 0;
+            return this.applyClicked ? value.length > 0 : true;
         },
         apply() {
-            this.$emit('apply', this.editableFilter)
+            this.applyClicked = true;
+            if(this.isValidFilter) {
+                this.$emit('apply', this.editableFilter)
+            }
         }
     },
     template: `
-        <div class="report-filter">
-            <div class="d-flex justify-content-between mt-4 mb-2 pr-4">
+        <div class="report-filter bg-gray-000 p-20 mt-24">
+            <div class="d-flex justify-content-between mb-2">
                 <p class="font-h5 font-bold">{{ computedTitle }}</p>
                 <a class="notification-close" @click="removeFilter"></a>
             </div>
@@ -262,13 +267,13 @@ const ReportFilter = {
                             </div>
                         </td>
                         <td class="cell-icon">
-                            <div class="d-flex justify-content-end table-action align-items-center pl-2 pr-4 pt-2">
+                            <div class="d-flex justify-content-end table-action align-items-center pl-2 pt-2">
                                 <button 
                                     v-if="editableFilter.options.length > 1"
-                                    type="button" class="btn btn-24 btn-action"
+                                    type="button" class="btn btn-24 btn__purple"
                                     @click="removeOption(option.id)"><i class="fas fa-minus"></i>
                                  </button>
-                                <button type="button" class="btn btn-24 btn-action" @click="addOption"><i class="fas fa-plus"></i></button>
+                                <button type="button" class="btn btn-24 btn__purple" @click="addOption"><i class="fas fa-plus"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -277,8 +282,7 @@ const ReportFilter = {
             <div class="d-flex justify-content-start">
                 <button class="btn btn-basic mr-2 d-flex align-items-center"
                     type="button"
-                    @click="apply"
-                    :disabled="!isInvalidFilter">Apply
+                    @click="apply">Apply
                         <i v-if="loadingApply" class="preview-loader__white ml-2"></i>
                     </button>
                 <button v-if="this.editableFilter.id"
@@ -292,7 +296,7 @@ const ReportFilter = {
                     class="btn btn-default d-flex align-items-center"
                     >Save <i v-if="loadingSave" class="preview-loader ml-2"></i>
                 </button>
-                <button class="btn btn-default" @click="saveAs" :disabled="!isInvalidFilter">Save as...</button>
+                <button class="btn btn-default" @click="saveAs" :disabled="!isValidFilter">Save as...</button>
             </div>
         </div>
     `
