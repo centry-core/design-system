@@ -36,8 +36,7 @@ class Module(module.ModuleModel):
         # Init Blueprint
         self.descriptor.init_blueprint()
 
-        from tools import config
-        if config.DEV:
+        if self.context.debug:
             self.descriptor.init_slots()
 
             from tools import theme
