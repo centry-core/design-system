@@ -178,6 +178,13 @@
         </div>
     </div>
 </main>
+<script>
+    window.wait_for = async (prop_name, root = window, poll_length = 500) => {
+        while (!root.hasOwnProperty(prop_name))
+            await new Promise(resolve => setTimeout(resolve, poll_length))
+        return root[prop_name]
+    }
+</script>
 <script src="https://unpkg.com/vue@next"></script>
 <script src="assets/js/utils.js"></script>
 <script src="assets/js/mock/data-view-filter.js"></script>
