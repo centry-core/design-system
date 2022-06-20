@@ -1309,6 +1309,7 @@
     </div>
 </main>
 <script>
+    const tags_mapper = ['Lg_5236_30246']
     fetch('assets/js/mock/logs.json')
         .then((response) => {
             return response.json();
@@ -1319,7 +1320,13 @@
                     return logTag.stream.hostname;
                 }
             })
-            const uniqTags = [...new Set(logsTag)]
+
+            const uniqTags = [...new Set(logsTag)].filter(tag => !!(tag))
+            uniqTags.forEach(tag => {
+                if(!tags_mapper.includes(tag))
+                tags_mapper.push(tag)
+            })
+
             const tagColors = [
                 '#f89033',
                 '#e127ff',
@@ -1330,7 +1337,6 @@
                 '#7345fc',
                 '#94E5B0',
             ]
-            console.log(uniqTags)
             data.streams.forEach(stream_item => {
                 stream_item.values.forEach(message_item => {
                     if(stream_item.stream.filename === "/tmp/jmeter_logs.log") {
