@@ -88,12 +88,13 @@ const modalSaveFilter = {
     props: ['loading'],
     data() {
         return {
+            saveClicked: false,
             filterTitle: '',
         }
     },
     computed: {
         hasError() {
-            return this.isShortName();
+            return this.isShortName() && this.saveClicked;
         }
     },
     methods: {
@@ -101,6 +102,7 @@ const modalSaveFilter = {
             return this.filterTitle.length < 3;
         },
         saveNewFilter() {
+            this.saveClicked = true;
             if (!this.hasError) this.$emit('save-new-filter', this.filterTitle)
         }
     },
@@ -140,6 +142,7 @@ const ReportFilter = {
             editableFilter: {},
             isValidFilter: true,
             applyClicked: false,
+            canSave: false,
         }
     },
     mounted() {
@@ -160,6 +163,7 @@ const ReportFilter = {
                     })
                     let flag = this.applyClicked ? 'false' : 'true'
                     this.isValidFilter = arr.every(elem => elem === flag)
+                    this.canSave =  arr.every(elem => elem === 'false')
                 });
             },
             deep: true
@@ -221,8 +225,8 @@ const ReportFilter = {
             <table class="w-100 table-filter mb-3" id="table-filter">
                 <thead>
                     <tr class="font-h6">
-                        <th>Column</th>
-                        <th>Operator</th>
+                        <th style="min-width: 175px">Column</th>
+                        <th style="min-width: 175px">Operator</th>
                         <th>Data</th>
                     </tr>
                 </thead>
@@ -291,7 +295,7 @@ const ReportFilter = {
                     @click="resetFilter">Reset</button>
                 <button v-if="this.editableFilter.id" 
                     :class="{'btn-secondary': loadingSave}"
-                    :disabled="!isInvalidFilter"
+                    :disabled="!isValidFilter"
                     @click="save"
                     class="btn btn-default d-flex align-items-center"
                     >Save <i v-if="loadingSave" class="preview-loader ml-2"></i>
@@ -338,6 +342,8 @@ const vueApp = Vue.createApp({
     methods: {
         initTable({ columns, data }) {
             this.tableData = data;
+            debugger
+            debugger
             const tableOptions = {
                 columns,
                 data: this.tableData,

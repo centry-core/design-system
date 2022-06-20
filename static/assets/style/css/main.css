@@ -286,6 +286,10 @@ h2 a {
   margin-top: 24px;
 }
 
+.min-w-175 {
+  min-width: 175px;
+}
+
 .text-gray-600 {
   color: #757f99;
 }
@@ -2969,6 +2973,7 @@ input[type=range]::-moz-range-thumb {
   border: 1px solid var(--gray400);
 }
 .bootstrap-select__b {
+  background: white;
   border: solid 1px var(--gray400);
   border-radius: 4px;
 }

@@ -27,6 +27,7 @@ const tablesData = [
                 field: 'severity',
                 formatter: 'tableSeverityButtonFormatter',
                 sortable: true,
+                class: 'min-w-170',
             }
         ],
         tableData: [
