@@ -46,6 +46,15 @@ class Module(module.ModuleModel):
                 "Design System",
                 kind="holder",
                 location="left",
+                weight=33
+            )
+            theme.register_subsection(
+                "configuration", "design-system",
+                "Design System",
+                title="Design System",
+                kind="redirect",
+                weight=-33,
+                url='/-/design-system/'
             )
 
             from pathlib import Path
