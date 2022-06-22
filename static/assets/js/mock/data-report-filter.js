@@ -25,13 +25,13 @@ const tableColumns = [
         field: 'severity',
         formatter: 'tableSeverityButtonFormatter',
         sortable: true,
-        class: 'min-w-175',
+        class: 'min-w-175 pl-1',
     }, {
         title: 'status',
         field: 'status',
         formatter: 'tableStatusButtonFormatter',
         sortable: true,
-        class: 'min-w-175',
+        class: 'min-w-175 pl-1',
 
     }
 ]
@@ -110,13 +110,13 @@ const tableColumnsUpdated = [
         field: 'severity',
         formatter: 'tableSeverityButtonFormatter',
         sortable: true,
-        class: 'min-w-175',
+        class: 'min-w-175 pl-1',
     }, {
         title: 'status',
         field: 'status',
         formatter: 'tableStatusButtonFormatter',
         sortable: true,
-        class: 'min-w-175',
+        class: 'min-w-175 pl-1',
     }
 ]
 

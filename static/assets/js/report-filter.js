@@ -161,9 +161,7 @@ const ReportFilter = {
                             arr.push(cell.getAttribute('data-valid'));
                         })
                     })
-                    let flag = this.applyClicked ? 'false' : 'true'
-                    this.isValidFilter = arr.every(elem => elem === flag)
-                    this.canSave =  arr.every(elem => elem === 'false')
+                    this.isValidFilter = arr.every(elem => elem === 'true')
                 });
             },
             deep: true
@@ -207,6 +205,9 @@ const ReportFilter = {
             this.$emit('save', this.editableFilter)
         },
         hasError(value) {
+            return value.length > 0;
+        },
+        showError(value) {
             return this.applyClicked ? value.length > 0 : true;
         },
         apply() {
@@ -233,8 +234,8 @@ const ReportFilter = {
                 <tbody>
                     <tr v-for="option in editableFilter.options" :key="option.id">
                         <td class="pr-2 pb-2 cell-input">
-                            <div class="select-validation" :class="{'invalid-select': !hasError(option.column)}"
-                                :data-valid="!hasError(option.column)">
+                            <div class="select-validation" :class="{'invalid-select': !showError(option.column)}"
+                                :data-valid="hasError(option.column)">
                                 <select class="selectpicker bootstrap-select__b"
                                     v-model="option.column"
                                     data-style="btn">
@@ -247,8 +248,8 @@ const ReportFilter = {
                             </div>
                         </td>
                         <td class="pr-2 pb-2 cell-input">
-                            <div class="select-validation" :class="{'invalid-select': !hasError(option.operator)}"
-                                :data-valid="!hasError(option.operator)">
+                            <div class="select-validation" :class="{'invalid-select': !showError(option.operator)}"
+                                :data-valid="hasError(option.operator)">
                                 <select class="selectpicker bootstrap-select__b"
                                     v-model="option.operator"
                                     data-style="btn">
@@ -261,8 +262,8 @@ const ReportFilter = {
                             </div>
                         </td>
                         <td class="w-100 pb-2 cell-input">
-                            <div class="custom-input" :class="{'invalid-input': !hasError(option.title)}"
-                                :data-valid="!hasError(option.title)">
+                            <div class="custom-input" :class="{'invalid-input': !showError(option.title)}"
+                                :data-valid="hasError(option.title)">
                                 <input
                                     type="text"
                                     v-model="option.title"
@@ -342,8 +343,6 @@ const vueApp = Vue.createApp({
     methods: {
         initTable({ columns, data }) {
             this.tableData = data;
-            debugger
-            debugger
             const tableOptions = {
                 columns,
                 data: this.tableData,
