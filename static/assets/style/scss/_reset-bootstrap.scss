@@ -47,3 +47,25 @@ label {
   background-color: #545b62;
   border-color: var(--purple-outline);
 }
+
+.table.table-transparent .thead-light th {
+  color: #495057;
+  background-color: transparent !important;
+  border-color: #dee2e6;
+}
+
+.table-transparent.table-bordered td, .table-bordered th {
+  border: none !important;
+}
+
+.table-transparent.table-bordered tbody tr {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.table-transparent.table-bordered {
+  border: none !important;
+}
+
+.table-transparent .thead-light th {
+  border-top: none !important;
+}

@@ -123,7 +123,7 @@
                 <a href="charts.html">Charts</a>
             </li>
             <li class="custom-nav_item">
-                <a href="summary.html">Icons</a>
+                <a href="icons.html">Icons</a>
             </li>
         </ul>
     </aside>
@@ -1311,6 +1311,48 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="mt-3 card-table-sm p-4">
+            <table
+                class="table table-transparent"
+                id="tests-list-dynamic"
+                data-toggle="table"
+                data-unique-id="id"
+                data-data='{
+                "total": 2,
+                "rows": [
+                    {
+                        "id": 4,
+                        "engine_type": "String",
+                        "runners_type": 134,
+                        "cpu_type": "intel",
+                        "memory_size": "4000"
+                    },
+                    {
+                        "id": 1,
+                        "engine_type": "String",
+                        "runners_type": 154,
+                        "cpu_type": "intel",
+                        "memory_size": "4000"
+                    }
+                ]
+                }'>
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" class="w-100" data-sortable="true" data-field="engine_type" data-formatter=ParamsTable.dataTypeFormatter>ENGINE LOCATION</th>
+                        <th scope="col" data-sortable="true" data-field="runners_type" data-formatter=ParamsTable.stepperFormatter>RUNNERS</th>
+                        <th scope="col" data-sortable="true" data-field="cpu_type" data-formatter=ParamsTable.inputFormatter>CPU, CORES</th>
+                        <th scope="col" data-sortable="true" data-field="memory_size" data-formatter=ParamsTable.inputFormatter>MEMORY, GB</th>
+                        <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=ParamsTable.actionDeleteRow></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <button class="btn btn-secondary mt-2 d-flex align-items-center" id="create-location">
+                <i class="icon__18x18 icon-create-element mr-2"></i>
+                Add Location
+            </button>
         </div>
     </div>
 </main>
