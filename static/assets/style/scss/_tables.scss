@@ -78,14 +78,10 @@
 }
 
 .card-body table td {
-  line-height: 18px;
-}
-
-.card-table .card-body table td {
   line-height: 24px;
 }
 
-.card-table .card-body table th {
+.card-body table th {
   line-height: 18px;
 }
 
@@ -121,7 +117,7 @@
 }
 
 .card-body .page-link {
-  font-size: 12px;
+  font-size: 14px;
   padding: 4px 8px;
   height: 24px !important;
   min-width: 24px;
@@ -353,5 +349,45 @@ td.disabled input {
 .table {
   .bootstrap-select {
     min-width: 100%;
+  }
+}
+
+.table {
+  .detail-icon {
+    i.fa-plus::before {
+      content: url("/design-system/static/assets/ico/detail-view.svg");
+    }
+    i.fa-minus::before {
+      content: url("/design-system/static/assets/ico/detail-view.svg");
+      transform: rotate(180deg);
+      display: inline-block;
+    }
+  }
+}
+.container-logs {
+  height: 450px;
+  max-width: 1200px;
+  width: 100%;
+  overflow:auto;
+  padding: 2rem 0;
+  .table-logs {
+    tr td {
+      white-space: nowrap;
+    }
+  }
+  .colored-log {
+    padding: 0 16px;
+    &__INFO {
+      color: #18B64D;
+    }
+    &__WARN {
+      color: #DBC714;
+    }
+    &__ERROR {
+      color: #fd8484;
+    }
+    &__FATAL {
+      color: #F32626;
+    }
   }
 }

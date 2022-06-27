@@ -129,26 +129,25 @@
             </div>
         </div>
 
-        <div class="card mt-3 card-table">
+        <div class="card mt-3 card-table-sm">
             <div class="card-header">
                 <div class="row">
                     <div class="col-4">
-                        <h3>Report Block</h3>
+                        <h4>Report Block</h4>
                     </div>
                     <div class="col-8">
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-plus"></i></button>
-                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-sync"></i></button>
-                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-filter"></i></button>
-                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-tag"></i></button>
-                            <button type="button" class="btn btn-32 btn-secondary"><i class="fas fa-trash-alt"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-plus"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-sync"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-filter"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-tag"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon__sm mr-2"><i class="fas fa-trash-alt"></i></button>
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="card-body">
-                <table class="table table-border" id="tests-list-first"
+                <table class="table table-borderless"
                     data-toggle="table"
                     data-unique-id="id"
                     data-page-list="[5, 10, 15]"
@@ -387,11 +386,90 @@
                             </th>
                             <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
                                 Entrypoint</th>
-                            <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                            <th scope="col" data-align="center" data-sortable="true" data-formatter=ParamsTable.lgFormatter
                                 data-field="job_type">Tool</th>
-                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>Actions
+                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=ParamsTable.actionFormatter>Actions
                             </th>
                         </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card p-28 mt-3">
+            <div class="row">
+                <div class="col-4 mb-4">
+                    <h4>Report Block</h4>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-border"
+                       data-toggle="table"
+                       data-unique-id="id"
+                       data-page-list="[5, 10, 15]"
+                       data-pagination="true"
+                       data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
+                       data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
+                       data-page-size=5
+                       data-detail-view="true"
+                       data-detail-formatter="ParamsTable.detailFormatter"
+                       data-data='{
+                            "total": 6,
+                            "rows": [
+                                {
+                                   "id": 48,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 47,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 46,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 45,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 44,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                },
+                                {
+                                   "id": 24,
+                                    "test_uid": "06bccf22-38c9-4a9d-889f-07ed76542d9e",
+                                    "name": "PetsDemoKaren1",
+                                    "entrypoint": "Petclinic.jmx",
+                                    "job_type": "action"
+                                }
+                            ]
+                       }'>
+                    <thead class="thead-light">
+                    <tr>
+                        <th data-visible="false" data-field="id">index</th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="name">REQUEST NAME</th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="test_uid">URL
+                        </th>
+                        <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
+                            RESPONSE CODE</th>
+                    </tr>
                     </thead>
                     <tbody>
                     </tbody>
@@ -402,7 +480,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-4">
-                        <h3>Table & Inputs</h3>
+                        <h4>Table & Inputs</h4>
                     </div>
                 </div>
             </div>
@@ -531,9 +609,9 @@
                                 <th data-visible="false" data-field="id">index</th>
                                 <th scope="col" data-field="name">Name</th>
                                 <th scope="col" data-sortable="true" data-field="entrypoint">Entrypoint</th>
-                                <th scope="col" data-field="job_type" data-formatter=dataTypeFormatter>UUID</th>
-                                <th scope="col" data-field="emails" data-formatter=inputFormatter>Tool</th>
-                                <th scope="col" data-align="right" data-formatter=actionFormatter>Actions</th>
+                                <th scope="col" data-field="job_type" data-formatter=ParamsTable.dataTypeFormatter>UUID</th>
+                                <th scope="col" data-field="emails" data-formatter=ParamsTable.inputFormatter>Tool</th>
+                                <th scope="col" data-align="right" data-formatter=ParamsTable.actionFormatter>Actions</th>
                             </tr>
                         </thead>
                     <tbody>
@@ -541,11 +619,17 @@
                 </table>
             </div>
         </div>
+        <div class="card p-4 mt-3">
+            <div class="container-logs">
+                <table id="tableLogs" class="table-logs">
+                </table>
+            </div>
+        </div>
         <div class="card mt-3 card-table-sm">
             <div class="card-header">
                 <div class="row">
                     <div class="col-4">
-                        <h3>Table Block</h3>
+                        <h4>Table Block</h4>
                     </div>
                     <div class="col-8">
                         <div class="d-flex justify-content-end">
@@ -689,9 +773,9 @@
                             </th>
                             <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
                                 Entrypoint</th>
-                            <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                            <th scope="col" data-align="center" data-sortable="true" data-formatter=ParamsTable.lgFormatter
                                 data-field="job_type">Tool</th>
-                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>
+                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=ParamsTable.actionFormatter>
                                 Actions
                             </th>
                         </tr>
@@ -707,7 +791,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Table Widget</h3>
+                                <h4>Table Widget</h4>
                             </div>
                             <div class="col-8">
                                 <div class="d-flex justify-content-end">
@@ -726,7 +810,6 @@
                     <div class="card-body">
                         <table
                                 class="table table-borderless"
-                                id="tests-list"
                                 data-toggle="table"
                                 data-unique-id="id"
                                 data-pagination-pre-text="<img src='assets/ico/arrow_left.svg'>"
@@ -854,10 +937,10 @@
                                 </th>
                                 <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
                                     Entrypoint</th>
-                                <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                <th scope="col" data-align="center" data-sortable="true" data-formatter=ParamsTable.lgFormatter
                                     data-field="job_type">Tool</th>
                                 <th scope="col" data-align="right" data-cell-style="cellStyle"
-                                    data-formatter=actionFormatter>Actions</th>
+                                    data-formatter=ParamsTable.actionFormatter>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -872,7 +955,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Table Widget</h3>
+                                <h4>Table Widget</h4>
                             </div>
                             <div class="col-8">
                                 <div class="d-flex justify-content-end">
@@ -1020,10 +1103,10 @@
                                 </th>
                                 <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
                                     Entrypoint</th>
-                                <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                <th scope="col" data-align="center" data-sortable="true" data-formatter=ParamsTable.lgFormatter
                                     data-field="job_type">Tool</th>
                                 <th scope="col" data-align="right" data-cell-style="cellStyle"
-                                    data-formatter=actionFormatter>Actions</th>
+                                    data-formatter=ParamsTable.actionFormatter>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -1039,7 +1122,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Buckets</h3>
+                                <h4>Buckets</h4>
                             </div>
                             <div class="col-8">
                                 <div class="d-flex justify-content-end">
@@ -1102,7 +1185,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Buckets</h3>
+                                <h4>Buckets</h4>
                             </div>
                             <div class="col-8">
                                 <div class="d-flex justify-content-end">
@@ -1165,7 +1248,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Buckets</h3>
+                                <h4>Buckets</h4>
                             </div>
                             <div class="col-8">
                                 <div class="d-flex justify-content-end">
@@ -1225,9 +1308,57 @@
         </div>
     </div>
 </main>
+<script>
+    const tags_mapper = ['Lg_5236_30246']
+    fetch('assets/js/mock/logs.json')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            const logsTag = data.streams.map(logTag => {
+                if(logTag.stream.filename === "/tmp/jmeter_logs.log") {
+                    return logTag.stream.hostname;
+                }
+            })
+
+            const uniqTags = [...new Set(logsTag)].filter(tag => !!(tag))
+            uniqTags.forEach(tag => {
+                if(!tags_mapper.includes(tag))
+                tags_mapper.push(tag)
+            })
+
+            const tagColors = [
+                '#f89033',
+                '#e127ff',
+                '#2BD48D',
+                '#2196C9',
+                '#6eaecb',
+                '#385eb0',
+                '#7345fc',
+                '#94E5B0',
+            ]
+            data.streams.forEach(stream_item => {
+                stream_item.values.forEach(message_item => {
+                    if(stream_item.stream.filename === "/tmp/jmeter_logs.log") {
+                        const d = new Date(Number(message_item[0])/1000000)
+                        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                        const timestamp = d.toLocaleString("en-GB", {timeZone: tz})
+                        let messages = message_item[1].split(" ")
+                        const indexColor = uniqTags.indexOf(stream_item.stream.hostname);
+                        const coloredTag = `<span style="color: ${tagColors[indexColor]}" class="ml-4">[${stream_item.stream.hostname}]</span>`
+                        let coloredText = `${coloredTag}<span class="colored-log colored-log__${messages[2]}">${messages[2]}</span>`
+                        let message = message_item[1].split(" ").slice(3)
+
+                        const row = `<tr><td>${timestamp}</td><td>${coloredText}</td><td> ${message}</td><br>`
+                        $('#tableLogs').append(row)
+                    }
+                })
+            })
+        });
+</script>
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>
-    <script src="assets/js/table.js"></script>
+    <script src="assets/js/table-formatters.js"></script>
 </body>
 
 </html>

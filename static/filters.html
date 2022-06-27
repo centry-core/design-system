@@ -133,7 +133,7 @@
                         @save-new-filter="saveNewFilter"
                         :loading="loadingSaveAs"
                     ></modal-save-filter>
-                    <div class="d-flex justify-content-end pb-4">
+                    <div class="d-flex justify-content-end">
                         <status-filter
                             :active-tab="activeTab"
                             @select-tab="selectTab"
@@ -177,6 +177,13 @@
         </div>
     </div>
 </main>
+<script>
+    window.wait_for = async (prop_name, root = window, poll_length = 500) => {
+        while (!root.hasOwnProperty(prop_name))
+            await new Promise(resolve => setTimeout(resolve, poll_length))
+        return root[prop_name]
+    }
+</script>
 <script src="https://unpkg.com/vue@next"></script>
 <script src="assets/js/utils.js"></script>
 <script src="assets/js/mock/data-report-filter.js"></script>
