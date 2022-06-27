@@ -42,3 +42,30 @@ label {
 .bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
   color: #212529;
 }
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #545b62;
+  border-color: var(--purple-outline);
+}
+
+.table.table-transparent .thead-light th {
+  color: #495057;
+  background-color: transparent !important;
+  border-color: #dee2e6;
+}
+
+.table-transparent.table-bordered td, .table-bordered th {
+  border: none !important;
+}
+
+.table-transparent.table-bordered tbody tr {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.table-transparent.table-bordered {
+  border: none !important;
+}
+
+.table-transparent .thead-light th {
+  border-top: none !important;
+}
