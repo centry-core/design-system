@@ -77,7 +77,7 @@ var ParamsTable = {
     actionDeleteRow(value, row, index) {
         return `
         <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-24 btn-action" onclick="deleteRow('${row.id}')"><i class="fas fa-trash-alt"></i></button>
+            <button type="button" class="btn btn-24 btn-action" onclick="deleteRow('${row.id}', '${index}')"><i class="fas fa-trash-alt"></i></button>
         </div>
     `
     },
@@ -101,11 +101,9 @@ var ParamsTable = {
     },
     parametersDeleteFormatter(value, row, index) {
         return `
-    <!--        <div class="d-flex justify-content-end">-->
-                <button type="button" class="btn btn-24 btn-action" onclick="this.deleteParams(${index}, this)">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-    <!--        </div>-->
+            <button type="button" class="btn btn-24 btn-action" onclick="this.deleteParams(${index}, this)">
+                <i class="fas fa-trash-alt"></i>
+            </button>
             `
     },
     tableSeverityButtonFormatter(value, row, index) {
@@ -183,10 +181,10 @@ function changeCounter(el, e, row, field, oldValue) {
     $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: value })
 }
 
-function deleteRow(id) {
+function deleteRow(rowId, index) {
     $('#tests-list-dynamic').bootstrapTable('remove', {
-        field: '$index',
-        values: [1]
+        field: 'id',
+        values: [+rowId]
     })
 }
 
@@ -194,13 +192,13 @@ $(function() {
     $('#create-location').click(function () {
         var randomId = 100 + ~~(Math.random() * 100)
         $('#tests-list-dynamic').bootstrapTable('insertRow', {
-            index: 1,
+            index: 0,
             row: {
-                "id": 1,
+                "id": randomId,
                 "engine_type": "String",
                 "runners_type": 0,
-                "cpu_type": "intel",
-                "memory_size": "4000"
+                "cpu_type": "",
+                "memory_size": ""
             }
         })
     })
