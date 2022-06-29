@@ -386,9 +386,9 @@
                             </th>
                             <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
                                 Entrypoint</th>
-                            <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                            <th scope="col" data-align="center" data-sortable="true" data-formatter=ParamsTable.lgFormatter
                                 data-field="job_type">Tool</th>
-                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>Actions
+                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=ParamsTable.actionFormatter>Actions
                             </th>
                         </tr>
                     </thead>
@@ -413,7 +413,7 @@
                        data-pagination-next-text="<img src='assets/ico/arrow_right.svg'>"
                        data-page-size=5
                        data-detail-view="true"
-                       data-detail-formatter="detailFormatter"
+                       data-detail-formatter="ParamsTable.detailFormatter"
                        data-data='{
                             "total": 6,
                             "rows": [
@@ -609,9 +609,9 @@
                                 <th data-visible="false" data-field="id">index</th>
                                 <th scope="col" data-field="name">Name</th>
                                 <th scope="col" data-sortable="true" data-field="entrypoint">Entrypoint</th>
-                                <th scope="col" data-field="job_type" data-formatter=dataTypeFormatter>UUID</th>
+                                <th scope="col" data-field="job_type" data-formatter=ParamsTable.dataTypeFormatter>UUID</th>
                                 <th scope="col" data-field="emails" data-formatter=ParamsTable.inputFormatter>Tool</th>
-                                <th scope="col" data-align="right" data-formatter=actionFormatter>Actions</th>
+                                <th scope="col" data-align="right" data-formatter=ParamsTable.actionFormatter>Actions</th>
                             </tr>
                         </thead>
                     <tbody>
@@ -773,9 +773,9 @@
                             </th>
                             <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
                                 Entrypoint</th>
-                            <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                            <th scope="col" data-align="center" data-sortable="true" data-formatter=ParamsTable.lgFormatter
                                 data-field="job_type">Tool</th>
-                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=actionFormatter>
+                            <th scope="col" data-align="right" data-cell-style="cellStyle" data-formatter=ParamsTable.actionFormatter>
                                 Actions
                             </th>
                         </tr>
@@ -937,10 +937,10 @@
                                 </th>
                                 <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
                                     Entrypoint</th>
-                                <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                <th scope="col" data-align="center" data-sortable="true" data-formatter=ParamsTable.lgFormatter
                                     data-field="job_type">Tool</th>
                                 <th scope="col" data-align="right" data-cell-style="cellStyle"
-                                    data-formatter=actionFormatter>Actions</th>
+                                    data-formatter=ParamsTable.actionFormatter>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -1103,10 +1103,10 @@
                                 </th>
                                 <th scope="col" data-sortable="true" data-cell-style="nameStyle" data-field="entrypoint">
                                     Entrypoint</th>
-                                <th scope="col" data-align="center" data-sortable="true" data-formatter=lgFormatter
+                                <th scope="col" data-align="center" data-sortable="true" data-formatter=ParamsTable.lgFormatter
                                     data-field="job_type">Tool</th>
                                 <th scope="col" data-align="right" data-cell-style="cellStyle"
-                                    data-formatter=actionFormatter>Actions</th>
+                                    data-formatter=ParamsTable.actionFormatter>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -1309,6 +1309,7 @@
     </div>
 </main>
 <script>
+    const tags_mapper = ['Lg_5236_30246']
     fetch('assets/js/mock/logs.json')
         .then((response) => {
             return response.json();
@@ -1319,7 +1320,13 @@
                     return logTag.stream.hostname;
                 }
             })
-            const uniqTags = [...new Set(logsTag)]
+
+            const uniqTags = [...new Set(logsTag)].filter(tag => !!(tag))
+            uniqTags.forEach(tag => {
+                if(!tags_mapper.includes(tag))
+                tags_mapper.push(tag)
+            })
+
             const tagColors = [
                 '#f89033',
                 '#e127ff',
@@ -1330,7 +1337,6 @@
                 '#7345fc',
                 '#94E5B0',
             ]
-            console.log(uniqTags)
             data.streams.forEach(stream_item => {
                 stream_item.values.forEach(message_item => {
                     if(stream_item.stream.filename === "/tmp/jmeter_logs.log") {
@@ -1352,7 +1358,7 @@
 </script>
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="assets/vendor/bootstrap-table/bootstrap-table.min.js"></script>
-    <script src="assets/js/table.js"></script>
+    <script src="assets/js/table-formatters.js"></script>
 </body>
 
 </html>
