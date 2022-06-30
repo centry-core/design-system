@@ -262,6 +262,9 @@ const ComplexListFilter = {
         },
         showSelected: {
             default: true,
+        },
+        extraClass: {
+            default: ''
         }
     },
     data() {
@@ -303,6 +306,7 @@ const ComplexListFilter = {
     template: `
         <div id="complexList" class="complex-list complex-list__filter">
             <button class="btn btn-select dropdown-toggle position-relative text-left d-flex align-items-center"
+                :class="extraClass"
                 :style="{minWidth: minWidth}"
                 type="button"   
                 data-toggle="dropdown"
@@ -483,7 +487,7 @@ const VDropdown = {
     },
     template: `
         <div class="d-flex">
-            <div class="complex-list">
+            <div class="complex-list complex-list__filter">
                 <button class="btn btn-select btn-select__sm dropdown-toggle br-left d-flex align-items-center"
                     type="button"   
                     data-toggle="dropdown"

@@ -42,9 +42,11 @@ var ParamsTable = {
     },
     inputFormatter(value, row, index, field) {
         return `
-            <input type="text" class="form-control form-control-alternative" 
-                onchange="this.updateCell(this, ${index}, '${field}')" value="${value}">
-            <div class="invalid-tooltip invalid-tooltip-custom"></div>
+            <div class="custom-input max-w-175">
+                <input type="text" 
+                    onchange="updateCell(this, ${index}, '${field}')" value="${value}">
+                <div class="invalid-tooltip invalid-tooltip-custom"></div>
+            </div>
         `
     },
     deleteParams: (index, source) => {
@@ -72,6 +74,13 @@ var ParamsTable = {
     </div>
     `
     },
+    actionDeleteRow(value, row, index) {
+        return `
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-24 btn-action" onclick="deleteRow('${row.id}', '${index}')"><i class="fas fa-trash-alt"></i></button>
+        </div>
+    `
+    },
     checkboxFormatter (value, row, index, field) {
         const isChecked = value.checked ? 'checked' : ''
         return `
@@ -86,20 +95,15 @@ var ParamsTable = {
         </label>
     `
     },
-    updateCell(el, row, field) {
-        $(el.closest('table')).bootstrapTable('updateCell', {index: row, field: field, value: el.value})
-    },
 
     nameStyle(value, row, index) {
         return {css: {"max-width": "100px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
     },
     parametersDeleteFormatter(value, row, index) {
         return `
-    <!--        <div class="d-flex justify-content-end">-->
-                <button type="button" class="btn btn-24 btn-action" onclick="this.deleteParams(${index}, this)">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-    <!--        </div>-->
+            <button type="button" class="btn btn-24 btn-action" onclick="this.deleteParams(${index}, this)">
+                <i class="fas fa-trash-alt"></i>
+            </button>
             `
     },
     tableSeverityButtonFormatter(value, row, index) {
@@ -141,11 +145,71 @@ var ParamsTable = {
         html.push('<p><b>Headers:</b> ' + row['Headers'] + '</p>')
         html.push('<p><b>Response body:</b></p></div>')
         return html.join('')
+    },
+    stepperFormatter(value, row, index, field) {
+        return `
+            <div id="inputStepper" class="input-stepper">
+                <button onclick="decreaseValue(this, '${value}', '${index}', '${field}')"
+                ><i class="icon__16x16 icon-minus__16"></i></button>
+                <span role="textbox" contenteditable onfocusout="changeCounter(this, event, '${index}', '${field}', '${value}')">${value}</span>
+                <button onclick="increaseValue(this, '${value}', '${index}', '${field}')"
+                ><i class="icon__16x16 icon-plus__16"></i>
+                </button>
+            </div>
+        `
     }
 }
+function increaseValue(el, newValue, row, field) {
+    const counter = +newValue + 1
+    $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: counter })
+}
+
+function decreaseValue(el, newValue, row, field) {
+    const counter = +newValue - 1
+    $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: counter })
+}
+
+function updateCell(el, row, field) {
+    $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: el.value })
+}
+
+function changeCounter(el, e, row, field, oldValue) {
+    const value = +e.target.innerText;
+    if (isNaN(value / 1)) {
+        $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: oldValue })
+    };
+    $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: value })
+}
+
+function deleteRow(rowId, index) {
+    $('#tests-list-dynamic').bootstrapTable('remove', {
+        field: 'id',
+        values: [+rowId]
+    })
+}
+
+$(function() {
+    $('#create-location').click(function () {
+        var randomId = 100 + ~~(Math.random() * 100)
+        $('#tests-list-dynamic').bootstrapTable('insertRow', {
+            index: 0,
+            row: {
+                "id": randomId,
+                "engine_type": "String",
+                "runners_type": 0,
+                "cpu_type": "",
+                "memory_size": ""
+            }
+        })
+    })
+})
 
 $(document).on('vue_init', () => {
     $('.params-table').on('all.bs.table', () => {
         $('.selectpicker').selectpicker('render')
     })
+})
+
+$('.table').on('all.bs.table', () => {
+    $('.selectpicker').selectpicker('render');
 })
