@@ -1,0 +1,45 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div class="card mt-3 w-100">
+        <div class="card-header">
+            <h1>Typography</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h4 class="pt-2">Buttons 40px</h4>
+                    <div class="d-flex">
+                        <div class="card w-100 p-4 card-stripped">
+                            <h4 class="mb-1">H1 (36/44)</h4>
+                            <p class="font-h1 font-bold"><b>BOLD: </b>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H2 (22/32)</h4>
+                            <p class="font-h2 font-bold"><b>BOLD: </b>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H3 (18/28)</h4>
+                            <p class="font-h3 font-bold"><b>BOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h3"><b>REGULAR:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H4 (16/24)</h4>
+                            <p class="font-h4 font-bold"><b>BOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h4"><b>REGULAR:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H5 (14/24)</h4>
+                            <p class="font-h5 font-bold"><b>BOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h5 font-bold font-uppercase"><b>BOLD UPPERCASE:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h5"><b>REGULAR:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h5 font-semibold"><b>SEMIBOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h5 font-semibold font-uppercase"><b>SEMIBOLD UPPERCASE:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <h4 class="mb-1 mt-3">H6 (14/24)</h4>
+                            <p class="font-h6 font-bold"><b>BOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h6 font-bold font-uppercase"><b>BOLD UPPERCASE:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h6"><b>REGULAR:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h6 font-semibold"><b>SEMIBOLD:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                            <p class="font-h6 font-semibold font-uppercase"><b>SEMIBOLD UPPERCASE:</b> Lorem ipsum dolor sit amet, consectetur elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
