@@ -144,19 +144,19 @@ const defaultPreset = {
         {
             title: 'test name',
             field: 'name',
-            formatter: 'checkboxFormatter',
+            formatter: 'ParamsTable.checkboxFormatter',
         }, {
             title: 'scan type',
             field: 'scan_type',
-            formatter: 'checkboxFormatter',
+            formatter: 'ParamsTable.checkboxFormatter',
         }, {
             title: 'scanner',
             field: 'scanner',
-            formatter: 'checkboxFormatter',
+            formatter: 'ParamsTable.checkboxFormatter',
         }, {
             title: 'description',
             field: 'description',
-            formatter: 'checkboxFormatter',
+            formatter: 'ParamsTable.checkboxFormatter',
         }
     ],
     data: [
@@ -203,19 +203,19 @@ const presetsData = [
             {
                 title: 'test name',
                 field: 'name',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'scan type',
                 field: 'scan_type',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'scanner',
                 field: 'scanner',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'description',
                 field: 'description',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }
         ],
         data: [
@@ -260,19 +260,19 @@ const presetsData = [
             {
                 title: 'test name',
                 field: 'name',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'scan type',
                 field: 'scan_type',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'scanner',
                 field: 'scanner',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'description',
                 field: 'description',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }
         ],
         data: [
@@ -317,19 +317,19 @@ const presetsData = [
             {
                 title: 'test name',
                 field: 'name',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'scan type',
                 field: 'scan_type',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'scanner',
                 field: 'scanner',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }, {
                 title: 'description',
                 field: 'description',
-                formatter: 'checkboxFormatter',
+                formatter: 'ParamsTable.checkboxFormatter',
             }
         ],
         data: [
