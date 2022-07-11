@@ -41,7 +41,7 @@
                         <input
                             type="text"
                             placeholder="Search">
-                        <img src="assets/ico/search.svg" class="icon-search position-absolute">
+                        <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
                     </div>
                     <h4 class="mt-4 mb-1">Height 32px: add class 'custom-input__sm'</h4>
                     <div class="custom-input custom-input__sm mb-3">
@@ -102,17 +102,7 @@
             <div class="col-6">
                 <h4 class="pt-2">Input stepper</h4>
                 <div class="card w-100 card-stripped p-3 align-items-start">
-                    <div id="inputStepper" class="input-stepper">
-                        <button
-                            @click="counter--"
-                            :disabled="counter <= 0"
-                        ><i class="fas fa-minus"></i>
-                        </button>
-                        <span role="textbox" contenteditable @input="changeCounter">{{ counter }}</span>
-                        <button
-                            @click="counter++"
-                        ><i class="fas fa-plus"></i></button>
-                    </div>
+                    <input-stepper></input-stepper>
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@ var ParamsTable = {
                 class="selectpicker bootstrap-select__b mr-2 ${row._type_class}" 
                 data-style="btn" 
                 ${is_disabled && 'disabled'}
-                onchange="this.updateCell(this, '${index}', '${field}')"
+                onchange="updateCell(this, '${index}', '${field}')"
                 >
                     ${options}
             </select>
@@ -88,7 +88,7 @@ var ParamsTable = {
             class="mb-0 w-100 d-flex align-items-center custom-checkbox">
             <input
                 value="${value.checked}"
-                onchange="this.updateCell(this, '${index}', '${field}', '${value.title}')" 
+                onchange="updateCbx(this, ${index}, '${field}', '${value.title}', '${value.checked}')" 
                 ${isChecked}
                 type="checkbox">
             <span class="w-100 d-inline-block ml-3">${value.title}</span>
@@ -128,7 +128,7 @@ var ParamsTable = {
             <select 
                 class="selectpicker btn-colored-select mr-2 btn-colored-table" 
                 data-style="btn-colored" 
-                onchange="this.updateCell(this, '${index}', '${fieldName}')"
+                onchange="updateCell(this, '${index}', '${fieldName}')"
             >
                 ${options.join('')}
             </select>
@@ -167,6 +167,11 @@ function increaseValue(el, newValue, row, field) {
 function decreaseValue(el, newValue, row, field) {
     const counter = +newValue - 1
     $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: counter })
+}
+
+function updateCbx(el, row, field, titleValue, checkedValue) {
+    const values = { title: titleValue, checked: checkedValue !== 'true' }
+    $(el.closest('table')).bootstrapTable('updateCell', { index: row, field: field, value: values})
 }
 
 function updateCell(el, row, field) {
