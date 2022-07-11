@@ -4758,5 +4758,10 @@ div-content .row {
   background: #eef3f6;
   border-radius: 4px;
 }
-
+.w-100-imp {
+  width: 100% !important;
+}
+.w-100-imp .bootstrap-select {
+  width: 100% !important;
+}
 /*# sourceMappingURL=main.css.map */
