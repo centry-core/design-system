@@ -229,3 +229,9 @@ h2 a {
 .max-w-175 {
   max-width: 175px;
 }
+.w-100-imp {
+  width: 100% !important;
+}
+.w-100-imp .bootstrap-select {
+  width: 100% !important;
+}
