@@ -1,5 +1,5 @@
 const InputStepper = {
-    props: ['defaultValue', 'instance_name'],
+    props: ['defaultValue', 'instance_name', 'uniq_id'],
     data() {
         return {
             counter: this.defaultValue
@@ -20,7 +20,7 @@ const InputStepper = {
                 :disabled="counter <= 0"
             ><i class="icon__16x16 icon-minus__16"></i>
             </button>
-            <span role="textbox" contenteditable @input="changeCounter">{{ counter }}</span>
+            <span role="textbox" contenteditable :id="uniq_id" @input="changeCounter">{{ counter }}</span>
             <button
                 @click="counter++"
             ><i class="icon__16x16 icon-plus__16"></i></button>
