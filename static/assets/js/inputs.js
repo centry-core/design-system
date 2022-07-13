@@ -1,5 +1,5 @@
 const InputStepper = {
-    props: ['defaultValue'],
+    props: ['defaultValue', 'instance_name'],
     data() {
         return {
             counter: this.defaultValue

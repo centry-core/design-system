@@ -1,5 +1,6 @@
-<main class="d-flex align-items-start">
+{{ template_slot("locations_content", payload={"modal_id": "test_locations"}) | safe }}
 
+<main class="d-flex align-items-start">
 {#    {{ template_slot('design-system_aside') }}#}
     {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
         {% include 'design-system:aside.html' %}
