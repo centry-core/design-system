@@ -322,6 +322,14 @@ h2 a {
   max-width: 175px;
 }
 
+.w-100-imp {
+  width: 100% !important;
+}
+
+.w-100-imp .bootstrap-select {
+  width: 100% !important;
+}
+
 .text-gray-600 {
   color: #757f99;
 }
@@ -3090,7 +3098,7 @@ input[type=range]::-moz-range-thumb {
 .bootstrap-select .dropdown-item {
   display: block;
   width: 100%;
-  padding: 6px 32px 6px 16px;
+  padding: 6px 16px 6px 16px;
   clear: both;
   font-weight: 400;
   font-size: 14px;
@@ -3125,7 +3133,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .dropdown-item span {
-  width: 95%;
+  width: calc(100% - 16px);
   text-overflow: ellipsis;
 }
 
@@ -4758,10 +4766,5 @@ div-content .row {
   background: #eef3f6;
   border-radius: 4px;
 }
-.w-100-imp {
-  width: 100% !important;
-}
-.w-100-imp .bootstrap-select {
-  width: 100% !important;
-}
+
 /*# sourceMappingURL=main.css.map */
