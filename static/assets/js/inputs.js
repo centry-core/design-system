@@ -1,8 +1,14 @@
 const InputStepper = {
     props: ['defaultValue', 'instance_name', 'uniq_id'],
+    emits: ['change'],
     data() {
         return {
             counter: this.defaultValue
+        }
+    },
+    watch: {
+        counter(newValue) {
+            this.$emit('change', newValue)
         }
     },
     methods: {
