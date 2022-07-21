@@ -9,6 +9,9 @@ const InputStepper = {
     watch: {
         counter(newValue) {
             this.$emit('change', newValue)
+        },
+        defaultValue(newValue) {
+            this.counter = newValue
         }
     },
     methods: {
@@ -16,7 +19,6 @@ const InputStepper = {
             const value = +e.target.innerText;
             if (isNaN(value / 1)) return;
             this.counter = value;
-            this.$emit('setValue', value)
         }
     },
     template: `
