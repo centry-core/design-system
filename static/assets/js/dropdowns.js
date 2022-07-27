@@ -699,15 +699,21 @@ let data = [{
         "text": "node-2",
     }
 ]
-let tree = new Tree('.tree', {
-    data,
-    loaded: function () {
-        this.values = ['1', '2'];
-        // console.log(this.selectedNodes)
-        // console.log(this.values)
-    },
-})
 
-$(".dropdown-menu.close-outside").on("click", function (event) {
-    event.stopPropagation();
-});
+$(document).ready(function() {
+    $(".dropdown-menu.close-outside").on("click", function (event) {
+        event.stopPropagation();
+    });
+
+    if($('.tree').length > 0) {
+        let tree = new Tree('.tree', {
+            data,
+            loaded: function () {
+                this.values = ['1', '2'];
+                // console.log(this.selectedNodes)
+                // console.log(this.values)
+            },
+        })
+    }
+
+})
