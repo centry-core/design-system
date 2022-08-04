@@ -330,8 +330,16 @@ h2 a {
   width: 100% !important;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .text-gray-600 {
   color: #757f99;
+}
+
+.text-purple {
+  color: #5933C6 !important;
 }
 
 .text-gray-800 {
@@ -2726,6 +2734,15 @@ td.disabled input {
   background-color: var(--cbx-color);
 }
 
+.legend-span {
+  display: inline-block;
+  margin-right: 5px;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 input[type=radio].custom-radio {
   position: absolute;
   z-index: -1;
@@ -3534,6 +3551,11 @@ option {
   color: #212529;
 }
 
+.dropdown-menu__scroll-area {
+  height: 185px;
+  overflow: scroll;
+}
+
 .treejs-switcher {
   position: absolute;
   left: 46px;
@@ -4088,6 +4110,10 @@ p {
 
 .icon-plus__16 {
   background: url("../../../assets/ico/icon-plus__16x16.svg");
+}
+
+.icon-plus__16-purple {
+  background: url("../../../assets/ico/create_element.svg");
 }
 
 .font-h1 {

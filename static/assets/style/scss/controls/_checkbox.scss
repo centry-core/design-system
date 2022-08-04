@@ -69,3 +69,13 @@
     }
   }
 }
+
+
+.legend-span{
+  display: inline-block;
+  margin-right: 5px;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

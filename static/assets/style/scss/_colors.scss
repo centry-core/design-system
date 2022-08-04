@@ -16,6 +16,10 @@ $purple-basic: #5933C6;
   color: $gray600;
 }
 
+.text-purple {
+  color: $purple-basic !important;
+}
+
 .text-gray-800 {
   color: $gray800;
 }
