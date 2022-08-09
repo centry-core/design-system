@@ -1,0 +1,7 @@
+.d-grid {
+  display: grid;
+}
+
+.grid-column-7 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
