@@ -3624,7 +3624,7 @@ option {
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 1000;
+  z-index: 1300;
   overflow: hidden;
   transition: all 0.5s linear;
 }
