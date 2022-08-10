@@ -26,15 +26,6 @@
   border: 0;
 }
 
-
-.form-control:focus {
-  color: var(--main-text);
-  background-color: #fff;
-  border-color: var(--lines);
-  outline: 0;
-  box-shadow: var(--inputs-shadow);
-}
-
 .form-control::placeholder {
   color: var(--tip);
   opacity: 1;
@@ -109,4 +100,39 @@ input[type="file"] {
     border-color: var(--lines);
     outline: 0;
     box-shadow: none;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  border-color: var(--error);
+  padding-right: 40px;
+  background-image: url(../../../assets/ico/alarm.svg);
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 16px;
+}
+
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
+  box-shadow: 0px 2px 3px rgb(36 36 93 / 10%), 0px -1px 1px rgb(36 36 93 / 5%);
+}
+
+.form-control {
+  text-align: left;
+  width: 100%;
+  padding: 7px 16px;
+  border: solid 1px var(--gray400);
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+
+.form-control:focus {
+  border: solid 1px var(--gray400);
+  box-shadow: 0px 2px 3px rgb(36 36 93 / 10%), 0px -1px 1px rgb(36 36 93 / 5%);
+}
+
+input.form-control {
+  margin-top: 4px;
+  margin-bottom: 12px;
 }
