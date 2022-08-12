@@ -1555,7 +1555,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .card-body .bootstrap-table .fixed-table-container .fixed-table-body {
   height: unset;
-  min-height: 210px;
+  min-height: 247px;
 }
 
 .bootstrap-table .fixed-table-container .table thead th .th-inner {
@@ -1816,13 +1816,13 @@ td.disabled input {
 
 .container-logs {
   height: 450px;
-  max-width: 1200px;
   width: 100%;
   overflow: auto;
   padding: 2rem 0;
 }
 .container-logs .table-logs tr td {
   white-space: nowrap;
+  vertical-align: top;
 }
 .container-logs .colored-log {
   padding: 0 16px;
@@ -3109,6 +3109,35 @@ input[type=range]::-moz-range-thumb {
 .custom-tabs a.active {
   color: var(--purple);
   border-color: var(--purple);
+}
+
+.input-tabs {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+}
+.input-tabs a {
+  display: block;
+  color: #757f99;
+  font-size: 12px;
+  line-height: 24px;
+  padding: 4px 16px 3px 16px;
+  border: none;
+  background: white;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.input-tabs a.active {
+  color: var(--purple);
+  background: var(--tabs-btns-icns);
+}
+
+.custom-input__tabs {
+  position: relative;
+}
+
+.custom-input__tabs .form-control.is-invalid ~ .input-tabs {
+  bottom: 33px;
 }
 
 .dropdown-toggle:disabled {
@@ -4792,7 +4821,6 @@ div-content .row {
 
 .flex-container {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 
