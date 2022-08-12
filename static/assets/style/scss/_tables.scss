@@ -87,7 +87,7 @@
 
 .card-body .bootstrap-table .fixed-table-container .fixed-table-body {
   height: unset;
-  min-height: 210px;
+  min-height: 247px;
 }
 
 .bootstrap-table .fixed-table-container .table thead th .th-inner {
@@ -366,13 +366,13 @@ td.disabled input {
 }
 .container-logs {
   height: 450px;
-  max-width: 1200px;
   width: 100%;
   overflow:auto;
   padding: 2rem 0;
   .table-logs {
     tr td {
       white-space: nowrap;
+      vertical-align: top;
     }
   }
   .colored-log {
