@@ -502,3 +502,25 @@ option {
   height: 185px;
   overflow: scroll;
 }
+
+.selectpicker-titled {
+  display: flex;
+  align-items: center;
+  .item__left {
+    padding: 7px 7px;
+    border-top: 1px solid var(--basic60);
+    border-left: 1px solid var(--basic60);
+    border-bottom: 1px solid var(--basic60);
+    border-radius: 5px 0 0 5px;
+    margin-right: -1px;
+  }
+  .item__right {
+    border: 1px solid var(--basic60) !important;
+    border-radius: 0 5px 5px 0 !important;
+    &:hover {
+      transition: all 0.3s;
+      box-shadow: 0 2px 3px rgb(36 36 93 / 10%), 0 -1px 1px rgb(36 36 93 / 5%) !important;
+      border-radius: 0 5px 5px 0 !important;
+    }
+  }
+}
