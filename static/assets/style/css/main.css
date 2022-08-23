@@ -544,9 +544,9 @@ body {
   margin-top: 20px;
 }
 
-.card-sm-table table,
+.card-sm-table .table,
 .response-codes,
-.card-sm-tag-table table {
+.card-sm-tag-table .table {
   width: 100%;
   font-size: 12px;
   line-height: 20px;
@@ -1538,18 +1538,18 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   padding-right: 20px;
 }
 
-.card-body table td {
+.card-body .table td {
   font-size: 12px;
   font-weight: 300px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
-.card-body table td {
+.card-body .table td {
   line-height: 24px;
 }
 
-.card-body table th {
+.card-body .table th {
   line-height: 18px;
 }
 
@@ -3622,6 +3622,7 @@ option {
   border-bottom: 1px solid var(--basic60);
   border-radius: 5px 0 0 5px;
   margin-right: -1px;
+  color: var(--basic);
 }
 .selectpicker-titled .item__right {
   border: 1px solid var(--basic60) !important;
@@ -4150,6 +4151,11 @@ p {
 }
 
 .icon-arrow-up-bold__16 {
+  background: url("../../../assets/ico/icon-arrow-up-bold__16x16.svg");
+}
+
+.icon-arrow-left-bold__16 {
+  transform: rotate(270deg);
   background: url("../../../assets/ico/icon-arrow-up-bold__16x16.svg");
 }
 
