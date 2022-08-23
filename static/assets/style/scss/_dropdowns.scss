@@ -513,6 +513,7 @@ option {
     border-bottom: 1px solid var(--basic60);
     border-radius: 5px 0 0 5px;
     margin-right: -1px;
+    color: var(--basic);
   }
   .item__right {
     border: 1px solid var(--basic60) !important;
@@ -523,4 +524,13 @@ option {
       border-radius: 0 5px 5px 0 !important;
     }
   }
+  //.selectpicker.dropdown-menu-right~.dropdown-menu {
+  //  overflow: hidden;
+  //  min-height: 120px;
+  //  position: absolute;
+  //  will-change: transform;
+  //  top: 0px;
+  //  left: 0px;
+  //  transform: translate3d(-5px, 32px, 0px);
+  //}
 }
