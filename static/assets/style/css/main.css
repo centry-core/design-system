@@ -1840,6 +1840,10 @@ td.disabled input {
   color: #F32626;
 }
 
+.table-card-result tr td {
+  vertical-align: baseline;
+}
+
 .d-flex .btn-32 {
   margin-right: 10px;
 }
