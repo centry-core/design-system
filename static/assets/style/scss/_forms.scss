@@ -84,9 +84,10 @@ input[type="file"] {
     border-color: var(--lines);
 }
 
-.input-group-append .btn {
-    border-left: 0;
-    border-color: var(--lines);
+.input-group {
+  .input-group-append {
+    margin-top: 4px;
+  }
 }
 
 .form-control-borderless {
