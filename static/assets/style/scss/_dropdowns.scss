@@ -389,6 +389,19 @@
         color: var(--purple);
       }
     }
+    .btn-default {
+      border-color: var(--purple);
+      i {
+        background: url("../../../assets/ico/icon-user__active.svg") no-repeat;
+      }
+    }
+  }
+  &:hover {
+    .btn-default {
+      i {
+        background: url("../../../assets/ico/icon-user__hover.svg") no-repeat;
+      }
+    }
   }
   .dropdown-item {
     cursor: pointer;
