@@ -1,45 +1,3 @@
-const SimpleList = {
-    data() {
-        return {
-            selectedItems1: [],
-            itemsList1: [
-                { id: 1, title: 'Step 1' },
-                { id: 2, title: 'Step 2' }
-            ]
-        }
-    },
-    watch: {
-        selectedItems1: (val) => {
-            console.log(`SELECTED ITEMS: ${val}`)
-        }
-    },
-    template:`
-        <div id="simpleList" class="dropdown_simple-list">
-            <button class="btn btn-select dropdown-toggle" type="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="complex-list_filled" v-if="selectedItems1.length > 0">{{ selectedItems1.length }} selected</span>
-            <span v-else class="complex-list_empty">Select Step</span>
-            </button>
-            <ul class="dropdown-menu close-outside"
-                v-if="itemsList1.length > 0">
-                <li class="dropdown-menu_item d-flex align-items-center px-3" v-for="item in itemsList1" :key="item.id">
-                    <label
-                        class="mb-0 w-100 d-flex align-items-center custom-checkbox">
-                        <input
-                            :value="item.title"
-                            v-model="selectedItems1"
-                            type="checkbox">
-                        <span class="w-100 d-inline-block ml-3">{{ item.title }}</span>
-                    </label>
-                </li>
-            </ul>
-            <div class="dropdown-menu py-0" v-else>
-                <span class="px-3 py-2 d-inline-block">There are no any steps.</span>
-            </div>
-        </div>
-    `
-}
-
 const TreeList = {
     props: {
       allSelected: {
@@ -497,8 +455,7 @@ const VDropdown = {
                         <span class="complex-list_filled">{{ selectedItem.title }}</span>
                     </p>
                 </button>
-                <div class="dropdown-menu"
-                    :class="{'close-outside': closeOntside}">
+                <div class="dropdown-menu">
                     <ul class="my-0">
                         <li
                             class="dropdown-item dropdown-menu_item d-flex align-items-center">
@@ -658,18 +615,12 @@ const RemovableFilter = {
         </div>`
 };
 
-const dropdownsApp = Vue.createApp({
-    components: {
-        'simple-list': SimpleList,
-        'complex-list': ComplexList,
-        'complex-list-filter': ComplexListFilter,
-        'removable-filter': RemovableFilter,
-        'v-dropdown': VDropdown,
-        'multiselect-filter': MultiselectFilter,
-    }
-});
 
-dropdownsApp.mount('#dropdowns');
+register_component('complex-list', ComplexList)
+register_component('complex-list-filter', ComplexListFilter)
+register_component('removable-filter', RemovableFilter)
+register_component('v-dropdown', VDropdown)
+register_component('multiselect-filter', MultiselectFilter)
 
 let data = [{
     "id": "1",
