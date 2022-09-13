@@ -143,8 +143,8 @@
                     <div class="d-flex justify-content-start m-4">
                         <div class="mr-2">
                             <complex-list-filter
-                                :min-width="'350px'"
-                                :fix-width="true"
+                                    :min-width="'350px'"
+                                    :fix-width="true"
                             >
                                 <template v-slot:label>
                                     <span class="dropdown-toggle_label font-weight-500">
@@ -240,7 +240,7 @@
                             </button>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuAction">
-                                <li class="px-3 py-1 font-weight-500">Create  Test</li>
+                                <li class="px-3 py-1 font-weight-500">Create Test</li>
                                 <li class="dropdown-item">
                                     <span class="pl-2">Backend</span></li>
                                 <li class="dropdown-item">
@@ -276,7 +276,7 @@
                             </button>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuActionSm">
-                                <li class="px-3 py-1 font-weight-bold">Create  Test</li>
+                                <li class="px-3 py-1 font-weight-bold">Create Test</li>
                                 <li class="dropdown-item">
                                     <span class="pl-2">Backend</span></li>
                                 <li class="dropdown-item">
@@ -317,12 +317,24 @@
                 </div>
             </div>
             <div class="col-4">
-                <h4 class="pt-2">Simple List</h4>
+                <h4 class="pt-2">MultiselectDropdown</h4>
                 <div class="card w-100 mr-2 card-stripped">
                     <div class="d-flex m-4">
-                        <div class="d-flex">
-                            <simple-list class="mr-2"></simple-list>
-                            <simple-list></simple-list>
+                        <div class="row-cols-1 w-100">
+                            Selected: [[ registered_components.multiselect_dropdown_1?.selected_items ]]
+                            <div class="d-flex justify-content-between">
+                                <multiselect-dropdown
+                                        @register="register"
+                                        placeholder="Select Step"
+                                        :list_items='Array.from({{ ["Step 1", "Step 2"] | tojson }})'
+                                        instance_name="multiselect_dropdown_1"
+                                ></multiselect-dropdown>
+                                <multiselect-dropdown
+                                        @register="register"
+                                        placeholder="Empty selector"
+                                ></multiselect-dropdown>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -388,7 +400,8 @@
                             </ul>
                         </div>
                         <div class="dropdown_multilevel">
-                            <button class="btn btn-secondary btn-select btn-select__sm btn-select__purple dropdown-toggle font-weight-400" type="button"
+                            <button class="btn btn-secondary btn-select btn-select__sm btn-select__purple dropdown-toggle font-weight-400"
+                                    type="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Actions
                             </button>
