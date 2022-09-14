@@ -4,6 +4,10 @@ const MultiselectDropdown = {
             type: [Array, String],
             default: []
         },
+        pre_selected_indexes: {
+            type: [Array, String],
+            default: []
+        },
         placeholder: {
             type: String,
             default: undefined
@@ -13,6 +17,7 @@ const MultiselectDropdown = {
             default: ','
         }
     },
+    emits: ['change'],
     delimiters: ['[[', ']]'],
     data() {
         return {
@@ -20,16 +25,26 @@ const MultiselectDropdown = {
             selected_indexes: [],
         }
     },
-    computed: {
-        selected_items() {
-            return this.selected_indexes.map(i => this.li[i])
-        }
-    },
     mounted() {
         if (typeof this.list_items === 'string') {
             this.li = this.list_items.split(this.delimiter)
         } else {
             this.li = this.list_items
+        }
+        if (typeof this.pre_selected_indexes === 'string') {
+            this.selected_indexes = this.pre_selected_indexes.split(this.delimiter)
+        } else {
+            this.selected_indexes = this.pre_selected_indexes
+        }
+    },
+    computed: {
+        selected_items() {
+            return this.selected_indexes.map(i => this.li[i])
+        }
+    },
+    watch: {
+        selected_indexes(newValue) {
+            this.$nextTick(() => this.$emit('change', this.selected_items))
         }
     },
     template:`
