@@ -4926,4 +4926,8 @@ div-content .row {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
+.grid-column-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
 /*# sourceMappingURL=main.css.map */
