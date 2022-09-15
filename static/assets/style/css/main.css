@@ -4922,8 +4922,20 @@ div-content .row {
   display: grid;
 }
 
+.grid-column-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
 .grid-column-7 {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.grid-column-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-column-9 {
+  grid-template-columns: repeat(9, 1fr);
 }
 
 /*# sourceMappingURL=main.css.map */
