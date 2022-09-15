@@ -15,7 +15,11 @@ const MultiselectDropdown = {
         delimiter: {
             type: String,
             default: ','
-        }
+        },
+        container_class: {
+            type: String,
+            default: ','
+        },
     },
     emits: ['change'],
     delimiters: ['[[', ']]'],
@@ -48,7 +52,9 @@ const MultiselectDropdown = {
         }
     },
     template:`
-        <div class="dropdown_simple-list">
+        <div class="dropdown_simple-list" 
+            :class="container_class"
+        >
             <button class="btn btn-select dropdown-toggle" type="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
             >
