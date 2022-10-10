@@ -18,7 +18,19 @@ const MultiselectDropdown = {
         },
         container_class: {
             type: String,
-            default: ','
+            default: ''
+        },
+        button_class: {
+            type: String,
+            default: 'btn-select dropdown-toggle'
+        },
+        variant: {
+            type: String,
+            default: 'with_selected',
+            validator(value) {
+                // The value must match one of these strings
+                return ['with_selected', 'slot'].includes(value)
+            }
         },
     },
     emits: ['change'],
@@ -51,17 +63,23 @@ const MultiselectDropdown = {
             this.$nextTick(() => this.$emit('change', this.selected_items))
         }
     },
-    template:`
+    template: `
         <div class="dropdown_simple-list" 
             :class="container_class"
         >
-            <button class="btn btn-select dropdown-toggle" type="button"
+            <button class="btn" type="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  :class="button_class"
             >
-                <span class="complex-list_filled" v-if="selected_indexes.length > 0">
-                    [[ selected_indexes.length ]] selected
-                </span>
-                <span v-else class="complex-list_empty">[[ placeholder ]]</span>
+                <div v-if="variant === 'slot'">
+                    <slot name="dropdown_button"></slot>
+                </div>
+                <div v-else>
+                    <span class="complex-list_filled" v-if="selected_indexes.length > 0">
+                        [[ selected_indexes.length ]] selected
+                    </span>
+                    <span v-else class="complex-list_empty">[[ placeholder ]]</span>
+                </div>
             </button>
             <ul class="dropdown-menu close-outside"
                 v-if="li.length > 0"
