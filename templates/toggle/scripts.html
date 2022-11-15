@@ -1,0 +1,41 @@
+<script>
+    var print_props = (pre_id, V=window.vueVm) => $(`pre#${pre_id}`).text(
+        JSON.stringify(V.registered_components[pre_id]?.$props, null, '  ')
+    )
+    $(document).on('vue_init', () => {
+        $(() => {
+            const ids = ['text_toggle_1', 'text_toggle_2', 'text_toggle_3']
+            ids.forEach(i => print_props(i))
+        })
+    })
+    const DummyParentComponent = {
+        props: ['input_instance_name'],
+        delimiters: ['[[', ']]'],
+        mounted() {
+            print_props(this.input_instance_name, this.$root)
+        },
+        data() {
+            return {
+                some_labels: ['l1', 'l2', 'l3', 'l4'],
+                selected_label: null
+            }
+        },
+        template: `
+            <div class="d-flex flex-row">
+                <TextToggle
+                    @register="$root.register"
+                    :instance_name="input_instance_name"
+                    :labels="some_labels"
+                    v-model="selected_label"
+                ></TextToggle>
+            </div>
+            This is parent component data:
+            <pre>[[ this.$data ]]</pre>
+            This is child component data:
+            <pre>[[ $root.registered_components[input_instance_name]?.$data ]]</pre>
+            This is child component props:
+            <pre :id="input_instance_name"></pre>
+        `
+    }
+    register_component('DummyParentComponent', DummyParentComponent)
+</script>
