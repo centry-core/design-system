@@ -1859,6 +1859,18 @@ td.disabled input {
   vertical-align: baseline;
 }
 
+tr.highlight {
+  border-left: 2px solid var(--basic);
+  border-top: 1px solid var(--gray200);
+  border-bottom: 1px solid var(--gray200);
+  cursor: pointer;
+  background: var(--gray100);
+  color: var(--basic);
+}
+tr.highlight td:last-child div {
+  display: flex !important;
+}
+
 .d-flex .btn-32 {
   margin-right: 10px;
 }
