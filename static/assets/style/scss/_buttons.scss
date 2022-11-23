@@ -307,7 +307,7 @@
   }
 }
 .btn-secondary.hover,
-.btn-secondary:hover {
+.btn-secondary:not(:disabled):hover {
   color: var(--basic-hover);
   background-color: var(--white) !important;
   border: 1px solid var(--basic60);

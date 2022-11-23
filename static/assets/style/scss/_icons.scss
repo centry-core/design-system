@@ -18,8 +18,27 @@
   background-color: $gray600;
 }
 
+.btn:hover .icon__16x16, .btn:hover .icon__18x18,
+li:hover .icon__16x16, li:hover .icon__18x18 {
+  background-color: var(--basic);
+}
+
+.btn-icon__purple .icon__16x16, .btn-icon__purple .icon__18x18 {
+  background-color: var(--basic);
+}
+
+.btn-icon__purple:disabled .icon__16x16, .btn-icon__purple:disabled .icon__18x18 {
+  background-color: $gray400;
+}
+
 .icon-filter {
   -webkit-mask-image: url("../../../assets/ico/icon-filter__18x18.svg");
+}
+
+.icon-sort {
+  -webkit-mask-image: url("../../../assets/ico/icon-sort.svg");
+  -webkit-mask-repeat: no-repeat;
+  height: 9px;
 }
 
 .icon-refresh {

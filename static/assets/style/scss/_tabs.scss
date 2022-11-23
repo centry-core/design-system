@@ -16,22 +16,32 @@
 
 .input-tabs {
   position: absolute;
-  bottom: 3px;
-  left: 3px;
+  bottom: 2px;
+  left: 2px;
   a {
+    border: solid 1px var(--gray300);
     display: block;
     color: $gray600;
     font-size: 12px;
     line-height: 24px;
     padding: 4px 16px 3px 16px;
-    border: none;
+    //border: none;
     background: white;
-    border-radius: 2px;
     text-decoration: none;
+  }
+  .nav-item:first-child a {
+    margin-right: -1px;
+  }
+  .nav-item:first-child a {
+    border-radius: 4px 0 0 4px;
+  }
+  .nav-item:last-child a {
+    border-radius: 0 4px 4px 0;
   }
   a.active {
     color: var(--purple);
     background: var(--tabs-btns-icns);
+    border: solid 1px var(--purple-outline);
   }
 }
 
