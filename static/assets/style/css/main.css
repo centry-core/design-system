@@ -335,7 +335,7 @@ h2 a {
 }
 
 .text-gray-600 {
-  color: #757f99;
+  color: #757f99 !important;
 }
 
 .text-purple {
@@ -1874,8 +1874,40 @@ tr.highlight {
   background: var(--gray100);
   color: var(--basic);
 }
+tr.highlight td:first-child {
+  padding-left: 18px !important;
+}
 tr.highlight td:last-child div {
   display: flex !important;
+}
+
+.bootstrap-table .bucket-name {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+.table-fix-thead table {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+.table-fix-thead thead {
+  flex: 0 0 auto;
+}
+.table-fix-thead tbody {
+  flex: 1 1 auto;
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.table-fix-thead tr {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+.table-fix-thead tr:not(.highlight) {
+  border-bottom: none !important;
 }
 
 .d-flex .btn-32 {

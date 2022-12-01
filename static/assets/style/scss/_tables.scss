@@ -410,9 +410,48 @@ tr.highlight {
   cursor: pointer;
   background: var(--gray100);
   color: var(--basic);
+  td:first-child {
+    padding-left: 18px !important;
+  }
   td:last-child {
     div {
       display: flex !important;
     }
+  }
+}
+
+.bootstrap-table {
+  .bucket-name {
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+  }
+}
+
+.table-fix-thead {
+  table {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
+
+  thead {
+    flex: 0 0 auto;
+  }
+
+  tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+  tr:not(.highlight) {
+    border-bottom: none !important;
   }
 }
