@@ -177,7 +177,28 @@
 {
   cursor: pointer !important;
 }
+/* dropdown info */
+.dropdown_info {
+  .dropdown-toggle {
+    color: var(--gray800);
+    border: none;
+    box-shadow: none;
+    &:hover {
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+.list-circle {
+  display: inline-block;
+  width: 8px !important;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bg-color);
+  color: transparent;
+}
 /* dropdown multilevel */
+
 .dropdown_multilevel .dropdown-menu > li:hover > .submenu{
   display: block;
 }
