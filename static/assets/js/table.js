@@ -69,7 +69,9 @@ function nameStyle(value, row, index) {
     return {css: {"max-width": "100px", "overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
 }
 
-
+function styleNoWrapText(value, row, index) {
+    return {css: {"overflow": "hidden", "text-overflow": "ellipsis", "white-space": "nowrap"}}
+}
 
 function detailFormatter(index, row) {
     var html = []

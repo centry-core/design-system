@@ -334,6 +334,10 @@ h2 a {
   cursor: pointer;
 }
 
+.text-gray-700 {
+  color: #525F7F !important;
+}
+
 .text-gray-600 {
   color: #757f99 !important;
 }
@@ -1882,6 +1886,7 @@ tr.highlight td:last-child div {
 }
 
 .bootstrap-table .bucket-name {
+  width: 124px;
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
@@ -3392,6 +3397,26 @@ input[type=range]::-moz-range-thumb {
 .dropdown_tree-list input[type=checkbox],
 .dropdown_tree-list label {
   cursor: pointer !important;
+}
+
+/* dropdown info */
+.dropdown_info .dropdown-toggle {
+  color: var(--gray800);
+  border: none;
+  box-shadow: none;
+}
+.dropdown_info .dropdown-toggle:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.list-circle {
+  display: inline-block;
+  width: 8px !important;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bg-color);
+  color: transparent;
 }
 
 /* dropdown multilevel */
