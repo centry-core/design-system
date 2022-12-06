@@ -229,6 +229,12 @@ li:hover .icon__16x16, li:hover .icon__18x18 {
 }
 
 .icon-user__18 {
-  -webkit-mask-image: url("../../../assets/ico/icon-user.svg") no-repeat;
+  -webkit-mask-image: url("../../../assets/ico/icon-user.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-search__18 {
+  -webkit-mask-image: url("../../../assets/ico/icon-search__18x18.svg");
+  -webkit-mask-repeat: no-repeat;
 }
 
