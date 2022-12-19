@@ -1533,6 +1533,11 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   background: url("../../../assets/ico/sorting_arrows__up.svg") no-repeat;
 }
 
+.thead-light.bg-transparent th {
+  background-color: white !important;
+  border-top: none !important;
+}
+
 .params-table td {
   padding-top: 0px;
   padding-bottom: 0px;
