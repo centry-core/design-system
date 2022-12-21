@@ -22,7 +22,7 @@ const MultiselectDropdown = {
         },
         button_class: {
             type: String,
-            default: 'btn-select dropdown-toggle'
+            default: 'btn btn-select dropdown-toggle d-inline-flex align-items-center'
         },
         variant: {
             type: String,
@@ -32,35 +32,71 @@ const MultiselectDropdown = {
                 return ['with_selected', 'slot'].includes(value)
             }
         },
+        return_key: {
+            type: [String, null],
+            default: 'name',
+        },
     },
-    emits: ['change'],
+    emits: ['change', 'update:modelValue'],
     delimiters: ['[[', ']]'],
     data() {
         return {
-            li: [],
             selected_indexes: [],
         }
     },
     mounted() {
-        if (typeof this.list_items === 'string') {
-            this.li = this.list_items.split(this.delimiter)
-        } else {
-            this.li = this.list_items
-        }
-        if (typeof this.pre_selected_indexes === 'string') {
-            this.selected_indexes = this.pre_selected_indexes.split(this.delimiter)
-        } else {
-            this.selected_indexes = this.pre_selected_indexes
+        if (this.list_items.length > 0) {
+            if (typeof this.pre_selected_indexes === 'string') {
+                this.selected_indexes = this.pre_selected_indexes.split(this.delimiter)
+            } else {
+                this.selected_indexes = this.pre_selected_indexes
+            }
         }
     },
     computed: {
-        selected_items() {
-            return this.selected_indexes.map(i => this.li[i])
-        }
+        li() {
+            if (this.list_items.length > 0) {
+                let listed_items
+                if (typeof this.list_items === 'string') {
+                    listed_items = this.list_items.split(this.delimiter)
+                } else {
+                    listed_items = this.list_items
+                }
+                return listed_items.map((i, index) => {
+                    if (typeof i === 'object') {
+                        return {
+                            ...i,
+                            name: i.name,
+                            idx: index,
+                        }
+                    }
+                    return {
+                        name: i,
+                        idx: index
+                    }
+                })
+            }
+            return []
+        },
     },
     watch: {
         selected_indexes(newValue) {
-            this.$nextTick(() => this.$emit('change', this.selected_items))
+            this.$nextTick(() => {
+                let return_value
+                switch (this.return_key) {
+                    case 'idx':
+                        return_value = newValue
+                        break
+                    case null:
+                        return_value = newValue.map(i => this.li[i])
+                        break
+                    default:
+                        return_value = newValue.map(i => this.li[i][this.return_key])
+                        break
+                }
+                this.$emit('change', return_value)
+                this.$emit('update:modelValue', return_value)
+            })
         }
     },
     template: `
@@ -81,20 +117,22 @@ const MultiselectDropdown = {
                     <span v-else class="complex-list_empty">[[ placeholder ]]</span>
                 </div>
             </button>
-            <ul class="dropdown-menu close-outside"
+            <ul class="dropdown-menu"
                 v-if="li.length > 0"
+                @click="$event.stopPropagation()"
             >
-                <li class="dropdown-menu_item d-flex align-items-center px-3" 
-                    v-for="(item, index) in li" 
-                    :key="index"
+                <li class="dropdown-menu_item p-0" 
+                    v-for="i in li" 
+                    :key="i.idx"
                 >
-                    <label class="mb-0 w-100 d-flex align-items-center custom-checkbox">
+                    <label class="d-flex align-items-center custom-checkbox px-3 py-2">
                         <input
-                            :value="index"
+                            :value="i.idx"
                             v-model="selected_indexes"
                             type="checkbox"
                         >
-                        <span class="w-100 d-inline-block ml-3">[[ item ]]</span>
+                        <span v-if="i.html !== undefined" v-html="i.html"></span>
+                        <span v-else class="w-100 d-inline-block ml-3">[[ i.name ]]</span>
                     </label>
                 </li>
             </ul>
@@ -105,4 +143,5 @@ const MultiselectDropdown = {
     `
 }
 
-register_component('MultiselectDropdown', MultiselectDropdown)
+register_component('MultiselectDropdown', MultiselectDropdown
+)

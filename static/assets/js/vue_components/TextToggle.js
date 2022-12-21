@@ -18,9 +18,9 @@ const TextToggle = {
             type: Array,
             default: []
         },
-        return_ids: {
-            type: Boolean,
-            default: false
+        return_key: {
+            type: [String, null],
+            default: 'name',
         },
         radio_group_name: {
             type: String,
@@ -29,31 +29,24 @@ const TextToggle = {
     },
     data() {
         return {
-            selected_value: null,
-            return_value: null
+            selected_idx: null,
+            return_value: undefined,
         }
     },
     mounted() {
         if (this.modelValue !== undefined) {
-            this.selected_value = this.find_by_value(this.modelValue)
+            this.selected_idx = this.find_by_value(this.modelValue)?.idx
         } else if (this.pre_selected_index !== null && this.pre_selected_index <= this.labels.length - 1) {
-            this.selected_value = this.formatted_labels[this.pre_selected_index]
-            // this.selected_value = this.find_by_value(this.pre_selected_index)
-            // this.selected_value = this.return_ids ? this.formatted_labels[this.pre_selected_index].idx
-            //     : this.formatted_labels[this.pre_selected_index].name
-            // this.selected_value = this.formatted_labels[this.pre_selected_index]
+            this.selected_idx = this.pre_selected_index
         }
     },
     computed: {
         formatted_labels() {
             return this.labels.map((i, index) => {
                 if (typeof i === 'object') {
-                    const {name, html} = i
-                    const result = {idx: index, name}
-                    if (html !== undefined) {
-                        result.html = html
-                    }
-                    return result
+                    // must have name and possible html
+                    i.name === undefined && console.warn('TextToggle object label must include "name" key')
+                    return {...i, idx: index}
                 }
                 return {name: i, idx: index}
             })
@@ -66,21 +59,23 @@ const TextToggle = {
             } else {
                 return get_hash(this.formatted_labels.reduce((a ,b) => `${a.name}${b.name}`))
             }
-        }
+        },
     },
     watch: {
+        selected_idx(newValue) {
+            this.return_value = this.get_return_value(newValue, this.return_key)
+        },
+        return_key(newValue) {
+            this.return_value = this.get_return_value(this.selected_idx, newValue)
+        },
         return_value(newValue) {
             this.$emit('update:modelValue', newValue)
         },
-        selected_value(newValue) {
-            this.return_value = this.get_value(newValue)
-        },
         modelValue(newValue) {
-            this.selected_value = this.find_by_value(newValue)
+            if (this.return_value !== newValue) {
+                this.selected_idx = this.find_by_value(newValue)?.idx
+            }
         },
-        return_ids(newValue) {
-            this.return_value = this.get_value(this.selected_value)
-        }
     },
     methods: {
         get_disabled(item) {
@@ -90,33 +85,36 @@ const TextToggle = {
             }
             return attrs
         },
-        get_value(item) {
-            if (item !== null) return this.return_ids ? item.idx : item.name
-            return item
-        },
         find_by_value(value) {
             return this.formatted_labels.find(i => {
-                if (this.return_ids) {
-                    return i.idx == value
-                } else {
-                    return i.name === value
+                if (this.return_key === null) {
+                    return i.idx === value.idx
                 }
+                return i[this.return_key] === value
             })
+        },
+        get_return_value(index, key) {
+            if (index === null) {
+                return undefined
+            } else {
+                const selected_item = this.formatted_labels[index]
+                return key === null ? selected_item : selected_item[key]
+            }
         }
     },
     template: `
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-toggle" 
                 v-for="i in formatted_labels" :key="i.idx" 
-                :class="{disabled: disabled_indexes.includes(i.idx)}"
+                :class="{disabled: disabled_indexes.includes(i.idx), active: i.idx === selected_idx}"
             >
                 <input type="radio" 
                     :name="radiogroup_name" 
-                    v-model="selected_value" 
-                    :value="i"
+                    v-model="selected_idx" 
+                    :value="i.idx"
                     v-bind="get_disabled(i)"
                 >
-                <span v-if="i.html" v-html="i.html"></span>
+                <span v-if="i.html !== undefined" v-html="i.html"></span>
                 <span v-else>[[ i.name ]]</span>
             </label>
         </div>
