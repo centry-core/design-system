@@ -2,7 +2,7 @@ const popup = Notification({
     duration: 3000,
 });
 
-const showNotify = (type, title = '') => {
+window.showNotify = (type, title = '') => {
     switch (type) {
         case 'ERROR':
             popup.error({
@@ -26,7 +26,7 @@ const showNotify = (type, title = '') => {
             break;
         default:
             popup.basic({
-                title: 'Message basic',
+                // title: 'Message basic',
                 iconUrl: "/design-system/static/assets/ico/success_purple_icon.svg"
             });
             break;
