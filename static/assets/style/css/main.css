@@ -88,6 +88,18 @@ td.align-top.bs-checkbox {
   padding: 8px;
 }
 
+.modal-backdrop.show {
+  opacity: 0.2;
+}
+
+.modal-backdrop {
+  background-color: var(--gray600);
+}
+
+.modal-dialog {
+  box-shadow: 0px 2px 20px rgba(13, 24, 80, 0.15), 0px 0px 10px rgba(22, 25, 106, 0.04);
+}
+
 /* common */
 /* latin */
 @font-face {
@@ -809,7 +821,7 @@ input.form-control {
 }
 
 .modal-dialog-aside .modal-content {
-  padding: 50px;
+  padding: 40px 50px 50px 50px;
 }
 
 .modal .modal-dialog-aside .modal-body {
@@ -825,7 +837,7 @@ input.form-control {
   padding: 0px;
   height: 32px;
   max-height: 32px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .modal .modal-dialog-aside .modal-content {
