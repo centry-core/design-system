@@ -69,3 +69,12 @@ label {
 .table-transparent .thead-light th {
   border-top: none !important;
 }
+
+td.align-top.bs-checkbox {
+  vertical-align: top!important;
+  padding-top: 12px !important;
+}
+
+.table.table-transparent td, .table.table-transparent th {
+  padding: 8px;
+}

@@ -233,6 +233,9 @@
 .dropdown_multilevel .dropdown-menu .dropdown-item {
   cursor: pointer;
 }
+.dropdown_multilevel .dropdown-menu{
+  min-width: 200px;
+}
 .dropdown_tree-list i.fa-sort-down {
   left: 46px;
 }

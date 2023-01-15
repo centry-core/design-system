@@ -14,8 +14,13 @@
 }
 .table-hover tbody tr:hover {
   background-color: var(--gray100);
-  a {
+  a:not(.dropdown-item) {
     color: #2F7DF1;
+  }
+}
+.table tbody tr {
+  a.dropdown-item span{
+    color: var(--main-text);
   }
 }
 .thead-light th {
@@ -91,11 +96,14 @@
   line-height: 18px;
 }
 
-.card-body .bootstrap-table .fixed-table-container .fixed-table-body {
+//.card-body .bootstrap-table .fixed-table-container .fixed-table-body {
+//  height: unset;
+//  min-height: 247px;
+//}
+.card-body.fixed-h-table .bootstrap-table .fixed-table-container .fixed-table-body{
   height: unset;
   min-height: 247px;
 }
-
 .bootstrap-table .fixed-table-container .table thead th .th-inner {
   padding: 11px;
 }
@@ -103,7 +111,6 @@
 .card-body .pagination-info {
   font-size: 12px;
   font-weight: 300;
-  padding-left: 20px;
 }
 
 .card-table .card-body .pagination-info {
@@ -165,14 +172,14 @@ td.disabled input {
 
 .card-table .bootstrap-table .fixed-table-pagination > .pagination-detail,
 .card-table .bootstrap-table .fixed-table-pagination > .pagination {
-  margin-top: 16px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .card-table-sm .bootstrap-table .fixed-table-pagination > .pagination-detail,
 .card-table-sm .bootstrap-table .fixed-table-pagination > .pagination {
-  margin-top: 16px;
-  margin-bottom: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .table-list input[type="radio"] {
