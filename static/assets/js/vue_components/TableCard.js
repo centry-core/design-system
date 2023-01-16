@@ -1,6 +1,6 @@
 const TableCard = {
     delimiters: ['[[', ']]'],
-    props: ['instance_name', 'header', 'borders', 'container_classes', 'table_attributes'],
+    props: ['instance_name', 'header', 'borders', 'container_classes', 'table_attributes', 'adaptiveHeight'],
     mounted() {
         console.debug('TableCard mounted', {refs: this.$refs, props: this.$props})
     },
@@ -41,24 +41,23 @@ const TableCard = {
                 </div>
             </div>
         </div>
-
-        <div class="card-body card-table">
+        <div class="card-body card-table" 
+            :class="!!adaptiveHeight ? '' : 'fixed-h-table'">
             <table class="table"
-                    :class="!!borders ? 'table-border' : 'table-borderless'"
-                    
-                   data-toggle="table"
-                   data-unique-id="id"
-                   data-virtual-scroll="true"
-                   data-pagination="true"
-                   data-side-pagination="server"
-                   data-pagination-parts='["pageInfoShort", "pageList"]'
-                   
-                    data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
-                    data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
-                   
-                   ref="table"
-
-                   v-bind="table_attributes"
+                :class="!!borders ? 'table-border' : 'table-borderless'"
+                data-toggle="table"
+                data-unique-id="id"
+                data-virtual-scroll="true"
+                data-pagination="true"
+                data-side-pagination="server"
+                data-pagination-parts='["pageInfoShort", "pageList"]'
+                
+                data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
+                data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
+                
+                ref="table"
+                
+                v-bind="table_attributes"
             >
                 <thead class="thead-light">
                     <tr>

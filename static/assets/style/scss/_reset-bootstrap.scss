@@ -69,3 +69,24 @@ label {
 .table-transparent .thead-light th {
   border-top: none !important;
 }
+
+td.align-top.bs-checkbox {
+  vertical-align: top!important;
+  padding-top: 12px !important;
+}
+
+.table.table-transparent td, .table.table-transparent th {
+  padding: 8px;
+}
+
+.modal-backdrop.show {
+  opacity: .2;
+}
+
+.modal-backdrop {
+  background-color: var(--gray600);
+}
+
+.modal-dialog {
+  box-shadow: 0px 2px 20px rgba(13, 24, 80, 0.15), 0px 0px 10px rgba(22, 25, 106, 0.04);
+}
