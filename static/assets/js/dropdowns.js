@@ -223,6 +223,12 @@ const ComplexListFilter = {
         },
         extraClass: {
             default: ''
+        },
+        hasSearch: {
+            default: true,
+        },
+        hasConfirmBtn: {
+            default: true,
         }
     },
     data() {
@@ -280,7 +286,7 @@ const ComplexListFilter = {
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div v-if="itemsList.length > 4" class="px-3 pb-2 search-group">
+                <div v-if="itemsList.length > 4 && hasSearch" class="px-3 pb-2 search-group">
                     <div class="custom-input custom-input_search__sm position-relative">
                         <input
                             type="text"
@@ -315,7 +321,7 @@ const ComplexListFilter = {
                         </label>
                     </li>
                 </ul>
-                <div class="p-3">
+                <div class="p-3" v-if="hasConfirmBtn">
                     <button class="btn btn-basic mr-2" type="submit">Primary</button>
                     <button type="button" class="btn btn-secondary">Secondary</button>
                 </div>
@@ -381,7 +387,7 @@ const MultiselectFilter = {
                             type="text"
                             placeholder="Search"
                             v-model="inputSearch">
-                        <img src="assets/ico/search.svg" class="icon-search position-absolute">
+                        <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
                     </div>
                 </div>
                 <ul class="my-0">

@@ -1899,10 +1899,16 @@ tr.highlight td:last-child div {
 }
 
 .bootstrap-table .bucket-name {
-  width: 124px;
+  width: 159px;
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
+}
+.bootstrap-table .bucket-size {
+  width: 60px;
+}
+.bootstrap-table .fixed-table-container .table thead th.bucket-size .sortable {
+  padding-right: 0 !important;
 }
 
 .table-fix-thead table {
@@ -3026,9 +3032,9 @@ input[type=range]::-moz-range-thumb {
   line-height: 24px;
 }
 .custom-input .custom-input_desc {
-  font-size: 12px;
-  line-height: 16px;
-  color: var(--gray600);
+  font-size: 14px;
+  line-height: 24px;
+  color: #32325d;
 }
 .custom-input input {
   text-align: left;

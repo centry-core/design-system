@@ -432,10 +432,16 @@ tr.highlight {
 
 .bootstrap-table {
   .bucket-name {
-    width: 124px;
+    width: 159px;
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;
+  }
+  .bucket-size {
+    width: 60px;
+  }
+  .fixed-table-container .table thead th.bucket-size .sortable {
+    padding-right: 0 !important;
   }
 }
 
