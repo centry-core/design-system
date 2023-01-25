@@ -32,7 +32,7 @@ const TableCard = {
         <div class="card-header">
             <div class="row">
                 <div class="col-4">
-                    <h3>[[ header ]]</h3>
+                    <p class="font-h4 font-bold">[[ header ]]</p>
                 </div>
                 <div class="col-8">
                     <slot name="actions"
