@@ -557,7 +557,7 @@ option {
     border-radius: 0 5px 5px 0 !important;
     &:hover {
       transition: all 0.3s;
-      box-shadow: 0 2px 3px rgb(36 36 93 / 10%), 0 -1px 1px rgb(36 36 93 / 5%) !important;
+      box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05) !important;
       border-radius: 0 5px 5px 0 !important;
     }
   }
