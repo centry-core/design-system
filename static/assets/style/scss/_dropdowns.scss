@@ -408,13 +408,13 @@
   }
   &.show {
     .btn-secondary.dropdown-toggle {
-      border-color: var(--purple);
+      border-color: var(--pressed60);
       i {
         color: var(--purple);
       }
     }
     .btn-default {
-      border-color: var(--purple);
+      border-color: var(--pressed60);
       i {
         background: url("../../../assets/ico/icon-user__active.svg") no-repeat;
       }
