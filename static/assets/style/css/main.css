@@ -140,7 +140,7 @@ td.align-top.bs-checkbox {
   --bg-yellow: #fffbe7;
   --yellow: #fac933;
   --purple: #432fbb;
-  --blue: rgb(94, 114, 228);
+  --blue: #2772E2;
   --blue60: rgba(94, 114, 228, 0.35);
   --magenta: #e127ff;
   --warn: #f89033;
@@ -167,7 +167,7 @@ td.align-top.bs-checkbox {
   --card-lightblue: #d3fcfc;
   --border-azure20: rgba(91, 239, 239, 0.2);
   --card-red: #fff0f0;
-  --card-blue: #e0f2fe;
+  --card-blue: #E0F2FE;
   --border-blue20: rgba(150, 192, 255, 0.2);
   --card-green: #e7ffe7;
   --border-green20: rgba(125, 214, 128, 0.2);
@@ -301,7 +301,7 @@ h2 a {
   color: #32325d; }
 
 .text-gray-500 {
-  color: #abb3b9; }
+  color: #abb3b9 !important; }
 
 .bg-gray-000 {
   background: #FAFBFD; }
@@ -4141,6 +4141,15 @@ div-content .row {
 
 .d-grid {
   display: grid; }
+
+.grid-column-2 {
+  grid-template-columns: repeat(2, 1fr); }
+
+.grid-column-4 {
+  grid-template-columns: repeat(4, 1fr); }
+
+.grid-column-5 {
+  grid-template-columns: repeat(5, 1fr); }
 
 .grid-column-6 {
   grid-template-columns: repeat(6, 1fr); }

@@ -1,7 +1,6 @@
 .fas.fa-gray {
   color: var(--gray500);
 }
-
 .icon__18x18 {
   display: inline-block;
   width: 18px;
@@ -22,6 +21,7 @@
 li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon__strict-color) {
   background-color: var(--basic);
 }
+
 .btn-icon__purple .icon__16x16, .btn-icon__purple .icon__18x18 {
   background-color: var(--basic);
 }
