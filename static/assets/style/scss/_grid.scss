@@ -1,6 +1,16 @@
 .d-grid {
   display: grid;
 }
+.grid-column-2 {
+  grid-template-columns:  repeat(2, 1fr);
+}
+.grid-column-4 {
+  grid-template-columns:  repeat(4, 1fr);
+}
+
+.grid-column-5 {
+  grid-template-columns:  repeat(5, 1fr);
+}
 
 .grid-column-6 {
   grid-template-columns:  repeat(6, 1fr);
