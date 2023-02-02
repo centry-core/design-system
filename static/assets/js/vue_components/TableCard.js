@@ -4,10 +4,12 @@ const TableCard = {
     mounted() {
         console.debug('TableCard mounted', {refs: this.$refs, props: this.$props});
         $(this.$refs.table).bootstrapTable({
-            onLoadSuccess: function() {
+            onLoadSuccess: () => {
                 const isExistTableScrollHeader = $('.table-scroll > .card-table > .bootstrap-table > .fixed-table-container > .fixed-table-header > .table.table-hover');
                 if (isExistTableScrollHeader) {
-                    isExistTableScrollHeader.css('width', '100%');
+                    this.$nextTick(() => {
+                        isExistTableScrollHeader.css('width', '100%');
+                    })
                 }
             },
         });
