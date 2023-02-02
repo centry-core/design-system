@@ -2,7 +2,15 @@ const TableCard = {
     delimiters: ['[[', ']]'],
     props: ['instance_name', 'header', 'borders', 'container_classes', 'table_attributes', 'adaptiveHeight'],
     mounted() {
-        console.debug('TableCard mounted', {refs: this.$refs, props: this.$props})
+        console.debug('TableCard mounted', {refs: this.$refs, props: this.$props});
+        $(this.$refs.table).bootstrapTable({
+            onLoadSuccess: function() {
+                const isExistTableScrollHeader = $('.table-scroll > .card-table > .bootstrap-table > .fixed-table-container > .fixed-table-header > .table.table-hover');
+                if (isExistTableScrollHeader) {
+                    isExistTableScrollHeader.css('width', '100%');
+                }
+            },
+        });
     },
     data() {
         return {
@@ -10,9 +18,6 @@ const TableCard = {
         }
     },
     computed: {
-    //     $table() {
-    //         return $(this.$refs.table)
-    //     },
         container_class() {
             let classes = this.borders ? 'card card-table' : 'card card-table-sm'
             if (!!this.container_classes) classes = `${classes} ${this.container_classes}`
