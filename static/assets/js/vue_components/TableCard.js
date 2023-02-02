@@ -3,16 +3,6 @@ const TableCard = {
     props: ['instance_name', 'header', 'borders', 'container_classes', 'table_attributes', 'adaptiveHeight'],
     mounted() {
         console.debug('TableCard mounted', {refs: this.$refs, props: this.$props});
-        $(this.$refs.table).bootstrapTable({
-            onLoadSuccess: () => {
-                const isExistTableScrollHeader = $('.table-scroll > .card-table > .bootstrap-table > .fixed-table-container > .fixed-table-header > .table.table-hover');
-                if (isExistTableScrollHeader) {
-                    this.$nextTick(() => {
-                        isExistTableScrollHeader.css('width', '100%');
-                    })
-                }
-            },
-        });
     },
     data() {
         return {

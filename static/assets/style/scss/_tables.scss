@@ -472,3 +472,7 @@ tr.highlight {
     border-bottom: none !important;
   }
 }
+
+.table-scroll > .card-table > .bootstrap-table > .fixed-table-container > .fixed-table-header > .table.table-hover {
+  width: 100% !important;
+}
