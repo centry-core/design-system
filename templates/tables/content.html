@@ -11,13 +11,11 @@
             <div class="flex-item-2">
                 <Table-Card
                     header='Left Table'
+                    class="table-scroll"
+                    :adaptive-height="true"
                     :table_attributes="{
                         'data-url': '/design-system/static/assets/js/mock/data-table.json',
-                        'data-pagination': 'true',
-                        'data-page-list': '[5, 10, 15, 20]',
-                        'data-page-size': 5,
-                        'data-side-pagination': 'client',
-                        'data-pagination-parts': ['pageInfo', 'pageList']
+                        'data-height': '319'
                     }"
                 >
                     <template #actions="{master}">

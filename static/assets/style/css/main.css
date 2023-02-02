@@ -1579,6 +1579,9 @@ tr.highlight {
 .table-fix-thead tr:not(.highlight) {
   border-bottom: none !important; }
 
+.table-scroll > .card-table > .bootstrap-table > .fixed-table-container > .fixed-table-header > .table.table-hover {
+  width: 100% !important; }
+
 .d-flex .btn-32 {
   margin-right: 10px; }
 
@@ -3764,7 +3767,7 @@ body {
   line-height: 1.6;
   color: #222;
   margin: 0px;
-  background: #f8f8f8; }
+  background: #F9FAFF; }
 
 .main {
   padding: calc(100vh/10) 0; }

@@ -2,7 +2,7 @@ const TableCard = {
     delimiters: ['[[', ']]'],
     props: ['instance_name', 'header', 'borders', 'container_classes', 'table_attributes', 'adaptiveHeight'],
     mounted() {
-        console.debug('TableCard mounted', {refs: this.$refs, props: this.$props})
+        console.debug('TableCard mounted', {refs: this.$refs, props: this.$props});
     },
     data() {
         return {
@@ -10,9 +10,6 @@ const TableCard = {
         }
     },
     computed: {
-    //     $table() {
-    //         return $(this.$refs.table)
-    //     },
         container_class() {
             let classes = this.borders ? 'card card-table' : 'card card-table-sm'
             if (!!this.container_classes) classes = `${classes} ${this.container_classes}`
