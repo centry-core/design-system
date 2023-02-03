@@ -1556,8 +1556,6 @@ tr.highlight {
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis; }
-.bootstrap-table .bucket-size {
-  width: 60px; }
 .bootstrap-table .fixed-table-container .table thead th.bucket-size .sortable {
   padding-right: 0 !important; }
 
