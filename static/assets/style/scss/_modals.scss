@@ -64,7 +64,11 @@
 .modal-body p {
   margin-bottom: 0;
 }
-
+.section-h-auto {
+  .section {
+    margin-bottom: auto;
+  }
+}
 .section {
   margin-bottom: 50px;
 }
