@@ -23,8 +23,11 @@
   padding: 30px;
 }
 
-.card .card-body {
+.colorful-cards .card .card-body {
   padding-top: 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
 }
 
 .card-12 {
@@ -62,7 +65,18 @@
   padding: 10px 20px 0px 20px;
   margin: 0;
 }
-
+.colorful-cards .card-header {
+  padding: 8px 24px 4px 24px;
+  font-size: 22px;
+  line-height: 24px;
+}
+.colorful-cards .card-body {
+  padding: 0 0 4px 0;
+  margin: 0px 24px 12px 24px;
+}
+.card-sm.card-health .card-header {
+  padding: 13px 24px 4px 24px;
+}
 .card-sm .card-body {
   font-weight: 400;
   font-size: 12px;
@@ -153,6 +167,22 @@
 }
 .card-orange .card-body {
   border-bottom-color: var(--boder-orange);
+}
+
+.card-health {
+  color: white;
+  &__green {
+    background-color: #18B64D;
+  }
+  &__red {
+    background-color: #F32626;
+  }
+  &__amber{
+    background-color: #F89033;
+  }
+  &__grey {
+    background-color: #ABB3B9;
+  }
 }
 
 .card-sm-table,
@@ -280,4 +310,7 @@
 
 .max-card {
   height: calc(100vh - 100px);
+}
+.card-body.card-table {
+  padding-top: 0;
 }

@@ -12,10 +12,13 @@
                 <Table-Card
                     header='Left Table'
                     class="table-scroll"
+                    :show-custom-count="true"
                     :adaptive-height="true"
                     :table_attributes="{
+                        'data-pagination': false,
                         'data-url': '/design-system/static/assets/js/mock/data-table.json',
-                        'data-height': '319'
+                        'data-height': '247',
+                        'id': 'scrolledTable'
                     }"
                 >
                     <template #actions="{master}">

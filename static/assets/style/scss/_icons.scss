@@ -236,4 +236,29 @@ li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon_
   -webkit-mask-image: url("../../../assets/ico/icon-search__18x18.svg");
   -webkit-mask-repeat: no-repeat;
 }
+.icon-health {
+  display: inline-block;
+  width: 22px;
+  height: 23px;
+  cursor: pointer;
+  background: white;
+  &__green {
+    -webkit-mask-image: url("../../../assets/ico/icon-health__green.svg");
+    -webkit-mask-repeat: no-repeat;
+  }
+  &__amber {
+    -webkit-mask-image: url("../../../assets/ico/icon-health__amber.svg");
+    -webkit-mask-repeat: no-repeat;
+  }
+  &__grey {
+    -webkit-mask-image: url("../../../assets/ico/icon-health__grey.svg");
+    -webkit-mask-repeat: no-repeat;
+  }
+  &__red {
+    -webkit-mask-image: url("../../../assets/ico/icon-health__grey.svg");
+    -webkit-mask-repeat: no-repeat;
+  }
+}
+
+
 

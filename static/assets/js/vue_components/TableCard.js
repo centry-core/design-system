@@ -1,12 +1,29 @@
 const TableCard = {
     delimiters: ['[[', ']]'],
-    props: ['instance_name', 'header', 'borders', 'container_classes', 'table_attributes', 'adaptiveHeight'],
+    props: {
+        showCustomCount: {
+            default: false,
+        },
+        instance_name: {},
+        header: {},
+        borders: {},
+        container_classes: {},
+        table_attributes: {},
+        adaptiveHeight: {}
+    },
     mounted() {
         console.debug('TableCard mounted', {refs: this.$refs, props: this.$props});
+        if (this.showCustomCount) {
+            $(this.$refs.table).on('load-success.bs.table', () => {
+                const items = $('#'+this.table_attributes.id).bootstrapTable('getData');
+                this.itemsCount = items.length;
+            });
+        }
     },
     data() {
         return {
-            table_data: []
+            table_data: [],
+            itemsCount: 0,
         }
     },
     computed: {
@@ -64,6 +81,9 @@ const TableCard = {
                     </tr>
                 </thead>
             </table>
+        </div>
+        <div style="padding: 24px 20px" v-if="showCustomCount">
+            <span class="font-h5 text-gray-600">[[ itemsCount ]] items</span>
         </div>
     </div>
     `
