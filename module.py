@@ -41,20 +41,16 @@ class Module(module.ModuleModel):
 
             from tools import theme
 
-            theme.register_section(
-                "design-system",
-                "Design System",
+            theme.register_mode(
+                "developer", "Developer",
+                permissions=[],
+            )
+            theme.register_mode_section(
+                "developer", "design-system", "Design System",
                 kind="holder",
                 location="left",
-                weight=33
-            )
-            theme.register_subsection(
-                "configuration", "design-system",
-                "Design System",
-                title="Design System",
-                kind="redirect",
-                weight=-33,
-                url='/-/design-system/'
+                weight=33,
+                permissions=[],
             )
 
             from pathlib import Path
@@ -90,12 +86,14 @@ class Module(module.ModuleModel):
             )
 
         from tools import theme
-        theme.register_subsection(
-            "design-system", name,
-            name.capitalize(),
+        theme.register_mode_subsection(
+            "developer", "design-system",
+            name, name.capitalize(),
+            permissions=[],
             title=f"DS - {name.capitalize()}",
             kind="slot",
             prefix=f"design-system_{name}_",
             **kwargs
         )
+
         self.aside.append({'name': name, 'weight': kwargs.get('weight', 0)})
