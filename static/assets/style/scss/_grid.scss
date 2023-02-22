@@ -27,3 +27,7 @@
 .grid-column-9 {
   grid-template-columns: repeat(9, 1fr);
 }
+
+.grid-items-start {
+  align-items: flex-start;
+}
