@@ -126,3 +126,29 @@ input[type="file"] {
   border: solid 1px var(--gray400);
   box-shadow: 0px 2px 3px rgba(36, 36, 93, 0.10), 0px -1px 1px rgba(36, 36, 93, 0.05);
 }
+
+
+.form-control.is-valid, .was-validated .form-control:valid {
+  border-color: var(--gray400);
+  padding-right: 16px !important;
+  background-image: none;
+}
+
+.form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+  border-color: var(--gray400);
+  box-shadow: 0px 2px 3px rgba(36, 36, 93, 0.10), 0px -1px 1px rgba(36, 36, 93, 0.05);
+}
+.bootstrap-select.is-valid .dropdown-toggle {
+  border-color: var(--gray400);
+}
+
+.was-validated .bootstrap-select select:valid + .dropdown-toggle {
+  border-color: var(--gray400);
+}
+
+.bootstrap-select.is-invalid .dropdown-toggle, .error .bootstrap-select .dropdown-toggle, .has-error .bootstrap-select .dropdown-toggle, .was-validated .bootstrap-select select:invalid+.dropdown-toggle {
+  border-color: var(--error);
+}
+.drop-area__invalid {
+  border: dashed 2px var(--error) !important;
+}

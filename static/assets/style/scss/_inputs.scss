@@ -185,3 +185,11 @@
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   width: auto;
 }
+
+.bootstrap-select__need-validation {
+  button.dropdown-toggle {
+    border-color: var(--gray400);
+    height: auto;
+    padding: 7px 16px;
+  }
+}
