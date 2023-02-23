@@ -32,12 +32,15 @@ const TableCard = {
             if (!!this.container_classes) classes = `${classes} ${this.container_classes}`
             return classes
 
+        },
+        el() {
+            return $(this.$refs.table)
         }
     },
     methods: {
         table_action(method, ...options) {
             console.debug('TableCard running action', method, options)
-            this.table_data = $(this.$refs.table).bootstrapTable(method, ...options)
+            this.table_data = this.el.bootstrapTable(method, ...options)
             return this.table_data
         }
     },
