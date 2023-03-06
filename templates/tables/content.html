@@ -119,6 +119,38 @@
         </div>
 
         <Table-Card
+                header='Row Table'
+                :adaptive-height="true"
+                :table_attributes="{
+                'data-url': '/design-system/static/assets/js/mock/data-table.json',
+                'data-pagination': 'true',
+                'data-page-list': '[5, 10, 15, 20]',
+                'data-page-size': 5,
+                'data-side-pagination': 'client',
+                'data-pagination-parts': ['pageInfo', 'pageList'],
+                'edit-mode': false
+            }"
+                container_classes="mt-3 mr-3"
+        >
+            <template #actions="{master}">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-basic btn-icon">
+                        <i class="icon__18x18 icon-edit icon__white"></i>
+                    </button>
+                </div>
+            </template>
+            <template #table_headers>
+                <th data-visible="false" data-field="id">index</th>
+                <th scope="col" data-sortable="true" data-field="permission"
+                    data-formatter="ParamsTable.checkboxFormatterSimple">Permission
+                </th>
+                <th scope="col" data-sortable="true" data-field="role"
+                    data-formatter="ParamsTable.checkboxFormatter">Role
+                </th>
+            </template>
+        </Table-Card>
+
+        <Table-Card
             header='Row Table'
             :adaptive-height="true"
             :table_attributes="{
