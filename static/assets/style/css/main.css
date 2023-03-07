@@ -829,6 +829,14 @@ input[type="file"] {
   left: 50%;
   transform: translate(-50%, -50%); }
 
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease; }
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0; }
+
 .striped .nav-link {
   border-radius: 0px;
   border-top: 0px;
@@ -1540,12 +1548,12 @@ td.disabled input {
 
 .modal-component {
   position: fixed;
-  z-index: 10000;
+  z-index: 1000;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2); }
+  background: rgba(117, 127, 153, 0.2); }
   .modal-component .modal-card {
     width: 600px;
     position: absolute;
@@ -1554,7 +1562,8 @@ td.disabled input {
     transform: translate(-50%, -50%);
     background: white;
     padding: 28px;
-    border-radius: 4px; }
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(22, 25, 106, 0.04), 0px 2px 20px rgba(13, 24, 80, 0.15); }
 
 .preview-loader {
   animation: load 1.1s infinite linear;
@@ -3492,6 +3501,13 @@ p {
   cursor: pointer;
   background-color: #757f99; }
 
+.icon__14x14 {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  background-color: #757f99; }
+
 .btn:hover .icon__16x16:not(.icon__white), .btn:hover .icon__18x18:not(.icon__white),
 li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon__strict-color) {
   background-color: var(--basic); }
@@ -3588,6 +3604,18 @@ li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon_
 
 .icon-zoom-out {
   -webkit-mask-image: url("../../../assets/ico/icon-zoom-out__18x18.svg"); }
+
+.icon-add-column {
+  -webkit-mask-image: url("../../../assets/ico/icon-add-column.svg");
+  -webkit-mask-repeat: no-repeat; }
+
+.icon-checked__circle {
+  -webkit-mask-image: url("../../../assets/ico/icon-checked__circle.svg");
+  -webkit-mask-repeat: no-repeat; }
+
+.icon-eraser {
+  -webkit-mask-image: url("../../../assets/ico/icon-eraser.svg");
+  -webkit-mask-repeat: no-repeat; }
 
 .icon-aborted__16 {
   -webkit-mask-image: url("../../../assets/ico/icon-aborted__16x16.svg"); }
