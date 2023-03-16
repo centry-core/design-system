@@ -1,5 +1,19 @@
-<style>
-    nav.navbar > ul.navbar-nav {
-
-    }
-</style>
+<link rel="stylesheet" href="{{ url_for('design-system.static', filename='assets/js/color-picker/dist/coloris.min.css') }}" />
+<link rel="stylesheet" href="{{ url_for('design-system.static', filename='assets/js/bootstrap-tags-master/tags-standalone.min.css') }}" />
+<script type="module">
+    import BootstrapInputsTags from "{{ url_for('design-system.static', filename='assets/js/bootstrap-tags-master/tags.js') }}";
+    $(document).ready(() => {
+        BootstrapInputsTags.init("select[multiple]", {
+            onSelectItem: (item) => {
+                console.log('item', item)
+            },
+            onClearItem: (value) => {
+                console.log('value', value)
+            },
+            onRenderItem: (item, label) => {
+                console.log(item, label)
+                return label;
+            },
+        });
+    })
+</script>

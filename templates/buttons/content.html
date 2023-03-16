@@ -242,7 +242,7 @@
                                     <i class="fas fa-download"></i>
                                 </button>
                             </div>
-                            <div class="d-flex">
+                            <div class="d-flex mb-2">
                                 <button class="btn btn-xs btn-painted mr-2 rounded-pill"
                                         style="--text-color: var(--error); --brd-color: var(--red-underline)">Business
                                 </button>
@@ -250,92 +250,28 @@
                                         style="--text-color: var(--success); --brd-color: var(--green-underline)">System
                                 </button>
                             </div>
-                            <div class="d-flex mt-2">
-                                <button class="btn btn-back">
-                                    <i class="icon_arrow-back"></i>
-                                </button>
+                            <div class="square mb-2">
+                                <input type="text" id="coloris" class="square" value="#5933c6">
                             </div>
+                            <form class="needs-validation" novalidate onsubmit="event.preventDefault();">
+                                <select class="form-select"
+                                        id="validationTagsShow"
+                                        name="tags_show[]"
+                                        multiple
+                                        data-allow-new="true"
+                                        data-allow-clear="true"
+                                        data-show-all-suggestions="true">
+                                    <option disabled hidden value="">Type to search or create tag</option>
+                                    <option value="1" selected="selected">Apple</option>
+                                    <option value="2" selected="selected">Banana</option>
+                                    <option value="3" data-badge-style="btn-painted" data-style-color="#2bd48d">Orange</option>
+                                    <option value="4">Blueberry</option>
+                                    <option value="5">Strawberry</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a valid tag.</div>
+                            </form>
                         </div>
                     </div>
-                </div>
-            </div>
-            <h4 class="pt-2">Button tags</h4>
-            <div class="d-flex">
-                <div class="card w-100 mr-2 card-stripped">
-                    <div class="d-flex m-4">
-                        <a class="btn btn-basic mr-2" href="#" role="button">Link</a>
-                        <button class="btn btn-basic mr-2" type="submit">Button</button>
-                        <input class="btn btn-basic mr-2" type="button" value="Input">
-                        <input class="btn btn-basic mr-2" type="submit" value="Submit">
-                        <input class="btn btn-basic mr-2" type="reset" value="Reset">
-                    </div>
-                </div>
-                <div class="card w-100 ml-2 card-sm">
-                    <h12>
-                        Buttons with class btn-basic of tags a, button, input
-                    </h12>
-                </div>
-            </div>
-            <h4 class="pt-2">Button sizes</h4>
-            <div class="d-flex">
-                <div class="card w-100 mr-2 card-stripped">
-                    <div class="d-flex m-4">
-                        <button class="btn btn-lg btn-basic mr-2" type="submit">.btn .btn-lg</button>
-                        <button class="btn btn-basic mr-2" type="submit">.btn</button>
-                        <button class="btn btn-sm btn-basic mr-2" type="submit">.btn .btn-sm</button>
-                    </div>
-                </div>
-                <div class="card w-100 ml-2 card-stripped">
-                    <div class="d-flex m-4">
-                        <button class="btn btn-lg btn-secondary mr-2" type="submit">.btn .btn-lg</button>
-                        <button class="btn btn-secondary mr-2" type="submit">.btn</button>
-                        <button class="btn btn-sm btn-secondary mr-2" type="submit">.btn .btn-sm</button>
-                    </div>
-                </div>
-            </div>
-            <h4 class="pt-2">Buttons</h4>
-            <div class="card card-stripped">
-                <div class="d-flex vertical-center m-4">
-                    <h6 class="m-0">By class: </h6>
-                    <button type="button" class="btn btn-primary mr-2">Primary</button>
-                    <button type="button" class="btn btn-basic mr-2">Basic</button>
-                    <button type="button" class="btn btn-secondary mr-2">Secondary</button>
-                    <button type="button" class="btn btn-warning mr-2">Warning</button>
-                    <button type="button" class="btn btn-danger mr-2">Danger</button>
-                </div>
-                <div class="d-flex vertical-center m-4">
-                    <h6 class="m-0">default/hover/active/disabled (secondary and 32): </h6>
-                    <button type="button" class="btn btn-secondary btn-32"><i class="fas fa-download"></i></button>
-                    <button type="button" class="btn btn-secondary btn-32 hover"><i
-                            class="fas fa-download"></i></button>
-                    <button type="button" class="btn btn-secondary btn-32 active"><i
-                            class="fas fa-download"></i></button>
-                    <button type="button" class="btn btn-secondary btn-32 disabled"><i
-                            class="fas fa-download"></i></button>
-                    <button type="button" class="btn btn-basic btn-32"><i class="fas fa-cog"></i></button>
-                    <button type="button" class="btn btn-basic btn-32 hover"><i class="fas fa-cog"></i></button>
-                    <button type="button" class="btn btn-basic btn-32 active"><i class="fas fa-cog"></i></button>
-                    <button type="button" class="btn btn-basic btn-32 disabled"><i class="fas fa-cog"></i></button>
-                </div>
-                <div class="d-flex vertical-center m-4">
-                    <h6 class="m-0">Basic busy buttons: </h6>
-                    <button class="btn btn-basic disabled updating mr-2" type="submit">disabled updating</button>
-                    <button class="btn btn-secondary disabled updating mr-2" type="submit">disabled updating</button>
-                </div>
-                <div class="d-flex vertical-center m-4">
-                    <h6 class="m-0">Action buttons (24 and 16): </h6>
-                    <button type="button" class="btn btn-24 btn-action"><i class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-24 btn-action hover"><i class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-24 btn-action active"><i class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-24 btn-action disabled"><i class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-24 btn-action disabled updating"><i
-                            class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-16 btn-action"><i class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-16 btn-action hover"><i class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-16 btn-action active"><i class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-16 btn-action disabled"><i class="fas fa-play"></i></button>
-                    <button type="button" class="btn btn-16 btn-action disabled updating"><i
-                            class="fas fa-play"></i></button>
                 </div>
             </div>
         </div>
