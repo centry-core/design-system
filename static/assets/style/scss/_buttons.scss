@@ -799,13 +799,20 @@
 }
 
 .btn-painted {
+  &.btn-painted__size:hover {
+    color: #757F99;
+    border: 1px solid $gray600;
+  }
+  &.btn-painted__size:active, &.btn-painted__size:focus {
+    border: 1px solid $gray600;
+  }
   color: var(--text-color);
   border: 1px solid var(--brd-color);
-  &:hover {
+  background: white;
+  &:not(.btn-painted__size):hover {
     color: var(--text-color);
-    box-shadow: 0px 2px 4px rgba(203, 39, 39, 0.1), 0px 1px 12px rgba(190, 29, 29, 0.08);
   }
-  &:active, &:focus {
+  &:not(.btn-painted__size):active, &:not(.btn-painted__size):focus {
     color: var(--text-color);
     border: 1px solid var(--text-color);
   }
