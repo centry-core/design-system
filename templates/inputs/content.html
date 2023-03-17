@@ -70,6 +70,33 @@
                                 placeholder="Text">
                     </div>
                 </div>
+                <h4 class="py-2">Tags input</h4>
+                <div class="square mb-2">
+                    <input type="text" id="coloris" class="square" value="#5933c6">
+                </div>
+                <p class="font-h5 font-weight-400">1. Var "selectedColor" is the default color for new tag;</p>
+                <p class="font-h5 font-weight-400 mb-2">2. Array "swatches" includes suggested colors;</p>
+                <form class="needs-validation form-tags" novalidate onsubmit="event.preventDefault();">
+                    <select class="form-select"
+                            id="validationTagsShow"
+                            name="tags_show[]"
+                            multiple
+                            data-allow-new="true"
+                            data-show-all-suggestions="true"
+                            data-allow-clear="true">
+                        <option disabled hidden value="">Type to search or create tag</option>
+                        <option value="1" selected="selected" data-style-color="#2bd48d">Apple</option>
+                        <option value="2" selected="selected" data-style-color="#f89033">Banana</option>
+                        <option value="3" data-style-color="#2bd48d">Orange</option>
+                        <option value="3" data-style-color="#2bd48d">Orangutang</option>
+                        <option value="4" data-style-color="#F89033">Blueberry</option>
+                        <option value="5" data-style-color="#f32626">Strawberry</option>
+                        <option value="3" data-style-color="#2bd48d">House</option>
+                        <option value="4" data-style-color="#F89033">Monkey</option>
+                        <option value="5" data-style-color="#f32626">Canada</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a valid tag.</div>
+                </form>
             </div>
             <div class="col-6">
                 <h4 class="pt-2">Select</h4>

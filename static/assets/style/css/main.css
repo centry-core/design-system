@@ -3122,8 +3122,7 @@ input[type="range"]::-moz-range-thumb {
 option {
   display: inline-block;
   height: 40px !important;
-  padding: 8px 16px !important;
-  background: red; }
+  padding: 8px 16px !important; }
 
 /* main-select */
 .main-select .btn {
@@ -5317,5 +5316,46 @@ div-content .row {
 
 input.clr-color:focus {
   border: solid 1px var(--gray400) !important; }
+
+.form-tags .form-control-focus {
+  border-color: var(--gray400) !important;
+  box-shadow: none !important; }
+.form-tags .badge.badge-tag {
+  border-radius: 50rem !important;
+  padding: 3px 8px 3px 8px !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  font-weight: 400 !important; }
+.form-tags .dropdown-menu.tags-menu {
+  left: 0 !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+  padding: 8px 0 !important; }
+.form-tags .form-control.dropdown {
+  padding: 4px 8px !important;
+  min-height: 40px !important; }
+  .form-tags .form-control.dropdown .dropdown-item {
+    padding: 4px 16px; }
+    .form-tags .form-control.dropdown .dropdown-item span {
+      display: inline-block;
+      padding: 0 8px;
+      border-radius: 20px;
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 400;
+      text-decoration: none;
+      white-space: nowrap;
+      background-color: white;
+      width: auto; }
+    .form-tags .form-control.dropdown .dropdown-item:hover {
+      text-decoration: none; }
+    .form-tags .form-control.dropdown .dropdown-item.active-tag {
+      background-color: var(--gray100); }
+      .form-tags .form-control.dropdown .dropdown-item.active-tag span {
+        font-weight: 500 !important; }
+  .form-tags .form-control.dropdown input[role="combobox"]::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    color: #abb3b9; }
 
 /*# sourceMappingURL=main.css.map */
