@@ -1393,6 +1393,13 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   height: unset;
   min-height: 247px; }
 
+.card-body.fixed-h-table__wide-row .bootstrap-table .fixed-table-container .fixed-table-body {
+  height: unset;
+  min-height: 277px; }
+
+tr.no-records-found td {
+  color: #abb3b9 !important; }
+
 .bootstrap-table .fixed-table-container .table thead th .th-inner {
   padding: 11px; }
 

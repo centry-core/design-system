@@ -1,3 +1,13 @@
+function loadingTemplate(message) {
+    return `
+        <div class="layout-spinner">
+            <div class="spinner-centered">
+                <i class="spinner-loader__32x32"></i>
+            </div>
+        </div>
+    `
+}
+
 const TableCard = {
     delimiters: ['[[', ']]'],
     props: {
@@ -9,7 +19,10 @@ const TableCard = {
         borders: {},
         container_classes: {},
         table_attributes: {},
-        adaptiveHeight: {}
+        adaptiveHeight: {},
+        wideTableRow: {
+            default: false,
+        },
     },
     mounted() {
         console.debug('TableCard mounted', {refs: this.$refs, props: this.$props});
@@ -58,8 +71,8 @@ const TableCard = {
                 </div>
             </div>
         </div>
-        <div class="card-body card-table" 
-            :class="!!adaptiveHeight ? '' : 'fixed-h-table'">
+        <div class="card-body card-table"
+            :class="[!!adaptiveHeight ? '' : 'fixed-h-table', wideTableRow ? 'fixed-h-table__wide-row' : '']">
             <table class="table"
                 :class="!!borders ? 'table-border' : 'table-borderless'"
                 data-toggle="table"
@@ -68,7 +81,7 @@ const TableCard = {
                 data-pagination="true"
                 data-side-pagination="server"
                 data-pagination-parts='["pageInfoShort", "pageList"]'
-                
+                data-loading-template="loadingTemplate"
                 data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
                 data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
                 
