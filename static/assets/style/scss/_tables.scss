@@ -96,14 +96,20 @@
   line-height: 18px;
 }
 
-//.card-body .bootstrap-table .fixed-table-container .fixed-table-body {
-//  height: unset;
-//  min-height: 247px;
-//}
 .card-body.fixed-h-table .bootstrap-table .fixed-table-container .fixed-table-body{
   height: unset;
   min-height: 247px;
 }
+
+.card-body.fixed-h-table__wide-row .bootstrap-table .fixed-table-container .fixed-table-body{
+  height: unset;
+  min-height: 277px;
+}
+
+tr.no-records-found td{
+  color: $gray500 !important;
+}
+
 .bootstrap-table .fixed-table-container .table thead th .th-inner {
   padding: 11px;
 }
