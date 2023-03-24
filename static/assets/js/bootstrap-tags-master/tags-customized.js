@@ -117,9 +117,11 @@ const DEFAULTS = {
   noCache: true,
   debounceTime: 300,
   notFoundMessage: "",
+  selectedColor: "",
   onRenderItem: (item, label, inst) => {
     return label;
   },
+  onInputChart: (e) => {},
   onSelectItem: (item, inst) => {},
   onClearItem: (value, inst) => {},
   onCanAdd: (text, data, inst) => {},
@@ -266,7 +268,6 @@ class BootstrapInputsTags {
       document.addEventListener("scroll", this, true); // capture input for all scrollables elements
       window.addEventListener("resize", this);
     }
-
     // Add listeners (remove then on dispose()). See handleEvent.
     this._searchInput.addEventListener("focus", this); // focusin bubbles, focus does not.
     this._searchInput.addEventListener("blur", this); // focusout bubbles, blur does not.
@@ -277,6 +278,9 @@ class BootstrapInputsTags {
     this.loadData();
   }
 
+  changeColor(color) {
+    this._config.selectedColor = color;
+  }
   // #region Core
 
   /**
@@ -293,10 +297,9 @@ class BootstrapInputsTags {
       if (BootstrapInputsTags.getInstance(list[i])) {
         continue;
       }
-      new BootstrapInputsTags(list[i], opts);
+      return new BootstrapInputsTags(list[i], opts);
     }
   }
-
   /**
    * @param {HTMLSelectElement} el
    */
@@ -570,6 +573,9 @@ class BootstrapInputsTags {
 
   _configureSearchInput() {
     this._searchInput = document.createElement("input");
+    this._searchInput.addEventListener('input', (e) => {
+      this._config.onInputChart(e.target.value);
+    })
     this._searchInput.type = "text";
     this._searchInput.autocomplete = "off";
     this._searchInput.spellcheck = false;
@@ -698,7 +704,7 @@ class BootstrapInputsTags {
           // We use what is typed if not selected and not empty
           if (this._config.allowNew && this._searchInput.value) {
             let text = this._searchInput.value;
-            this._add(text, text, { new: 1 });
+            this._add(text, text, { new: 1 , styleColor: this._config.selectedColor });
           }
         }
         break;
@@ -1217,6 +1223,19 @@ class BootstrapInputsTags {
      */
     const selected = this._selectElement.querySelectorAll("option[selected]");
     return Array.from(selected).map((el) => el.value);
+  }
+  getFullSelectedValues() {
+    /**
+     * @type {NodeListOf<HTMLOptionElement>}
+     */
+    const selected = this._selectElement.querySelectorAll("option[selected]");
+    const selectedTags = Array.from(selected).map((el) => {
+      return {
+        title: el.value,
+        hex: el.dataset.styleColor,
+      }
+    });
+    return selectedTags;
   }
 
   /**
@@ -1794,8 +1813,8 @@ class BootstrapInputsTags {
       span.style.color = data?.styleColor;
       span.style.borderColor = data?.styleColor;
     } else {
-      span.style.color = selectedColor;
-      span.style.borderColor = selectedColor;
+      span.style.color = this._config.selectedColor;
+      span.style.borderColor = this._config.selectedColor;
     }
     span.style.borderStyle = 'solid';
     span.style.borderWidth = '1px';
@@ -1890,4 +1909,3 @@ class BootstrapInputsTags {
   }
 }
 
-export default BootstrapInputsTags;
