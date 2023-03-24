@@ -1,33 +1,33 @@
 <script src="{{ url_for('design-system.static', filename='assets/js/inputs.js') }}"></script>
 <script src="{{ url_for('design-system.static', filename='assets/js/color-picker/dist/coloris.min.js') }}"></script>
+<script src="{{ url_for('design-system.static', filename='assets/js/bootstrap-tags-master/tags-customized.min.js') }}"></script>
 <script>
-    let selectedColor = '#5933c6';
-    Coloris({
-        el: '#coloris',
-        themeMode: 'light',
-        onChange: (color) => {
-            selectedColor = color;
-        },
-        swatches: [
-            '#5933c6',
-            '#29B8F5',
-            '#2bd48d',
-            '#EFE482',
-            '#F89033',
-            '#f32626',
-        ],
-    });
-</script>
-<script type="module">
-    import BootstrapInputsTags from "{{ url_for('design-system.static', filename='assets/js/bootstrap-tags-master/tags-customized.min.js') }}";
     $(document).ready(() => {
-        BootstrapInputsTags.init("select[multiple]", {
+        let selectedColor = '#5933c6';
+        let btt = BootstrapInputsTags.init("select[multiple]", {
             onSelectItem: (item) => {
                 console.log('item', item)
             },
             onClearItem: (value) => {
                 console.log('value', value)
             },
+            selectedColor,
+        });
+        Coloris({
+            el: '#coloris',
+            themeMode: 'light',
+            onChange: (color) => {
+                selectedColor = color;
+                btt.changeColor(color)
+            },
+            swatches: [
+                '#5933c6',
+                '#29B8F5',
+                '#2bd48d',
+                '#EFE482',
+                '#F89033',
+                '#f32626',
+            ],
         });
     })
 </script>
