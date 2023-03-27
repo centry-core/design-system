@@ -28,7 +28,17 @@
   border-radius: 4px;
   color: var(--gray800);
 }
-
+.tooltip__custom {
+  border-radius: 4px;
+  border: 1px solid #DBE2E8;
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
+  padding: 8px 0 !important;
+  .tooltip-inner__custom {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
 .tooltip.show {
   opacity: 1;
 }

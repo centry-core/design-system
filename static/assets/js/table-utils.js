@@ -4,7 +4,6 @@ const valuesSelectsTable = {
 
 var table_formatters = {
     selectFormatter(value, row, index, field) {
-        console.log(value)
         const options = valuesSelectsTable[this.values].map((item, index) =>
             `<option
                 value=${item}
