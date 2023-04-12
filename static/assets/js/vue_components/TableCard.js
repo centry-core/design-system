@@ -70,6 +70,9 @@ const TableCard = {
                     ></slot>
                 </div>
             </div>
+            <slot name="extra"
+                :master="this"
+            ></slot>
         </div>
         <div class="card-body card-table"
             :class="[!!adaptiveHeight ? '' : 'fixed-h-table', wideTableRow ? 'fixed-h-table__wide-row' : '']">

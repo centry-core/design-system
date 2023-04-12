@@ -311,6 +311,27 @@
   border: 1px solid var(--basic60);
   box-shadow: var(--hover-shadow);
 }
+.fixed-table-pagination {
+  .show > .btn-secondary.dropdown-toggle {
+    border: solid 1px white;
+  }
+  .btn-secondary:hover {
+    border: solid 1px white;
+    box-shadow: none;
+  }
+  .page-list .btn-secondary:focus {
+    border: solid 1px white;
+  }
+  .page-list .btn-secondary:focus {
+    border: solid 1px white;
+  }
+  .btn-secondary:not(:disabled):hover {
+    color: var(--gray800);
+  }
+  .btn-secondary:not(:disabled):not(.disabled):active {
+    border: solid 1px white;
+  }
+}
 
 .btn-secondary.focus,
 .btn-secondary:focus {
@@ -538,6 +559,10 @@
 .btn-danger:not(:disabled):not(.disabled):active:focus,
 .show > .btn-danger.dropdown-toggle:focus {
   box-shadow: none;
+}
+
+.btn-success__custom {
+  background: #18B64D;
 }
 
 .btn-success {

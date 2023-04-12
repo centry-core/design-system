@@ -20,6 +20,10 @@ const MultiselectDropdown = {
             type: String,
             default: ''
         },
+        has_error_class: {
+            type: String,
+            default: ''
+        },
         button_class: {
             type: String,
             default: 'btn btn-select dropdown-toggle d-inline-flex align-items-center'
@@ -100,7 +104,8 @@ const MultiselectDropdown = {
         }
     },
     template: `
-        <div class="dropdown_simple-list" 
+    <div class="select-validation" :class="has_error_class">
+        <div class="dropdown_simple-list dropdown bootstrap-select bootstrap-select__b bootstrap-select__sm"
             :class="container_class"
         >
             <button class="btn" type="button"
@@ -140,6 +145,7 @@ const MultiselectDropdown = {
                 <span class="px-3 py-2 d-inline-block">Nothing to select</span>
             </div>
         </div>
+    </div>
     `
 }
 
