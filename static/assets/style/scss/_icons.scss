@@ -208,6 +208,12 @@ li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon_
   background-image: url("../../../assets/ico/icon-check__16x16.svg");
   background-color: transparent;
 }
+.icon-check__white {
+  background-image: url("../../../assets/ico/icon-check__white.svg");
+  background-color: transparent !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 .icon-close__16 {
   -webkit-mask-image: url("../../../assets/ico/icon-close__16x16.svg");

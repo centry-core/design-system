@@ -570,3 +570,28 @@ option {
   //  transform: translate3d(-5px, 32px, 0px);
   //}
 }
+.dropdown-multiple {
+  .dropdown-menu {
+    div.inner.show {
+      overflow: hidden !important;
+    }
+  }
+  .show-tick .dropdown-menu li a span.text {
+    margin-right: 0 !important;
+  }
+  .dropdown-item:active::after {
+    content: "";
+    display: inline-block;
+    background: none;
+    width: 0;
+    height: 0;
+  }
+  li.selected {
+    input[type=checkbox]::before {
+      border-color: var(--purple);
+      background-color: var(--purple);
+      background-image: url(../../../assets/ico/check-white.svg);
+      background-size: 10px;
+    }
+  }
+}

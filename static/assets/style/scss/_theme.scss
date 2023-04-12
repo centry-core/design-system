@@ -247,3 +247,12 @@ h2 a {
     margin-left: -4px;
   }
 }
+
+.d-visibility {
+  visibility: visible;
+  height: auto;
+}
+.n-visibility {
+  visibility: hidden;
+  height: 0;
+}
