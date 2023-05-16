@@ -1,6 +1,7 @@
 .fas.fa-gray {
   color: var(--gray500);
 }
+
 .icon__18x18 {
   display: inline-block;
   width: 18px;
@@ -92,6 +93,14 @@ li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon_
   -webkit-mask-image: url("../../../assets/ico/icon-eye__18x18.svg");
 }
 
+.icon-eye-closed {
+  -webkit-mask-image: url("../../../assets/ico/icon-eye-closed__16x16.svg");
+}
+
+.icon-integrate-purple {
+  -webkit-mask-image: url("../../../assets/ico/icon_integrate__16x16.svg");
+}
+
 .icon-folder {
   -webkit-mask-image: url("../../../assets/ico/icon-folder__18x18.svg");
 }
@@ -157,10 +166,12 @@ li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon_
   -webkit-mask-image: url("../../../assets/ico/icon-add-column.svg");
   -webkit-mask-repeat: no-repeat;
 }
+
 .icon-checked__circle {
   -webkit-mask-image: url("../../../assets/ico/icon-checked__circle.svg");
   -webkit-mask-repeat: no-repeat;
 }
+
 .icon-eraser {
   -webkit-mask-image: url("../../../assets/ico/icon-eraser.svg");
   -webkit-mask-repeat: no-repeat;
@@ -208,6 +219,7 @@ li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon_
   background-image: url("../../../assets/ico/icon-check__16x16.svg");
   background-color: transparent;
 }
+
 .icon-check__white {
   background-image: url("../../../assets/ico/icon-check__white.svg");
   background-color: transparent !important;
@@ -263,24 +275,29 @@ li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon_
   -webkit-mask-image: url("../../../assets/ico/icon-search__18x18.svg");
   -webkit-mask-repeat: no-repeat;
 }
+
 .icon-health {
   display: inline-block;
   width: 22px;
   height: 23px;
   cursor: pointer;
   background: white;
+
   &__green {
     -webkit-mask-image: url("../../../assets/ico/icon-health__green.svg");
     -webkit-mask-repeat: no-repeat;
   }
+
   &__amber {
     -webkit-mask-image: url("../../../assets/ico/icon-health__amber.svg");
     -webkit-mask-repeat: no-repeat;
   }
+
   &__grey {
     -webkit-mask-image: url("../../../assets/ico/icon-health__grey.svg");
     -webkit-mask-repeat: no-repeat;
   }
+
   &__red {
     -webkit-mask-image: url("../../../assets/ico/icon-health__red.svg");
     -webkit-mask-repeat: no-repeat;
