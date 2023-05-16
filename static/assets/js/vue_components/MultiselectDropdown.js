@@ -40,104 +40,179 @@ const MultiselectDropdown = {
             type: [String, null],
             default: 'name',
         },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        hasSearch: {
+            type: [String, Boolean],
+            default: false
+        },
+        maxHeight: {
+            type: String,
+            default: null
+        }
     },
     emits: ['change', 'update:modelValue'],
     delimiters: ['[[', ']]'],
     data() {
         return {
-            selected_indexes: [],
+            inputSearch: '',
+            isAllSelected: false,
+            selectedItems: [],
+            refSearchId: 'refSearchCbx' + Math.round(Math.random() * 1000),
         }
     },
     mounted() {
         if (this.list_items.length > 0) {
             if (typeof this.pre_selected_indexes === 'string') {
-                this.selected_indexes = this.pre_selected_indexes.split(this.delimiter)
+                this.selectedItems = this.li.filter(
+                    (el, idx) => this.pre_selected_indexes.split(this.delimiter).includes(idx)
+                )
             } else {
-                this.selected_indexes = this.pre_selected_indexes
+                this.selectedItems = this.li.filter((el, idx) => this.pre_selected_indexes.includes(idx))
             }
         }
     },
     computed: {
         li() {
-            if (this.list_items.length > 0) {
-                let listed_items
-                if (typeof this.list_items === 'string') {
-                    listed_items = this.list_items.split(this.delimiter)
-                } else {
-                    listed_items = this.list_items
+
+            if (this.list_items.length <= 0) return []
+
+            let listed_items
+            if (typeof this.list_items === 'string') {
+                listed_items = this.list_items.split(this.delimiter)
+            } else {
+                listed_items = this.list_items
+            }
+
+            listed_items = listed_items.map((i, index) => {
+                if (typeof i === 'object') {
+                    return {
+                        ...i,
+                        name: i.name,
+                        idx: index,
+                    }
                 }
-                return listed_items.map((i, index) => {
+                return {
+                    name: i,
+                    idx: index
+                }
+            })
+            if (this.inputSearch) {
+                listed_items = listed_items.filter(i => {
+                    if (typeof i === 'object') {
+                        return i.name.toLowerCase().includes(this.inputSearch.toLowerCase())
+                    }
+                    return i.toLowerCase().includes(this.inputSearch.toLowerCase())
+                })
+            }
+            return listed_items
+        },
+        is_all_selected() {
+            return (this.selectedItems.length < this.list_items.length) && this.selectedItems.length > 0
+        }
+    },
+    methods: {
+        handlerSelectAll() {
+            if (this.selectedItems.length !== this.list_items.length) {
+                this.selectedItems = [...this.list_items.map((i, idx) => {
                     if (typeof i === 'object') {
                         return {
                             ...i,
                             name: i.name,
-                            idx: index,
+                            idx: idx,
                         }
                     }
                     return {
                         name: i,
-                        idx: index
+                        idx: idx
                     }
-                })
+                })]
+            } else {
+                this.selectedItems.splice(0);
             }
-            return []
-        },
+        }
     },
     watch: {
-        selected_indexes(newValue) {
+        selectedItems(newValue) {
             this.$nextTick(() => {
                 let return_value
                 switch (this.return_key) {
                     case 'idx':
-                        return_value = newValue
+                        return_value = newValue.map(i => i.idx)
                         break
                     case null:
-                        return_value = newValue.map(i => this.li[i])
+                        return_value = newValue
                         break
                     default:
-                        return_value = newValue.map(i => this.li[i][this.return_key])
+                        return_value = newValue.map(i => i[this.return_key])
                         break
                 }
                 this.$emit('change', return_value)
                 this.$emit('update:modelValue', return_value)
+                this.$refs[this.refSearchId].checked = this.selectedItems.length === this.list_items.length
             })
         }
     },
     template: `
     <div class="select-validation" :class="has_error_class">
-        <div class="dropdown_simple-list dropdown bootstrap-select bootstrap-select__b bootstrap-select__sm"
+        <div class="dropdown_simple-list bootstrap-select bootstrap-select__b bootstrap-select__sm"
             :class="container_class"
         >
             <button class="btn" type="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  :disabled="disabled"
                   :class="button_class"
             >
                 <div v-if="variant === 'slot'">
                     <slot name="dropdown_button"></slot>
                 </div>
                 <div v-else>
-                    <span class="complex-list_filled" v-if="selected_indexes.length > 0">
-                        [[ selected_indexes.length ]] selected
+                    <span class="complex-list_filled" v-if="selectedItems.length > 0">
+                        [[ selectedItems.length ]] selected
                     </span>
                     <span v-else class="complex-list_empty">[[ placeholder ]]</span>
                 </div>
             </button>
-            <ul class="dropdown-menu"
-                v-if="li.length > 0"
+            <ul class="dropdown-menu overflow-auto"
+                v-if="list_items.length > 0"
                 @click="$event.stopPropagation()"
+                :style="maxHeight ? {maxHeight: maxHeight} : {}"
             >
+                    <li v-if="hasSearch" class="dropdown-menu_item pl-3 pr-3 pt-2 pb-2">
+                    <div class="custom-input custom-input_search__sm position-relative">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            v-model="inputSearch">
+                        <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
+                    </div>
+                    </li>
+                 <li
+                        class="dropdown-menu_item d-flex align-items-center">
+                        <label
+                            class="mb-0 w-100 d-flex align-items-center custom-checkbox"
+                            :class="{ 'custom-checkbox__minus': is_all_selected }">
+                            <input
+                                @click="handlerSelectAll"
+                                :ref="refSearchId"
+                                type="checkbox">
+                            <span class="w-100 d-inline-block ml-3">All</span>
+                        </label>
+                    </li>
                 <li class="dropdown-menu_item p-0" 
-                    v-for="i in li" 
-                    :key="i.idx"
+                    v-for="item in li" 
+                    :key="item.idx"
                 >
                     <label class="d-flex align-items-center custom-checkbox px-3 py-2">
                         <input
-                            :value="i.idx"
-                            v-model="selected_indexes"
+                            :value="item"
+                            v-model="selectedItems"
                             type="checkbox"
                         >
-                        <span v-if="i.html !== undefined" v-html="i.html"></span>
-                        <span v-else class="w-100 d-inline-block ml-3">[[ i.name ]]</span>
+                        <span v-if="item.html !== undefined" v-html="item.html"></span>
+                        <span v-else class="w-100 d-inline-block ml-3">[[ item.name ]]</span>
                     </label>
                 </li>
             </ul>
