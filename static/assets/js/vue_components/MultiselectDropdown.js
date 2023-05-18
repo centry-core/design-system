@@ -51,6 +51,9 @@ const MultiselectDropdown = {
         maxHeight: {
             type: String,
             default: null
+        },
+        modelValue: {
+            type: Array
         }
     },
     emits: ['change', 'update:modelValue'],
@@ -75,6 +78,9 @@ const MultiselectDropdown = {
         }
     },
     computed: {
+        selected_indexes() {
+            return this.selectedItems.map(i => i.idx)
+        },
         li() {
 
             if (this.list_items.length <= 0) return []
@@ -130,7 +136,7 @@ const MultiselectDropdown = {
                     }
                 })]
             } else {
-                this.selectedItems.splice(0);
+                this.selectedItems = []
             }
         }
     },
@@ -152,6 +158,26 @@ const MultiselectDropdown = {
                 this.$emit('change', return_value)
                 this.$emit('update:modelValue', return_value)
                 this.$refs[this.refSearchId].checked = this.selectedItems.length === this.list_items.length
+            })
+        },
+        modelValue(newValue) {
+            newValue.forEach(i => {
+                let item_id
+                switch (this.return_key) {
+                    case 'idx':
+                        item_id = i
+                        break
+                    case null:
+                        item_id = i.idx
+                        break
+                    default:
+                        item_id = this.li.find(x => x[this.return_key] === i)?.idx
+                        break
+                }
+                if (this.selectedItems.find(x => x.idx === item_id) === undefined) {
+                    const item = this.li.find(x => x.idx === item_id)
+                    this.selectedItems.push(item)
+                }
             })
         }
     },
