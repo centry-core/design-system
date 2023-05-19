@@ -14,6 +14,14 @@
 }
 .table-hover tbody tr:hover {
   background-color: var(--gray100);
+  a:not(.dropdown-item) {
+    color: #2F7DF1;
+  }
+}
+.table tbody tr {
+  a.dropdown-item span{
+    color: var(--main-text);
+  }
 }
 .thead-light th {
   background-color: var(--background) !important;
@@ -42,7 +50,10 @@
     }
   }
 }
-
+.thead-light.bg-transparent th {
+  background-color: white !important;
+  border-top: none !important;
+}
 .params-table td {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -70,24 +81,33 @@
   padding-right: 20px;
 }
 
-.card-body table td {
-  font-size: 12px;
-  font-weight: 300px;
+.table td {
+  font-size: 14px;
+  font-weight: 400;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
-.card-body table td {
+.card-body .table td {
   line-height: 24px;
 }
 
-.card-body table th {
+.card-body .table th {
   line-height: 18px;
 }
 
-.card-body .bootstrap-table .fixed-table-container .fixed-table-body {
+.card-body.fixed-h-table .bootstrap-table .fixed-table-container .fixed-table-body{
   height: unset;
-  min-height: 210px;
+  min-height: 247px;
+}
+
+.card-body.fixed-h-table__wide-row .bootstrap-table .fixed-table-container .fixed-table-body{
+  height: unset;
+  min-height: 277px;
+}
+
+tr.no-records-found td{
+  color: $gray500 !important;
 }
 
 .bootstrap-table .fixed-table-container .table thead th .th-inner {
@@ -97,7 +117,6 @@
 .card-body .pagination-info {
   font-size: 12px;
   font-weight: 300;
-  padding-left: 20px;
 }
 
 .card-table .card-body .pagination-info {
@@ -159,14 +178,14 @@ td.disabled input {
 
 .card-table .bootstrap-table .fixed-table-pagination > .pagination-detail,
 .card-table .bootstrap-table .fixed-table-pagination > .pagination {
-  margin-top: 16px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .card-table-sm .bootstrap-table .fixed-table-pagination > .pagination-detail,
 .card-table-sm .bootstrap-table .fixed-table-pagination > .pagination {
-  margin-top: 16px;
-  margin-bottom: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .table-list input[type="radio"] {
@@ -188,6 +207,10 @@ td.disabled input {
       td {
         color: var(--gray800);
         font-size: 14px;
+        a:hover {
+          color: #2F7DF1;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -292,12 +315,13 @@ td.disabled input {
 }
 .modal-component {
   position: fixed;
-  z-index: 10000;
+  z-index: 1000;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.2);
+  //background: rgba(0,0,0,0.2);
+  background: rgba(117, 127, 153, 0.2);
   .modal-card {
     width: 600px;
     position: absolute;
@@ -307,6 +331,7 @@ td.disabled input {
     background: white;
     padding: 28px;
     border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(22, 25, 106, 0.04), 0px 2px 20px rgba(13, 24, 80, 0.15);
   }
 }
 .preview-loader {
@@ -314,7 +339,7 @@ td.disabled input {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-image: url("../../../assets/ico/loading.svg");
+  background-image: url("/design-system/static/assets/ico/loading.svg");
 }
 .preview-loader__white {
   animation: load 1.1s infinite linear;
@@ -366,13 +391,13 @@ td.disabled input {
 }
 .container-logs {
   height: 450px;
-  max-width: 1200px;
   width: 100%;
   overflow:auto;
   padding: 2rem 0;
   .table-logs {
     tr td {
       white-space: nowrap;
+      vertical-align: top;
     }
   }
   .colored-log {
@@ -390,4 +415,69 @@ td.disabled input {
       color: #F32626;
     }
   }
+}
+
+.table-card-result tr td {
+  vertical-align: baseline;
+}
+
+tr.highlight {
+  border-left: 2px solid var(--basic);
+  border-top: 1px solid var(--gray200);
+  border-bottom: 1px solid var(--gray200);
+  cursor: pointer;
+  background: var(--gray100);
+  color: var(--basic);
+  td:first-child {
+    padding-left: 18px !important;
+  }
+  td:last-child {
+    div {
+      display: flex !important;
+    }
+  }
+}
+
+.bootstrap-table {
+  .bucket-name {
+    width: 159px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+  }
+  .fixed-table-container .table thead th.bucket-size .sortable {
+    padding-right: 0 !important;
+  }
+}
+
+.table-fix-thead {
+  table {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
+
+  thead {
+    flex: 0 0 auto;
+  }
+
+  tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+  tr:not(.highlight) {
+    border-bottom: none !important;
+  }
+}
+
+.table-scroll > .card-table > .bootstrap-table > .fixed-table-container > .fixed-table-header > .table.table-hover {
+  width: 100% !important;
 }

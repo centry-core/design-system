@@ -1,45 +1,3 @@
-const SimpleList = {
-    data() {
-        return {
-            selectedItems1: [],
-            itemsList1: [
-                { id: 1, title: 'Step 1' },
-                { id: 2, title: 'Step 2' }
-            ]
-        }
-    },
-    watch: {
-        selectedItems1: (val) => {
-            console.log(`SELECTED ITEMS: ${val}`)
-        }
-    },
-    template:`
-        <div id="simpleList" class="dropdown_simple-list">
-            <button class="btn btn-select dropdown-toggle" type="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="complex-list_filled" v-if="selectedItems1.length > 0">{{ selectedItems1.length }} selected</span>
-            <span v-else class="complex-list_empty">Select Step</span>
-            </button>
-            <ul class="dropdown-menu close-outside"
-                v-if="itemsList1.length > 0">
-                <li class="dropdown-menu_item d-flex align-items-center px-3" v-for="item in itemsList1" :key="item.id">
-                    <label
-                        class="mb-0 w-100 d-flex align-items-center custom-checkbox">
-                        <input
-                            :value="item.title"
-                            v-model="selectedItems1"
-                            type="checkbox">
-                        <span class="w-100 d-inline-block ml-3">{{ item.title }}</span>
-                    </label>
-                </li>
-            </ul>
-            <div class="dropdown-menu py-0" v-else>
-                <span class="px-3 py-2 d-inline-block">There are no any steps.</span>
-            </div>
-        </div>
-    `
-}
-
 const TreeList = {
     props: {
       allSelected: {
@@ -262,6 +220,15 @@ const ComplexListFilter = {
         },
         showSelected: {
             default: true,
+        },
+        extraClass: {
+            default: ''
+        },
+        hasSearch: {
+            default: true,
+        },
+        hasConfirmBtn: {
+            default: true,
         }
     },
     data() {
@@ -303,6 +270,7 @@ const ComplexListFilter = {
     template: `
         <div id="complexList" class="complex-list complex-list__filter">
             <button class="btn btn-select dropdown-toggle position-relative text-left d-flex align-items-center"
+                :class="extraClass"
                 :style="{minWidth: minWidth}"
                 type="button"   
                 data-toggle="dropdown"
@@ -318,7 +286,7 @@ const ComplexListFilter = {
             </button>
             <div class="dropdown-menu"
                 :class="{'close-outside': closeOnItem}">
-                <div v-if="itemsList.length > 4" class="px-3 pb-2 search-group">
+                <div v-if="itemsList.length > 4 && hasSearch" class="px-3 pb-2 search-group">
                     <div class="custom-input custom-input_search__sm position-relative">
                         <input
                             type="text"
@@ -353,7 +321,7 @@ const ComplexListFilter = {
                         </label>
                     </li>
                 </ul>
-                <div class="p-3">
+                <div class="p-3" v-if="hasConfirmBtn">
                     <button class="btn btn-basic mr-2" type="submit">Primary</button>
                     <button type="button" class="btn btn-secondary">Secondary</button>
                 </div>
@@ -419,7 +387,7 @@ const MultiselectFilter = {
                             type="text"
                             placeholder="Search"
                             v-model="inputSearch">
-                        <img src="assets/ico/search.svg" class="icon-search position-absolute">
+                        <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
                     </div>
                 </div>
                 <ul class="my-0">
@@ -483,7 +451,7 @@ const VDropdown = {
     },
     template: `
         <div class="d-flex">
-            <div class="complex-list">
+            <div class="complex-list complex-list__filter">
                 <button class="btn btn-select btn-select__sm dropdown-toggle br-left d-flex align-items-center"
                     type="button"   
                     data-toggle="dropdown"
@@ -493,8 +461,7 @@ const VDropdown = {
                         <span class="complex-list_filled">{{ selectedItem.title }}</span>
                     </p>
                 </button>
-                <div class="dropdown-menu"
-                    :class="{'close-outside': closeOntside}">
+                <div class="dropdown-menu">
                     <ul class="my-0">
                         <li
                             class="dropdown-item dropdown-menu_item d-flex align-items-center">
@@ -654,18 +621,12 @@ const RemovableFilter = {
         </div>`
 };
 
-const dropdownsApp = Vue.createApp({
-    components: {
-        'simple-list': SimpleList,
-        'complex-list': ComplexList,
-        'complex-list-filter': ComplexListFilter,
-        'removable-filter': RemovableFilter,
-        'v-dropdown': VDropdown,
-        'multiselect-filter': MultiselectFilter,
-    }
-});
 
-dropdownsApp.mount('#dropdowns');
+register_component('complex-list', ComplexList)
+register_component('complex-list-filter', ComplexListFilter)
+register_component('removable-filter', RemovableFilter)
+register_component('v-dropdown', VDropdown)
+register_component('multiselect-filter', MultiselectFilter)
 
 let data = [{
     "id": "1",
@@ -695,15 +656,21 @@ let data = [{
         "text": "node-2",
     }
 ]
-let tree = new Tree('.tree', {
-    data,
-    loaded: function () {
-        this.values = ['1', '2'];
-        // console.log(this.selectedNodes)
-        // console.log(this.values)
-    },
-})
 
-$(".dropdown-menu.close-outside").on("click", function (event) {
-    event.stopPropagation();
-});
+$(document).ready(function() {
+    $(".dropdown-menu.close-outside").on("click", function (event) {
+        event.stopPropagation();
+    });
+
+    if($('.tree').length > 0) {
+        let tree = new Tree('.tree', {
+            data,
+            loaded: function () {
+                this.values = ['1', '2'];
+                // console.log(this.selectedNodes)
+                // console.log(this.values)
+            },
+        })
+    }
+
+})

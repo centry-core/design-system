@@ -26,15 +26,6 @@
   border: 0;
 }
 
-
-.form-control:focus {
-  color: var(--main-text);
-  background-color: #fff;
-  border-color: var(--lines);
-  outline: 0;
-  box-shadow: var(--inputs-shadow);
-}
-
 .form-control::placeholder {
   color: var(--tip);
   opacity: 1;
@@ -56,11 +47,6 @@ select.form-control:focus::-ms-value {
 .form-control-range {
   display: block;
   width: 100%;
-}
-
-input.form-control {
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .form-control-label {
@@ -93,9 +79,10 @@ input[type="file"] {
     border-color: var(--lines);
 }
 
-.input-group-append .btn {
-    border-left: 0;
-    border-color: var(--lines);
+.input-group {
+  .input-group-append {
+    margin-top: 4px;
+  }
 }
 
 .form-control-borderless {
@@ -109,4 +96,59 @@ input[type="file"] {
     border-color: var(--lines);
     outline: 0;
     box-shadow: none;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  border-color: var(--error);
+  padding-right: 40px;
+  background-image: url(../../../assets/ico/alarm.svg);
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 16px;
+}
+
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
+  box-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1), 0px -1px 1px rgba(36, 36, 93, 0.05);
+}
+
+.form-control {
+  text-align: left;
+  width: 100%;
+  padding: 7px 16px;
+  border: solid 1px var(--gray400);
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.form-control:focus {
+  border: solid 1px var(--gray400);
+  box-shadow: 0px 2px 3px rgba(36, 36, 93, 0.10), 0px -1px 1px rgba(36, 36, 93, 0.05);
+}
+
+
+.form-control.is-valid, .was-validated .form-control:valid {
+  border-color: var(--gray400);
+  padding-right: 16px !important;
+  background-image: none;
+}
+
+.form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+  border-color: var(--gray400);
+  box-shadow: 0px 2px 3px rgba(36, 36, 93, 0.10), 0px -1px 1px rgba(36, 36, 93, 0.05);
+}
+.bootstrap-select.is-valid .dropdown-toggle {
+  border-color: var(--gray400);
+}
+
+.was-validated .bootstrap-select select:valid + .dropdown-toggle {
+  border-color: var(--gray400);
+}
+
+.bootstrap-select.is-invalid .dropdown-toggle, .error .bootstrap-select .dropdown-toggle, .has-error .bootstrap-select .dropdown-toggle, .was-validated .bootstrap-select select:invalid+.dropdown-toggle {
+  border-color: var(--error);
+}
+.drop-area__invalid {
+  border: dashed 2px var(--error) !important;
 }

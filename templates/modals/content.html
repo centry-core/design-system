@@ -1,0 +1,141 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div class="card mt-3 w-100">
+        <div class="card-header">
+            <h1>Modals</h1>
+            <h7>We have 3 major types of modals</h7>
+        </div>
+        <div class="card-body">
+            <button type="button" class="btn mr-2 btn-secondary" data-toggle="modal" data-target="#basicModal">Basic Modal</button>
+            <button type="button" class="btn mr-2 btn-secondary" data-toggle="modal" data-target="#smallModal">Small Modal</button>
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#lgModal">Large Modal</button>
+        </div>
+    </div>
+
+    <div class="modal modal-base fixed-left fade shadow-sm" tabindex="-1" role="dialog" id="basicModal">
+        <div class="modal-dialog modal-dialog-aside" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row w-100">
+                        <div class="col">
+                            <p class="font-h3 font-weight-bold">Basic Modal</p>
+                        </div>
+                        <div class="col-xs">
+                            <button type="button" class="btn mr-2 btn-secondary" data-dismiss="modal" aria-label="Close">
+                                Cancel
+                            </button>
+                            <button type="button" id="submit" class="btn mr-2 btn-secondary">Secondary Button</button>
+                            <button type="button" id="save" class="btn btn-basic">Primary button</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="section">
+                        <div class="row">
+                            <div class="col ">
+                                <div style="background-color: dimgrey; min-height: 200px;"></div>
+                            </div>
+                            <div class="col ">
+                                <div style="background-color: dimgrey; min-height: 200px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="row">
+                            <div class="col" style="background-color: dimgrey; min-height: 200px;"></div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="row">
+                            <div class="col ">
+                                <div style="background-color: dimgrey; min-height: 200px;"></div>
+                            </div>
+                            <div class="col">
+                                <div style="background-color: dimgrey; min-height: 200px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-small fixed-left fade shadow-sm" tabindex="-1" role="dialog" id="smallModal">
+        <div class="modal-dialog modal-dialog-aside" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row w-100">
+                        <div class="col">
+                            <p class="font-h3 font-weight-bold">Small Modal</p>
+                        </div>
+                        <div class="col-xs">
+                            <button type="button" class="btn mr-2 btn-secondary" data-dismiss="modal" aria-label="Close">
+                                Cancel
+                            </button>
+                            <button type="button" id="save" class="btn   btn-basic">Primary button</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="section">
+                        <div class="row">
+                            <div class="col" style="background-color: dimgrey; min-height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fixed-left fade shadow-sm" tabindex="-1" role="dialog" id="lgModal">
+        <div class="modal-dialog modal-dialog-aside" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row w-100">
+                        <div class="col">
+                            <p class="font-h3 font-weight-bold">Responcive Modal</p>
+                        </div>
+                        <div class="col-xs">
+                            <button type="button" class="btn mr-2 btn-secondary" data-dismiss="modal" aria-label="Close">
+                                Cancel
+                            </button>
+                            <button type="button" id="submit" class="btn mr-2 btn-secondary">Secondary Button</button>
+                            <button type="button" id="save" class="btn btn-basic">Primary button</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="section">
+                        <div class="row">
+                            <div class="col sidebar">
+                                <div style="background-color: dimgrey; min-height: 270px;"></div>
+                            </div>
+                            <div class="col">
+                                <div class="row p-sm">
+                                    <div class="col">
+                                        <div style="background-color: dimgrey; min-height: 50px;"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div style="background-color: dimgrey; min-height: 200px;"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col ">
+                                        <div style="background-color: dimgrey; min-height: 200px;"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div style="background-color: dimgrey; min-height: 200px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

@@ -1,0 +1,69 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div id="dropdowns" class="card mt-3 w-100">
+        <div class="card-header">
+            <h1>Notifications</h1>
+        </div>
+        <div class="card-body row">
+            <div class="col-6">
+                <h4 class="pt-2">Static Notifications</h4>
+                <div class="card w-100 mr-2 card-stripped">
+                    <div class="m-4">
+                        <div class="notification notification-error" onclick="showNotify('ERROR')">
+                            <a class="notification-close"></a>
+                            <div class="notification-body">
+                                <div class="notification-content">
+                                    <div class="notification-title">Message Title</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification notification-warning" onclick="showNotify('WARNING')">
+                            <a class="notification-close"></a>
+                            <div class="notification-body">
+                                <div class="notification-content">
+                                    <div class="notification-title">Message Title</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification notification-info" onclick="showNotify('INFO')">
+                            <a class="notification-close"></a>
+                            <div class="notification-body">
+                                <div class="notification-content">
+                                    <div class="notification-title">Message Title</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification notification-success" onclick="showNotify('SUCCESS')">
+                            <a class="notification-close"></a>
+                            <div class="notification-body">
+                                <div class="notification-content">
+                                    <div class="notification-title">Message Title</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h4 class="pt-2">Dynamic Notifications</h4>
+                <div class="card w-100 mr-2 card-stripped">
+                    <div class="m-4">
+                        <div class="notification notification-basic" onclick="showNotify()">
+                            <a class="notification-close"></a>
+                            <div class="notification-body">
+                                <div class="notification-icon"><img src="/design-system/static/assets/ico/success_purple_icon.svg"></div>
+                                <div class="notification-content">
+                                    <div class="notification-title">Message Title</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

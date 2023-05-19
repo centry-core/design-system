@@ -1,0 +1,13 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div class="w-100">
+        <div class="card mt-3 card-table">
+            <div class="card-body">
+                <filter-component></filter-component>
+            </div>
+        </div>
+    </div>
+</main>

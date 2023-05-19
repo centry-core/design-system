@@ -1,0 +1,138 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection, aside_list=aside_list %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+
+    <div class="card mt-3 w-100">
+        <div class="card-header">
+            <h1> Inputs </h1>
+        </div>
+        <div class="card-body row">
+            <div class="col-6">
+                <h4 class="pt-2">Fields</h4>
+                <div class="card w-100 card-stripped p-3">
+                    <h4 class="mt-4 mb-1">Height 40px</h4>
+                    <div class="custom-input mb-3">
+                        <input
+                            type="text"
+                            placeholder="Text">
+                    </div>
+                    <div class="custom-input mb-3">
+                        <input
+                            type="text"
+                            value="Text"
+                            placeholder="Text">
+                    </div>
+                    <div class="custom-input mb-3">
+                        <input
+                            disabled
+                            type="text"
+                            value="Text"
+                            placeholder="Text">
+                    </div>
+                    <div class="custom-input invalid-input mb-3">
+                        <input
+                            type="text"
+                            value="Wrong data"
+                            placeholder="Text">
+                        <span class="input_error-msg">Сlarifying error message</span>
+                    </div>
+                    <div class="custom-input custom-input_search position-relative">
+                        <input
+                            type="text"
+                            placeholder="Search">
+                        <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
+                    </div>
+                    <h4 class="mt-4 mb-1">Height 32px: add class 'custom-input__sm'</h4>
+                    <div class="custom-input custom-input__sm mb-3">
+                        <input
+                            type="text"
+                            placeholder="Text">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h4 class="pt-2">Fields & label</h4>
+                <div class="card w-100 card-stripped p-3">
+                    <div class="custom-input mb-3">
+                        <label for="fieldOne" class="font-weight-bold mb-0">Label</label>
+                        <p class="custom-input_desc mb-2">Description</p>
+                        <input
+                            id="fieldOne"
+                            type="text"
+                            placeholder="Text">
+                    </div>
+                    <div class="custom-input mb-3">
+                        <label for="fieldTwo" class="font-weight-bold mb-1">Label</label>
+                        <input
+                                id="fieldTwo"
+                                type="text"
+                                placeholder="Text">
+                    </div>
+                </div>
+                <h4 class="py-2">Tags input</h4>
+                <div class="square mb-2">
+                    <input type="text" id="coloris" class="square" value="#5933c6">
+                </div>
+                <p class="font-h5 font-weight-400">1. Var "selectedColor" is the default color for new tag;</p>
+                <p class="font-h5 font-weight-400 mb-2">2. Array "swatches" includes suggested colors;</p>
+                <form class="needs-validation form-tags" novalidate onsubmit="event.preventDefault();">
+                    <select class="form-select"
+                            id="validationTagsShow"
+                            name="tags_show[]"
+                            multiple
+                            data-allow-new="true"
+                            data-show-all-suggestions="true"
+                            data-allow-clear="true">
+                        <option disabled hidden value="">Type to search or create tag</option>
+                        <option value="1" selected="selected" data-style-color="#2bd48d">Apple</option>
+                        <option value="2" selected="selected" data-style-color="#f89033">Banana</option>
+                        <option value="3" data-style-color="#2bd48d">Orange</option>
+                        <option value="3" data-style-color="#2bd48d">Orangutang</option>
+                        <option value="4" data-style-color="#F89033">Blueberry</option>
+                        <option value="5" data-style-color="#f32626">Strawberry</option>
+                        <option value="3" data-style-color="#2bd48d">House</option>
+                        <option value="4" data-style-color="#F89033">Monkey</option>
+                        <option value="5" data-style-color="#f32626">Canada</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a valid tag.</div>
+                </form>
+            </div>
+            <div class="col-6">
+                <h4 class="pt-2">Select</h4>
+                <div class="card w-100 card-stripped p-3">
+                    <select class="selectpicker mb-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <select class="selectpicker bootstrap-select__b mb-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <select class="selectpicker bootstrap-select__b invalid-input mb-3" data-style="btn">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                    <div class="select-validation invalid-select">
+                        <select class="selectpicker bootstrap-select__b" data-style="btn">
+                            <option>Mustard</option>
+                            <option>Ketchup</option>
+                            <option>Relish</option>
+                        </select>
+                        <span class="select_error-msg">Сlarifying error message</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h4 class="pt-2">Input stepper</h4>
+                <div class="card w-100 card-stripped p-3 align-items-start">
+                    <input-stepper :default-value="100"></input-stepper>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

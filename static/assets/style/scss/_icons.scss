@@ -1,3 +1,311 @@
 .fas.fa-gray {
   color: var(--gray500);
 }
+
+.icon__18x18 {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  background-color: $gray600;
+}
+
+.icon__16x16 {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background-color: $gray600;
+}
+
+.icon__14x14 {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  background-color: $gray600;
+}
+
+.btn:hover .icon__16x16:not(.icon__white), .btn:hover .icon__18x18:not(.icon__white),
+li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon__strict-color) {
+  background-color: var(--basic);
+}
+
+.btn-icon__purple:disabled .icon__16x16:not(.icon__white), .btn-icon__purple:disabled .icon__18x18:not(.icon__white) {
+  background-color: $gray400;
+}
+
+.btn-icon__purple .icon__16x16:not(.icon__white), .btn-icon__purple .icon__18x18:not(.icon__white) {
+  background-color: var(--basic);
+}
+
+.icon-filter {
+  -webkit-mask-image: url("../../../assets/ico/icon-filter__18x18.svg");
+}
+
+.icon-sort {
+  -webkit-mask-image: url("../../../assets/ico/icon-sort.svg");
+  -webkit-mask-repeat: no-repeat;
+  height: 9px;
+}
+
+.icon-refresh {
+  -webkit-mask-image: url("../../../assets/ico/icon-refresh__18x18.svg");
+}
+
+.icon-settings {
+  -webkit-mask-image: url("../../../assets/ico/icon-settings__18x18.svg");
+}
+
+.icon-tag {
+  -webkit-mask-image: url("../../../assets/ico/icon-tag__18x18.svg");
+}
+
+.icon-delete {
+  -webkit-mask-image: url("../../../assets/ico/icon-delete__18x18.svg");
+}
+
+.icon-edit {
+  -webkit-mask-image: url("../../../assets/ico/icon-edit__18x18.svg");
+}
+
+.icon-copy {
+  -webkit-mask-image: url("../../../assets/ico/icon-copy__18x18.svg");
+}
+
+.icon-create-element {
+  -webkit-mask-image: url("../../../assets/ico/icon-create-element__18x18.svg");
+}
+
+.icon-date-picker {
+  -webkit-mask-image: url("../../../assets/ico/icon-date-picker__18x18.svg");
+}
+
+.icon-download {
+  -webkit-mask-image: url("../../../assets/ico/icon-download__18x18.svg");
+}
+
+.icon-drag {
+  -webkit-mask-image: url("../../../assets/ico/icon-drag__18x18.svg");
+}
+
+.icon-eye {
+  -webkit-mask-image: url("../../../assets/ico/icon-eye__18x18.svg");
+}
+
+.icon-eye-closed {
+  -webkit-mask-image: url("../../../assets/ico/icon-eye-closed__16x16.svg");
+}
+
+.icon-integrate-purple {
+  -webkit-mask-image: url("../../../assets/ico/icon_integrate__16x16.svg");
+}
+
+.icon-folder {
+  -webkit-mask-image: url("../../../assets/ico/icon-folder__18x18.svg");
+}
+
+.icon-integrate {
+  -webkit-mask-image: url("../../../assets/ico/icon-integrate__18x18.svg");
+}
+
+.icon-link {
+  -webkit-mask-image: url("../../../assets/ico/icon-link__18x18.svg");
+}
+
+.icon-lock {
+  -webkit-mask-image: url("../../../assets/ico/icon-lock__18x18.svg");
+}
+
+.icon-menu-dots {
+  -webkit-mask-image: url("../../../assets/ico/icon-menu-dots__18x18.svg");
+}
+
+.icon-multichoice {
+  -webkit-mask-image: url("../../../assets/ico/icon-multichoice__18x18.svg");
+}
+
+.icon-remove-element {
+  -webkit-mask-image: url("../../../assets/ico/icon-remov-element__18x18.svg");
+}
+
+.icon-run {
+  -webkit-mask-image: url("../../../assets/ico/icon-run__18x18.svg");
+}
+
+.icon-stamp {
+  -webkit-mask-image: url("../../../assets/ico/icon-stamp__18x18.svg");
+}
+
+.icon-table-basic {
+  -webkit-mask-image: url("../../../assets/ico/icon-table-basic__18x18.svg");
+}
+
+.icon-table-advanced {
+  -webkit-mask-image: url("../../../assets/ico/icon-table-advanced__18x18.svg");
+}
+
+.icon-table-cards {
+  -webkit-mask-image: url("../../../assets/ico/icon-table-cards__18x18.svg");
+}
+
+.icon-user {
+  -webkit-mask-image: url("../../../assets/ico/icon-user__18x18.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-zoom-in {
+  -webkit-mask-image: url("../../../assets/ico/icon-zoom-in__18x18.svg");
+}
+
+.icon-zoom-out {
+  -webkit-mask-image: url("../../../assets/ico/icon-zoom-out__18x18.svg");
+}
+
+.icon-add-column {
+  -webkit-mask-image: url("../../../assets/ico/icon-add-column.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-checked__circle {
+  -webkit-mask-image: url("../../../assets/ico/icon-checked__circle.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-eraser {
+  -webkit-mask-image: url("../../../assets/ico/icon-eraser.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-aborted__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-aborted__16x16.svg");
+}
+
+.icon-arrow-down-bold__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-arrow-down-bold__16x16.svg");
+}
+
+.icon-arrow-down__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-arrow-down__16x16.svg");
+}
+
+.icon-arrow-right__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-arrow-right__16x16.svg");
+}
+
+.icon-arrow-up__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-arrow-up__16x16.svg");
+}
+
+.icon-arrow-up-bold__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-arrow-up-bold__16x16.svg");
+}
+
+.icon-arrow-left-bold__16 {
+  transform: rotate(270deg);
+  -webkit-mask-image: url("../../../assets/ico/icon-arrow-up-bold__16x16.svg");
+}
+
+.icon-arrows-left__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-arrows-left__16x16.svg");
+}
+
+.icon-attention__16 {
+  background-image: url("../../../assets/ico/icon-attention__16x16.svg");
+  background-color: transparent;
+}
+
+.icon-check__16 {
+  background-image: url("../../../assets/ico/icon-check__16x16.svg");
+  background-color: transparent;
+}
+
+.icon-check__white {
+  background-image: url("../../../assets/ico/icon-check__white.svg");
+  background-color: transparent !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-close__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-close__16x16.svg");
+}
+
+.icon-info-note__16 {
+  background-image: url("../../../assets/ico/icon-info-note__16x16.svg");
+  background-color: transparent;
+}
+
+.icon-info__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-info__16x16.svg");
+}
+
+.icon-loading__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-loading__16x16.svg");
+}
+
+.icon-success__16 {
+  background-image: url("../../../assets/ico/icon-success__16x16.svg");
+  background-color: transparent;
+}
+
+.icon-test-failed__16 {
+  background-image: url("../../../assets/ico/icon-test-failed__16x16.svg");
+  background-color: transparent;
+}
+
+.icon-minus__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-minus__16x16.svg");
+}
+
+.icon-plus__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-plus__16x16.svg");
+}
+
+.icon-plus__16-purple {
+  -webkit-mask-image: url("../../../assets/ico/create_element.svg");
+}
+
+.icon-user__18 {
+  -webkit-mask-image: url("../../../assets/ico/icon-user.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-search__18 {
+  -webkit-mask-image: url("../../../assets/ico/icon-search__18x18.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-health {
+  display: inline-block;
+  width: 22px;
+  height: 23px;
+  cursor: pointer;
+  background: white;
+
+  &__green {
+    -webkit-mask-image: url("../../../assets/ico/icon-health__green.svg");
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  &__amber {
+    -webkit-mask-image: url("../../../assets/ico/icon-health__amber.svg");
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  &__grey {
+    -webkit-mask-image: url("../../../assets/ico/icon-health__grey.svg");
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  &__red {
+    -webkit-mask-image: url("../../../assets/ico/icon-health__red.svg");
+    -webkit-mask-repeat: no-repeat;
+  }
+}
+
+.icon__white {
+  background-color: white;
+}
+
+

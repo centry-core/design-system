@@ -212,7 +212,7 @@ const modalSavePreset = {
     `
 }
 
-const vueApp = Vue.createApp({
+const ViewFilterComponent = {
     components: {
         'choose-preset': ChoosePreset,
         'confirm-modal': ConfirmModal,
@@ -363,11 +363,64 @@ const vueApp = Vue.createApp({
                 showNotify('ERROR', error);
             })
         }
-    }
-});
+    },
+    template: `
+        <div class="pt-4">
+            <div class="d-flex justify-content-between">
+                <h1 class="font-h2">Summary</h1>
+                <modal-save-preset
+                    v-if="showModal"
+                    @save-preset-as="savePresetAs"
+                    @open-modal="openModal"
+                    @save-new-preset="saveNewPreset"
+                    :loading="loadingSaveAs"
+                ></modal-save-preset>
+                <confirm-modal
+                    v-if="showConfirm"
+                    @close-confirm="openConfirm"
+                    :deleted-preset="prepearDeletedPreset"
+                    @delete-preset="deletePreset"
+                    :loading-delete="loadingDelete"
+                ></confirm-modal>
+                <div class="d-flex ">
+                    <choose-preset
+                        :loading-presets="loadingPresets"
+                        :items="presets"
+                        @open-confirm="openConfirm"
+                        @select-preset="selectPreset"
+                        @select-default="selectDefault"
+                        :selected-preset="selectedPreset"
+                    ></choose-preset>
+                    <edit-preset
+                        @save="savePreset"
+                        @open-modal="openModal"
+                        @create-new-preset="prepearNewPreset"
+                        @reset-to-default="resetToDefault"
+                        :loading-save="loadingSave"
+                        :selected-preset="selectedPreset"
+                    ></edit-preset>
+                </div>
+            </div>
+            <div v-if="loadingTable" class="d-flex align-items-center justify-content-center" style="height: 270px">
+                <i class="preview-loader"></i>
+            </div>
+            <table
+                id="table"
+                class="table table-border mt-4"
+                data-pagination="true"
+                data-page-list="[5, 10, 15]"
+                data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
+                data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
+                data-page-size=5>
+            </table>
+        </div>
+    `
+}
 
-const viewFilter = vueApp.mount('#vueApp');
+register_component('view-filter-component', ViewFilterComponent)
 
-$(".dropdown-menu.close-outside").on("click", function (event) {
-    event.stopPropagation();
-});
+$(document).ready(function() {
+    $(".dropdown-menu.close-outside").on("click", function (event) {
+        event.stopPropagation();
+    });
+})

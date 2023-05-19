@@ -12,12 +12,24 @@ $gray800: #32325d;
 
 $purple-basic: #5933C6;
 
+.text-gray-700 {
+  color: $gray700 !important;
+}
+
 .text-gray-600 {
-  color: $gray600;
+  color: $gray600 !important;
+}
+
+.text-purple {
+  color: $purple-basic !important;
+}
+
+.text-gray-800 {
+  color: $gray800;
 }
 
 .text-gray-500 {
-  color: $gray500;
+  color: $gray500 !important;
 }
 
 .bg-gray-000 {

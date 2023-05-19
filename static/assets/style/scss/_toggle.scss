@@ -1,0 +1,36 @@
+.btn-group-toggle {
+  .btn-toggle {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    padding-top: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: $gray600;
+    border: solid 1px $gray300;
+    &__icon {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    &:hover:not(.disabled):not(.active) {
+      background-color: $gray100;
+      color: $gray700;
+      .icon__18x18 {
+        background-color: $gray700 !important;
+      }
+    }
+    &.disabled {
+      color: $gray400;
+      background-color: $gray100;
+    }
+    &.active {
+      background-color: var(--purple-active-bg);
+      border: solid 1px var(--purple-outline);
+      box-shadow: none;
+      color: var(--basic);
+      .icon__18x18 {
+        background-color: var(--basic) !important;
+      }
+    }
+  }
+}

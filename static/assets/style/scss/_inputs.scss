@@ -13,9 +13,9 @@
     line-height: 24px;
   }
   .custom-input_desc {
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--gray600);
+    font-size: 14px;
+    line-height: 24px;
+    color: $gray800;
   }
   input {
     text-align: left;
@@ -93,7 +93,7 @@
 }
 .input-stepper {
   color: var(--gray800);
-  border: solid 1px var(--gray500);
+  border: solid 1px var(--gray400);
   border-radius: 4px;
   display: flex;
   float: left;
@@ -106,7 +106,7 @@
   button {
     color: var(--gray500);
     font-size: 16px;
-    padding: 12px 15px;
+    padding: 11px 15px;
     background: white;
     border: none;
   }
@@ -119,8 +119,8 @@
 }
 .bootstrap-select.btn-colored-select{
   .dropdown-toggle {
-    height: 38px;
-    padding: 8px 16px;
+    height: 32px;
+    padding: 5px 12px;
     &:hover {
       border: 1px solid var(--b-color) !important;
     }
@@ -152,6 +152,7 @@
     }
   }
   &__b {
+    background: white;
     border: solid 1px var(--gray400);
     border-radius: 4px;
     .dropdown-toggle {
@@ -162,6 +163,12 @@
       .dropdown-toggle {
         border: 1px solid transparent !important;
       }
+    }
+  }
+  &__b.bootstrap-select__sm {
+    .dropdown-toggle {
+      height: 30px;
+      padding: 4px 8px;
     }
   }
   width: auto !important;
@@ -183,4 +190,12 @@
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   width: auto;
+}
+
+.bootstrap-select__need-validation {
+  button.dropdown-toggle {
+    border-color: var(--gray400);
+    height: auto;
+    padding: 7px 16px;
+  }
 }

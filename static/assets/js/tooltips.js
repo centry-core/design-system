@@ -10,8 +10,6 @@ const initTooltips = () => {
     })
 }
 
-$(initTooltips)
-
 $(document).on('vue_init', () => {
-    initTooltips()
+    setTimeout(() => initTooltips(), 0)
 })

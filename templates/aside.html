@@ -1,0 +1,16 @@
+{#{{ active_subsection }}#}
+{#{{ aside_list }}#}
+<aside class="m-3 card position-sticky" style="width: 200px">
+    <ul class="custom-nav flex-column">
+        {% for section in aside_list %}
+            <li class="custom-nav_item {% if section == active_subsection %}active{% endif %} text-capitalize">
+                <a href="{{ url_for(
+                    "theme.route_mode_section_subsection",
+                    mode='developer', section='design-system', subsection=section
+                    ) }}">
+                    {{ section }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</aside>

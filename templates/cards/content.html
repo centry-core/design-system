@@ -1,0 +1,301 @@
+<main class="d-flex align-items-start">
+    {% with active_subsection=payload.theme.active_subsection %}
+        {% include 'design-system:aside.html' %}
+    {% endwith %}
+    <div class="w-100">
+        <div class="card mt-3">
+            <div class="card-header">
+                <h1>Cards</h1>
+                <h7>Cards provide a flexible and extensible content container with multiple variants and options</h7>
+            </div>
+            <div class="card-body">
+                <h13>
+                    A card is a flexible and extensible content container. It includes options for headers and footers,
+                    a
+                    wide
+                    variety of
+                    content, contextual background colors, and powerful display options. If you’re familiar with
+                    Bootstrap
+                    3,
+                    cards replace
+                    our old panels, wells, and thumbnails. Similar functionality to those components is available as
+                    modifier
+                    classes for
+                    cards.
+                </h13>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-4">
+                        <h2><a href="#"><i class="fas fa-arrow-left"></i></a>Card-12</h2>
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-sm btn-secondary">Send</button>
+                            <button class="btn btn-sm btn-secondary">Re-run test</button>
+                            <button class="btn btn-sm btn-secondary">Set as a baseline</button>
+                            <button class="btn btn-sm btn-secondary">Compare with baseline</button>
+                            <button class="btn btn-sm btn-secondary">Not worse then</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-sm card-green">
+                            <div class="card-header">card-sm</div>
+                            <div class="card-body">card-green</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-blue">
+                            <div class="card-header">card-sm</div>
+                            <div class="card-body">card-blue</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-red">
+                            <div class="card-header">card-sm</div>
+                            <div class="card-body">card-red</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-azure">
+                            <div class="card-header">card-sm</div>
+                            <div class="card-body">card-azure</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-magento">
+                            <div class="card-header">card-sm</div>
+                            <div class="card-body">card-magento</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-sm-table">
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td>Started</td>
+                                        <td>2021-01-25T16:43:56.684Z</td>
+                                        <td>Duration</td>
+                                        <td>58s</td>
+                                        <td>Test Type</td>
+                                        <td>default</td>
+                                    </tr>
+                                    <tr>
+                                        <td>End</td>
+                                        <td>2021-01-25T16:43:56.684Z</td>
+                                        <td>Environment</td>
+                                        <td>Demo</td>
+                                        <td>Location</td>
+                                        <td>default</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm-tag-table">
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Response codes
+                                        </td>
+                                        <td>
+                                            Tags
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table class="response-codes">
+                                                <tr>
+                                                    <td>1xx:</td>
+                                                    <td>12K</td>
+                                                    <td>2xx:</td>
+                                                    <td>1.2M</td>
+                                                    <td>3xx:</td>
+                                                    <td>0</td>
+                                                    <td>4xx:</td>
+                                                    <td>0</td>
+                                                    <td>5xx:</td>
+                                                    <td>0</td>
+                                                    <td>N/A:</td>
+                                                    <td>0</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-primary">Primary</span>
+                                            <span class="badge badge-secondary">Secondary</span>
+                                            <span class="badge badge-success">Success</span>
+                                            <span class="badge badge-danger">Danger</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-4">
+                        <h2><a href="#"><i class="fas fa-arrow-left"></i></a>Test Name</h2>
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-sm btn-secondary">Re-run test</button>
+                            <button class="btn btn-sm btn-secondary">Show config</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-sm card-gray">
+                            <div class="card-header">104</div>
+                            <div class="card-body">new</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-red">
+                            <div class="card-header">167</div>
+                            <div class="card-body">critical</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-orange">
+                            <div class="card-header">456</div>
+                            <div class="card-body">high</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-yellow">
+                            <div class="card-header">45</div>
+                            <div class="card-body">medium</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-green">
+                            <div class="card-header">867</div>
+                            <div class="card-body">low</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm card-blue">
+                            <div class="card-header">255</div>
+                            <div class="card-body">info</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-sm-table">
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td>Started</td>
+                                        <td>2021-01-25T16:43:56.684Z</td>
+                                        <td>scan type</td>
+                                        <td>DAST</td>
+                                        <td>valid</td>
+                                        <td>850</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ended</td>
+                                        <td>2021-01-25T16:43:56.684Z</td>
+                                        <td>Environment</td>
+                                        <td>Demo</td>
+                                        <td>false positives</td>
+                                        <td>240</td>
+                                    </tr>
+                                    <tr>
+                                        <td>duration</td>
+                                        <td>181.0 s</td>
+                                        <td>findings</td>
+                                        <td>1500</td>
+                                        <td>ignored</td>
+                                        <td>380</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-sm-table">
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td>Scanners</td>
+                                        <td>Qualys, Masscan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>URL</td>
+                                        <td>http://address.com, http://address.com, http://address.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>tags</td>
+                                        <td>
+                                            <span class="badge badge-primary">Primary</span>
+                                            <span class="badge badge-secondary">Secondary</span>
+                                            <span class="badge badge-success">Success</span>
+                                            <span class="badge badge-danger">Danger</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mb-3">
+            <div class="card card-x">
+                <div class="card-header">
+                    <h2>card-x</h2>
+                </div>
+                <div class="card-body">
+                    <h9>Card card-x in d-flex container uses all available width, if there are few of those, they will
+                        share
+                        a
+                        row
+                    </h9>
+                </div>
+            </div>
+            <div class="card card-x">
+                <div class="card-header">
+                    <h2>card-x</h2>
+                </div>
+                <div class="card-body">
+                    <h9>Card card-x in d-flex container uses all available width, if there are few of those, they will
+                        share
+                        a
+                        row
+                    </h9>
+                </div>
+            </div>
+            <div class="card card-x">
+                <div class="card-header">
+                    <h2>card-x</h2>
+                </div>
+                <div class="card-body">
+                    <h9>Card card-x in d-flex container uses all available width, if there are few of those, they will
+                        share
+                        a
+                        row
+                    </h9>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

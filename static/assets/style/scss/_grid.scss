@@ -1,0 +1,33 @@
+.d-grid {
+  display: grid;
+}
+.grid-column-2 {
+  grid-template-columns:  repeat(2, 1fr);
+}
+.grid-column-4 {
+  grid-template-columns:  repeat(4, 1fr);
+}
+
+.grid-column-5 {
+  grid-template-columns:  repeat(5, 1fr);
+}
+
+.grid-column-6 {
+  grid-template-columns:  repeat(6, 1fr);
+}
+
+.grid-column-7 {
+  grid-template-columns:  repeat(7, 1fr);
+}
+
+.grid-column-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-column-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.grid-items-start {
+  align-items: flex-start;
+}

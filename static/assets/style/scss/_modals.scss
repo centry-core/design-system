@@ -22,7 +22,7 @@
 }
 
 .modal-dialog-aside .modal-content {
-  padding: 50px;
+  padding: 40px 50px 50px 50px;
 }
 
 .modal .modal-dialog-aside .modal-body {
@@ -38,7 +38,7 @@
   padding: 0px;
   height: 32px;
   max-height: 32px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .modal .modal-dialog-aside .modal-content {
@@ -64,7 +64,11 @@
 .modal-body p {
   margin-bottom: 0;
 }
-
+.section-h-auto {
+  .section {
+    margin-bottom: auto;
+  }
+}
 .section {
   margin-bottom: 50px;
 }
@@ -97,4 +101,21 @@
 
 .modal .pb-sm {
   margin-bottom: 20px !important;
+}
+
+.layout-spinner {
+  position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.5)
+}
+
+.spinner-centered {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
