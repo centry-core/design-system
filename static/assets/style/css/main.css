@@ -14,6 +14,7 @@ label {
   margin-bottom: 0 !important; }
 
 .dropdown-menu {
+  overflow: hidden;
   padding: 4px 0 !important; }
   .dropdown-menu .btn {
     font-size: 12px;
@@ -3629,6 +3630,14 @@ li:hover .icon__16x16:not(.icon__strict-color), li:hover .icon__18x18:not(.icon_
 
 .icon-eye {
   -webkit-mask-image: url("../../../assets/ico/icon-eye__18x18.svg"); }
+
+.icon-eye-closed {
+  -webkit-mask-image: url("../../../assets/ico/icon-eye-closed__16x16.svg");
+}
+
+.icon-integrate-purple {
+  -webkit-mask-image: url("../../../assets/ico/icon_integrate__16x16.svg");
+}
 
 .icon-folder {
   -webkit-mask-image: url("../../../assets/ico/icon-folder__18x18.svg"); }
