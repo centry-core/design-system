@@ -275,6 +275,15 @@
   -webkit-mask-repeat: no-repeat;
 }
 
+.icon-search__filled {
+  -webkit-mask-image: url("../../../assets/ico/icon_search__filled.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+.icon-plus__big {
+  -webkit-mask-image: url("../../../assets/ico/icon_plus__big.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
 .icon-health {
   display: inline-block;
   width: 22px;
