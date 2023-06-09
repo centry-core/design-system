@@ -3568,6 +3568,14 @@ p {
   cursor: pointer;
   background-color: #757f99; }
 
+.icon__24x24 {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-color: #757f99;
+}
+
 .icon__16x16 {
   display: inline-block;
   width: 16px;
@@ -3685,7 +3693,7 @@ p {
 
 .icon-zoom-out {
   -webkit-mask-image: url("../../../assets/ico/icon-zoom-out__18x18.svg"); }
-
+  
 .icon-add-column {
   -webkit-mask-image: url("../../../assets/ico/icon-add-column.svg");
   -webkit-mask-repeat: no-repeat; }
@@ -3709,6 +3717,16 @@ p {
 
 .icon-arrow-right__16 {
   -webkit-mask-image: url("../../../assets/ico/icon-arrow-right__16x16.svg"); }
+
+.icon-single-arrow-left__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-left-Arrow.svg"); 
+  background-repeat: no-repeat;
+}
+
+.icon-scroll-top {
+  -webkit-mask-image: url("../../../assets/ico/arrow_up_bold.svg"); 
+  background-repeat: no-repeat;
+}
 
 .icon-arrow-up__16 {
   -webkit-mask-image: url("../../../assets/ico/icon-arrow-up__16x16.svg"); }
@@ -3782,6 +3800,63 @@ p {
 .icon-plus__big {
   -webkit-mask-image: url("../../../assets/ico/icon_plus__big.svg");
   -webkit-mask-repeat: no-repeat; }
+  
+.icon-circle-deep-grey__16 {
+  -webkit-mask-image: url("../../../assets/ico/circle_deep_grey__16x16.svg");
+  -webkit-mask-repeat: no-repeat; 
+  background: #525F7F;
+}
+
+.icon-upload {
+  -webkit-mask-image: url("../../../assets/ico/upload.svg");
+  -webkit-mask-repeat: no-repeat; 
+}
+
+.icon-download {
+  -webkit-mask-image: url("../../../assets/ico/download.svg");
+  -webkit-mask-repeat: no-repeat; 
+}
+
+.icon-circle-green__16 {
+  -webkit-mask-image: url("../../../assets/ico/circle_green__16x16.svg");
+  -webkit-mask-repeat: no-repeat;
+  background: #18B64D;
+}
+
+.icon-circle-grey__16 {
+  -webkit-mask-image: url("../../../assets/ico/circle_grey__16x16.svg");
+  -webkit-mask-repeat: no-repeat;
+  background: #CAD1D7;
+}
+ 
+.icon-circle-red__16 {
+  -webkit-mask-image: url("../../../assets/ico/circle_red__16x16.svg");
+  -webkit-mask-repeat: no-repeat; 
+  background: #2772E2;
+  background: #D71616;
+}
+
+.icon-circle-blue__16 {
+  -webkit-mask-image: url("../../../assets/ico/circle_red__16x16.svg");
+  -webkit-mask-repeat: no-repeat; 
+  background: #2772E2;
+}
+
+.icon-status__18 {
+  -webkit-mask-image: url("../../../assets/ico/status__18x18.svg");
+  -webkit-mask-repeat: no-repeat; 
+}
+
+.icon-date-picker__18 {
+  -webkit-mask-image: url("../../../assets/ico/date_picker__18x18.svg");
+  -webkit-mask-repeat: no-repeat; 
+}
+ 
+.icon-severity__18 {
+  -webkit-mask-image: url("../../../assets/ico/severity__18x18.svg");
+  -webkit-mask-repeat: no-repeat; 
+}
+
 
 .icon-health {
   display: inline-block;
