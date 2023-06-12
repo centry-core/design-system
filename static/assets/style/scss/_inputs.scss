@@ -132,7 +132,7 @@
 }
 .bootstrap-select {
   &.show, &:hover {
-    .dropdown-toggle:not(.btn-chapters) {
+    .dropdown-toggle:not(.btn-chapters):not(.btn-border-none) {
       transition: all .3s;
       border: 1px solid $gray400;
       box-shadow: 0 2px 3px rgba(36, 36, 93, 0.1), 0 -1px 1px rgba(36, 36, 93, 0.05);
@@ -165,6 +165,9 @@
       }
     }
   }
+  &__b-purple {
+    border: solid 1px var(--purple-outline) !important;
+  }
   &__b-sm {
     .dropdown-toggle {
       height: 30px;
@@ -174,7 +177,7 @@
   &__b.bootstrap-select__sm {
     .dropdown-toggle {
       height: 30px;
-      padding: 4px 8px;
+      padding: 3px 8px;
     }
   }
   width: auto !important;
