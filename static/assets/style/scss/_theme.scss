@@ -6,10 +6,10 @@
   font-weight: 300;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2)
-    format("woff2");
+  format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+  U+FEFF, U+FFFD;
 }
 @font-face {
   font-family: "Source Sans Pro";
@@ -17,10 +17,10 @@
   font-weight: 300;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2)
-    format("woff2");
+  format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+  U+FEFF, U+FFFD;
 }
 @font-face {
   font-family: "Source Sans Pro";
@@ -28,10 +28,10 @@
   font-weight: 700;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2)
-    format("woff2");
+  format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+  U+FEFF, U+FFFD;
 }
 
 :root {
@@ -105,24 +105,24 @@
   --card-green: #e7ffe7;
   --border-green20: rgba(125, 214, 128, 0.2);
   --blue-linear: linear-gradient(
-      139.18deg,
-      #7345fc 2.11%,
-      rgba(114, 69, 250, 0.26) 95.79%
-    ),
-    #341580;
+                  139.18deg,
+                  #7345fc 2.11%,
+                  rgba(114, 69, 250, 0.26) 95.79%
+  ),
+  #341580;
   --bloc-shadow: 0px 0px 8px rgba(18, 17, 97, 0.06);
   --hover-shadow: 0px 2px 4px rgba(84, 51, 181, 0.15),
-    0px 0px 12px rgba(55, 32, 149, 0.04);
+  0px 0px 12px rgba(55, 32, 149, 0.04);
   --hover-warn-shadow: 0px 2px 4px rgba(252, 154, 67, 0.15),
-    0px 0px 12px rgba(252, 154, 67, 0.04);
+  0px 0px 12px rgba(252, 154, 67, 0.04);
   --hover-danger-shadow: 0px 2px 4px rgba(243, 38, 38, 0.15),
-    0px 0px 12px rgba(243, 38, 38, 0.04);
+  0px 0px 12px rgba(243, 38, 38, 0.04);
   --hover-success-shadow: 0px 2px 4px rgba(43, 212, 141, 0.15),
-    0px 0px 12px rgba(43, 212, 141, 0.04);
+  0px 0px 12px rgba(43, 212, 141, 0.04);
   --inputs-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1),
-    0px -1px 1px rgba(36, 36, 93, 0.05);
+  0px -1px 1px rgba(36, 36, 93, 0.05);
   --card-shadow: 0px 2px 3px rgba(36, 36, 93, 0.1),
-    0px -1px 1px rgba(36, 36, 93, 0.05);
+  0px -1px 1px rgba(36, 36, 93, 0.05);
 }
 
 h1,
@@ -218,6 +218,9 @@ h2 a {
 .pb-24 {
   padding-bottom: 24px;
 }
+.pt-24 {
+  padding-top: 24px;
+}
 .pt-20 {
   padding-top: 20px;
 }
@@ -232,6 +235,13 @@ h2 a {
   padding-left: 24px;
   padding-right: 24px;
 }
+.px-28 {
+  padding-left: 28px;
+  padding-right: 28px;
+}
+.pb-28 {
+  padding-bottom: 28px;
+}
 .mt-20 {
   margin-top: 20px;
 }
@@ -245,6 +255,11 @@ h2 a {
 .displacement-ml-4 {
   .dropdown-menu {
     margin-left: -4px;
+  }
+}
+.displacement-left-4 {
+  .dropdown-menu {
+    left: 4px !important;
   }
 }
 

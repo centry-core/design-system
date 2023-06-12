@@ -51,7 +51,8 @@
 }
 
 .icon-refresh {
-  -webkit-mask-image: url("../../../assets/ico/icon-refresh__18x18.svg");
+  -webkit-mask-image: url("../../../assets/ico/icon-refresh.svg");
+  -webkit-mask-repeat: no-repeat;
 }
 
 .icon-settings {
@@ -259,12 +260,27 @@
   -webkit-mask-image: url("../../../assets/ico/icon-minus__16x16.svg");
 }
 
+.icon-minus__big {
+  -webkit-mask-image: url("../../../assets/ico/icon-minus__big.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
 .icon-plus__16 {
   -webkit-mask-image: url("../../../assets/ico/icon-plus__16x16.svg");
 }
 
 .icon-plus__16-purple {
   -webkit-mask-image: url("../../../assets/ico/create_element.svg");
+}
+
+.icon-save {
+  -webkit-mask-image: url("../../../assets/ico/icon-save.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-share {
+  -webkit-mask-image: url("../../../assets/ico/icon-share.svg");
+  -webkit-mask-repeat: no-repeat;
 }
 
 .icon-user__18 {
@@ -285,7 +301,10 @@
   -webkit-mask-image: url("../../../assets/ico/icon_plus__big.svg");
   -webkit-mask-repeat: no-repeat;
 }
-
+.icon_close-modal {
+  -webkit-mask-image: url("../../../assets/ico/icon_close-modal.svg");
+  -webkit-mask-repeat: no-repeat;
+}
 .icon-health {
   display: inline-block;
   width: 22px;
