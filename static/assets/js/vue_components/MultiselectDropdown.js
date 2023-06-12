@@ -4,9 +4,16 @@ const MultiselectDropdown = {
             type: [Array, String],
             default: []
         },
+        list_position: {
+            type: String,
+        },
+        isAllChecked: {
+            type: Boolean,
+            default: false,
+        },
         pre_selected_indexes: {
             type: [Array, String],
-            default: []
+            default: [],
         },
         placeholder: {
             type: String,
@@ -26,7 +33,7 @@ const MultiselectDropdown = {
         },
         button_class: {
             type: String,
-            default: 'btn btn-select dropdown-toggle d-inline-flex align-items-center'
+            default: 'btn btn-select dropdown-toggle d-inline-flex align-items-center btn-border-none'
         },
         variant: {
             type: String,
@@ -76,13 +83,16 @@ const MultiselectDropdown = {
                 this.selectedItems = this.li.filter((el, idx) => this.pre_selected_indexes.includes(idx))
             }
         }
+        if (this.isAllChecked) {
+            this.selectedItems = this.list_items
+            this.handlerSelectAll(true)
+        }
     },
     computed: {
         selected_indexes() {
             return this.selectedItems.map(i => i.idx)
         },
         li() {
-
             if (this.list_items.length <= 0) return []
 
             let listed_items
@@ -117,10 +127,29 @@ const MultiselectDropdown = {
         },
         is_all_selected() {
             return (this.selectedItems.length < this.list_items.length) && this.selectedItems.length > 0
+        },
+        isAllHandleChecked() {
+            return this.selectedItems.length === this.list_items.length
         }
     },
     methods: {
-        handlerSelectAll() {
+        handlerSelectAll(initCheckAll = false) {
+            if (initCheckAll) {
+                this.selectedItems = [...this.list_items.map((i, idx) => {
+                    if (typeof i === 'object') {
+                        return {
+                            ...i,
+                            name: i.name,
+                            idx: idx,
+                        }
+                    }
+                    return {
+                        name: i,
+                        idx: idx
+                    }
+                })]
+                return;
+            }
             if (this.selectedItems.length !== this.list_items.length) {
                 this.selectedItems = [...this.list_items.map((i, idx) => {
                     if (typeof i === 'object') {
@@ -157,7 +186,10 @@ const MultiselectDropdown = {
                 }
                 this.$emit('change', return_value)
                 this.$emit('update:modelValue', return_value)
-                this.$refs[this.refSearchId].checked = this.selectedItems.length === this.list_items.length
+                if(this.$refs[this.refSearchId]) {
+                    this.$refs[this.refSearchId].checked = this.selectedItems.length === this.list_items.length
+                }
+
             })
         },
         modelValue(newValue) {
@@ -183,72 +215,92 @@ const MultiselectDropdown = {
     },
     template: `
     <div class="select-validation" :class="has_error_class">
-        <div class="dropdown_simple-list bootstrap-select bootstrap-select__b bootstrap-select__sm"
+        <div class="dropdown_simple-list dropdown bootstrap-select bootstrap-select__sm"
             :class="container_class"
         >
-            <button class="btn" type="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                  :disabled="disabled"
-                  :class="button_class"
-            >
-                <div v-if="variant === 'slot'">
-                    <slot name="dropdown_button"></slot>
-                </div>
-                <div v-else>
-                    <span class="complex-list_filled" v-if="selectedItems.length > 0">
-                        [[ selectedItems.length ]] selected
-                    </span>
-                    <span v-else class="complex-list_empty">[[ placeholder ]]</span>
-                </div>
-            </button>
-            <ul class="dropdown-menu overflow-auto"
-                v-if="list_items.length > 0"
-                @click="$event.stopPropagation()"
-                :style="maxHeight ? {maxHeight: maxHeight} : {}"
-            >
-                    <li v-if="hasSearch" class="dropdown-menu_item pl-3 pr-3 pt-2 pb-2">
-                    <div class="custom-input custom-input_search__sm position-relative">
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            v-model="inputSearch">
-                        <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
+            <div class="d-flex">
+                <slot name="label">
+                </slot>
+                <template v-if="variant === 'slot'">
+                    <button class="btn" type="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        :ref="dropdownButton"
+                        :disabled="disabled"
+                        :class="button_class"
+                    > 
+                        <slot name="dropdown_button"></slot>
+                    </button>
+                </template>
+                <button v-else class="btn w-100" type="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    :ref="dropdownButton"
+                    :disabled="disabled"
+                    :class="button_class"
+                >   
+                    
+                    <div v-else class="d-flex justify-content-start pl-2 w-100">
+                        <span class="complex-list_filled" v-if="isAllHandleChecked && selectedItems.length > 0">
+                            All
+                        </span>
+                        <span class="complex-list_filled" v-else-if="selectedItems.length > 0">
+                            [[ selectedItems.length ]] selected
+                        </span>
+                        <span v-else class="complex-list_empty">[[ placeholder ]]</span>
                     </div>
+                </button>
+                <ul class="dropdown-menu overflow-auto mt-1 dropdown-menu-right"
+                    :class="list-position"
+                    v-if="list_items.length > 0"
+                    @click="$event.stopPropagation()"
+                    :style="maxHeight ? {maxHeight: maxHeight} : {}"
+                >
+                    <li v-if="hasSearch" class="dropdown-menu_item pl-3 pr-3 pt-2 pb-2">
+                        <div class="custom-input custom-input_search__sm position-relative">
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                v-model="inputSearch">
+                            <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
+                        </div>
                     </li>
-                 <li
+                     <li
                         class="dropdown-menu_item d-flex align-items-center">
                         <label
                             class="mb-0 w-100 d-flex align-items-center custom-checkbox"
                             :class="{ 'custom-checkbox__minus': is_all_selected }">
                             <input
-                                @click="handlerSelectAll"
+                                @click="() => handlerSelectAll(false)"
                                 :ref="refSearchId"
                                 type="checkbox">
                             <span class="w-100 d-inline-block ml-3">All</span>
                         </label>
                     </li>
-                <li class="dropdown-menu_item p-0" 
-                    v-for="item in li" 
-                    :key="item.idx"
-                >
-                    <label class="d-flex align-items-center custom-checkbox px-3 py-2">
-                        <input
-                            :value="item"
-                            v-model="selectedItems"
-                            type="checkbox"
-                        >
-                        <span v-if="item.html !== undefined" v-html="item.html"></span>
-                        <span v-else class="w-100 d-inline-block ml-3">[[ item.name ]]</span>
-                    </label>
-                </li>
-            </ul>
-            <div class="dropdown-menu py-0" v-else>
-                <span class="px-3 py-2 d-inline-block">Nothing to select</span>
+                    <li class="dropdown-menu_item p-0" 
+                        v-for="item in li" 
+                        :key="item.idx"
+                    >
+                        <label class="d-flex align-items-center custom-checkbox px-3 py-2">
+                            <input
+                                :value="item"
+                                v-model="selectedItems"
+                                type="checkbox"
+                            >
+                            <span v-if="item.html !== undefined" v-html="item.html"></span>
+                            <span v-else class="w-100 d-inline-block ml-3" style="white-space: pre;">[[ item.name ]]</span>
+                        </label>
+                    </li>
+                </ul>
+                <ul class="dropdown-menu overflow-auto mt-1 w-auto" :class="list-position" v-else>
+                    <li class="dropdown-menu_item p-0">
+                        <label class="d-flex align-items-center custom-checkbox px-3 py-2">
+                            <span class="w-100 d-inline-block" style="white-space: pre;">Nothing to select</span>
+                        </label>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     `
 }
 
-register_component('MultiselectDropdown', MultiselectDropdown
-)
+register_component('MultiselectDropdown', MultiselectDropdown)
