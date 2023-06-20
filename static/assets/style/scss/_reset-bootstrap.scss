@@ -100,3 +100,17 @@ td.align-top.bs-checkbox {
 .no-records-found {
   border-bottom: none !important;
 }
+.btn-light {
+  background: white;
+}
+.btn-light:hover {
+  background-color: white;
+}
+.btn-light:not(:disabled):not(.disabled):active,
+.show>.btn-light.dropdown-toggle,
+.btn-light:focus {
+  background-color: white;
+}
+.bootstrap-select .dropdown-menu.w-auto {
+  min-width: auto;
+}
