@@ -238,7 +238,7 @@ const MultiselectDropdown = {
                     :class="button_class"
                 >   
                     
-                    <div v-else class="d-flex justify-content-start pl-2 w-100">
+                    <div class="d-flex justify-content-start pl-2 w-100">
                         <span class="complex-list_filled" v-if="isAllHandleChecked && selectedItems.length > 0">
                             All
                         </span>
