@@ -44,6 +44,7 @@ function uploadSingleFile(file) {
     const item = document.createElement('div');
     item.classList.add('preview-area_item', 'preview-area_loader');
     const fileName = document.createElement('span');
+    fileName.classList.add('file_name')
     item.addEventListener('click', function () {
         previewArea.innerHTML = '';
         fileInput.value = '';
