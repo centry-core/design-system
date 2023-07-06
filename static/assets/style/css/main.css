@@ -3788,6 +3788,11 @@ p {
 .icon-close__16 {
   -webkit-mask-image: url("../../../assets/ico/icon-close__16x16.svg"); }
 
+.icon-close__24{
+  -webkit-mask-image: url("../../../assets/ico/icon-close__24x24.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
 .icon-info-note__16 {
   background-image: url("../../../assets/ico/icon-info-note__16x16.svg");
   background-color: transparent; }
