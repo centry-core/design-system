@@ -6,24 +6,24 @@ $(document).ready(function() {
     fileInput = document.getElementById('file');
 
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        dropArea.addEventListener(eventName, preventDefaults, false)
+        dropArea?.addEventListener(eventName, preventDefaults, false)
     });
 
     ['dragenter', 'dragover'].forEach(eventName => {
-        dropArea.addEventListener(eventName, highlight, false)
+        dropArea?.addEventListener(eventName, highlight, false)
     });
 
     ['dragleave', 'drop'].forEach(eventName => {
-        dropArea.addEventListener(eventName, unhighlight, false)
+        dropArea?.addEventListener(eventName, unhighlight, false)
     })
 
     function highlight(e) {
-        dropArea.classList.add('highlight')
+        dropArea?.classList.add('highlight')
     }
     function unhighlight(e) {
-        dropArea.classList.remove('highlight')
+        dropArea?.classList.remove('highlight')
     }
-    dropArea.addEventListener('drop', handleDrop, false)
+    dropArea?.addEventListener('drop', handleDrop, false)
     function handleDrop(e) {
         let dt = e.dataTransfer
         let files = dt.files
@@ -44,6 +44,7 @@ function uploadSingleFile(file) {
     const item = document.createElement('div');
     item.classList.add('preview-area_item', 'preview-area_loader');
     const fileName = document.createElement('span');
+    fileName.classList.add('file_name')
     item.addEventListener('click', function () {
         previewArea.innerHTML = '';
         fileInput.value = '';
