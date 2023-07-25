@@ -153,6 +153,7 @@ function reportsStatusFormatter(value, row, index) {
             return `<div style="color: var(--red)"><i class="fas fa-exclamation-circle error"></i> ${value}</div>`
         case 'success':
             return `<div style="color: var(--green)"><i class="fas fa-exclamation-circle error"></i> ${value}</div>`
+        case 'cancelled':
         case 'canceled':
             return `<div style="color: var(--gray)"><i class="fas fa-times-circle"></i> ${value}</div>`
         case 'finished':
