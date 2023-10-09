@@ -3847,6 +3847,10 @@ p {
   -webkit-mask-image: url("../../../assets/ico/icon_schedule.svg");
   -webkit-mask-repeat: no-repeat; }
 
+.icon-sent__message {
+  -webkit-mask-image: url("../../../assets/ico/sent-message.svg");
+  -webkit-mask-repeat: no-repeat; }
+
 .icon-health {
   display: inline-block;
   width: 22px;
