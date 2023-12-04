@@ -116,7 +116,7 @@ const PresetTable = {
         async fetchSummaryData() {
             let url = this.summary_url
             if (Object.keys(this.query_params).length > 0) {
-                url = this.summary_url + new URLSearchParams(this.query_params);
+                url = this.summary_url + "?" + new URLSearchParams(this.query_params);
             }
             const res = await fetch(url, {
                 method: 'GET',
