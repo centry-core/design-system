@@ -26,6 +26,7 @@ const TextToggle = {
             type: String,
             default: undefined
         },
+        disabled_buttons: false,
     },
     data() {
         return {
@@ -109,6 +110,7 @@ const TextToggle = {
                 :class="{disabled: disabled_indexes.includes(i.idx), active: i.idx === selected_idx}"
             >
                 <input type="radio" 
+                    :disabled="disabled_buttons"
                     :name="radiogroup_name" 
                     v-model="selected_idx" 
                     :value="i.idx"
