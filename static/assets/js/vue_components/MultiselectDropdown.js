@@ -261,7 +261,7 @@ const MultiselectDropdown = {
                                 type="text"
                                 placeholder="Search"
                                 v-model="inputSearch">
-                            <img :src="`${url_prefix}/design-system/static/assets/ico/search.svg`" class="icon-search position-absolute">
+                            <img :src="${url_prefix}/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
                         </div>
                     </li>
                      <li

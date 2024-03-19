@@ -537,8 +537,8 @@ const FilterComponent = {
                         class="table table-border mt-4"
                         data-pagination="true"
                         data-page-list="[5, 10, 15]"
-                        :data-pagination-pre-text="`<img src='${url_prefix}/design-system/static/assets/ico/arrow_left.svg'>`"
-                        :data-pagination-next-text="`<img src='${url_prefix}/design-system/static/assets/ico/arrow_right.svg'>`"
+                        :data-pagination-pre-text="<img src='${url_prefix}/design-system/static/assets/ico/arrow_left.svg'>"
+                        :data-pagination-next-text="<img src='${url_prefix}/design-system/static/assets/ico/arrow_right.svg'>"
                         data-page-size=5>
                     </table>
                 </div>
