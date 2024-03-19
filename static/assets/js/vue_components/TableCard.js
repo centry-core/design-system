@@ -86,8 +86,8 @@ const TableCard = {
                 data-side-pagination="server"
                 data-pagination-parts='["pageInfoShort", "pageList"]'
                 data-loading-template="loadingTemplate"
-                data-pagination-pre-text="<img src='[[ url_prefix ]]/design-system/static/assets/ico/arrow_left.svg'>"
-                data-pagination-next-text="<img src='[[ url_prefix ]]/design-system/static/assets/ico/arrow_right.svg'>"
+                :data-pagination-pre-text="`<img src='${url_prefix}/design-system/static/assets/ico/arrow_left.svg'>`"
+                :data-pagination-next-text="`<img src='${url_prefix}/design-system/static/assets/ico/arrow_right.svg'>`"
 
                 ref="table"
 
