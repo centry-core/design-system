@@ -16,7 +16,7 @@
                     :adaptive-height="true"
                     :table_attributes="{
                         'data-pagination': false,
-                        'data-url': '/design-system/static/assets/js/mock/data-table.json',
+                        'data-url': '{{ tools.context.url_prefix }}/design-system/static/assets/js/mock/data-table.json',
                         'data-height': '247',
                         'id': 'scrolledTable'
                     }"
@@ -68,7 +68,7 @@
                 <Table-Card
                         header='Right Table'
                         :table_attributes="{
-                        'data-url': '/design-system/static/assets/js/mock/data-table.json',
+                        'data-url': '{{ tools.context.url_prefix }}/design-system/static/assets/js/mock/data-table.json',
                         'data-pagination': 'true',
                         'data-page-list': '[5, 10, 15, 20]',
                         'data-page-size': 5,
@@ -122,7 +122,7 @@
                 header='Row Table'
                 :adaptive-height="true"
                 :table_attributes="{
-                'data-url': '/design-system/static/assets/js/mock/data-table.json',
+                'data-url': '{{ tools.context.url_prefix }}/design-system/static/assets/js/mock/data-table.json',
                 'data-pagination': 'true',
                 'data-page-list': '[5, 10, 15, 20]',
                 'data-page-size': 5,
@@ -154,7 +154,7 @@
             header='Row Table'
             :adaptive-height="true"
             :table_attributes="{
-                'data-url': '/design-system/static/assets/js/mock/data-table.json',
+                'data-url': '{{ tools.context.url_prefix }}/design-system/static/assets/js/mock/data-table.json',
                 'data-pagination': 'true',
                 'data-page-list': '[5, 10, 15, 20]',
                 'data-page-size': 5,
@@ -199,7 +199,7 @@
             :adaptive-height="true"
             :borders="true"
             :table_attributes="{
-                'data-url': '/design-system/static/assets/js/mock/data-table.json',
+                'data-url': '{{ tools.context.url_prefix }}/design-system/static/assets/js/mock/data-table.json',
                 'data-pagination': 'true',
                 'data-page-list': '[5, 10, 15, 20]',
                 'data-page-size': 5,
@@ -302,7 +302,7 @@
             header='Parameters Table'
             :fixed-height="false"
             :table_attributes="{
-                    'data-url': '/design-system/static/assets/js/mock/data-table.json',
+                    'data-url': '{{ tools.context.url_prefix }}/design-system/static/assets/js/mock/data-table.json',
                     'data-pagination': 'true',
                     'data-page-list': '[5, 10, 15, 20]',
                     'data-page-size': 5,

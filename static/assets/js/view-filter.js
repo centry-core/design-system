@@ -14,7 +14,7 @@ const ChoosePreset = {
     template: `
         <div class="complex-list">
             <button class="btn btn-select btn-select__sm dropdown-toggle br-left d-flex align-items-center"
-                type="button"   
+                type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false">
@@ -42,7 +42,7 @@ const ChoosePreset = {
                             </button>
                         </div>
                     </li>
-                </ul>   
+                </ul>
             </div>
         </div>
     `
@@ -103,7 +103,7 @@ const EditPreset = {
             })
         },
     },
-    template: ` 
+    template: `
         <div class="dropdown_action" ref="presetToggle">
             <button class="btn btn-secondary_item__right btn-secondary btn-icon"
                     type="button"
@@ -118,7 +118,7 @@ const EditPreset = {
                     <div class="d-flex justify-content-between">
                         <h3 class="font-h3 mr-4">{{ editablePreset.title }}</h3>
                         <div class="d-flex justify-content-start">
-                            <button 
+                            <button
                                 v-if="editablePreset.id"
                                 @click="save"
                                 class="btn btn-basic d-flex align-items-center mr-2"
@@ -240,6 +240,7 @@ const ViewFilterComponent = {
             selectedPreset: {
                 title: ''
             },
+            url_prefix: window.url_prefix,
         }
     },
     async mounted() {
@@ -409,8 +410,8 @@ const ViewFilterComponent = {
                 class="table table-border mt-4"
                 data-pagination="true"
                 data-page-list="[5, 10, 15]"
-                data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
-                data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
+                data-pagination-pre-text="<img src='{{ url_prefix }}/design-system/static/assets/ico/arrow_left.svg'>"
+                data-pagination-next-text="<img src='{{ url_prefix }}/design-system/static/assets/ico/arrow_right.svg'>"
                 data-page-size=5>
             </table>
         </div>

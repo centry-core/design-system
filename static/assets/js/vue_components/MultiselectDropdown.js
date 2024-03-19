@@ -71,6 +71,7 @@ const MultiselectDropdown = {
             isAllSelected: false,
             selectedItems: [],
             refSearchId: 'refSearchCbx' + Math.round(Math.random() * 1000),
+            url_prefix: window.url_prefix,
         }
     },
     mounted() {
@@ -227,7 +228,7 @@ const MultiselectDropdown = {
                         :ref="dropdownButton"
                         :disabled="disabled"
                         :class="button_class"
-                    > 
+                    >
                         <slot name="dropdown_button"></slot>
                     </button>
                 </template>
@@ -236,8 +237,8 @@ const MultiselectDropdown = {
                     :ref="dropdownButton"
                     :disabled="disabled"
                     :class="button_class"
-                >   
-                    
+                >
+
                     <div class="d-flex justify-content-start pl-2 w-100">
                         <span class="complex-list_filled" v-if="isAllHandleChecked && selectedItems.length > 0">
                             All
@@ -260,7 +261,7 @@ const MultiselectDropdown = {
                                 type="text"
                                 placeholder="Search"
                                 v-model="inputSearch">
-                            <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
+                            <img src="[[ url_prefix ]]/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
                         </div>
                     </li>
                      <li
@@ -275,8 +276,8 @@ const MultiselectDropdown = {
                             <span class="w-100 d-inline-block ml-3">All</span>
                         </label>
                     </li>
-                    <li class="dropdown-menu_item p-0" 
-                        v-for="item in li" 
+                    <li class="dropdown-menu_item p-0"
+                        v-for="item in li"
                         :key="item.idx"
                     >
                         <label class="d-flex align-items-center custom-checkbox px-3 py-2">

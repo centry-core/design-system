@@ -57,9 +57,9 @@
 //     },
 //     lgFormatter(value, row, index) {
 //         if (row.job_type === "perfmeter") {
-//             return '<img src="/design-system/static/assets/ico/jmeter.png" width="20">'
+//             return '<img src="' + window.url_prefix + '/design-system/static/assets/ico/jmeter.png" width="20">'
 //         } else if (row.job_type === "perfgun") {
-//             return '<img src="/design-system/static/assets/ico/gatling.png" width="20">'
+//             return '<img src="' + window.url_prefix + '/design-system/static/assets/ico/gatling.png" width="20">'
 //         } else {
 //             return value
 //         }

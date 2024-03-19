@@ -23,6 +23,7 @@ const TreeList = {
                 { id: 9, title: 'Item 3' },
             ],
             selectedItems: [],
+            url_prefix: window.url_prefix,
         }
     },
     watch: {
@@ -132,6 +133,7 @@ const ComplexList = {
             refSearchId: 'refSearchCbx'+Math.round(Math.random() * 1000),
             selectedItems: [],
             closeOnItem: true,
+            url_prefix: window.url_prefix,
         }
     },
     computed: {
@@ -240,6 +242,7 @@ const ComplexListFilter = {
             refSearchId: 'refSearchCbx'+Math.round(Math.random() * 1000),
             selectedItems: [],
             closeOnItem: true,
+            url_prefix: window.url_prefix,
         }
     },
     computed: {
@@ -272,7 +275,7 @@ const ComplexListFilter = {
             <button class="btn btn-select dropdown-toggle position-relative text-left d-flex align-items-center"
                 :class="extraClass"
                 :style="{minWidth: minWidth}"
-                type="button"   
+                type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false">
@@ -281,7 +284,7 @@ const ComplexListFilter = {
                     :class="{'w-100': fixWidth}">
                     <span v-if="selectedItems.length === itemsList.length" class="complex-list_filled">All</span>
                     <span v-else-if="selectedItems.length > 0" class="complex-list_filled">{{ selectedItems.length }} selected</span>
-                    <span v-else class="complex-list_empty">Select Step</span>  
+                    <span v-else class="complex-list_empty">Select Step</span>
                 </p>
             </button>
             <div class="dropdown-menu"
@@ -340,6 +343,7 @@ const MultiselectFilter = {
             refSearchId: 'refSearchCbx'+Math.round(Math.random() * 1000),
             selectedItems: [],
             closeOnItem: true,
+            url_prefix: window.url_prefix,
         }
     },
     computed: {
@@ -369,13 +373,13 @@ const MultiselectFilter = {
     template: `
         <div id="complexList" class="complex-list complex-list__filter bootstrap-select">
             <button class="btn dropdown-toggle position-relative text-left d-flex align-items-center"
-                type="button"   
+                type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false">
                 <slot name="label"></slot>
                 <p class="d-flex mb-0">
-                    <span class="font-h5">{{ title }}</span>  
+                    <span class="font-h5">{{ title }}</span>
                     <span class="complex-list_filled ml-1 text-gray-600">({{ selectedItems.length }}/{{ itemsList.length }} selected)</span>
                 </p>
             </button>
@@ -387,7 +391,7 @@ const MultiselectFilter = {
                             type="text"
                             placeholder="Search"
                             v-model="inputSearch">
-                        <img src="/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
+                        <img src="{{ url_prefix }}/design-system/static/assets/ico/search.svg" class="icon-search position-absolute">
                     </div>
                 </div>
                 <ul class="my-0">
@@ -453,7 +457,7 @@ const VDropdown = {
         <div class="d-flex">
             <div class="complex-list complex-list__filter">
                 <button class="btn btn-select btn-select__sm dropdown-toggle br-left d-flex align-items-center"
-                    type="button"   
+                    type="button"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
@@ -481,18 +485,18 @@ const VDropdown = {
                                 <span class="w-100 d-inline-block">{{ item.title }}</span>
                                 <img v-if="item.id === selectedItem.id" src="./assets/ico/check.svg" class="mr-2">
                             </label>
-                            <button 
+                            <button
                                 v-if="loadingDelete && deletedId === item.id"
                                 class="btn btn-default btn-xs btn-table btn-icon__xs">
                                 <i class="preview-loader"></i>
                             </button>
-                            <button 
+                            <button
                                 v-else
                                 class="btn btn-default btn-xs btn-table btn-icon__xs" @click.stop="deleteItem(item)">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </li>
-                    </ul>   
+                    </ul>
                 </div>
             </div>
             <div class="dropdown_action">
@@ -560,7 +564,7 @@ const RemovableFilter = {
         <div id="complexList" class="complex-list complex-list__removable">
             <button class="btn btn-select dropdown-toggle position-relative text-left d-flex align-items-center"
                 :style="{ minWidth: minWidth }"
-                type="button"   
+                type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false">

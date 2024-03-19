@@ -27,7 +27,7 @@ window.showNotify = (type, title = '') => {
         default:
             popup.basic({
                 // title: 'Message basic',
-                iconUrl: "/design-system/static/assets/ico/success_purple_icon.svg"
+                iconUrl: window.url_prefix + "/design-system/static/assets/ico/success_purple_icon.svg"
             });
             break;
     }

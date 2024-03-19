@@ -28,7 +28,7 @@
     let high_value = 100;
     $(document).ready(function() {
         setParams();
-        loadRequestData('/api/v1/chart/requests/summary', "Response time, ms");
+        loadRequestData(window.url_prefix + '/api/v1/chart/requests/summary', "Response time, ms");
         fillSummaryTable();
         fillErrorTable();
         // $('#RT').trigger( "click" )

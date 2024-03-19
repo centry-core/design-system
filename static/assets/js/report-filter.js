@@ -60,9 +60,9 @@ const ChooseFilter = {
             </button>
 
             <ul class="dropdown-menu dropdown-menu-right close-outside" aria-labelledby="dropdownMenuLink">
-                <li class="dropdown-item dropdown-menu_item d-flex align-items-center justify-content-between" 
+                <li class="dropdown-item dropdown-menu_item d-flex align-items-center justify-content-between"
                     @click="$emit('create-filter')">Create new</li>
-                <li v-for="filter in filters" 
+                <li v-for="filter in filters"
                     class="dropdown-item dropdown-menu_item d-flex align-items-center justify-content-between"
                     @click="$emit('select-filter', filter)"
                     >
@@ -271,7 +271,7 @@ const ReportFilter = {
                         </td>
                         <td class="cell-icon">
                             <div class="d-flex justify-content-end table-action align-items-center pl-2 pt-2">
-                                <button 
+                                <button
                                     v-if="editableFilter.options.length > 1"
                                     type="button" class="btn btn-24 btn__purple"
                                     @click="removeOption(option.id)"><i class="fas fa-minus"></i>
@@ -292,7 +292,7 @@ const ReportFilter = {
                     type="button"
                     class="btn btn-secondary mr-2"
                     @click="resetFilter">Reset</button>
-                <button v-if="this.editableFilter.id" 
+                <button v-if="this.editableFilter.id"
                     :class="{'btn-secondary': loadingSave}"
                     :disabled="!isValidFilter"
                     @click="save"
@@ -328,6 +328,7 @@ const FilterComponent = {
             showFilter: false,
             activeTab: 'all',
             loadingTable: false,
+            url_prefix: window.url_prefix,
         }
     },
     async mounted() {
@@ -536,8 +537,8 @@ const FilterComponent = {
                         class="table table-border mt-4"
                         data-pagination="true"
                         data-page-list="[5, 10, 15]"
-                        data-pagination-pre-text="<img src='/design-system/static/assets/ico/arrow_left.svg'>"
-                        data-pagination-next-text="<img src='/design-system/static/assets/ico/arrow_right.svg'>"
+                        data-pagination-pre-text="<img src='{{ url_prefix }}/design-system/static/assets/ico/arrow_left.svg'>"
+                        data-pagination-next-text="<img src='{{ url_prefix }}/design-system/static/assets/ico/arrow_right.svg'>"
                         data-page-size=5>
                     </table>
                 </div>

@@ -13,7 +13,7 @@ var table_formatters = {
             </option>`)
 
         return `
-            <select 
+            <select
                 class="selectpicker bootstrap-select__b"
                 onchange="updateCell(this, '${index}', '${field}')"
             >
@@ -60,7 +60,7 @@ var table_formatters = {
     actions(value, row, index) {
         return `
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-default btn-xs btn-table btn-icon__xs test_run mr-2" 
+                <button type="button" class="btn btn-default btn-xs btn-table btn-icon__xs test_run mr-2"
                         data-toggle="tooltip" data-placement="top" title="Run Test">
                     <i class="icon__18x18 icon-run"></i>
                 </button>
@@ -93,7 +93,7 @@ var table_formatters = {
     action(value, row, index) {
         return `
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-default btn-xs btn-table btn-icon__xs test_run mr-2" 
+                <button type="button" class="btn btn-default btn-xs btn-table btn-icon__xs test_run mr-2"
                         data-toggle="tooltip" data-placement="top" title="Run Test">
                     <i class="icon__18x18 icon-run"></i>
                 </button>
@@ -132,7 +132,7 @@ var table_formatters = {
         },
 
         "click .int_docker": async function (e, value, row, index) {
-            // const resp = await fetch(`/api/v1/backend_performance/test/${row.project_id}/${row.id}/?output=docker`)
+            // const resp = await fetch(window.url_prefix + `/api/v1/backend_performance/test/${row.project_id}/${row.id}/?output=docker`)
             // if (resp.ok) {
             //     const {cmd} = await resp.json()
             //     vueVm.docker_command.cmd = cmd

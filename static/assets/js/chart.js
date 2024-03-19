@@ -47,7 +47,7 @@ function createTest() {
     data.append('cc_env_vars', JSON.stringify(params[3]));
 
     $.ajax({
-            url: `/api/v1/backend/${getSelectedProjectId()}`,
+            url: window.url_prefix + `/api/v1/backend/${getSelectedProjectId()}`,
             data: data,
             cache: false,
             contentType: false,
@@ -94,9 +94,9 @@ function addDNSOverride(id, key="", value="") {
 
 function backendLgFormatter(value, row, index) {
     if (row.job_type === "perfmeter") {
-        return '<img src="/design-system/static/assets/ico/jmeter.png" width="20">'
+        return '<img src="' + window.url_prefix + '/design-system/static/assets/ico/jmeter.png" width="20">'
     } else if (row.job_type === "perfgun") {
-        return '<img src="/design-system/static/assets/ico/gatling.png" width="20">'
+        return '<img src="' + window.url_prefix + '/design-system/static/assets/ico/gatling.png" width="20">'
     } else {
         return value
     }
@@ -296,7 +296,7 @@ function updateTest(test_id) {
     data['cc_env_vars'] = JSON.stringify(params[3]);
 
     $.ajax({
-            url: `/api/v1/tests/${getSelectedProjectId()}/backend/${test_id}`,
+            url: window.url_prefix + `/api/v1/tests/${getSelectedProjectId()}/backend/${test_id}`,
             data: JSON.stringify(data),
             cache: false,
             contentType: 'application/json',
@@ -309,7 +309,7 @@ function updateTest(test_id) {
 }
 
 function deleteTests(id) {
-    var tests = `/api/v1/backend/${getSelectedProjectId()}?`;
+    var tests = window.url_prefix + `/api/v1/backend/${getSelectedProjectId()}?`;
     if (id == undefined){
         $("#tests-list").bootstrapTable('getSelections').forEach(item => {
             tests += "id[]=" + item["id"] + "&"
@@ -327,7 +327,7 @@ function deleteTests(id) {
 }
 
 function deleteReports() {
-    var reports = `/api/v1/reports/${getSelectedProjectId()}?`;
+    var reports = window.url_prefix + `/api/v1/reports/${getSelectedProjectId()}?`;
     $("#results-list").bootstrapTable('getSelections').forEach(item => {
         reports += "id[]=" + item["id"] + "&"
     });
@@ -374,7 +374,7 @@ function runTest(test_id) {
         'region': $('#runTest_region').val()
     }
     $.ajax({
-        url: `/api/v1/tests/${getSelectedProjectId()}/backend/${test_id}`,
+        url: window.url_prefix + `/api/v1/tests/${getSelectedProjectId()}/backend/${test_id}`,
         data: JSON.stringify(data),
         contentType: 'application/json',
         type: 'POST',
@@ -558,7 +558,7 @@ function fillErrorTable() {
     var start_time = $("#start_time").html()
     var end_time = $("#end_time").html()
     test_name = document.querySelector("[property~=test_name][content]").content;
-    $('#errors').bootstrapTable('refreshOptions', {url: `/api/v1/chart/errors/table?test_name=${test_name}&start_time=${start_time}&end_time=${end_time}&low_value=${low_value}&high_value=${high_value}`})
+    $('#errors').bootstrapTable('refreshOptions', {url: window.url_prefix + `/api/v1/chart/errors/table?test_name=${test_name}&start_time=${start_time}&end_time=${end_time}&low_value=${low_value}&high_value=${high_value}`})
 }
 
 function resizeChart() {
@@ -606,7 +606,7 @@ function setBaseline() {
     };
 
     $.ajax({
-        url: `/api/v1/baseline/${getSelectedProjectId()}`,
+        url: window.url_prefix + `/api/v1/baseline/${getSelectedProjectId()}`,
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(data)
@@ -616,7 +616,7 @@ function setBaseline() {
 function compareWithBaseline() {
     console.log("here")
     $.get(
-        `/api/v1/baseline/${getSelectedProjectId()}`,
+        window.url_prefix + `/api/v1/baseline/${getSelectedProjectId()}`,
         {
             test_name: test_name,
             env: environment
@@ -663,7 +663,7 @@ function shareTestReport() {
 function stopTest() {
     data = {"test_status": {"status": "Canceled", "percentage": 100, "description": "Test was canceled"}}
     $.ajax({
-        url: `/api/v1/reports/${getSelectedProjectId()}/${testId}/status`,
+        url: window.url_prefix + `/api/v1/reports/${getSelectedProjectId()}/${testId}/status`,
         data: JSON.stringify(data),
         contentType: 'application/json',
         type: 'PUT',

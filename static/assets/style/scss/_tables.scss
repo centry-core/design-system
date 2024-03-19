@@ -339,7 +339,7 @@ td.disabled input {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-image: url("/design-system/static/assets/ico/loading.svg");
+  background-image: url("../../../assets/ico/loading.svg");
 }
 .preview-loader__white {
   animation: load 1.1s infinite linear;
@@ -380,10 +380,10 @@ td.disabled input {
 .table {
   .detail-icon {
     i.fa-plus::before {
-      content: url("/design-system/static/assets/ico/detail-view.svg");
+      content: url("../../../assets/ico/detail-view.svg");
     }
     i.fa-minus::before {
-      content: url("/design-system/static/assets/ico/detail-view.svg");
+      content: url("../../../assets/ico/detail-view.svg");
       transform: rotate(180deg);
       display: inline-block;
     }
