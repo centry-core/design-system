@@ -2099,6 +2099,10 @@ tr.highlight td:last-child div {
   width: 100% !important;
 }
 
+.fixed-table-pagination .dropdown-menu {
+  min-width: auto !important;
+}
+
 .d-flex .btn-32 {
   margin-right: 10px;
 }
@@ -3854,12 +3858,6 @@ input[type=range]::-moz-range-thumb {
 }
 .dropdown_action.show .btn-default {
   border-color: var(--pressed60);
-}
-.dropdown_action.show .btn-default i {
-  background: url("../../../assets/ico/icon-user__active.svg") no-repeat;
-}
-.dropdown_action:hover .btn-default i {
-  background: url("../../../assets/ico/icon-user__hover.svg") no-repeat;
 }
 .dropdown_action .dropdown-item {
   cursor: pointer;
@@ -6725,7 +6723,14 @@ body.th-dark {
 }
 
 /* card */
-.th-dark .card .card-header, .th-dark .card {
+.th-dark .storage-container {
+  border-top: solid 1px #4E525D !important;
+}
+.th-dark .border-b {
+  border-bottom: solid 1px #4E525D !important;
+}
+
+.th-dark .card .card-header, .th-dark .card:not(.integration_card) {
   background-color: #191d22;
 }
 
@@ -6737,13 +6742,21 @@ body.th-dark {
 
 .th-dark h1, .th-dark h2, .th-dark h3, .th-dark h4, .th-dark h5, .th-dark h6,
 .th-dark .font-h1, .th-dark .font-h2, .th-dark .font-h3, .th-dark .font-h4, .th-dark .font-h5, .th-dark .font-h6 {
-  color: #C8CCD6;
+  color: #C8CCD6 !important;
 }
 
 /* dropdown */
+.th-dark .bootstrap-select:hover .dropdown-toggle:not(.btn-chapters):not(.btn-border-none) {
+  border: 1px solid #ACAFB8 !important;
+}
+
 .th-dark .dropdown-menu .dropdown-menu_item:hover {
   background: #2D3139;
   color: #F3F3F3;
+}
+
+.th-dark .fixed-table-pagination .dropdown-menu {
+  min-width: auto !important;
 }
 
 .th-dark .dropdown-menu {
@@ -6754,6 +6767,10 @@ body.th-dark {
 
 .th-dark .dropdown-item {
   color: #C8CCD6;
+}
+
+.th-dark .dropdown-item.active {
+  background-color: #2F333A;
 }
 
 .th-dark .dropdown-item.active.selected {
@@ -6767,6 +6784,12 @@ body.th-dark {
 }
 
 /* select */
+.th-dark .btn-light, .th-dark .show > .btn-light.dropdown-toggle, .th-dark .btn-light:not(:disabled):not(.disabled):active {
+  color: #C8CCD6;
+  background-color: #191d22;
+  border: solid 1px transparent !important;
+}
+
 .th-dark .bootstrap-select__b {
   background-color: #191d22;
   border: solid 1px #4E525D !important;
@@ -6784,6 +6807,10 @@ body.th-dark {
 }
 
 /* table */
+.th-dark .table .dropdown-toggle:not(.btn-colored) {
+  background: transparent !important;
+}
+
 .th-dark .thead-light th {
   background-color: #20242B !important;
   color: #C8CCD6 !important;
@@ -6845,6 +6872,19 @@ body.th-dark {
 }
 
 /* buttons */
+.th-dark .dropdown_action.show .btn-default {
+  border-color: #4E525D;
+}
+.th-dark .btn-action, .th-dark .integration_card {
+  background-color: #20242B;
+  border: solid 1px #4E525D;
+}
+.th-dark .btn-action:hover, .th-dark .btn-action:not(:disabled):not(.disabled):active, .th-dark .integration_card:hover {
+  background-color: #2F333A !important;
+}
+.th-dark .integration_card .badge-grey {
+  background: #414850;
+}
 .th-dark .btn-secondary, .th-dark .btn-secondary:not(:disabled):active {
   background-color: #191d22 !important;
   border: 1px solid #4E525D !important;
@@ -6860,6 +6900,23 @@ body.th-dark {
   background-color: #20242c !important;
   border: 1px solid #2D3139 !important;
 }
+.th-dark .icon-check__16 {
+  background-image: url(../../../assets/ico/check-white.svg);
+  background-repeat: no-repeat;
+}
+.th-dark .btn:hover .icon__16x16:not(.icon__white),
+.th-dark .btn:hover .icon__18x18:not(.icon__white) {
+  background-color: #C8CCD6;
+}
+.th-dark #userDropDown .icon-user {
+  background-color: #C8CCD6;
+}
+.th-dark #userDropDown:hover {
+  border: 1px solid #4E525D !important;
+}
+.th-dark .active-mode {
+  color: #F3F3F3;
+}
 
 .th-dark .btn-icon__purple .icon__18x18:not(.icon__white),
 .th-dark .btn-icon__purple .icon__16x16:not(.icon__white),
@@ -6874,23 +6931,26 @@ body.th-dark {
 
 /* icons */
 .th-dark .dropdown-menu_item .icon__18x18,
-.th-dark table tr .icon__18x18 {
+.th-dark table tr .icon__18x18, .icon__18x18 {
   background-color: #ACAFB8;
 }
 
 .th-dark .btn:hover .icon__18x18:not(.icon__white),
 .th-dark .btn:focus .icon__18x18:not(.icon__white),
 .th-dark .btn:active .icon__18x18:not(.icon__white) {
-  background-color: #686C76 !important;
+  background-color: #C8CCD6 !important;
 }
 
 /* checkbox */
 .th-dark .custom-checkbox span {
   color: #F3F3F3;
 }
-.th-dark .bs-checkbox input[type=checkbox]:before {
+.th-dark .bs-checkbox input[type=checkbox]:not(:checked):before {
   border: 1px solid #4E525D;
   background-color: transparent !important;
+}
+.th-dark .bs-checkbox input[type=checkbox]:checked:before {
+  background-color: var(--purple);
 }
 .th-dark .custom-checkbox input:before {
   border: solid 1px #4E525D;
@@ -6904,6 +6964,10 @@ body.th-dark {
 .th-dark .modal-content {
   background-color: #20242B;
 }
+.th-dark .modal-component .modal-card {
+  background: #20242B;
+  border: 1px solid #2F333A;
+}
 
 /* form */
 .th-dark {
@@ -6911,11 +6975,12 @@ body.th-dark {
   /* input-search */
   /* toggle */
   /* radio */
+  /* dropdown */
 }
-.th-dark input.form-control:disabled {
+.th-dark input.form-control:disabled, .th-dark input[type=text], .th-dark .custom-input textarea {
   border: solid 1px #4E525D;
   background-color: #282C34;
-  color: #ACAFB8;
+  color: #F3F3F3;
 }
 .th-dark input.form-control {
   border: solid 1px #4E525D;
@@ -6953,6 +7018,50 @@ body.th-dark {
 }
 .th-dark .custom-radio:checked + label::before {
   background-color: #F3F3F3;
+}
+.th-dark div[aria-labelledby=userDropDown] .dropdown-item {
+  display: flex;
+  align-items: flex-end;
+}
+.th-dark .dropdown-divider {
+  border-top: 1px solid #4E525D;
+}
+
+/* tabs */
+.th-dark .nav-pills .nav-item a.active {
+  background: #2F333A;
+  border: solid 1px #2F333A;
+  color: #F3F3F3;
+}
+.th-dark .nav-pills .nav-item a {
+  background: transparent;
+  border: solid 1px #2F333A;
+  color: #ACAFB8;
+}
+.th-dark .btn-group.btn-group-toggle .btn-toggle.active {
+  background: #2F333A;
+  border: solid 1px #2F333A;
+  color: #F3F3F3;
+}
+.th-dark .btn-group.btn-group-toggle .btn-toggle, .th-dark .btn-group.btn-group-toggle .btn-toggle:hover:not(.disabled):not(.active) {
+  background: transparent;
+  border: solid 1px #2F333A;
+  color: #ACAFB8;
+}
+
+/* stepper */
+.th-dark .input-stepper button {
+  color: #C8CCD6;
+  background: transparent;
+}
+.th-dark .input-stepper button i.icon__16x16 {
+  background-color: #C8CCD6;
+}
+.th-dark .input-stepper {
+  border: solid 1px #4E525D !important;
+}
+.th-dark .input-stepper span {
+  color: #C8CCD6;
 }
 
 /*# sourceMappingURL=main.css.map */

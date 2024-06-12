@@ -416,14 +416,14 @@
     .btn-default {
       border-color: var(--pressed60);
       i {
-        background: url("../../../assets/ico/icon-user__active.svg") no-repeat;
+        //background: url("../../../assets/ico/icon-user__active.svg") no-repeat;
       }
     }
   }
   &:hover {
     .btn-default {
       i {
-        background: url("../../../assets/ico/icon-user__hover.svg") no-repeat;
+        //background: url("../../../assets/ico/icon-user__hover.svg") no-repeat;
       }
     }
   }
