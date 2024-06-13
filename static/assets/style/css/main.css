@@ -6810,6 +6810,9 @@ body.th-dark {
 .th-dark .table .dropdown-toggle:not(.btn-colored) {
   background: transparent !important;
 }
+.th-dark .card-body .table tr.empty-row__error {
+  background-color: #fa5e5e;
+}
 
 .th-dark .thead-light th {
   background-color: #20242B !important;
