@@ -11,6 +11,26 @@
             <h1>Buttons</h1>
         </div>
         <div class="card-body">
+            <div class="col-8">
+                <div class="d-flex justify-content-end">
+                    <button type="button"
+                            data-toggle="modal"
+                            data-target="#bucketModal"
+                            class="btn btn-basic btn-icon mr-2">
+                        <i class="icon__14x14 icon-plus__big icon__white"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-icon btn-icon__purple mr-2"
+                            @click="this.isShowSearch = !this.isShowSearch">
+                        <i class="icon-search__filled icon__16x16"></i>
+                    </button>
+                    <button type="button"
+                            @click="$emit('open-confirm', 'multiple')"
+                            :disabled="!isAnyBucketSelected"
+                            class="btn btn-secondary btn-icon btn-icon__purple">
+                        <i class="icon__18x18 icon-delete"></i>
+                    </button>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-3">
                     <h4 class="pt-2">Buttons 40px</h4>

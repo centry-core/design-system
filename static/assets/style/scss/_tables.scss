@@ -481,3 +481,6 @@ tr.highlight {
 .table-scroll > .card-table > .bootstrap-table > .fixed-table-container > .fixed-table-header > .table.table-hover {
   width: 100% !important;
 }
+.fixed-table-pagination .dropdown-menu {
+  min-width: auto !important;
+}
