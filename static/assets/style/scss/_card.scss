@@ -154,16 +154,16 @@
 .card-yellow {
   background-color: var(--bg-yellow);
   color: var(--text-yellow);
-  border: 1px solid var(--boder-yellow20);
+  border: 1px solid var(--text-yellow);
 }
 .card-yellow .card-body {
-  border-bottom-color: var(--boder-yellow);
+  border-bottom-color: var(--border-yellow20);
 }
 
 .card-orange {
-  background-color: var(--bg-orange);
+  background-color: var(--bg-orange) !important;
   color: var(--text-orange);
-  border: 1px solid var(--boder-orange20);
+  border: 1px solid var(--boder-orange);
 }
 .card-orange .card-body {
   border-bottom-color: var(--boder-orange);

@@ -681,7 +681,6 @@
     } else if (format === 'auto') {
       format = currentFormat;
     }
-
     switch (format) {
       case 'hex':
         colorValue.value = hex;
