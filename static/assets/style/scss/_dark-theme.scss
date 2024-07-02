@@ -105,8 +105,17 @@ body.th-dark {
 }
 /* table */
 .th-dark {
+  .fixed-columns, .fixed-columns-right {
+    background-color: #191d22 !important;
+  }
+  .table-transparent.table-bordered tbody tr {
+    border-bottom: 1px solid #282C34 !important;
+  }
   .table tbody tr a.dropdown-item span {
     color: inherit;
+  }
+  .table-hover tbody tr.detail-view:hover {
+    background-color: #212529;
   }
   .bootstrap-table .fixed-table-container.fixed-height:not(.has-footer) {
     border-bottom: 1px solid #282C34;
@@ -181,15 +190,26 @@ body.th-dark {
 }
 /* buttons */
 .th-dark {
+  .btn-basic {
+    .icon__18x18 {
+      background-color: white !important;
+    }
+  }
+  .btn-table i {
+    color: #ACAFB8;
+  }
   .text-disabled {
     color: #525F7F !important;
   }
   .btn-action:focus {
     background-color: transparent !important;
   }
-  .btn-painted {
+  .btn-painted:not(.rounded-pill) {
     background-color: #191d22 !important;
     border-color: rgba(215, 22, 22, 0.3) !important;
+  }
+  .btn-painted.rounded-pill {
+    background-color: #191d22 !important;
   }
   .btn-painted:hover {
     background-color: #20242B !important;
@@ -301,8 +321,22 @@ body.th-dark {
 
 .th-dark {
   /* input */
+  .custom-input label,
+  .custom-input .custom-input_desc, .custom-input_desc {
+    color: #C8CCD6;
+  }
+  textarea.form-control {
+    background: #191d22 !important;
+    color: #C8CCD6 !important;
+    border: solid 1px #4E525D !important;
+  }
   .form-tags .form-control {
     background-color: transparent;
+  }
+  .custom-input input {
+    background: #191d22 !important;
+    color: #C8CCD6 !important;
+    border: solid 1px #4E525D !important;
   }
   input.form-control:disabled, input[type=text], .custom-input textarea {
     border: solid 1px #4E525D;
@@ -331,6 +365,9 @@ body.th-dark {
   }
   .btn-select .complex-list_filled {
     color: #C8CCD6;
+  }
+  #complexList .btn-select {
+    border: solid 1px #4E525D;
   }
   .show > .btn-secondary.dropdown-toggle {
     background-color: #191d22 !important;
@@ -418,5 +455,22 @@ body.th-dark {
     span {
       color: #C8CCD6;
     }
+  }
+}
+
+/* drag & drop */
+
+.th-dark {
+  .preview-area_item {
+    background: #191d22;
+    border: solid 1px #4E525D !important;
+    color: #F3F3F3;
+  }
+}
+/* tooltip */
+.th-dark {
+  .tooltip.tooltip__custom {
+    background: #20242b;
+    border-color: #2e2f33;
   }
 }

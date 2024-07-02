@@ -6830,8 +6830,17 @@ body.th-dark {
 }
 
 /* table */
+.th-dark .fixed-columns, .th-dark .fixed-columns-right {
+  background-color: #191d22 !important;
+}
+.th-dark .table-transparent.table-bordered tbody tr {
+  border-bottom: 1px solid #282C34 !important;
+}
 .th-dark .table tbody tr a.dropdown-item span {
   color: inherit;
+}
+.th-dark .table-hover tbody tr.detail-view:hover {
+  background-color: #212529;
 }
 .th-dark .bootstrap-table .fixed-table-container.fixed-height:not(.has-footer) {
   border-bottom: 1px solid #282C34;
@@ -6913,15 +6922,24 @@ body.th-dark {
 }
 
 /* buttons */
+.th-dark .btn-basic .icon__18x18 {
+  background-color: white !important;
+}
+.th-dark .btn-table i {
+  color: #ACAFB8;
+}
 .th-dark .text-disabled {
   color: #525F7F !important;
 }
 .th-dark .btn-action:focus {
   background-color: transparent !important;
 }
-.th-dark .btn-painted {
+.th-dark .btn-painted:not(.rounded-pill) {
   background-color: #191d22 !important;
   border-color: rgba(215, 22, 22, 0.3) !important;
+}
+.th-dark .btn-painted.rounded-pill {
+  background-color: #191d22 !important;
 }
 .th-dark .btn-painted:hover {
   background-color: #20242B !important;
@@ -7038,8 +7056,22 @@ body.th-dark {
   /* radio */
   /* dropdown */
 }
+.th-dark .custom-input label,
+.th-dark .custom-input .custom-input_desc, .th-dark .custom-input_desc {
+  color: #C8CCD6;
+}
+.th-dark textarea.form-control {
+  background: #191d22 !important;
+  color: #C8CCD6 !important;
+  border: solid 1px #4E525D !important;
+}
 .th-dark .form-tags .form-control {
   background-color: transparent;
+}
+.th-dark .custom-input input {
+  background: #191d22 !important;
+  color: #C8CCD6 !important;
+  border: solid 1px #4E525D !important;
 }
 .th-dark input.form-control:disabled, .th-dark input[type=text], .th-dark .custom-input textarea {
   border: solid 1px #4E525D;
@@ -7067,6 +7099,9 @@ body.th-dark {
 }
 .th-dark .btn-select .complex-list_filled {
   color: #C8CCD6;
+}
+.th-dark #complexList .btn-select {
+  border: solid 1px #4E525D;
 }
 .th-dark .show > .btn-secondary.dropdown-toggle {
   background-color: #191d22 !important;
@@ -7147,6 +7182,19 @@ body.th-dark {
 }
 .th-dark .input-stepper span {
   color: #C8CCD6;
+}
+
+/* drag & drop */
+.th-dark .preview-area_item {
+  background: #191d22;
+  border: solid 1px #4E525D !important;
+  color: #F3F3F3;
+}
+
+/* tooltip */
+.th-dark .tooltip.tooltip__custom {
+  background: #20242b;
+  border-color: #2e2f33;
 }
 
 /*# sourceMappingURL=main.css.map */
