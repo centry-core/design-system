@@ -6723,6 +6723,10 @@ body.th-dark {
 }
 
 /* card */
+.th-dark .card-gray {
+  border: solid 1px #4E525D;
+  color: #F3F3F3;
+}
 .th-dark .welcome-card-body {
   background-color: #191d22;
 }
@@ -7012,11 +7016,12 @@ body.th-dark {
 
 .th-dark .close, .th-dark i.fa {
   color: #ACAFB8 !important;
+  opacity: 1;
 }
 
 .th-dark .btn:hover .icon__18x18:not(.icon__white),
 .th-dark .btn:focus .icon__18x18:not(.icon__white),
-.th-dark .btn:active .icon__18x18:not(.icon__white) {
+.th-dark .btn:active .icon__18x18:not(.icon__white), .th-dark .btn-icon__xs .icon__16x16 {
   background-color: #C8CCD6 !important;
 }
 
@@ -7040,12 +7045,18 @@ body.th-dark {
 }
 
 /* modal */
+.th-dark .modal-footer {
+  border-top: 1px solid #4E525D;
+}
 .th-dark .modal-content {
   background-color: #20242B;
 }
 .th-dark .modal-component .modal-card {
   background: #20242B;
   border: 1px solid #2F333A;
+}
+.th-dark .modal-dialog .modal-body #message {
+  color: #F3F3F3;
 }
 
 /* form */
@@ -7055,6 +7066,9 @@ body.th-dark {
   /* toggle */
   /* radio */
   /* dropdown */
+}
+.th-dark .list-group-item {
+  background-color: #3c3e44 !important;
 }
 .th-dark .custom-input label,
 .th-dark .custom-input .custom-input_desc, .th-dark .custom-input_desc {
@@ -7195,6 +7209,38 @@ body.th-dark {
 .th-dark .tooltip.tooltip__custom {
   background: #20242b;
   border-color: #2e2f33;
+}
+
+/* editor */
+.th-dark .note-editable p {
+  color: #F3F3F3;
+}
+
+/* calendar */
+.th-dark input[type=date] {
+  color-scheme: dark;
+}
+
+/* kanban */
+.th-dark .kanban-board {
+  background: #20242B;
+}
+.th-dark .kanban-board .param-text {
+  color: #F3F3F3;
+}
+.th-dark .ticket-card .ticket-title {
+  color: #F3F3F3;
+}
+
+/* chart */
+.th-dark div#layout_empty-chart {
+  background: #2D3139 !important;
+}
+.th-dark .layout-spinner {
+  background: #2D3139;
+}
+.th-dark .spinner-loader__32x32 {
+  background-image: url(../../../assets/ico/loading__white.svg);
 }
 
 /*# sourceMappingURL=main.css.map */
