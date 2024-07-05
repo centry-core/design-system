@@ -189,8 +189,37 @@ body.th-dark {
   background-color: #15181C;
   color: #F3F3F3 !important;
 }
+.th-dark tr.highlight .ticket-title .title {
+  color: white !important;
+  font-weight: bold;
+}
+.th-dark tr .ticket-title .title {
+  color: #F3F3F3 !important;
+}
+.th-dark .ticket-view {
+  background: #191d22 !important;
+  color: #F3F3F3 !important;
+}
 .th-dark .table-logs td {
   color: #F3F3F3;
+}
+.th-dark {
+  .ticket-header {
+    color: #F3F3F3;
+  }
+  .ticket-type {
+    color: #F3F3F3;
+  }
+  .row-value .value {
+    font-weight: 400;
+    color: #F3F3F3;
+  }
+  .note-editable {
+    color: #F3F3F3;
+  }
+  .activity-container {
+    background: transparent;
+  }
 }
 /* buttons */
 .th-dark {
