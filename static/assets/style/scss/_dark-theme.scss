@@ -13,6 +13,10 @@ body.th-dark {
 }
 /* card */
 .th-dark {
+  .card-gray {
+    border: solid 1px #4E525D;
+    color: #F3F3F3;
+  }
   .welcome-card-body {
     background-color: $bg-dark;
   }
@@ -185,8 +189,37 @@ body.th-dark {
   background-color: #15181C;
   color: #F3F3F3 !important;
 }
+.th-dark tr.highlight .ticket-title .title {
+  color: white !important;
+  font-weight: bold;
+}
+.th-dark tr .ticket-title .title {
+  color: #F3F3F3 !important;
+}
+.th-dark .ticket-view {
+  background: #191d22 !important;
+  color: #F3F3F3 !important;
+}
 .th-dark .table-logs td {
   color: #F3F3F3;
+}
+.th-dark {
+  .ticket-header {
+    color: #F3F3F3;
+  }
+  .ticket-type {
+    color: #F3F3F3;
+  }
+  .row-value .value {
+    font-weight: 400;
+    color: #F3F3F3;
+  }
+  .note-editable {
+    color: #F3F3F3;
+  }
+  .activity-container {
+    background: transparent;
+  }
 }
 /* buttons */
 .th-dark {
@@ -279,10 +312,11 @@ body.th-dark {
 }
 .th-dark .close, .th-dark i.fa {
   color: #ACAFB8 !important;
+  opacity: 1;
 }
 .th-dark .btn:hover .icon__18x18:not(.icon__white),
 .th-dark .btn:focus .icon__18x18:not(.icon__white),
-.th-dark .btn:active .icon__18x18:not(.icon__white) {
+.th-dark .btn:active .icon__18x18:not(.icon__white), .th-dark .btn-icon__xs .icon__16x16  {
   background-color: #C8CCD6 !important;
 }
 
@@ -308,6 +342,9 @@ body.th-dark {
 }
 /* modal */
 .th-dark {
+  .modal-footer {
+    border-top: 1px solid #4E525D;
+  }
   .modal-content {
     background-color: #20242B;
   }
@@ -315,11 +352,21 @@ body.th-dark {
     background: #20242B;
     border: 1px solid #2F333A;
   }
+  .modal-dialog {
+    .modal-body {
+      #message {
+        color: #F3F3F3;
+      }
+    }
+  }
 }
 
 /* form */
 
 .th-dark {
+  .list-group-item {
+    background-color: #3c3e44 !important;
+  }
   /* input */
   .custom-input label,
   .custom-input .custom-input_desc, .custom-input_desc {
@@ -472,5 +519,46 @@ body.th-dark {
   .tooltip.tooltip__custom {
     background: #20242b;
     border-color: #2e2f33;
+  }
+}
+
+/* editor */
+.th-dark {
+  .note-editable p {
+    color: #F3F3F3;
+  }
+}
+/* calendar */
+
+.th-dark {
+  input[type=date] {
+    color-scheme: dark;
+  }
+}
+
+/* kanban */
+
+.th-dark {
+  .kanban-board {
+    background: #20242B;
+    .param-text {
+      color: #F3F3F3;
+    }
+  }
+  .ticket-card .ticket-title {
+    color: #F3F3F3;
+  }
+}
+
+/* chart */
+.th-dark {
+  div#layout_empty-chart {
+    background: #2D3139 !important;
+  }
+  .layout-spinner {
+    background: #2D3139;
+  }
+  .spinner-loader__32x32 {
+    background-image: url(../../../assets/ico/loading__white.svg);
   }
 }
