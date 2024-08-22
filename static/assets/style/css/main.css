@@ -4732,6 +4732,36 @@ p {
   -webkit-mask-repeat: no-repeat;
 }
 
+.icon-severity__18 {
+  -webkit-mask-image: url("../../../assets/ico/icon-severity.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-status__18 {
+  -webkit-mask-image: url("../../../assets/ico/icon-status.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-circle-green__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-circle-green__16.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-circle-red__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-circle-red__16.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-circle-grey__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-circle-grey__16.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
+.icon-circle-deep-grey__16 {
+  -webkit-mask-image: url("../../../assets/ico/icon-circle-deep-grey__16.svg");
+  -webkit-mask-repeat: no-repeat;
+}
+
 .icon-health {
   display: inline-block;
   width: 22px;
@@ -6921,8 +6951,39 @@ body.th-dark {
   color: #F3F3F3 !important;
 }
 
+.th-dark tr.highlight .ticket-title .title {
+  color: white !important;
+  font-weight: bold;
+}
+
+.th-dark tr .ticket-title .title {
+  color: #F3F3F3 !important;
+}
+
+.th-dark .ticket-view {
+  background: #191d22 !important;
+  color: #F3F3F3 !important;
+}
+
 .th-dark .table-logs td {
   color: #F3F3F3;
+}
+
+.th-dark .ticket-header {
+  color: #F3F3F3;
+}
+.th-dark .ticket-type {
+  color: #F3F3F3;
+}
+.th-dark .row-value .value {
+  font-weight: 400;
+  color: #F3F3F3;
+}
+.th-dark .note-editable {
+  color: #F3F3F3;
+}
+.th-dark .activity-container {
+  background: transparent;
 }
 
 /* buttons */
@@ -7241,6 +7302,34 @@ body.th-dark {
 }
 .th-dark .spinner-loader__32x32 {
   background-image: url(../../../assets/ico/loading__white.svg);
+}
+
+/* design-system*/
+.th-dark .custom-nav_item.active {
+  background-color: #15181C;
+  color: #F3F3F3 !important;
+}
+.th-dark .custom-nav_item {
+  border-top: 1px solid #282C34;
+  border-bottom: 1px solid #282C34;
+  cursor: pointer;
+  background-color: #191d22;
+  color: #F3F3F3 !important;
+}
+.th-dark .custom-nav .custom-nav_item a {
+  color: #F3F3F3 !important;
+}
+.th-dark .custom-nav .custom-nav_item.active {
+  border-left: 2px solid var(--basic);
+  border-top: 1px solid #282C34;
+  border-bottom: 1px solid #282C34;
+}
+.th-dark .custom-nav {
+  border-top: 1px solid #282C34;
+}
+.th-dark .custom-nav .custom-nav_item:hover {
+  background-color: #15181C;
+  transition: all 0.3s;
 }
 
 /*# sourceMappingURL=main.css.map */

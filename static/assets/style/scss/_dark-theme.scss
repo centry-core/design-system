@@ -562,3 +562,33 @@ body.th-dark {
     background-image: url(../../../assets/ico/loading__white.svg);
   }
 }
+
+/* design-system*/
+.th-dark {
+  .custom-nav_item.active {
+    background-color: #15181C;
+    color: #F3F3F3 !important;
+  }
+  .custom-nav_item {
+    border-top: 1px solid #282C34;
+    border-bottom: 1px solid #282C34;
+    cursor: pointer;
+    background-color: #191d22;
+    color: #F3F3F3 !important;
+  }
+  .custom-nav .custom-nav_item a {
+    color: #F3F3F3 !important;
+  }
+  .custom-nav .custom-nav_item.active {
+    border-left: 2px solid var(--basic);
+    border-top: 1px solid #282C34;
+    border-bottom: 1px solid #282C34;
+  }
+  .custom-nav {
+    border-top: 1px solid #282C34;
+  }
+  .custom-nav .custom-nav_item:hover {
+    background-color: #15181C;
+    transition: all 0.3s;
+  }
+}
