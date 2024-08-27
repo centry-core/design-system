@@ -2107,6 +2107,10 @@ tr.highlight td:last-child div {
   margin-right: 10px;
 }
 
+.btn.disabled, .btn:disabled {
+  opacity: 0.9 !important;
+}
+
 .btn {
   font-size: 14px;
   height: 32px;
