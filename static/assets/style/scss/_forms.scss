@@ -38,6 +38,11 @@
   opacity: 1;
 }
 
+.table .dropdown-toggle.disabled:not(.btn-colored) {
+  background-color: var(--gray100) !important;
+  opacity: 1;
+}
+
 select.form-control:focus::-ms-value {
   color: var(--main-text);
   background-color: #fff;

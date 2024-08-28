@@ -823,6 +823,11 @@ body {
   opacity: 1;
 }
 
+.table .dropdown-toggle.disabled:not(.btn-colored) {
+  background-color: var(--gray100) !important;
+  opacity: 1;
+}
+
 select.form-control:focus::-ms-value {
   color: var(--main-text);
   background-color: #fff;
@@ -7075,7 +7080,7 @@ body.th-dark {
 
 /* icons */
 .th-dark .dropdown-menu_item .icon__18x18,
-.th-dark table tr .icon__18x18, .icon__18x18 {
+.th-dark table tr .icon__18x18 {
   background-color: #ACAFB8;
 }
 
