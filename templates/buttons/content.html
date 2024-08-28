@@ -11,120 +11,29 @@
             <h1>Buttons</h1>
         </div>
         <div class="card-body">
-            <div class="col-8">
-                <div class="d-flex justify-content-end">
-                    <button type="button"
-                            data-toggle="modal"
-                            data-target="#bucketModal"
-                            class="btn btn-basic btn-icon mr-2">
-                        <i class="icon__14x14 icon-plus__big icon__white"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary btn-icon btn-icon__purple mr-2"
-                            @click="this.isShowSearch = !this.isShowSearch">
-                        <i class="icon-search__filled icon__16x16"></i>
-                    </button>
-                    <button type="button"
-                            @click="$emit('open-confirm', 'multiple')"
-                            :disabled="!isAnyBucketSelected"
-                            class="btn btn-secondary btn-icon btn-icon__purple">
-                        <i class="icon__18x18 icon-delete"></i>
-                    </button>
-                </div>
-            </div>
             <div class="row">
-                <div class="col-3">
-                    <h4 class="pt-2">Buttons 40px</h4>
-                    <div class="d-flex">
-                        <div class="card w-100 p-4 card-stripped">
-                            <h4 class="mb-1">Primary</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-basic btn-lg mr-2">Action</button>
-                                <button class="btn btn-basic btn-lg mr-2" disabled>Action</button>
-                            </div>
-                            <h4 class="mb-1">Secondary</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-lg btn-secondary mr-2">Action</button>
-                                <button class="btn btn-lg btn-secondary" disabled>Action</button>
-                            </div>
-                            <div class="d-flex my-2">
-                                <button class="btn btn-lg btn-basic btn-icon__lg mr-2">
-                                    <i class="fas fa-download"></i>
-                                </button>
-                                <button class="btn btn-lg btn-basic btn-icon__lg" disabled>
-                                    <i class="fas fa-download"></i>
-                                </button>
-                            </div>
-                            <h4 class="mb-1">Integration</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-lg btn-secondary mr-2">
-                                    <i class="fa fa-plus mr-2"></i>
-                                    Action
-                                </button>
-                                <button class="btn btn-lg btn-secondary" disabled>
-                                    <i class="fa fa-plus mr-2"></i>
-                                    Action
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-3">
                     <h4 class="pt-2">Buttons 32px</h4>
                     <div class="d-flex">
                         <div class="card w-100 p-4 card-stripped">
                             <h4 class="mb-1">Primary</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-basic mr-2">Action</button>
-                                <button class="btn btn-basic" disabled>Action</button>
-                            </div>
-                            <div class="d-flex">
-                                <select class="selectpicker mr-1" data-style="select-primary">
-                                    <option>Mustard</option>
-                                    <option>Ketchup</option>
-                                    <option>Relish</option>
-                                    <option>Some long ass creepy name</option>
-                                </select>
-                                <select class="selectpicker" disabled data-style="select-primary">
-                                    <option>Mustard</option>
-                                    <option>Ketchup</option>
-                                    <option>Relish</option>
-                                    <option>Some long ass creepy name</option>
-                                </select>
-                            </div>
-                            <div class="d-flex my-2">
-                                <button class="btn btn-basic btn-icon mr-2">
-                                    <i class="fas fa-download"></i>
+                            <div class="d-flex mb-2 gap-2">
+                                <button type="button" class="btn  btn-secondary">
+                                    Cancel
                                 </button>
-                                <button class="btn btn-basic btn-icon" disabled>
-                                    <i class="fas fa-download"></i>
+                                <button type="button" class="btn  btn-secondary" disabled>
+                                    Cancel
                                 </button>
                             </div>
-                            <h4 class="mb-1">Secondary</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-secondary mr-2">Action</button>
-                                <button class="btn btn-secondary" disabled>Action</button>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-painted mr-2 rounded-pill"
-                                        style="--text-color: var(--error); --brd-color: var(--red-underline)">Business
+                            <div class="d-flex mb-2 gap-2">
+                                <button type="button" class="btn btn-secondary btn-icon btn-icon__purple">
+                                    <i class="icon__14x14 icon-plus__big"></i>
                                 </button>
-                                <button class="btn btn-painted mr-2 rounded-pill"
-                                        style="--text-color: var(--success); --brd-color: var(--green-underline)">System
+                                <button type="button" disabled class="btn btn-secondary btn-icon btn-icon__purple mr-2">
+                                    <i class="icon__18x18 icon-delete"></i>
                                 </button>
                             </div>
-                            <div class="d-flex mb-2">
-                                <select class="selectpicker mr-2" data-style="select-secondary">
-                                    <option>Mustard</option>
-                                    <option>Ketchup</option>
-                                    <option>Relish</option>
-                                </select>
-                                <select class="selectpicker" disabled data-style="select-secondary">
-                                    <option>Mustard</option>
-                                    <option>Ketchup</option>
-                                    <option>Relish</option>
-                                </select>
-                            </div>
-                            <div class="d-flex mb-2">
+                            <div class="d-flex mb-2 gap-2">
                                 <button class="btn btn-secondary mr-2">
                                     <i class="fa fa-plus mr-2"></i>
                                     Action
@@ -134,88 +43,61 @@
                                     Action
                                 </button>
                             </div>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-secondary btn-icon mr-2">
-                                    <i class="fas fa-download"></i>
+                            <h4 class="mb-1">Secondary</h4>
+                            <div class="d-flex mb-2 gap-2">
+                                <button type="button"
+                                        class="btn btn-basic d-flex align-items-center"
+                                >Save</button>
+                                <button type="button"
+                                        disabled
+                                        class="btn btn-basic d-flex align-items-center"
+                                >Save</button>
+                                <button type="button"
+                                        class="btn btn-basic d-flex align-items-center"
+                                >Save<i class="preview-loader__white ml-2"></i></button>
+                            </div>
+                            <div class="d-flex my-2 gap-2">
+                                <button type="button" class="btn btn-basic btn-icon">
+                                    <i class="icon__14x14 icon-plus__big icon__white"></i>
                                 </button>
-                                <button class="btn btn-secondary btn-icon" disabled>
-                                    <i class="fas fa-download"></i>
+                                <button type="button" class="btn btn-basic btn-icon mr-2" disabled>
+                                    <i class="icon__14x14 icon-plus__big icon__white"></i>
                                 </button>
                             </div>
-                            <h4 class="mb-1">Tertiary</h4>
                             <div class="d-flex mb-2">
-                                <button class="btn btn-default mr-2">Action</button>
-                                <button class="btn btn-default mr-2" disabled>Action</button>
-                            </div>
-                            <h4 class="mb-1">Colored</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-painted mr-2"
-                                        style="--text-color: rgb(243, 38, 38); --brd-color: rgb(242, 180, 180)">Action
+                                <button class="btn btn-painted mr-2 rounded-pill"
+                                        style="--text-color: var(--error); --brd-color: var(--red-underline)">Business
                                 </button>
-                                <button class="btn btn-painted mr-2" disabled>Action</button>
+                                <button class="btn btn-painted mr-2 rounded-pill"
+                                        style="--text-color: var(--success); --brd-color: var(--green-underline)">System
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-3">
-                    <h4 class="pt-2">Buttons 28px</h4>
+                    <h4 class="pt-2">Buttons 28px (with class 'btn-sm')</h4>
                     <div class="d-flex">
                         <div class="card w-100 p-4 card-stripped">
                             <h4 class="mb-1">Primary</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-sm btn-basic mr-2">Action</button>
-                                <button class="btn btn-sm btn-basic" disabled>Action</button>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <select class="selectpicker select__sm mr-1" data-style="select-primary">
-                                    <option>Mustard</option>
-                                    <option>Ketchup</option>
-                                    <option>Relish</option>
-                                    <option>Some long ass creepy name</option>
-                                </select>
-                                <select class="selectpicker select__sm mr-1" disabled data-style="select-primary">
-                                    <option>Mustard</option>
-                                    <option>Ketchup</option>
-                                    <option>Relish</option>
-                                    <option>Some long ass creepy name</option>
-                                </select>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-basic btn-sm btn-icon__sm mr-2">
-                                    <i class="fas fa-download"></i>
+                            <div class="d-flex mb-2 gap-2">
+                                <button type="button" class="btn btn-sm btn-secondary">
+                                    Cancel
                                 </button>
-                                <button class="btn btn-basic btn-sm btn-icon__sm" disabled>
-                                    <i class="fas fa-download"></i>
+                                <button type="button" class="btn btn-sm btn-secondary" disabled>
+                                    Cancel
                                 </button>
                             </div>
-
-                            <h4 class="mb-1">Secondary</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-sm btn-secondary mr-2">Action</button>
-                                <button class="btn btn-sm btn-secondary" disabled>Action</button>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-sm btn-painted mr-2 rounded-pill"
-                                        style="--text-color: var(--error); --brd-color: var(--red-underline)">Business
+                            <div class="d-flex mb-2 gap-2">
+                                <button type="button" class="btn btn-sm btn-secondary btn-icon btn-icon__purple">
+                                    <i class="icon__14x14 icon-plus__big"></i>
                                 </button>
-                                <button class="btn btn-sm btn-painted mr-2 rounded-pill"
-                                        style="--text-color: var(--success); --brd-color: var(--green-underline)">System
+                                <button type="button" disabled class="btn btn-sm btn-secondary btn-icon btn-icon__purple mr-2">
+                                    <i class="icon__18x18 icon-delete"></i>
                                 </button>
                             </div>
-                            <div class="d-flex mb-2">
-                                <select class="selectpicker select__sm mr-2" data-style="select-secondary">
-                                    <option>Mustard</option>
-                                    <option>Ketchup</option>
-                                    <option>Relish</option>
-                                </select>
-                                <select class="selectpicker select__sm" disabled data-style="select-secondary">
-                                    <option>Mustard</option>
-                                    <option>Ketchup</option>
-                                    <option>Relish</option>
-                                </select>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-sm btn-secondary mr-2">
+                            <div class="d-flex mb-2 gap-2">
+                                <button class="btn btn-sm btn-secondary">
                                     <i class="fa fa-plus mr-2"></i>
                                     Action
                                 </button>
@@ -224,18 +106,34 @@
                                     Action
                                 </button>
                             </div>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-secondary btn-sm btn-icon__sm mr-2">
-                                    <i class="fas fa-download"></i>
+                            <h4 class="mb-1">Secondary</h4>
+                            <div class="d-flex mb-2 gap-2">
+                                <button type="button"
+                                        class="btn btn-basic btn-sm d-flex align-items-center"
+                                >Save</button>
+                                <button type="button"
+                                        disabled
+                                        class="btn btn-basic btn-sm d-flex align-items-center"
+                                >Save</button>
+                                <button type="button"
+                                        class="btn btn-basic btn-sm d-flex align-items-center"
+                                >Save<i class="preview-loader__white ml-2"></i></button>
+                            </div>
+                            <div class="d-flex my-2 gap-2">
+                                <button type="button" class="btn btn-sm btn-basic btn-icon">
+                                    <i class="icon__14x14 icon-plus__big icon__white"></i>
                                 </button>
-                                <button class="btn btn-secondary btn-sm btn-icon__sm" disabled>
-                                    <i class="fas fa-download"></i>
+                                <button type="button" class="btn btn-sm btn-basic btn-icon mr-2" disabled>
+                                    <i class="icon__14x14 icon-plus__big icon__white"></i>
                                 </button>
                             </div>
-                            <h4 class="mb-1">Tertiary</h4>
                             <div class="d-flex mb-2">
-                                <button class="btn btn-sm btn-default mr-2">Action</button>
-                                <button class="btn btn-sm btn-default" disabled>Action</button>
+                                <button class="btn btn-painted btn-sm mr-2 rounded-pill"
+                                        style="--text-color: var(--error); --brd-color: var(--red-underline)">Business
+                                </button>
+                                <button class="btn btn-painted btn-sm mr-2 rounded-pill"
+                                        style="--text-color: var(--success); --brd-color: var(--green-underline)">System
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -245,15 +143,6 @@
                     <div class="d-flex">
                         <div class="card w-100 p-4 card-stripped">
                             <h4 class="mb-1">Table icons</h4>
-                            <div class="d-flex mb-2">
-                                <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
-                                    <i class="fas fa-download"></i>
-                                </button>
-                                <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2" disabled>
-                                    <i class="fas fa-download"></i>
-                                </button>
-                            </div>
-                            <h4 class="mb-1">Table actions</h4>
                             <div class="d-flex mb-2">
                                 <button class="btn btn-default btn-xs btn-table btn-icon__xs mr-2">
                                     <i class="fas fa-download"></i>
