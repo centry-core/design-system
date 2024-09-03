@@ -185,7 +185,8 @@ const PresetTable = {
                 pages: pages,
             }, {
                 'filterAlgorithm': (row, filters) => {
-                    if (filters.pages.length === 0 ) {
+                    if (!filters) return false;
+                    if (filters.pages.length === 0) {
                         return false
                     }
                     if (filters.type === 'all' && filters.loop === 'all' && filters.pages.length === this.requestNames.length) return true;
